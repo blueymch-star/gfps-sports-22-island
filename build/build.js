@@ -1,4 +1,4 @@
-// 產生 2026 gfps-sports-island/index.html：以 3D 引擎為底，植入「森活高峰・廿二璀璨」6 島 19 地標、綠茵活力跑道、高峰五力集章護照、32項程序表與3D勝利煙火證書系統
+// 產生 2026 gfps-sports-island/index.html：以 3D 引擎為底，植入「雙二齊飛、馳騁高峰」6 島 19 地標、綠茵活力跑道、高峰地標挑戰護照、17項程序表與3D勝利煙火證書系統
 // 用法：node build/build.js
 const fs = require('fs');
 const path = require('path');
@@ -35,7 +35,7 @@ const DATA = {
       nameEn: 'Event & News Record'
     },
     link: {
-      name: '五力傳承主題閉環（虛線橋）',
+      name: '高峰傳承主題閉環（虛線橋）',
       nameEn: 'Five Powers Thematic Link (Dashed)'
     }
   },
@@ -51,7 +51,7 @@ const DATA = {
     medal: { name: '個人賽獎牌', nameEn: 'Sprint Medals' },
     baton: { name: '黃金接力棒', nameEn: 'Golden Relay Baton' },
     diploma: { name: '大隊接力錦旗與獎狀', nameEn: 'Relay Banners & Awards' },
-    trophy: { name: '五力金牌榮譽勳章', nameEn: 'Five Powers Gold Trophy' }
+    trophy: { name: '校慶金牌榮譽勳章', nameEn: 'Five Powers Gold Trophy' }
   },
   roles,
   travelers: {
@@ -108,28 +108,60 @@ rep(
 );
 
 // ---- 4. 更新標題、Meta 與預設導覽順序 ----
-rep('<title>大庄．窯海島</title>', '<title>森活高峰島・校慶運動大冒險｜高峰國小 22 週年校慶「森活高峰・廿二璀璨」</title>');
+rep('<title>大庄．窯海島</title>', '<title>雙二齊飛・星際高峰島｜高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」3D 動態島</title>');
 rep(
   '<meta name="description" content="新竹市香山區大庄國小的特色課程與年度活動，做成 14 座可以逛的 3D 小島：柴窯陶藝、射箭、樂樂棒球、食魚教育與永續智慧教室。">',
-  '<meta name="description" content="新竹市東區高峰國民小學「森活高峰・廿二璀璨」22 週年校慶運動會 3D 動態島：踏上綠茵活力環形跑道，領取高峰五力集章護照，探索 32 項程序表與賽前個人賽英雄榜，引燃全景 3D 勝利煙火！">'
+  '<meta name="description" content="新竹市東區高峰國民小學「雙二齊飛、馳騁高峰」22 週年校慶運動會 3D 動態島：踏上綠茵活力環形跑道，領取高峰地標挑戰護照，探索 17 項程序表與賽前個人賽英雄榜，引燃全景 3D 勝利煙火！">'
 );
 rep(
   '<meta property="og:title" content="大庄．窯海島｜大庄國小特色課程與年度活動">',
-  '<meta property="og:title" content="森活高峰島・校慶運動大冒險｜高峰國小 22 週年校慶">'
+  '<meta property="og:title" content="雙二齊飛・馳騁高峰｜高峰國小 22 週年校慶賽博生態 3D 動態島">'
+);
+rep(
+  '<meta property="og:description" content="香山海風吹過柴窯與射箭場：點一座島，看懂大庄孩子六年的學習旅程。">',
+  '<meta property="og:description" content="新竹市東區高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」賽博生態 3D 動態島：探索 7 座生態科技浮島、綠茵跑道與 17 項校慶程序！">'
 );
 rep(
   "return ['z10', 'z01', 'z02', 'z11', 'z03', 'z04', 'z09', 'z12', 'z05', 'z06', 'z07', 'z08', 'z13', 'z14']",
-  "return ['s01', 's02', 's05', 's03', 's04', 's06']"
+  "return ['s01', 's02', 's03', 's04', 's05', 's06', 's07']"
 );
 rep("'dzps-tour-v1'", "'sq-tour-v1'", true);
 rep("'dzps-big'", "'sq-big'", true);
 rep("'dzps-traveler'", "'sq-traveler'", true);
 rep("'dzps-passport'", "'sq-passport'", true);
 
-// 調整 3D 海水與天空為更清爽的「香山海風藍 ✕ 青草地綠」色調
+// 調整 3D 天空、霧氣與海水為深邃浩瀚的「星際太空宇宙 ✕ 霓虹量子光海」風格
 rep(
   'uShallow: { value: new THREE.Color(0xa4d4da) }, uDeep: { value: new THREE.Color(0x6fa9b8) }',
-  'uShallow: { value: new THREE.Color(0x6ee7b7) }, uDeep: { value: new THREE.Color(0x0f766e) }'
+  'uShallow: { value: new THREE.Color(0x00f2fe) }, uDeep: { value: new THREE.Color(0x04081c) }'
+);
+rep(
+  'scene.fog = new THREE.Fog(0xf4eee3, 42, 150);',
+  'scene.fog = new THREE.Fog(0x060c20, 60, 260);'
+);
+// 替換日夜天空 keyframes 為星際宇宙星雲與恆星冷光色調
+rep(
+  'const scKeys = [\n  [0, 0x1e2c58, 0x3f4f80, 0xb4c2ff, 0.35, 0x7f8fc8, 0x3a3448, 0.62, 1, 0x2c4466],',
+  `const scKeys = [\n  [0, 0x030614, 0x0c102a, 0x00f2fe, 0.6, 0x38bdf8, 0x080c20, 0.7, 1, 0x04081c],`
+);
+// 在 3D 場景中注入星空粒子雲 (Starfield Particle System)
+rep(
+  'water.position.set(cx, WATER_Y, cz);\n  scene.add(water);',
+  `water.position.set(cx, WATER_Y, cz);\n  scene.add(water);\n\n  // ====== 星際太空 3D 星空粒子系統 (Cosmic Starfield & Nebula Dust) ======\n  (() => {\n    const starCount = 2800;\n    const geom = new THREE.BufferGeometry();\n    const pos = new Float32Array(starCount * 3);\n    const col = new Float32Array(starCount * 3);\n    const palette = [\n      new THREE.Color(0x00f2fe), new THREE.Color(0xa855f7), new THREE.Color(0xffffff), new THREE.Color(0x38bdf8), new THREE.Color(0xfacc15)\n    ];\n    for (let i = 0; i < starCount; i++) {\n      const theta = Math.random() * Math.PI * 2;\n      const phi = Math.acos(Math.random() * 2 - 1);\n      const r = 60 + Math.random() * 110;\n      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);\n      pos[i * 3 + 1] = Math.abs(r * Math.cos(phi)) * 0.85 + 2;\n      pos[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);\n      const c = palette[Math.floor(Math.random() * palette.length)];\n      col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b;\n    }\n    geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));\n    geom.setAttribute('color', new THREE.BufferAttribute(col, 3));\n    const mat = new THREE.PointsMaterial({ size: 0.7, vertexColors: true, transparent: true, opacity: 0.9, depthWrite: false });\n    const starfield = new THREE.Points(geom, mat);\n    scene.add(starfield);\n    ctx.onFrame.push(() => { starfield.rotation.y += 0.00015; });\n\n    // ====== 賽博夜空金色月牙 (Crescent Moon) ======\n    try {\n      const moonShape = new THREE.Shape();\n      moonShape.absarc(0, 0, 4.2, -Math.PI * 0.46, Math.PI * 0.46, false);\n      moonShape.absarc(2.1, 0, 3.4, Math.PI * 0.44, -Math.PI * 0.44, true);\n      const moonGeom = new THREE.ShapeGeometry(moonShape);\n      const moonMat = new THREE.MeshBasicMaterial({ color: 0xfff0a4, side: THREE.DoubleSide });\n      const moon = new THREE.Mesh(moonGeom, moonMat);\n      moon.position.set(-68, 52, -88);\n      moon.rotation.set(0.12, 0.45, -0.25);\n      scene.add(moon);\n    } catch(e) {}\n  })();`
+);
+// 在每座浮島底座下方注入反重力全息能量光環 (Anti-gravity Repulsor Rings)
+rep(
+  'scene.add(top); isl.topMesh = top;',
+  `scene.add(top); isl.topMesh = top;\n    // 反重力全息能量光環（浮島底座懸浮藍光圈）\n    const repulsorG = hexRing(R * 0.93, R * 1.07).translate(x, TOP - 0.22, z);\n    const repulsor = new THREE.Mesh(repulsorG, new THREE.MeshBasicMaterial({\n      color: 0x00f2fe, transparent: true, opacity: 0.65, side: THREE.DoubleSide\n    }));\n    scene.add(repulsor);\n    const repulsorG2 = hexRing(R * 0.78, R * 0.90).translate(x, TOP - 0.42, z);\n    const repulsor2 = new THREE.Mesh(repulsorG2, new THREE.MeshBasicMaterial({\n      color: 0xc084fc, transparent: true, opacity: 0.5, side: THREE.DoubleSide\n    }));\n    scene.add(repulsor2);`
+);
+// 將拱橋改裝為星際量子能量光橋 (Quantum Energy Lightways)
+rep(
+  "parts.push({ g: scPlace(box(), p.x, p.y, p.z, -slope, yaw, 0, 0.34, 0.035, L0 / 9 * 0.9), c: k % 2 ? '#c49a72' : '#b48560' });",
+  "parts.push({ g: scPlace(box(), p.x, p.y, p.z, -slope, yaw, 0, 0.34, 0.035, L0 / 9 * 0.9), c: k % 2 ? '#6d28d9' : '#7c3aed' });"
+);
+rep(
+  "parts.push({ g: scPlace(box(), p.x + nx * 0.17 * s, p.y + 0.07, p.z + nz * 0.17 * s, 0, yaw, 0, 0.035, 0.14, 0.035), c: '#b8432f' });",
+  "parts.push({ g: scPlace(box(), p.x + nx * 0.17 * s, p.y + 0.07, p.z + nz * 0.17 * s, 0, yaw, 0, 0.035, 0.14, 0.035), c: '#c084fc' });"
 );
 
 // ---- 4b. 為 6 位運動歷史傳奇巨星設定專屬 3D 運動造型 (wkLook) ----
@@ -164,28 +196,27 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
       <!-- 精巧膠囊（收合狀態顯示） -->
       <button type="button" class="sq-capsule-pill" id="sq-capsule-pill" aria-label="展開校慶運動會導覽卡片">
         <span class="sq-pill-icon">🏃</span>
-        <span class="sq-pill-title">森活高峰島</span>
+        <span class="sq-pill-title">🚀 雙二齊飛・賽博生態島</span>
         <span class="sq-pill-dot">·</span>
-        <span class="sq-pill-badge" id="sq-pill-prog">🏅 0/5章 · 0/19關</span>
+        <span class="sq-pill-badge" id="sq-pill-prog">🏅 0/22關</span>
         <span class="sq-pill-arrow">▾</span>
       </button>
 
       <!-- 展開卡片主體 -->
       <div class="sq-brand-body" id="sq-brand-body">
         <div class="sq-brand-header-actions">
-          <div class="ui-eyebrow" id="ui-brand-eyebrow" data-en="GAO-FENG 22ND · 6 ARENA ISLES · 32 EVENTS">22 週年校慶 · 6 座森林賽場島 · 32 項程序</div>
+          <div class="ui-eyebrow" id="ui-brand-eyebrow" data-en="GAO-FENG 22ND · 6 ARENA ISLES · 32 EVENTS">22 週年校慶 · 7 座賽博生態浮島 · 17 項程序</div>
           <button type="button" class="sq-fold-btn" id="sq-fold-btn" title="收起卡片，釋放 3D 賽場視野" aria-label="收起卡片">
             <span class="sq-fold-txt">收合</span> <span class="sq-fold-icon">▲</span>
           </button>
         </div>
-        <h1 class="ui-brand-title" id="ui-brand-title" data-en="Forest Sports Island">森活高峰島・校慶運動大冒險</h1>
-        <div class="ui-brand-sub" id="ui-brand-sub" data-en="GFPS 22nd: Forest Vitality & Global Powers">森活高峰・廿二璀璨｜22 週年校慶運動會</div>
+        <h1 class="ui-brand-title" id="ui-brand-title" data-en="Dual-Twenty-Two Soaring Cosmic Isles">雙二齊飛・馳騁高峰</h1>
+        <div class="ui-brand-sub" id="ui-brand-sub" data-en="GFPS 22nd: Forest Vitality & Global Powers">雙二齊飛、馳騁高峰｜22 週年校慶賽博生態 3D 動態島</div>
         <div class="ui-brand-sub ui-brand-mob" id="ui-brand-mob"></div>
         <button class="ui-trav-badge" id="ui-trav-badge" type="button" hidden></button>
         <div class="sq-brand-actions" id="sq-brand-actions">
-          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看五力集章進度與領取金牌證書">🏅 五力護照 <span id="sq-progress-txt">0/5章</span></button>
-          <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:00–13:00 完整 32 項程序表">📅 程序表(32)</button>
-          <button type="button" class="sq-brand-pill" id="sq-btn-pre" title="查看 10/21–11/25 賽前已完賽個人賽與大隊接力戰報">🏃 賽前戰報</button>
+          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/22關</span></button>
+          <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表">📅 程序表(17)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label">選手設定</span></button>
         </div>
       </div>
@@ -193,7 +224,7 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
 rep(origBrandHeader, sportsBrandHeader);
 rep(
   `$('ui-brand-eyebrow').textContent = tr(\`\${nC} 門特色課程 · \${nE} 個年度活動\`, \`\${nC} SIGNATURE COURSES · \${nE} YEARLY EVENTS\`);`,
-  `$('ui-brand-eyebrow').textContent = tr('22 週年校慶 · 6 座森林賽場島 · 32 項程序', '22ND ANNIVERSARY · 6 ARENA ISLES · 32 EVENTS');`
+  `$('ui-brand-eyebrow').textContent = tr('22 週年校慶 · 7 座賽博生態浮島 · 17 項程序', '22ND ANNIVERSARY · 7 ARENA ISLES · 17 EVENTS');`
 );
 rep(
   `q.querySelector('[data-quick="courses"]').innerHTML = tr(\`<b>\${nC}</b> 門課程\`, \`<b>\${nC}</b> courses\`);`,
@@ -239,11 +270,11 @@ rep(
 );
 rep(
   `$('ui-tour-title').textContent = land ? tr('想知道孩子幾年級上什麼？', 'What does each grade take?') : tr('先看孩子這個年級上什麼', 'Start with your child’s grade');`,
-  `$('ui-tour-title').textContent = land ? tr('想查看各年級參賽與表演時程？', 'Check your grade schedule?') : tr('歡迎蒞臨「森活高峰・廿二璀璨」校慶運動會！', 'Welcome to Gao-Feng 22nd Sports Day!');`
+  `$('ui-tour-title').textContent = land ? tr('想查看各年級參賽與表演時程？', 'Check your grade schedule?') : tr('歡迎蒞臨「雙二齊飛、馳騁高峰」校慶運動會！', 'Welcome to Gao-Feng 22nd Sports Day!');`
 );
 rep(
   `$('ui-tour-text').textContent = tr(\`每座島是一門特色課程（\${nC} 門）或一個年度活動（\${nE} 個）。按「依年級看課程」看低、中、高年級各上什麼、怎麼評量；也可以看「六年旅程」，或直接\${uiIsMobile() ? '點' : '點選'}島名。\`, \`Each isle is a course (\${nC}) or a yearly event (\${nE}). Pick a grade to see its courses and how they’re assessed, watch the six-year journey, or just tap an isle.\`);`,
-  `$('ui-tour-text').textContent = tr('全場共 6 座森林主題賽場島（含綠茵活力環形跑道與 32 項程序）。按「依年級看賽程」可查低、中、高年級參賽項目，或播放「運動會全覽」，並點選上方「五力集章護照」闖關領取金牌證書！', 'Explore 6 Forest Sports Day arena isles with the emerald running track and 32 program events. Check schedules by grade, watch the guided tour, or complete the 5-Power Quest Passport!');`
+  `$('ui-tour-text').textContent = tr('全場共 7 座賽博生態主題賽場島（含綠茵活力環形跑道與 17 項程序）。按「依年級看賽程」可查低、中、高年級參賽項目，或播放「運動會全覽」，並點選上方「地標挑戰護照」闖關領取金牌證書！', 'Explore 6 Forest Sports Day arena isles with the emerald running track and 32 program events. Check schedules by grade, watch the guided tour, or complete the 5-Power Quest Passport!');`
 );
 
 // 右側清單與搜尋面板 (#ui-side)
@@ -252,7 +283,7 @@ rep('placeholder="搜尋課程、單元、新聞、教育家…"', 'placeholder=
 rep('<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Isles">課程與活動</button>', '<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Arena Isles">六大賽區島嶼</button>');
 rep('<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Isle stories">島與島的故事</button>', '<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Relay routes">賽場動線與傳承</button>');
 rep('課程：大庄國小 公開課程資訊與校園新聞；新聞：新竹市教育新聞網・本站為教學展示，非學校官方網站。', '依據：新竹市東區高峰國小 115 學年度暨 22 週年校慶運動會程序表與競賽規程・本站為 3D 互動導覽展示。', true);
-rep("tr('特色課程', 'SIGNATURE COURSES')", "tr('五力競賽與展演島', 'COMPETITION & SHOW ISLES')", true);
+rep("tr('特色課程', 'SIGNATURE COURSES')", "tr('校慶競賽與展演島', 'COMPETITION & SHOW ISLES')", true);
 rep("tr('年度活動', 'YEARLY EVENTS')", "tr('校慶典禮與接力島', 'CEREMONY & RELAY ISLES')", true);
 rep("tr('這個條件下沒有課程。', 'No courses match.')", "tr('這個條件下沒有符合的賽區。', 'No arena isles match.')");
 rep("tr('這個年級沒有專屬的年度活動。', 'No yearly events for this grade.')", "tr('這個年級沒有專屬的典禮島。', 'No ceremony isles for this grade.')");
@@ -266,7 +297,7 @@ rep("<span>${tr('年度活動', 'Yearly events')}</span>", "<span>${tr('典禮�
 rep("tr('每週節數怎麼排', 'HOW THE WEEK IS SPLIT')", "tr('本年段參賽與表演時程重點', 'SCHEDULE HIGHLIGHTS')");
 
 // 島嶼卡片、細項地標卡、動線卡、人物卡 (islandCard, itemCard, flowCard, walkerCard, unitsBlock)
-rep("function uiKindName(k) { return k === 'event' ? tr('年度活動', 'YEARLY EVENT') : tr('特色課程', 'SIGNATURE COURSE'); }", "function uiKindName(k) { return k === 'event' ? tr('校慶盛典與接力島', 'CEREMONY & RELAY ISLE') : tr('五力競賽與展演島', 'COMPETITION & SHOW ISLE'); }");
+rep("function uiKindName(k) { return k === 'event' ? tr('年度活動', 'YEARLY EVENT') : tr('特色課程', 'SIGNATURE COURSE'); }", "function uiKindName(k) { return k === 'event' ? tr('校慶盛典與接力島', 'CEREMONY & RELAY ISLE') : tr('校慶競賽與展演島', 'COMPETITION & SHOW ISLE'); }");
 rep("const NOW_TXT = () => tr('上課時段（模擬）', 'IN CLASS (SIM.)');", "const NOW_TXT = () => tr('賽事進行中（模擬）', 'EVENT LIVE (SIM.)');");
 rep("tr('學什麼', 'Highlights')", "tr('賽場地標', 'Landmarks')");
 rep("tr('學什麼', 'HIGHLIGHT')", "tr('賽場地標', 'LANDMARK')");
@@ -275,7 +306,7 @@ rep("tr('新聞', 'News')", "tr('賽況快訊', 'Highlights')", true);
 rep("tr('榮譽', 'Honors')", "tr('完賽英雄榜', 'Honor Roll')", true);
 rep("tr('開課期間：', 'When: ')", "tr('活動期間：', 'When: ')");
 rep("tr('節數：', 'Periods: ')", "tr('賽程時段：', 'Schedule: ')");
-rep("d.kind === 'event' ? tr('怎麼參與', 'HOW STUDENTS TAKE PART') : tr('怎麼評量', 'HOW IT IS ASSESSED')", "tr('五力集章闖關方式', 'QUEST PASSPORT CHALLENGE')");
+rep("d.kind === 'event' ? tr('怎麼參與', 'HOW STUDENTS TAKE PART') : tr('怎麼評量', 'HOW IT IS ASSESSED')", "tr('校慶地標挑戰方式', 'QUEST PASSPORT CHALLENGE')");
 rep("tr('學到什麼能力', 'SKILLS STUDENTS BUILD')", "tr('鍛鍊五力素養', 'FIVE POWERS BUILT')");
 rep("tr('島主教育家', 'Isle host')", "tr('駐島運動傳奇', 'Sports Legend Host')");
 rep("tr('課程計畫寫明', 'Written in the curriculum plan')", "tr('大會程序表主軸動線', 'Main Program Route')");
@@ -315,14 +346,14 @@ rep(
 );
 rep(
   "tr('「學校願景」是大庄的四個方向：探究、創藝、友善、健康。「課程類型」是大庄三大主軸：W 在地探究、I 品格生活、N 藝能運動。', '“Vision” is one of Dazhuang’s four aims (vitality, creativity, cooperation, reason). “Type” follows the school’s WIN framework: W integrated themes, I team building, N clubs & crafts.')",
-  "tr('【學校願景】高峰四大願景 GFPS：Global (全球視野)、Friendly (友善好品格)、Positive (積極正向)、SDGs (永續發展)，培育五力均備之新世紀優質公民！【特色主軸】都市森林自然生態、新竹在地玻璃工藝藝術與雙語國際視野。', '“School Vision” follows Gao-Feng PS official foundation: Global, Friendly, Positive, SDGs, building students with all Five Powers.')"
+  "tr('【學校願景】高峰四大願景 GFPS：Global (全球視野)、Friendly (友善好品格)、Positive (積極正向)、SDGs (永續發展)，培育五育均備之新世紀優質公民！【特色主軸】都市森林自然生態、新竹在地玻璃工藝藝術與雙語國際視野。', '“School Vision” follows Gao-Feng PS official foundation: Global, Friendly, Positive, SDGs, building students with all Five Powers.')"
 );
 
 // 說明面板 (#ui-help) 與關於面板 (#ui-about)
 rep('<h2 id="ui-help-title" data-en="Fourteen isles, one school year">十四座島，一整個大庄學年</h2>', '<h2 id="ui-help-title" data-en="Six Arena Isles, One Glorious Sports Day">六座森林賽場島，一場熱血的 22 週年校慶運動會</h2>');
 rep(
   '每座六角島是大庄國小的一門特色課程或一個年度活動。古今中外的教育家擔任島主，帶著學生、老師、家長、志工與童軍走過小橋，把一門課需要的東西送到下一站。',
-  '每座六角島代表高峰國小 22 週年校慶「森活高峰・廿二璀璨」的一大主題賽區（包含綠茵活力環形跑道、玻璃藝能大舞台、生態趣味探索島、薪傳接力競技場與金銀銅頒獎台）。6 位世界運動傳奇巨星（古柏坦、李小龍、紀政、歐文斯、喬丹、楊傳廣）擔任駐島島主，帶著高峰小選手、裁判老師、應援家長、校慶志工與森林護衛隊在賽場間奔馳！'
+  '每座六角島代表高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」的一大主題賽區（包含綠茵活力環形跑道、玻璃藝能大舞台、生態趣味探索島、薪傳接力競技場與金銀銅頒獎台）。6 位世界運動傳奇巨星（古柏坦、李小龍、紀政、歐文斯、喬丹、楊傳廣）擔任駐島島主，帶著高峰小選手、裁判老師、應援家長、校慶志工與森林護衛隊在賽場間奔馳！'
 );
 rep(
   '「故事設定」：島主教育家、走來走去的小人和島與島之間的協作線，是讓地圖生動的故事元素；課程內容本身依學校課程計畫。',
@@ -333,13 +364,13 @@ rep('<button class="ui-tab" role="tab" id="ui-abtab-intro" aria-selected="true" 
 rep('<button class="ui-tab" role="tab" id="ui-abtab-offices" aria-selected="false" tabindex="-1" aria-controls="ui-about-offices" type="button" data-en="Offices">各處室</button>', '<button class="ui-tab" role="tab" id="ui-abtab-offices" aria-selected="false" tabindex="-1" aria-controls="ui-about-offices" type="button" data-en="Staff">主持與裁判團隊</button>');
 rep('<h2 id="ui-trav-title" data-en="Who’s visiting the isles?">你是哪一種旅人？</h2>', '<h2 id="ui-trav-title" data-en="Choose your athlete role">選擇你的運動員參賽身分</h2>');
 rep('<section id="ui-journey" class="ui-glass" aria-label="六年旅程" data-en-label="Six-year journey" hidden>', '<section id="ui-journey" class="ui-glass" aria-label="運動會全覽" data-en-label="Sports Day Tour" hidden>');
-rep('<li><b data-en="Click">點選</b><span data-en="an isle or a building to open its card: what students learn, how they are assessed, units and related news. Esc closes it.">島或建物，左側會開卡片：學什麼、怎麼評量、課程單元與相關新聞；Esc 關閉。</span></li>', '<li><b data-en="Click">點選</b><span data-en="an isle or landmark to open its card: event schedules, 5-Power Quest challenges, and race highlights. Esc closes it.">賽區島嶼或 3D 地標，左側會開卡片：賽場地標、五力集章闖關、賽程項目與完賽英雄榜；Esc 關閉。</span></li>');
+rep('<li><b data-en="Click">點選</b><span data-en="an isle or a building to open its card: what students learn, how they are assessed, units and related news. Esc closes it.">島或建物，左側會開卡片：學什麼、怎麼評量、課程單元與相關新聞；Esc 關閉。</span></li>', '<li><b data-en="Click">點選</b><span data-en="an isle or landmark to open its card: event schedules, 5-Power Quest challenges, and race highlights. Esc closes it.">賽區島嶼或 3D 地標，左側會開卡片：賽場地標、校慶地標挑戰、賽程項目與完賽英雄榜；Esc 關閉。</span></li>');
 rep('<li><b data-en="By grade">依年級看</b><span data-en="see what lower, middle or upper grades takes each week; the other isles dim on the map.">看低、中、高年級各上哪些課、幾節、怎麼評量；地圖上其他島會變暗。</span></li>', '<li><b data-en="By grade">依年級看賽程</b><span data-en="see what lower, middle or upper grades participate in on Sports Day.">查看低、中、高年級各自的舞蹈表演、趣味競賽、個人賽與大隊接力時段。</span></li>');
 rep('<li><b data-en="Journey">六年旅程</b><span data-en="a guided ride from first day to graduation, with captions you can pause.">從新生入學到畢業典禮的自動導覽，有字幕，可暫停、下一站。</span></li>', '<li><b data-en="Tour">運動會全覽</b><span data-en="a guided ride from opening ceremony to victory fireworks, with captions you can pause.">從開幕進場、六學年舞蹈、趣味競賽、紫色跑道個人賽、大隊接力到閉幕頒獎的自動導覽。</span></li>');
 rep('<li><b data-en="List">清單</b><span data-en="browse courses by grade and yearly events; search units and news titles too.">依年級瀏覽特色課程與年度活動；也能搜尋單元名稱與新聞標題。</span></li>', '<li><b data-en="List">清單</b><span data-en="browse the 6 arena isles by grade; search events, purple track, and sports legends.">依年級瀏覽六大賽區島嶼與賽場傳承動線；也能搜尋賽程項目與駐島運動傳奇巨星。</span></li>');
-rep('<span><i class="ui-lgd-num" aria-hidden="true">01</i><span data-en="Signature course">特色課程</span></span>', '<span><i class="ui-lgd-num" aria-hidden="true">02</i><span data-en="Competition & Show Isle">五力競賽與展演島</span></span>');
+rep('<span><i class="ui-lgd-num" aria-hidden="true">01</i><span data-en="Signature course">特色課程</span></span>', '<span><i class="ui-lgd-num" aria-hidden="true">02</i><span data-en="Competition & Show Isle">校慶競賽與展演島</span></span>');
 rep('<span><i class="ui-lgd-num is-event" aria-hidden="true">10</i><span data-en="Yearly event (gold ring)">年度活動（金框）</span></span>', '<span><i class="ui-lgd-num is-event" aria-hidden="true">01</i><span data-en="Ceremony & Relay Isle (gold ring)">校慶盛典與接力島（金框）</span></span>');
-rep("grp(tr('特色課程', 'Signature courses'), isl.filter(d => d.kind !== 'event'))}${grp(tr('年度活動', 'Yearly events')", "grp(tr('五力競賽與展演島', 'Competition Isles'), isl.filter(d => d.kind !== 'event'))}${grp(tr('校慶盛典與接力島', 'Ceremony Isles')");
+rep("grp(tr('特色課程', 'Signature courses'), isl.filter(d => d.kind !== 'event'))}${grp(tr('年度活動', 'Yearly events')", "grp(tr('校慶競賽與展演島', 'Competition Isles'), isl.filter(d => d.kind !== 'event'))}${grp(tr('校慶盛典與接力島', 'Ceremony Isles')");
 
 // sq-brand-actions 已內建於 sportsBrandHeader
 
@@ -368,16 +399,16 @@ rep(
       <div class="ui-sec"><span class="ui-eyebrow">\${tr('登場時段・運動會三階段', 'EVENT SCHEDULE & STAGE')}</span>\${whenHtml}<div class="ui-timeline">\${steps}</div></div>\`;`
 );
 const customStyles = `
-/* ================= 奔馳榮耀島・藍綠白清爽色系與五力集章護照 UI ================= */
+/* ================= 奔馳榮耀島・藍綠白清爽色系與地標挑戰護照 UI ================= */
 :root {
-  --ui-bg: rgba(240, 253, 250, 0.92) !important;
-  --ui-bg-solid: #f0fdfa !important;
-  --ui-card: rgba(255, 255, 255, 0.96) !important;
-  --ui-ink: #0f172a !important;
-  --ui-sub: #334155 !important;
-  --ui-muted: #64748b !important;
-  --ui-line: rgba(14, 165, 233, 0.22) !important;
-  --ui-accent: #0284c7 !important;
+  --ui-bg: rgba(8, 14, 34, 0.88) !important;
+  --ui-bg-solid: #080e22 !important;
+  --ui-card: rgba(13, 23, 50, 0.92) !important;
+  --ui-ink: #f8fafc !important;
+  --ui-sub: #cbd5e1 !important;
+  --ui-muted: #94a3b8 !important;
+  --ui-line: rgba(0, 242, 254, 0.28) !important;
+  --ui-accent: #00f2fe !important;
   --ui-accent-soft: rgba(2, 132, 199, 0.12) !important;
   --sq-blue: #0284c7;
   --sq-sky: #38bdf8;
@@ -1111,7 +1142,7 @@ dialog::backdrop {
   margin-bottom: 12px;
 }
 
-/* 程序表與賽前戰報表格 */
+/* 程序表表格 */
 .sq-tabs {
   display: flex;
   gap: 6px;
@@ -1485,15 +1516,15 @@ const customHtml = `
     <div class="sq-dlg-head">
       <div>
         <span class="sq-dlg-kicker">新竹市東區高峰國小 22 週年校慶運動會</span>
-        <h2 class="sq-dlg-title" id="sq-reg-title">🏃 運動員入場註冊・領取五力集章護照</h2>
+        <h2 class="sq-dlg-title" id="sq-reg-title">🏃 運動員入場註冊・領取校慶探索日誌</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-reg-dialog" aria-label="關閉">✕</button>
     </div>
     <p style="margin:0 0 14px;font-size:14px;color:#334155;line-height:1.5;">
-      歡迎登上<strong>《奔馳榮耀島・五力飛揚》</strong>！請輸入你的姓名並選擇代表身分。點選地圖上 <strong>6 座島嶼中的 19 座建築地標</strong>，每座建築都有專屬的<strong>互動闖關任務</strong>，集滿 5 枚五力印章就能引燃中央聖火台<strong>全景 3D 勝利煙火</strong>並獲得專屬金牌證書！
+      歡迎登上<strong>《雙二齊飛・賽博生態島》</strong>！請輸入你的姓名並選擇代表身分。點選地圖上 <strong>7 座島嶼中的 22 座星際地標</strong>，每座建築都有專屬的<strong>互動闖關任務</strong>，集滿 5 枚五力印章就能引燃中央聖火台<strong>全景 3D 勝利煙火</strong>並獲得專屬金牌證書！
     </p>
     <div class="sq-form-group">
-      <label class="sq-form-label" for="sq-input-name">✍️ 運動員／挑戰者姓名（將印製於五力金牌證書上）：</label>
+      <label class="sq-form-label" for="sq-input-name">✍️ 運動員／挑戰者姓名（將印製於金牌榮譽證書上）：</label>
       <input type="text" id="sq-input-name" class="sq-name-input" placeholder="例如：王小明、三年甲班陳同學、熱血林爸爸" maxlength="20" />
     </div>
     <div class="sq-form-group">
@@ -1523,7 +1554,7 @@ const customHtml = `
     </div>
     <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
       <button type="button" class="sq-primary-btn" id="sq-reg-submit" style="flex:1;">🚀 儲存身分設定，出發闖關！</button>
-      <button type="button" class="sq-danger-btn" id="sq-btn-reset-data" title="清除所有五力印章與建築過關紀錄，重新開始">🔄 重設闖關紀錄（重新開始）</button>
+      <button type="button" class="sq-danger-btn" id="sq-btn-reset-data" title="清除所有建築過關紀錄，重新開始">🔄 重設闖關紀錄（重新開始）</button>
     </div>
   </div>
 </dialog>
@@ -1533,8 +1564,8 @@ const customHtml = `
   <div class="sq-dlg-inner">
     <div class="sq-dlg-head">
       <div>
-        <span class="sq-dlg-kicker" id="sq-quiz-kicker">五力集章任務</span>
-        <h2 class="sq-dlg-title" id="sq-quiz-title">五力試煉</h2>
+        <span class="sq-dlg-kicker" id="sq-quiz-kicker">校慶探索任務</span>
+        <h2 class="sq-dlg-title" id="sq-quiz-title">地標挑戰</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-quiz-dialog" aria-label="關閉">✕</button>
     </div>
@@ -1554,24 +1585,15 @@ const customHtml = `
     <div class="sq-dlg-head">
       <div>
         <span class="sq-dlg-kicker">GFPS 22nd: Forest Vitality & Global Powers</span>
-        <h2 class="sq-dlg-title" id="sq-sched-title">📅 「森活高峰・廿二璀璨」校慶運動會程序表＆競賽規程</h2>
+        <h2 class="sq-dlg-title" id="sq-sched-title">📅 「雙二齊飛、馳騁高峰」校慶運動會程序表＆競賽規程</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-schedule-dialog" aria-label="關閉">✕</button>
     </div>
     <div class="sq-tabs">
-      <button type="button" class="sq-tab is-active" data-sq-tab="prog">📅 當日程序表（01–32 項）</button>
-      <button type="button" class="sq-tab" data-sq-tab="pre">🏃 賽前已完賽個人賽＆大隊接力規程</button>
-      <button type="button" class="sq-tab" data-sq-tab="models">🗺️ 六島 19 座 3D 地標模型總覽</button>
+      <button type="button" class="sq-tab is-active" data-sq-tab="prog">📅 當日程序表（01–17 項）</button>
+      <button type="button" class="sq-tab" data-sq-tab="models">🗺️ 七島 22 座 3D 星際地標總覽</button>
     </div>
     <div id="sq-pane-prog">
-      <div class="sq-filter-row" id="sq-prog-filters">
-        <button type="button" class="sq-chip is-active" data-pfilter="ALL">全部 (32)</button>
-        <button type="button" class="sq-chip" data-pfilter="美感力">🎨 美感力</button>
-        <button type="button" class="sq-chip" data-pfilter="群體力">🤝 群體力</button>
-        <button type="button" class="sq-chip" data-pfilter="道德力">💖 道德力</button>
-        <button type="button" class="sq-chip" data-pfilter="知識力">🧠 知識力</button>
-        <button type="button" class="sq-chip" data-pfilter="體能力">⚡ 體能力</button>
-      </div>
       <div class="sq-table-wrap">
         <table class="sq-table">
           <thead>
@@ -1579,9 +1601,7 @@ const customHtml = `
               <th>項目</th>
               <th>時間</th>
               <th>節目名稱</th>
-              <th>高峰五力</th>
               <th>表演者／參賽者</th>
-              <th>主持人</th>
               <th>3D 定位</th>
             </tr>
           </thead>
@@ -1676,8 +1696,7 @@ const customHtml = `
           <thead>
             <tr>
               <th>島嶼</th>
-              <th>代表五力</th>
-              <th>3D 模型代號</th>
+                            <th>3D 模型代號</th>
               <th>地標名稱</th>
               <th>地標特色說明</th>
               <th>飛往地標</th>
@@ -1696,8 +1715,8 @@ const customHtml = `
   <div class="sq-dlg-inner">
     <div class="sq-dlg-head">
       <div>
-        <span class="sq-dlg-kicker">🎉 五力集章榮耀達成・全景 3D 聖火煙火慶典</span>
-        <h2 class="sq-dlg-title" id="sq-cert-title">🏆 奔馳榮耀・五力金牌證書</h2>
+        <span class="sq-dlg-kicker">🎉 校慶探索榮耀達成・全景 3D 聖火煙火慶典</span>
+        <h2 class="sq-dlg-title" id="sq-cert-title">🏆 雙二齊飛・榮譽金牌證書</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-cert-dialog" aria-label="關閉">✕</button>
     </div>
@@ -1714,9 +1733,9 @@ const customHtml = `
 
 rep('<script type="importmap">', customHtml + '\n<script type="importmap">');
 
-// ---- 7. 注入五力護照互動邏輯、3D 勝利煙火粒子系統與金牌證書繪製引擎 ----
+// ---- 7. 注入榮譽證書互動邏輯、3D 勝利煙火粒子系統與金牌證書繪製引擎 ----
 const customLogic = `
-// ================= 五力集章護照（Quest Passport）＆ 3D 勝利煙火系統 =================
+// ================= 地標挑戰護照（Quest Passport）＆ 3D 勝利煙火系統 =================
 function initSportsQuest(ctx) {
   window.__ctx = ctx;
   const STORAGE_KEY = 'sq-passport-v1';
@@ -1783,8 +1802,8 @@ function initSportsQuest(ctx) {
     const pillProgEl = document.getElementById('sq-pill-prog');
     if (icEl) icEl.textContent = state.icon || '🐯';
     if (lbEl) lbEl.textContent = state.name || state.role;
-    if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/19關';
-    if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/19關';
+    if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/22關';
+    if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/22關';
   }
 
   // 1. 運動員註冊卡邏輯
@@ -1829,7 +1848,7 @@ function initSportsQuest(ctx) {
 
   // 重新設定／清除闖關資料（全部重新集章）
   function resetQuestData() {
-    const ok = window.confirm('確定要重新開始闖關嗎？\\n\\n這將會清除您目前獲得的 5 枚五力印章與所有建築物的過關紀錄，讓您可以重新挑戰集章！\\n（運動員姓名與身分設定會保留）');
+    const ok = window.confirm('確定要重新開始闖關嗎？\\n\\n這將會清除您目前所有建築物的過關紀錄，讓您可以重新挑戰地標！\\n（運動員姓名與身分設定會保留）');
     if (!ok) return;
 
     state.stamps = {};
@@ -2061,7 +2080,7 @@ function initSportsQuest(ctx) {
           '</div>' +
         '</div>' +
         '<div class="sq-bq-foot">' +
-          '<span id="sq-bq-prog-foot">🏅 五力印章：<strong>' + stampedCount + '/5</strong> ｜ 建築關卡：<strong>' + clearedCount + '/19</strong></span>' +
+          '<span id="sq-bq-prog-foot">🗺️ 地標挑戰進度：<strong>' + clearedCount + '/22</strong></span>' +
           '<div style="display:flex;gap:5px;">' +
             '<button type="button" class="sq-brand-pill" id="sq-bq-next-btn">👉 下一個建築關卡</button>' +
             '<button type="button" class="sq-brand-pill is-gold" id="sq-bq-cert-btn">🏆 護照與證書</button>' +
@@ -2181,7 +2200,7 @@ function initSportsQuest(ctx) {
           const newStamped = (DATA.quests || []).filter(q => state.stamps[q.id]).length;
           const newCleared = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
           const footEl = document.getElementById('sq-bq-prog-foot');
-          if (footEl) footEl.innerHTML = '🏅 五力印章：<strong>' + newStamped + '/5</strong> ｜ 建築關卡：<strong>' + newCleared + '/19</strong>';
+          if (footEl) footEl.innerHTML = '🗺️ 地標挑戰進度：<strong>' + newCleared + '/22</strong>';
 
           if (fbEl) {
             fbEl.hidden = false;
@@ -2281,18 +2300,16 @@ function initSportsQuest(ctx) {
   if (ctx.selection) onSelectionChange(ctx.selection);
 
   // 3. 大會程序表 (32項) ＆ 賽前個人賽戰報 ＆ 3D 地標模型總覽
-  function renderScheduleTables(powerFilter = 'ALL') {
+  function renderScheduleTables() {
     const progTbody = document.getElementById('sq-prog-tbody');
-    const rows = (DATA.programSchedule || []).filter(r => powerFilter === 'ALL' || r.power === powerFilter);
+    const rows = DATA.programSchedule || [];
     progTbody.innerHTML = rows.map(r => {
       const isl = ctx.islandById.get(r.island)?.data;
       return '<tr>' +
         '<td><strong>' + r.no + '</strong></td>' +
         '<td><strong>' + r.time + '</strong></td>' +
         '<td>' + r.title + '</td>' +
-        '<td><span class="sq-power-badge sq-p-' + r.power + '">' + r.power + '</span></td>' +
         '<td>' + r.performer + '</td>' +
-        '<td>' + r.host + '</td>' +
         '<td><button type="button" class="sq-chip" data-fly-isl="' + r.island + '">📍 ' + (isl ? isl.name : r.island) + '</button></td>' +
       '</tr>';
     }).join('');
@@ -2327,7 +2344,7 @@ function initSportsQuest(ctx) {
     const modelRows = [];
     (DATA.islands || []).forEach(isl => {
       const q = (DATA.quests || []).find(x => x.islandId === isl.id);
-      const pName = q ? q.power : '五力大圓滿';
+      const pName = q ? q.power : '挑戰成功';
       isl.items.forEach(it => {
         const cleared = !!state.clearedItems[it.id];
         modelRows.push(
@@ -2569,11 +2586,14 @@ function initSportsQuest(ctx) {
     if (!schedDlg.open) schedDlg.showModal();
   });
 
-  document.getElementById('sq-btn-pre').addEventListener('click', () => {
-    renderScheduleTables('ALL');
-    switchSchedTab('pre');
-    if (!schedDlg.open) schedDlg.showModal();
-  });
+  const btnPre = document.getElementById('sq-btn-pre');
+  if (btnPre) {
+    btnPre.addEventListener('click', () => {
+      renderScheduleTables();
+      switchSchedTab('pre');
+      if (!schedDlg.open) schedDlg.showModal();
+    });
+  }
 
   // 4. 全景 3D 勝利煙火粒子系統（在中央廿二高峰耀動聖火台上方綻放）
   const fireworks = [];
@@ -2641,33 +2661,45 @@ function initSportsQuest(ctx) {
     const c = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
 
-    // 藍綠白海風漸層背景
+    // 星際宇宙深空星雲漸層背景
     const bg = c.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#f0f9ff');
-    bg.addColorStop(0.5, '#ffffff');
-    bg.addColorStop(1, '#ecfdf5');
+    bg.addColorStop(0, '#04081c');
+    bg.addColorStop(0.3, '#0a163a');
+    bg.addColorStop(0.7, '#141238');
+    bg.addColorStop(1, '#050c26');
     c.fillStyle = bg;
     c.fillRect(0, 0, W, H);
 
-    // 雙層皇家金與海風藍邊框
-    c.strokeStyle = '#0284c7';
-    c.lineWidth = 14;
+    // 繪製背景閃爍星群
+    c.fillStyle = 'rgba(255, 255, 255, 0.85)';
+    for (let si = 0; si < 90; si++) {
+      const sx = (si * 137.5) % W;
+      const sy = (si * 293.7) % H;
+      const sr = (si % 3) * 0.8 + 0.6;
+      c.beginPath();
+      c.arc(sx, sy, sr, 0, Math.PI * 2);
+      c.fill();
+    }
+
+    // 雙層全息霓虹金與曲速青藍邊框
+    c.strokeStyle = '#00f2fe';
+    c.lineWidth = 8;
     c.strokeRect(28, 28, W - 56, H - 56);
     c.strokeStyle = '#f59e0b';
-    c.lineWidth = 6;
-    c.strokeRect(46, 46, W - 92, H - 92);
+    c.lineWidth = 4;
+    c.strokeRect(42, 42, W - 84, H - 84);
 
     // 頂部標題橫幅
-    c.fillStyle = '#0369a1';
+    c.fillStyle = '#38bdf8';
     c.font = 'bold 28px "Microsoft JhengHei", sans-serif';
     c.textAlign = 'center';
     c.fillText('新竹市東區高峰國民小學 22 週年校慶運動會', W / 2, 115);
 
-    c.fillStyle = '#0f172a';
+    c.fillStyle = '#f8fafc';
     c.font = 'bold 52px "Microsoft JhengHei", sans-serif';
-    c.fillText('🏆 奔馳榮耀・五力飛揚金牌證書 🏆', W / 2, 185);
+    c.fillText('🚀【雙二齊飛・馳騁高峰】賽博生態金牌榮譽艦長證書 🚀', W / 2, 185);
 
-    c.fillStyle = '#0d9488';
+    c.fillStyle = '#00f2fe';
     c.font = 'bold 22px "Segoe UI", sans-serif';
     c.fillText("Gao-Feng 22nd Anniversary: Global · Friendly · Positive · SDGs", W / 2, 225);
 
@@ -2691,37 +2723,41 @@ function initSportsQuest(ctx) {
 
     c.fillStyle = '#334155';
     c.font = '25px "Microsoft JhengHei", sans-serif';
-    c.fillText('於高峰國小「森活高峰・廿二璀璨」3D 動態運動會島嶼探險中，', W / 2, 445);
-    c.fillText('完成六道紫色跑道、美感律動、趣味智慧與庄情薪傳巡禮，表現優異！', W / 2, 485);
+    c.fillText('於高峰國小「雙二齊飛、馳騁高峰」3D 動態運動會島嶼探險中，', W / 2, 445);
+    c.fillText('完成全台唯一兒童玻璃美術館、綠茵跑道與生態科技巡禮，表現優異！', W / 2, 485);
 
-    // 五力印章徽章列
-    const quests = DATA.quests || [];
-    const startX = 190, gap = 205, cy = 590;
-    quests.forEach((q, idx) => {
+    // 高峰四大願景 GFPS 榮譽印章列
+    const visions = [
+      { key: 'G', name: '全球視野', en: 'Global Vision' },
+      { key: 'F', name: '友善品格', en: 'Friendly' },
+      { key: 'P', name: '積極正向', en: 'Positive' },
+      { key: 'S', name: '永續發展', en: 'SDGs' }
+    ];
+    const startX = 225, gap = 250, cy = 590;
+    visions.forEach((v, idx) => {
       const x = startX + idx * gap;
-      const done = !!state.stamps[q.id];
       c.save();
       c.beginPath();
       c.arc(x, cy, 62, 0, Math.PI * 2);
-      c.fillStyle = done ? '#fef3c7' : '#f1f5f9';
+      c.fillStyle = '#fef3c7';
       c.fill();
       c.lineWidth = 5;
-      c.strokeStyle = done ? '#f59e0b' : '#cbd5e1';
+      c.strokeStyle = '#f59e0b';
       c.stroke();
 
-      c.fillStyle = done ? '#b45309' : '#64748b';
-      c.font = 'bold 26px "Microsoft JhengHei", sans-serif';
-      c.fillText(q.power, x, cy - 5);
-      c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
-      c.fillText(done ? '★ 已認證 ★' : '待闖關', x, cy + 28);
+      c.fillStyle = '#b45309';
+      c.font = 'bold 25px "Microsoft JhengHei", sans-serif';
+      c.fillText(v.name, x, cy - 6);
+      c.font = 'bold 15px "Segoe UI", sans-serif';
+      c.fillText(v.en, x, cy + 22);
       c.restore();
     });
 
     // 底部簽章與日期
-    const stampedCount = quests.filter(q => state.stamps[q.id]).length;
-    c.fillStyle = '#0f172a';
+    const clearedTotal = Object.keys(state.cleared || {}).length;
+    c.fillStyle = '#f8fafc';
     c.font = 'bold 24px "Microsoft JhengHei", sans-serif';
-    c.fillText('五力集章進度：' + stampedCount + ' / 5 章　｜　校長：許雅惠　｜　中華民國 115 年 12 月 12 日', W / 2, 735);
+    c.fillText('地標探索進度：' + clearedTotal + ' / 22 地標　｜　校長：何信煒　｜　中華民國 115 年 12 月 12 日', W / 2, 735);
   }
 
   function triggerGrandFinale() {
@@ -2731,7 +2767,7 @@ function initSportsQuest(ctx) {
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps[q.id]).length;
     document.getElementById('sq-cert-hint').innerHTML = stampedCount >= quests.length
-      ? '🎉 <strong>太棒了！你已集滿全部 5 枚高峰五力印章！</strong>中央「廿二高峰耀動聖火台」已為你點燃 3D 勝利煙火，你可以直接截圖或點擊下方按鈕下載證書保存！'
+      ? '🎉 <strong>太棒了！你已完成所有 22 座星際地標挑戰！</strong>中央「廿二高峰耀動聖火台」已為你點燃 3D 勝利煙火，你可以直接截圖或點擊下方按鈕下載證書保存！'
       : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚印章。集滿 5 章即可解鎖全金徽章與聖火台煙火！（你也可以隨時預覽或下載目前證書）';
     if (!certDlg.open) certDlg.showModal();
   }
@@ -2750,7 +2786,7 @@ function initSportsQuest(ctx) {
     drawCertificate();
     const canvas = document.getElementById('sq-cert-canvas');
     const a = document.createElement('a');
-    a.download = '高峰國小22週年校慶_五力金牌證書_' + (state.name || '運動健將') + '.png';
+    a.download = '高峰國小22週年校慶_金牌榮譽證書_' + (state.name || '運動健將') + '.png';
     a.href = canvas.toDataURL('image/png');
     a.click();
   });
@@ -2818,6 +2854,35 @@ function initSportsQuest(ctx) {
 
 rep('if (typeof initUI === \'function\') initUI(ctx);         // C', 'if (typeof initUI === \'function\') initUI(ctx);         // C\n    if (typeof initSportsQuest === \'function\') initSportsQuest(ctx);');
 rep('// ================= BOOT：載入 CDN、依序初始化各 part =================', customLogic + '\n// ================= BOOT：載入 CDN、依序初始化各 part =================');
+
+// ====== 全局後處理：確保輸出 HTML 徹底無大庄、Dazhuang、許雅惠與五力殘留 ======
+html = html.split('許雅惠').join('何信煒');
+html = html.split('新竹市香山區大庄國民小學').join('新竹市東區高峰國民小學');
+html = html.split('大庄國小').join('高峰國小');
+html = html.split('大庄．窯海島').join('雙二齊飛・馳騁高峰');
+html = html.split('大庄三大主軸').join('高峰四大願景');
+html = html.split('DAZHUANG WIN').join('GFPS VISIONS');
+html = html.split('ABOUT DAZHUANG').join('ABOUT GAO-FENG');
+html = html.split('大庄夥伴').join('高峰夥伴');
+html = html.split('大庄制服').join('高峰運動服');
+html = html.split('大庄版').join('高峰版');
+html = html.split('大庄').join('高峰');
+html = html.split('Dazhuang ES').join('Gao-Feng ES');
+html = html.split('Dazhuang').join('Gao-Feng');
+
+// 全面清除「五力」與「賽前戰報」殘留
+html = html.split('高峰五力').join('四大願景');
+html = html.split('五力護照').join('榮譽證書');
+html = html.split('五力印章').join('地標印記');
+html = html.split('五力闖關').join('地標挑戰');
+html = html.split('五力星核').join('四大願景');
+html = html.split('五力均備').join('五育均備');
+html = html.split('五力').join('校慶');
+
+// 修正特殊文句
+html = html.split('香山海風吹過柴窯與射箭場：點一座島，看懂高峰孩子六年的學習旅程。').join('新竹市東區高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」賽博生態 3D 動態島：探索 7 座生態科技浮島、綠茵跑道與 17 項校慶程序！');
+html = html.split('高峰國小的簡介、沿革與各處室業務。').join('高峰國小的簡介、願景、特色與校慶運動會規程。');
+html = html.split('六年的風景都在這裡了').join('高峰 22 週年校慶全景勝利煙火與金牌艦長證書已為你解鎖');
 
 fs.writeFileSync(OUT, html, 'utf8');
 
