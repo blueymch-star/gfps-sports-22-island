@@ -2301,21 +2301,23 @@ function initSportsQuest(ctx) {
     // 依角色難度係數縮放連擊目標次數
     const target = Math.max(diff.minTap, Math.round(baseTarget * diff.tapFactor));
     let tapCount = isCleared ? target : 0;
-    let seqIdx = isCleared ? ((ch.sequenceItems || []).length) : 0;
+    const items = ch.steps || ch.sequenceItems || [];
+    let seqIdx = isCleared ? items.length : 0;
 
     let stage1Html = '';
     if (ch.mode === 'tap_charge') {
       const pct = Math.min(100, Math.round((tapCount / target) * 100));
+      const actLabel = ch.actionBtn || '🔥 注入星核能量';
+      const doneMsg = ch.actionDone || '🔥 星核能量滿載！高峰 22 週年聖火熊熊燃起！';
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<button type="button" class="sq-act-btn" id="sq-bq-act-btn" style="width:100%;justify-content:center;padding:8px 12px;font-size:13px;">' +
-            ch.actionBtn + ' (' + diff.actionLabel + ' <span id="sq-bq-tap-num">' + tapCount + '/' + target + '</span>)' +
+            actLabel + ' (' + diff.actionLabel + ' <span id="sq-bq-tap-num">' + tapCount + '/' + target + '</span>)' +
           '</button>' +
           '<div class="sq-bq-meter"><div class="sq-bq-meter-fill" id="sq-bq-meter-fill" style="width:' + pct + '%;"></div></div>' +
-          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + ch.actionDone + '</div>' +
+          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     } else if (ch.mode === 'sequence') {
-      const items = ch.sequenceItems || [];
       // 隨機打亂排序按鈕的顯示位置（強迫玩家必須思考順序，不再只是由左至右盲點）
       const seqList = items.map((label, origIdx) => ({ label, origIdx }));
       if (seqList.length > 1) {
@@ -2328,6 +2330,7 @@ function initSportsQuest(ctx) {
           attempts++;
         } while (attempts < 10 && seqList.every((it, i) => it.origIdx === i));
       }
+      const doneMsg = ch.actionDone || '🎉 步驟順序完全正確！成功通過順序考驗！';
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<div style="font-size:12px;color:#475569;margin-bottom:6px;font-weight:700;">🧩 順序考驗（按鈕位置已隨機打亂，請依正確先後步驟點擊）：</div>' +
@@ -2336,15 +2339,17 @@ function initSportsQuest(ctx) {
               '<button type="button" class="sq-bq-seq-btn ' + (isCleared ? 'is-done' : '') + '" data-seq-idx="' + item.origIdx + '">' + item.label + '</button>'
             ).join('') +
           '</div>' +
-          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + ch.actionDone + '</div>' +
+          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     } else if (ch.mode === 'reaction') {
+      const actLabel = ch.actionBtn || '🔫 聽槍起跑反應測驗（點擊開始預備）';
+      const doneMsg = ch.actionDone || '⚡ 疾風起跑！完美掌握聽槍瞬間起跑反應！';
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<button type="button" class="sq-act-btn" id="sq-bq-react-btn" style="width:100%;justify-content:center;padding:8px 12px;font-size:13px;">' +
-            (isCleared ? '⚡ 再次實測紅色跑道聽槍起跑反應' : ch.actionBtn) +
+            (isCleared ? '⚡ 再次實測紅色跑道聽槍起跑反應' : actLabel) +
           '</button>' +
-          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + ch.actionDone + '</div>' +
+          '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     }
 
@@ -2437,7 +2442,8 @@ function initSportsQuest(ctx) {
               if (seqIdx < seqBtns.length) {
                 msgEl.innerHTML = '✨ 步驟 ' + seqIdx + ' 正確！請繼續找出下一步！';
               } else {
-                msgEl.innerHTML = ch.actionDone;
+                const doneMsg = ch.actionDone || '🎉 步驟順序完全正確！成功通過順序考驗！';
+                msgEl.innerHTML = doneMsg + '<br><span style="color:#059669;font-weight:700;">🔓 已解鎖第二階段問答題，請選出下方正確答案！</span>';
               }
             }
             if (seqIdx >= seqBtns.length) {
@@ -2499,6 +2505,16 @@ function initSportsQuest(ctx) {
     const fbEl = document.getElementById('sq-bq-fb');
     mount.querySelectorAll('.sq-bq-opt').forEach(btn => {
       btn.addEventListener('click', () => {
+        if (!stage1Done && !isCleared) {
+          if (fbEl) {
+            fbEl.hidden = false;
+            let tip = '請先依順序點擊上方按鈕通過考驗！';
+            if (ch.mode === 'tap_charge') tip = '請先連擊上方按鈕將能量蓄滿！';
+            if (ch.mode === 'reaction') tip = '請先點擊上方按鈕實測聽槍起跑反應！';
+            fbEl.innerHTML = '⚠️ <strong>尚未解鎖作答！</strong>' + tip;
+          }
+          return;
+        }
         const idx = Number(btn.dataset.optIdx);
         if (idx === ch.answer) {
           btn.classList.add('is-correct');
