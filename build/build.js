@@ -218,7 +218,7 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
         <div class="sq-brand-actions" id="sq-brand-actions">
           <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
           <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明">📖 集章說明</button>
-          <button type="button" class="sq-brand-pill is-fireworks" id="sq-btn-fireworks-top" title="隨時施放 3D 聖火勝利煙火慶祝（無須集滿 5 章）">🎆 施放煙火</button>
+          <button type="button" class="sq-brand-pill is-fireworks is-locked" id="sq-btn-fireworks-top" title="集滿 5 個章才可以施放煙火">🔒 煙火(0/5)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表">📅 程序表(17)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label">選手設定</span></button>
         </div>
@@ -637,6 +637,21 @@ dialog::backdrop {
   background: #fbcfe8;
   color: #9f1239;
   transform: translateY(-1px);
+}
+.sq-brand-pill.is-fireworks.is-locked {
+  background: rgba(241, 245, 249, 0.95);
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+.sq-brand-pill.is-fireworks.is-locked:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+.sq-act-btn.is-gold.is-locked {
+  background: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #64748b !important;
+  box-shadow: none !important;
 }
 
 /* 建築卡片內「登場時段」醒目膠囊 */
@@ -1760,7 +1775,7 @@ const customHtml = `
     <canvas id="sq-cert-canvas" width="1200" height="820" class="sq-cert-preview"></canvas>
     <div class="sq-cert-actions">
       <button type="button" class="sq-primary-btn" id="sq-btn-dl-cert">💾 下載高畫質金牌證書 (PNG)</button>
-      <button type="button" class="sq-act-btn is-gold" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;">🎆 施放 3D 勝利煙火（隨時可施放）</button>
+      <button type="button" class="sq-act-btn is-gold is-locked" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;">🔒 3D 勝利煙火（集滿 5 章解鎖）</button>
       <button type="button" class="sq-danger-btn" id="sq-btn-reset-cert" style="justify-content:center;">🔄 重設闖關紀錄（重新開始）</button>
     </div>
   </div>
@@ -1812,8 +1827,8 @@ const customHtml = `
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#fffbeb;border-radius:12px;border:1.5px solid #fde68a;">
         <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🎆</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#92400e;margin-bottom:2px;">隨時施放 3D 勝利煙火（無須集滿 5 章！）</div>
-          <div style="color:#78350f;">在任何時候，你都可以點擊<strong>「🎆 施放煙火」</strong>按鍵，鏡頭會立即飛往中央主聖火台，在上空為你綻放全景 3D 絢爛煙火，享受校慶慶典氣氛！</div>
+          <div style="font-weight:800;font-size:15px;color:#92400e;margin-bottom:2px;">集滿 5 個章解鎖 3D 勝利煙火！</div>
+          <div style="color:#78350f;">只要在各島嶼收集齊全 <strong>5 枚願景能量印章</strong>，即可成功解鎖中央聖火晶塔的 <strong>3D 超新星勝利煙火</strong>，在宇宙星空下盛大綻放慶典煙火！</div>
         </div>
       </div>
 
@@ -1908,6 +1923,19 @@ function initSportsQuest(ctx) {
     if (lbEl) lbEl.textContent = state.name || state.role;
     if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/22關';
     if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/22關';
+
+    const topFwBtn = document.getElementById('sq-btn-fireworks-top');
+    if (topFwBtn) {
+      if (stampedCount >= 5) {
+        topFwBtn.innerHTML = '🎆 施放煙火';
+        topFwBtn.title = '集滿 5 章達成！點擊施放中央聖火台 3D 勝利煙火！';
+        topFwBtn.classList.remove('is-locked');
+      } else {
+        topFwBtn.innerHTML = '🔒 煙火(' + stampedCount + '/5)';
+        topFwBtn.title = '集滿 5 個章才可以施放煙火（目前已收集 ' + stampedCount + '/5）';
+        topFwBtn.classList.add('is-locked');
+      }
+    }
   }
 
   // 1. 運動員註冊卡邏輯
@@ -3041,16 +3069,46 @@ function initSportsQuest(ctx) {
   }
 
   function triggerGrandFinale() {
-    if (ctx.frameIsland) ctx.frameIsland('s01');
-    spawn3DFireworks();
-    drawCertificate();
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
     const clearedTotal = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
-    document.getElementById('sq-cert-hint').innerHTML = stampedCount >= quests.length
-      ? '🎉 <strong>太棒了！你已集滿 5 大願景印章與完成探索！</strong>榮獲金牌榮譽艦長最高榮耀！中央聖火晶塔正為你盛大綻放勝利煙火，可點擊下方按鈕下載高畫質證書保存！'
-      : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚願景印章、完成 <strong>' + clearedTotal + ' / 22</strong> 座地標探索。（<strong>貼心提醒：隨時皆可點擊「🎆 施放 3D 勝利煙火」欣賞盛典，無須集滿即可搶先體驗！</strong>完成挑戰可點亮證書金鋼印）';
+
+    // 只有集滿 5 個章才可以施放煙火
+    if (stampedCount >= 5) {
+      if (ctx.frameIsland) ctx.frameIsland('s01');
+      spawn3DFireworks();
+    }
+    drawCertificate();
+
+    const fwBtn = document.getElementById('sq-btn-fireworks');
+    if (fwBtn) {
+      if (stampedCount >= 5) {
+        fwBtn.classList.remove('is-locked');
+        fwBtn.innerHTML = '🎆 飛往聖火台・施放 3D 勝利煙火！';
+      } else {
+        fwBtn.classList.add('is-locked');
+        fwBtn.innerHTML = '🔒 3D 勝利煙火（集滿 5 章解鎖，目前 ' + stampedCount + '/5）';
+      }
+    }
+
+    document.getElementById('sq-cert-hint').innerHTML = stampedCount >= 5
+      ? '🎉 <strong>太棒了！你已集滿 5 大願景印章！</strong>榮獲金牌榮譽艦長最高榮耀！中央聖火晶塔 3D 勝利煙火已解鎖，可點擊下方按鈕施放或下載高畫質證書保存！'
+      : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚願景印章、完成 <strong>' + clearedTotal + ' / 22</strong> 座地標探索。<br><span style="color:#b45309;font-weight:800;">🔒【解鎖條件】必須集滿全部 5 個願景印章，才可以解鎖並施放中央聖火台 3D 勝利煙火！</span>';
     if (!certDlg.open) certDlg.showModal();
+  }
+
+  function tryLaunchFireworks() {
+    const quests = DATA.quests || [];
+    const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
+    if (stampedCount < 5) {
+      showToast('🔒 勝利煙火尚未解鎖！目前已收集 ' + stampedCount + ' / 5 枚印章，集滿 5 個章才可以施放煙火！點擊「📖 集章說明」查看闖關指引。');
+      return false;
+    }
+    if (certDlg && certDlg.open) certDlg.close();
+    if (ctx.frameIsland) ctx.frameIsland('s01');
+    spawn3DFireworks();
+    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
+    return true;
   }
 
   document.getElementById('sq-btn-cert')?.addEventListener('click', () => {
@@ -3068,16 +3126,11 @@ function initSportsQuest(ctx) {
   });
 
   document.getElementById('sq-btn-fireworks-top')?.addEventListener('click', () => {
-    if (ctx.frameIsland) ctx.frameIsland('s01');
-    spawn3DFireworks();
-    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
+    tryLaunchFireworks();
   });
 
   document.getElementById('sq-btn-fireworks')?.addEventListener('click', () => {
-    if (certDlg.open) certDlg.close();
-    if (ctx.frameIsland) ctx.frameIsland('s01');
-    spawn3DFireworks();
-    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
+    tryLaunchFireworks();
   });
 
   document.getElementById('sq-btn-dl-cert').addEventListener('click', () => {
