@@ -57,8 +57,22 @@ const DATA = {
   roles,
   travelers: {
     ...orig.travelers,
-    roles: sqData.travelers.roles,
-    nick: orig.travelers.nick
+    roles: [
+      { id: 'student_low', name: '低年級小選手', nameEn: 'Junior Athlete', icon: '🐯', start: 'grade', hint: '入門友善難度，輕鬆集章！' },
+      { id: 'student_mid', name: '中年級飛毛腿', nameEn: 'Speedy Sprinter', icon: '⚡', start: 'grade', hint: '標準進階挑戰，衝刺搶道！' },
+      { id: 'student_high', name: '高年級破風手', nameEn: 'Windbreaker Pro', icon: '🔥', start: 'tour', hint: '高難度挑戰，手速爆發！' },
+      { id: 'parent', name: '熱血應援家長', nameEn: 'Cheering Parent', icon: '📸', start: 'grade', hint: '活力應援鼓掌，親子同樂！' },
+      { id: 'alumni', name: '親善校友貴賓', nameEn: 'Honored Alumni', icon: '🏅', start: 'news', hint: '傳承校史榮耀，重溫高峰！' },
+      { id: 'volunteer', name: '守護校園志工', nameEn: 'Campus Volunteer', icon: '💖', start: 'news', hint: '默默守護校園，感恩奉獻！' },
+      { id: 'teacher', name: '大會裁判老師', nameEn: 'Referee Teacher', icon: '👨‍🏫', start: 'grade', hint: '公正執法評判，維護體育精神！' },
+      { id: 'scout', name: '高峰森林護衛', nameEn: 'Forest Scout', icon: '🌲', start: 'tour', hint: '巡禮生態科技綠站，守護永續校園！' }
+    ],
+    nick: {
+      min: 2,
+      max: 20,
+      rule: '請輸入選手姓名或暱稱（將印製於榮譽證書上）',
+      ruleEn: 'Please enter athlete name (printed on certificate)'
+    }
   }
 };
 
@@ -331,7 +345,10 @@ rep("case 'medal':", "case 'trophy':\n    case 'medal':", true);
 rep("case 'diploma':", "case 'baton':\n    case 'diploma':", true);
 rep("const cnt = n => ev ? tr(n + ' 個流程', n + (n > 1 ? ' steps' : ' step')) : tr(n + ' 個單元', n + (n > 1 ? ' units' : ' unit'));", "const cnt = n => tr(n + ' 個賽程項目', n + (n > 1 ? ' events' : ' event'));");
 rep("tr('第 ' + u.weeks + ' 週', 'Wk ' + u.weeks)", "tr(u.weeks, u.weeks)");
-rep("tr(u.periods + ' 節', u.periods + (+u.periods === 1 ? ' period' : ' periods'))", "tr(u.periods + ' 場次/分鐘', u.periods + ' min')");
+// 賽程時間：去除「第」「週」，直接呈現時間區段（如 08:00~08:20）；單位調整為「分鐘」
+rep("tr('第 ' + u.weeks + ' 週', 'Wk ' + u.weeks)", "u.weeks");
+rep("tr('第 ' + u.weeks + ' 週', 'wk ' + u.weeks)", "u.weeks");
+rep("tr(u.periods + ' 節', u.periods + (+u.periods === 1 ? ' period' : ' periods'))", "tr(u.periods + ' 分鐘', u.periods + ' min')");
 rep("tr('帶隊教育家', 'Led by')", "tr('領隊運動傳奇', 'Led by Legend')");
 rep("role && role.ancient ? tr('教育家', 'EDUCATOR') : tr('大庄夥伴', 'DAZHUANG CREW')", "role && role.ancient ? tr('運動傳奇巨星', 'SPORTS LEGEND') : tr('高峰親師生選手', 'GAO-FENG ATHLETE')");
 rep(
@@ -1859,6 +1876,11 @@ rep(
 rep(
   'function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); first.focus(); }',
   'function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); if (first && first.focus) first.focus(); }'
+);
+// 當點擊身分設定或旅人登記時，優先開啟專屬高峰運動員註冊卡
+rep(
+  'function openTrav(first) {\n    if (!TRV) return;',
+  'function openTrav(first) {\n    const regDlg = document.getElementById("sq-reg-dialog");\n    if (regDlg) { if (!regDlg.open) regDlg.showModal(); return; }\n    if (!TRV) return;'
 );
 rep(
   'function closeModal(m, back) { m.hidden = true; bg().forEach(e => e.inert = false); if (back) back.focus(); }',

@@ -4847,23 +4847,76 @@ const DATA = {
   ],
   "travelers": {
     "roles": [
-      "coubertin",
-      "bruce_lee",
-      "chicheng",
-      "owens",
-      "jordan",
-      "student",
-      "yang",
-      "teacher",
-      "parent",
-      "volunteer",
-      "scout"
+      {
+        "id": "student_low",
+        "name": "低年級小選手",
+        "nameEn": "Junior Athlete",
+        "icon": "🐯",
+        "start": "grade",
+        "hint": "入門友善難度，輕鬆集章！"
+      },
+      {
+        "id": "student_mid",
+        "name": "中年級飛毛腿",
+        "nameEn": "Speedy Sprinter",
+        "icon": "⚡",
+        "start": "grade",
+        "hint": "標準進階挑戰，衝刺搶道！"
+      },
+      {
+        "id": "student_high",
+        "name": "高年級破風手",
+        "nameEn": "Windbreaker Pro",
+        "icon": "🔥",
+        "start": "tour",
+        "hint": "高難度挑戰，手速爆發！"
+      },
+      {
+        "id": "parent",
+        "name": "熱血應援家長",
+        "nameEn": "Cheering Parent",
+        "icon": "📸",
+        "start": "grade",
+        "hint": "活力應援鼓掌，親子同樂！"
+      },
+      {
+        "id": "alumni",
+        "name": "親善校友貴賓",
+        "nameEn": "Honored Alumni",
+        "icon": "🏅",
+        "start": "news",
+        "hint": "傳承校史榮耀，重溫高峰！"
+      },
+      {
+        "id": "volunteer",
+        "name": "守護校園志工",
+        "nameEn": "Campus Volunteer",
+        "icon": "💖",
+        "start": "news",
+        "hint": "默默守護校園，感恩奉獻！"
+      },
+      {
+        "id": "teacher",
+        "name": "大會裁判老師",
+        "nameEn": "Referee Teacher",
+        "icon": "👨‍🏫",
+        "start": "grade",
+        "hint": "公正執法評判，維護體育精神！"
+      },
+      {
+        "id": "scout",
+        "name": "高峰森林護衛",
+        "nameEn": "Forest Scout",
+        "icon": "🌲",
+        "start": "tour",
+        "hint": "巡禮生態科技綠站，守護永續校園！"
+      }
     ],
     "nick": {
       "min": 2,
-      "max": 8,
-      "rule": "只能用中文字，2–8 字；請用暱稱，不要用真實姓名。",
-      "ruleEn": "Chinese characters only, 2–8 long; use a nickname, not your real name."
+      "max": 20,
+      "rule": "請輸入選手姓名或暱稱（將印製於榮譽證書上）",
+      "ruleEn": "Please enter athlete name (printed on certificate)"
     },
     "banned": [
       "幹",
@@ -12327,7 +12380,7 @@ function initUI(ctx) {
     const cnt = n => tr(n + ' 個賽程項目', n + (n > 1 ? ' events' : ' event'));
     const semT = sem => sem === '全' ? (L(d, 'term') || tr('課程單元', 'Units')) : uiSemName(sem);
     return groups.map(g => `<div class="ui-unit-sem">${uiEsc(ev && groups.length === 1 ? L(d, 'periods') : semT(g.sem))}<span>${cnt(g.list.length)}</span></div>
-      <ol class="ui-units">${g.list.map(([u, idx]) => `<li class="${u.weeks ? '' : 'no-wk'} ${idx === hitIdx ? 'is-hit' : ''}" data-unit-idx="${idx}">${u.weeks ? `<span class="ui-unit-wk">${uiEsc(tr('第 ' + u.weeks + ' 週', 'Wk ' + u.weeks))}</span>` : ''}<span class="ui-unit-name">${uiEsc(L(u, 'name'))}</span><span class="ui-unit-p">${u.periods != null && u.periods !== '' ? uiEsc(tr(u.periods + ' 場次/分鐘', u.periods + ' min')) : ''}</span></li>`).join('')}</ol>`).join('');
+      <ol class="ui-units">${g.list.map(([u, idx]) => `<li class="${u.weeks ? '' : 'no-wk'} ${idx === hitIdx ? 'is-hit' : ''}" data-unit-idx="${idx}">${u.weeks ? `<span class="ui-unit-wk">${uiEsc(u.weeks)}</span>` : ''}<span class="ui-unit-name">${uiEsc(L(u, 'name'))}</span><span class="ui-unit-p">${u.periods != null && u.periods !== '' ? uiEsc(tr(u.periods + ' 分鐘', u.periods + ' min')) : ''}</span></li>`).join('')}</ol>`).join('');
   }
   function islandCard(id, opt = {}) {
     const isl = ctx.islandById.get(id), d = isl.data, host = uiRole(d.host), now = new Set(uiSlotItems());
@@ -12571,7 +12624,7 @@ function initUI(ctx) {
           ${q ? '' : `<p class="ui-isl-sum">${uiEsc(L(d, 'lead') || L(d, 'summary'))}</p>`}
           <ul class="ui-isl-items" style="--c:${PAL.coral}">
             <li><button class="ui-row ui-isl-open" type="button" data-sel="island:${d.id}"><span class="ui-ic">${uiSvg('home')}</span><span class="ui-row-main"><span class="ui-row-name">${tr('看整座島', 'Visit the whole isle')}</span></span></button></li>
-            ${units.slice(0, 8).map(({ u, idx }) => `<li><button class="ui-row" type="button" data-unit="${d.id}:${idx}"><span class="ui-kind-ic" aria-hidden="true">${uiEsc(semIc(u))}</span><span class="ui-row-main"><span class="ui-row-name">${hl(L(u, 'name'), terms)}</span><span class="ui-row-sub">${d.kind === 'event' ? tr('流程', 'Step') : tr('單元', 'Unit')}${u.sem === '上' || u.sem === '下' ? ' · ' + uiEsc(uiSemName(u.sem)) : ''}${u.weeks ? ' · ' + uiEsc(tr('第 ' + u.weeks + ' 週', 'wk ' + u.weeks)) : ''}</span></span></button></li>`).join('')}
+            ${units.slice(0, 8).map(({ u, idx }) => `<li><button class="ui-row" type="button" data-unit="${d.id}:${idx}"><span class="ui-kind-ic" aria-hidden="true">${uiEsc(semIc(u))}</span><span class="ui-row-main"><span class="ui-row-name">${hl(L(u, 'name'), terms)}</span><span class="ui-row-sub">${d.kind === 'event' ? tr('流程', 'Step') : tr('單元', 'Unit')}${u.sem === '上' || u.sem === '下' ? ' · ' + uiEsc(uiSemName(u.sem)) : ''}${u.weeks ? ' · ' + uiEsc(u.weeks) : ''}</span></span></button></li>`).join('')}
             ${moreRow(units.length - 8, 'units', tr(`還有 ${units.length - 8} 個單元`, `${units.length - 8} more units`))}
             ${news.slice(0, 8).map(n => newsLi(n, terms)).join('')}
             ${moreRow(news.length - 8, 'news', tr(`還有 ${news.length - 8} 則新聞`, `${news.length - 8} more news items`))}
@@ -13205,6 +13258,8 @@ function initUI(ctx) {
     return r;
   }
   function openTrav(first) {
+    const regDlg = document.getElementById("sq-reg-dialog");
+    if (regDlg) { if (!regDlg.open) regDlg.showModal(); return; }
     if (!TRV) return;
     st.travFirst = !!first;
     const t = travGet(), cur = t ? t.role : 'parent';
