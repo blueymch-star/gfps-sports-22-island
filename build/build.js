@@ -27,31 +27,32 @@ const DATA = {
   ...sqData,
   evidence: {
     plan: {
-      name: '大會程序表正式依據（實線橋）',
-      nameEn: 'Official Program Schedule (Solid)'
+      name: '大會程序表賽程動線（實線光橋）',
+      nameEn: 'Official Program Schedule Route (Solid)'
     },
     news: {
-      name: '賽事活動紀實報導',
-      nameEn: 'Event & News Record'
+      name: '賽事活動紀實報導（虛線光橋）',
+      nameEn: 'Event & News Record (Dashed)'
     },
     link: {
-      name: '高峰傳承主題閉環（虛線橋）',
-      nameEn: 'Five Powers Thematic Link (Dashed)'
+      name: '高峰願景薪火傳承閉環（點線光橋）',
+      nameEn: 'GFPS Heritage & Vision Link (Dotted)'
     }
   },
   phases: {
-    1: { name: '開幕與律動 (08:00–09:25)', nameEn: 'Opening & Dance (08:00–09:25)' },
-    2: { name: '趣味與徑賽 (09:30–12:00)', nameEn: 'Fun Games & Track (09:30–12:00)' },
-    3: { name: '薪傳與閉幕 (12:00–13:00)', nameEn: 'Relay & Awards (12:00–13:00)' }
+    1: { name: '開幕進場與美育展演 (08:00–09:40)', nameEn: 'Opening & Performances (08:00–09:40)' },
+    2: { name: '競速衝刺、趣味冒險與大隊接力 (09:50–12:05)', nameEn: 'Track, Fun Games & Relays (09:50–12:05)' },
+    3: { name: '無痕校園、美展與星光頒獎 (12:05–14:00)', nameEn: 'SDGs Campus, Art & Awards (12:05–14:00)' }
   },
   carries: {
     ...orig.carries,
-    note: { name: '大會程序手冊', nameEn: 'Program Handbook' },
-    toolbox: { name: '趣味競賽道具箱', nameEn: 'Games Gear Box' },
-    medal: { name: '個人賽獎牌', nameEn: 'Sprint Medals' },
-    baton: { name: '黃金接力棒', nameEn: 'Golden Relay Baton' },
-    diploma: { name: '大隊接力錦旗與獎狀', nameEn: 'Relay Banners & Awards' },
-    trophy: { name: '校慶金牌榮譽勳章', nameEn: 'Five Powers Gold Trophy' }
+    note: { name: '大會程序手冊與義工感謝狀', nameEn: 'Program Handbook & Awards' },
+    toolbox: { name: '滾大球與神箭趣味道具箱', nameEn: 'Fun Games Gear Box' },
+    medal: { name: '個人賽金銀銅獎牌與獎狀', nameEn: 'Sprint Medals & Awards' },
+    baton: { name: '奈米合金黃金接力棒', nameEn: 'Golden Relay Baton' },
+    diploma: { name: '大隊接力錦旗與榮譽獎狀', nameEn: 'Relay Banners & Diplomas' },
+    trophy: { name: '大會學年優勝總錦標金盃', nameEn: 'Championship Trophy Cup' },
+    torch: { name: '雙二躍動聖火火炬', nameEn: 'Dual-22 Sacred Torch' }
   },
   roles,
   travelers: {
@@ -280,7 +281,7 @@ rep(
 // 右側清單與搜尋面板 (#ui-side)
 rep('<div class="ui-eyebrow" data-en="DIRECTORY · TEXT VERSION">校園目錄・文字版</div>', '<div class="ui-eyebrow" data-en="ARENA DIRECTORY">運動會賽區目錄</div>');
 rep('const units = q ? (d.units || []).map((u, idx) => ({ u, idx })).filter(({ idx }) => rowMatch(terms, X.units[idx], X.doc)) : [];', 'const units = (d.units || []).map((u, idx) => ({ u, idx })).filter(({ idx }) => !q || islHit || rowMatch(terms, X.units[idx], X.doc));');
-rep('placeholder="搜尋課程、單元、新聞、教育家…"', 'placeholder="搜尋賽程、趣味競賽、紫色跑道、運動明星…"');
+rep('placeholder="搜尋課程、單元、新聞、教育家…"', 'placeholder="搜尋賽程、趣味競賽、紅色跑道、運動明星…"');
 rep('<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Isles">課程與活動</button>', '<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Arena Isles">七大賽區島嶼</button>');
 rep('<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Isle stories">島與島的故事</button>', '<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Relay routes">賽場動線與傳承</button>');
 rep('課程：大庄國小 公開課程資訊與校園新聞；新聞：新竹市教育新聞網・本站為教學展示，非學校官方網站。', '依據：新竹市東區高峰國小 115 學年度暨 22 週年校慶運動會程序表與競賽規程・本站為 3D 互動導覽展示。', true);
@@ -288,7 +289,7 @@ rep("tr('特色課程', 'SIGNATURE COURSES')", "tr('校慶競賽與展演島', '
 rep("tr('年度活動', 'YEARLY EVENTS')", "tr('校慶典禮與接力島', 'CEREMONY & RELAY ISLES')", true);
 rep("tr('這個條件下沒有課程。', 'No courses match.')", "tr('這個條件下沒有符合的賽區。', 'No arena isles match.')");
 rep("tr('這個年級沒有專屬的年度活動。', 'No yearly events for this grade.')", "tr('這個年級沒有專屬的典禮島。', 'No ceremony isles for this grade.')");
-rep("tr('低年級,高年級,陶藝,射箭,樂樂棒球,得獎', 'Grade 7,AI,club,reading,sports')", "tr('紫色跑道,大隊接力,趣味競賽,扇耀舞台,紀政,李小龍', 'Purple track,Relay,Fun games,Dance,Chi Cheng,Bruce Lee')");
+rep("tr('低年級,高年級,陶藝,射箭,樂樂棒球,得獎', 'Grade 7,AI,club,reading,sports')", "tr('紅色跑道,大隊接力,趣味競賽,扇耀舞台,紀政,李小龍', 'Red track,Relay,Fun games,Dance,Chi Cheng,Bruce Lee')");
 rep("tr('島與島的故事是讓地圖生動的故事設定；實線＝課程計畫寫明，其他是延伸連結。', 'Isle stories are a story layer; solid lines are written in the curriculum plan, others are further links.')", "tr('7 大賽區駐島領航員（含 6 位世界體育傳奇與高峰小健將）帶領高峰親師生在賽場間傳遞聖火與賽事裝備！', 'Six sports legends lead Gao-Feng athletes and families across the six Sports Day arenas.')");
 
 // 依年級看卡片 (gradeCard)
@@ -1549,7 +1550,7 @@ const customHtml = `
         </button>
         <button type="button" class="sq-role-card" data-role="中年級飛毛腿" data-icon="⚡">
           <div class="sq-rc-top"><strong>⚡ 中年級飛毛腿</strong> <span class="sq-rc-diff diff-medium">⭐⭐ 標準進階</span></div>
-          <span>標準難度：標準賽程挑戰、紫色跑道起跑反應與運動常識考驗</span>
+          <span>標準難度：標準賽程挑戰、紅色跑道起跑反應與運動常識考驗</span>
         </button>
         <button type="button" class="sq-role-card" data-role="高年級破風手" data-icon="🔥">
           <div class="sq-rc-top"><strong>🔥 高年級破風手</strong> <span class="sq-rc-diff diff-hard">⭐⭐⭐ 競速破風</span></div>
@@ -1639,7 +1640,7 @@ const customHtml = `
         </div>
         <div class="sq-stat-card">
           <span class="sq-stat-val">6 道</span>
-          <span class="sq-stat-lbl">紫色跑道預決賽</span>
+          <span class="sq-stat-lbl">紅色跑道預決賽</span>
         </div>
       </div>
 
@@ -2035,7 +2036,7 @@ function initSportsQuest(ctx) {
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<button type="button" class="sq-act-btn" id="sq-bq-react-btn" style="width:100%;justify-content:center;padding:8px 12px;font-size:13px;">' +
-            (isCleared ? '⚡ 再次實測紫色跑道聽槍起跑反應' : ch.actionBtn) +
+            (isCleared ? '⚡ 再次實測紅色跑道聽槍起跑反應' : ch.actionBtn) +
           '</button>' +
           '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + ch.actionDone + '</div>' +
         '</div>';

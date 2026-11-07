@@ -1,8 +1,4 @@
-/**
- * 新竹市東區高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」賽博生態 3D 動態島 - 核心資料庫
- * 方案 C：賽博生態科技浮島（Cyber-Forest 科技森林 ✕ 雙語機器人 ✕ 兒童玻璃美術館）
- */
-const DATA = {
+module.exports = {
   "updated": "115.11.21",
   "city": {
     "name": "高峰國小 22 週年校慶",
@@ -1672,167 +1668,214 @@ const DATA = {
       "from": "s01",
       "to": "s02",
       "crew": [
+        "coubertin",
         "student",
         "teacher"
       ],
       "carry": "note",
-      "type": "plan",
-      "phase": 1
+      "evidence": "plan",
+      "phase": 1,
+      "note": "【08:30 序幕傳遞】星艦總指揮官率領小健將，將大會程序手冊送往琉光舞台，由高峰天籟合唱團純淨獻唱揭開 22 週年盛典！",
+      "noteEn": "Opening Handover: Commander Coubertin delivers the Program Handbook to the Glass Stage for the celestial Choir Opening."
     },
     {
       "id": "f02",
-      "from": "s01",
+      "from": "s02",
       "to": "s03",
       "crew": [
+        "bruce_lee",
         "student",
         "teacher"
       ],
-      "carry": "medal",
-      "type": "plan",
-      "phase": 2
+      "carry": "torch",
+      "evidence": "plan",
+      "phase": 1,
+      "note": "【09:50 聖火引領】琉光美學大師護送躍動聖火火炬飛越星橋抵達綠茵跑道，宣告一二年級 60m 團體跑與三至六年級個人決賽全面燃起！",
+      "noteEn": "Torch Relay to Sprint: Bruce Lee carries the Dual-22 Sacred Torch to the track, igniting the 60m/100m sprint finals."
     },
     {
       "id": "f03",
-      "from": "s01",
-      "to": "s04",
-      "crew": [
-        "student",
-        "teacher"
-      ],
-      "carry": "baton",
-      "type": "plan",
-      "phase": 2
-    },
-    {
-      "id": "f04",
-      "from": "s01",
+      "from": "s03",
       "to": "s05",
       "crew": [
+        "chicheng",
         "student",
         "parent"
       ],
       "carry": "toolbox",
-      "type": "plan",
-      "phase": 2
+      "evidence": "plan",
+      "phase": 2,
+      "note": "【10:40 冒險啟航】曲速破風傳奇紀政將趣味道具箱送達古奇童趣星域，啟動一二年級【動物滾大球】與三年級【神箭闖江湖】！",
+      "noteEn": "Fun Games Launch: Chi Cheng transports the gear box to Guqi Odyssey, kicking off Giant Ball rolling and Magic Arrow shooting."
     },
     {
-      "id": "f05",
-      "from": "s01",
-      "to": "s06",
+      "id": "f04",
+      "from": "s05",
+      "to": "s04",
       "crew": [
-        "student",
-        "volunteer"
-      ],
-      "carry": "note",
-      "type": "plan",
-      "phase": 1
-    },
-    {
-      "id": "f06",
-      "from": "s01",
-      "to": "s07",
-      "crew": [
+        "jordan",
         "student",
         "teacher"
       ],
-      "carry": "trophy",
-      "type": "plan",
-      "phase": 3
+      "carry": "baton",
+      "evidence": "plan",
+      "phase": 2,
+      "note": "【11:10 越野穿梭】重力極限破風者喬丹引領小健將，將黃金接力棒傳往越野障礙賽場，展開四年級【小巨人奔跑】與五六年級【高峰越野障礙賽】！",
+      "noteEn": "Obstacle Challenge: Michael Jordan delivers the golden baton to the arena, fueling Grade 4 Little Giants and Grades 5-6 Obstacle sprints."
+    },
+    {
+      "id": "f05",
+      "from": "s04",
+      "to": "s03",
+      "crew": [
+        "owens",
+        "student",
+        "teacher"
+      ],
+      "carry": "baton",
+      "evidence": "plan",
+      "phase": 2,
+      "note": "【11:40 薪傳決戰】星軌傳承守護者歐文斯將黃金接力棒傳回跑道交接區，開啟二年級 40m 折返與中高年級 16 棒大隊接力搶道巔峰決戰！",
+      "noteEn": "Relay Showdown: Jesse Owens brings the relay baton to the track zone, unleashing the 16-runner lap relay cut-in finale!"
+    },
+    {
+      "id": "f06",
+      "from": "s03",
+      "to": "s06",
+      "crew": [
+        "student",
+        "volunteer",
+        "scout"
+      ],
+      "carry": "note",
+      "evidence": "plan",
+      "phase": 3,
+      "note": "【12:05 無痕復原】大隊接力壓線後，高峰小健將號召全校親師生，執行 12:05 休息區環境整理、場地復原、垃圾不留地 SDGs 永續行動！",
+      "noteEn": "No-Trace Campus Action: GFPS students rally the school for the 12:05 campus recovery and zero-waste cleanup."
     },
     {
       "id": "f07",
-      "from": "s02",
-      "to": "s03",
-      "crew": [
-        "student"
-      ],
-      "carry": "diploma",
-      "type": "link",
-      "phase": 2
-    },
-    {
-      "id": "f08",
-      "from": "s03",
-      "to": "s04",
-      "crew": [
-        "student"
-      ],
-      "carry": "medal",
-      "type": "link",
-      "phase": 2
-    },
-    {
-      "id": "f09",
-      "from": "s04",
-      "to": "s05",
-      "crew": [
-        "student"
-      ],
-      "carry": "baton",
-      "type": "link",
-      "phase": 2
-    },
-    {
-      "id": "f10",
-      "from": "s05",
-      "to": "s06",
-      "crew": [
-        "student"
-      ],
-      "carry": "toolbox",
-      "type": "link",
-      "phase": 2
-    },
-    {
-      "id": "f11",
       "from": "s06",
       "to": "s07",
       "crew": [
+        "yang",
+        "student",
+        "teacher"
+      ],
+      "carry": "medal",
+      "evidence": "plan",
+      "phase": 3,
+      "note": "【12:10 榮耀加冕】亞洲鐵人楊傳廣護送個人賽前六名獎牌、獎狀與即時成績榜單至超新星榮耀港，登上星光頒獎台接受全校喝采！",
+      "noteEn": "Podium Coronation: C.K. Yang escorts individual sprint medals and diplomas to the Star Terminal for the grand awards ceremony."
+    },
+    {
+      "id": "f08",
+      "from": "s01",
+      "to": "s07",
+      "crew": [
+        "coubertin",
+        "teacher",
+        "parent"
+      ],
+      "carry": "trophy",
+      "evidence": "plan",
+      "phase": 3,
+      "note": "【12:15 總錦標金盃】何信煒校長與大會裁判長將象徵最高集體榮譽的【大會學年優勝總錦標金盃】與錦旗送抵榮耀港，頒發學年總冠軍！",
+      "noteEn": "Championship Trophy: Principal He and the chief referee present the Overall Championship Gold Trophy to the winning grade."
+    },
+    {
+      "id": "f09",
+      "from": "s01",
+      "to": "s06",
+      "crew": [
+        "coubertin",
+        "volunteer",
+        "student"
+      ],
+      "carry": "note",
+      "evidence": "link",
+      "phase": 1,
+      "note": "【友善與永續傳承 (Friendly & SDGs)】中央星港將全校性績優義工感謝狀與健康促進指引送達綠站，傳承感恩好品格與環境責任。",
+      "noteEn": "Friendly & SDGs Legacy: Handing over volunteer appreciation certificates and health guidelines, honoring lifelong dedication."
+    },
+    {
+      "id": "f10",
+      "from": "s02",
+      "to": "s06",
+      "crew": [
+        "bruce_lee",
         "student"
       ],
       "carry": "diploma",
-      "type": "link",
-      "phase": 3
+      "evidence": "link",
+      "phase": 3,
+      "note": "【美學與科技跨界融合 (Arts & Tech)】兒童玻璃美術館與未來科技教室雙向互聯，將在地玻璃藝術靈感注入機器人科技教育，啟發多元創造力！",
+      "noteEn": "Arts & Tech Fusion: Glass art aesthetics meet robotics tech, bridging creative craftsmanship and future innovation."
+    },
+    {
+      "id": "f11",
+      "from": "s04",
+      "to": "s07",
+      "crew": [
+        "owens",
+        "student"
+      ],
+      "carry": "diploma",
+      "evidence": "link",
+      "phase": 2,
+      "note": "【積極正向運動家精神 (Positive Spirit)】四年級小巨人奔跑與越野拔河爭霸，將班級高度凝聚的運動家精神轉化為榮耀港上的璀璨星光！",
+      "noteEn": "Positive Sportsmanship: Transforming teamwork from obstacle challenges and tug-of-war into triumphant starlight."
     },
     {
       "id": "f12",
       "from": "s07",
-      "to": "s02",
+      "to": "s01",
       "crew": [
-        "student"
+        "yang",
+        "student",
+        "coubertin"
       ],
       "carry": "trophy",
-      "type": "link",
-      "phase": 3
+      "evidence": "link",
+      "phase": 3,
+      "note": "【雙二齊飛・終局勝利迴圈 (Dual-22 Complete Cycle)】全島星核集滿引燃 3D 超新星勝利煙火，金盃能量迴流中央星艦星港，世代傳承高峰卓越薪火！",
+      "noteEn": "Dual-22 Victory Loop: The championship triumph flows back to Flagship Isle, igniting 3D fireworks to protect Gao-Feng across generations."
     }
   ],
   "dayCycle": [
     {
-      "label": "星艦啟航 (07:50)",
+      "label": "08:00 迎賓進場與開幕聖火",
       "items": [
         "s01i1",
         "s01i2",
+        "s01i3"
+      ]
+    },
+    {
+      "label": "08:30 天籟合唱與義工表揚",
+      "items": [
+        "s01i4",
+        "s02i2",
         "s06i1"
       ]
     },
     {
-      "label": "天籟合唱 (08:30)",
+      "label": "09:00 大會舞展演與校慶專刊",
       "items": [
-        "s01i3",
-        "s01i4",
-        "s02i2"
+        "s02i1",
+        "s02i3",
+        "s06i2"
       ]
     },
     {
-      "label": "綠茵衝刺 (09:50)",
+      "label": "09:50 綠茵競速衝刺決賽",
       "items": [
         "s03i1",
-        "s03i2",
         "s03i3"
       ]
     },
     {
-      "label": "重力冒險 (10:40)",
+      "label": "10:40 古奇童趣冒險爭霸",
       "items": [
         "s05i1",
         "s05i2",
@@ -1840,7 +1883,7 @@ const DATA = {
       ]
     },
     {
-      "label": "星軌接力 (11:40)",
+      "label": "11:10 越野障礙與極限拔河",
       "items": [
         "s04i1",
         "s04i2",
@@ -1848,22 +1891,16 @@ const DATA = {
       ]
     },
     {
-      "label": "無痕復原 (12:05)",
+      "label": "11:40 星軌大隊接力巔峰決戰",
       "items": [
-        "s06i2",
-        "s06i3"
+        "s03i1",
+        "s03i2"
       ]
     },
     {
-      "label": "琉光特展 (13:10)",
+      "label": "12:05 無痕復原與星光頒獎",
       "items": [
-        "s02i1",
-        "s02i3"
-      ]
-    },
-    {
-      "label": "超新星頒獎 (13:40)",
-      "items": [
+        "s06i3",
         "s07i1",
         "s07i2",
         "s07i3"
@@ -1878,7 +1915,11 @@ const DATA = {
     "玻璃美感力": "結合新竹在地著名的傳統玻璃工藝，引導學童開展立體造型與視覺美學素養。",
     "峰湧體能力": "鼓勵學童勇於挑戰自我極限、強健身心體魄，享受 60m 與 100m 奔馳樂趣。",
     "高峰群體力": "強調團隊合作與信任，在大隊接力交接棒與趣味競賽中實踐共好精神。",
-    "全球永續力": "響應聯合國 SDGs 永續目標，落實健康體位、口腔保健與校園環境無痕綠色復原。"
+    "全球永續力": "響應聯合國 SDGs 永續目標，落實健康體位、口腔保健與校園環境無痕綠色復原。",
+    "賽程動線": "依據《大會程序表》規劃之完美閉環賽程動線：從中央星港開幕、合唱展演、個人徑賽決賽、中低年級趣味賽、大隊接力巔峰決戰、12:05 無痕環境復原至閉幕頒發總錦標金盃！",
+    "薪火傳承": "象徵高峰國小自民國 93 年創校 22 載以來，歷任師長、家長會、愛心義工與全校小健將代代相傳之【雙二齊飛、馳騁高峰】精神！",
+    "大隊接力薪傳": "二年級 40m 折返大隊接力（19 棒）與三至六年級 16 棒半圈大隊接力，第三棒搶道交接黃金接力棒，象徵同心協力、責任薪傳之最高集體默契！",
+    "雙二齊飛傳承": "高峰國小 22 週年校慶大會標語，代表『兩個 2（雙二）』展翅高飛、傳承 GFPS 四大願景，馳騁於智慧與健康的星際巔峰！"
   },
   "synonyms": {},
   "gradeStory": {
@@ -2068,6 +2109,18 @@ const DATA = {
           "F - Friendly: Good character, gratitude, volunteer awards.",
           "P - Positive: Athletic vitality, challenge, relay teamwork.",
           "S - SDGs: Health & fitness, low-carbon no-trace campus."
+        ]
+      },
+      {
+        "title": "賽程動線與薪火傳承網絡",
+        "titleEn": "Schedule Routes & Heritage Transmission",
+        "body": [
+          "12 條賽博光橋串聯 7 大浮島：以《大會程序表》為依據之 8 條實線賽程動線，引領運動員從開幕聖火、美感合唱、個人衝刺、古奇趣味、越野障礙到大隊接力巔峰決戰。",
+          "4 條傳承光橋閉環凝聚 GFPS 四大願景：將友善好品格、全校義工表揚、玻璃美感融合科技、正向運動家精神與終局 3D 超新星勝利煙火緊密扣合，代代薪傳高峰卓越校風！"
+        ],
+        "bodyEn": [
+          "12 Cyber Lightways connect the 7 isles: 8 solid routes follow the official program schedule from torch lighting to relay finals.",
+          "4 legacy loops unite the GFPS visions, volunteer appreciation, and 3D fireworks into an eternal cycle of excellence."
         ]
       }
     ],
@@ -3324,7 +3377,3 @@ const DATA = {
     ]
   }
 };
-
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = DATA;
-}

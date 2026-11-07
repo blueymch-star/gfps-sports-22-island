@@ -67,7 +67,7 @@ function kitMPurpleTrack(p, o) {
   // 立體紫色橡膠跑道底層（加厚立體感 0.012）
   p.box(0, G, cz, hl * 2, 0.012, R * 2, '#991b1b');
   for (const s of [-1, 1]) p.cyl(s * hl, G, cz, R, 0.012, '#991b1b');
-  // 六道紫色跑道面與交替色階
+  // 六道紅色跑道面與交替色階
   const laneW = (R - ri) / 6; // 6 個跑道
   for (let lane = 5; lane >= 0; lane--) {
     const rOuter = ri + (lane + 1) * laneW;
