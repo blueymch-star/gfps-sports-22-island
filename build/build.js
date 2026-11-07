@@ -2353,6 +2353,12 @@ function initSportsQuest(ctx) {
         '</div>';
     }
 
+    // 動態確保說明文字目標次數與下方按鈕目標次數 100% 絕對一致
+    let displayTaskDesc = ch.taskDesc || '';
+    if (ch.mode === 'tap_charge') {
+      displayTaskDesc = displayTaskDesc.replace(/連[點擊]\s*\d+\s*下/g, '連點 ' + target + ' 下');
+    }
+
     // 依據角色難度生成問答錦囊提示
     const correctOpt = (ch.options && ch.options[ch.answer]) ? ch.options[ch.answer] : '';
     let quizHintHtml = '';
@@ -2388,7 +2394,7 @@ function initSportsQuest(ctx) {
           '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? '✅ 本建築已過關' : '⏳ 待闖關挑戰') + '</span>' +
         '</div>' +
         '<h3 class="sq-bq-title">' + ch.title + '</h3>' +
-        '<p class="sq-bq-desc">' + ch.taskDesc + '</p>' +
+        '<p class="sq-bq-desc">' + displayTaskDesc + '</p>' +
         stage1Html +
         '<div id="sq-bq-quiz-wrap">' +
           '<p class="sq-bq-q">❓ ' + ch.question + '</p>' +
