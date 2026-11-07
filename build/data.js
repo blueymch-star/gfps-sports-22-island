@@ -648,6 +648,40 @@ const DATA = {
             "explain": "答對了！感謝親師志工長年為校園付出，正是高峰國小 F (Friendly) 友善好品格的具體實踐！"
           }
         }
+      ],
+      "units": [
+        {
+          "name": "運動員集結與量子迎賓進場",
+          "nameEn": "Athlete Assembly & Procession",
+          "weeks": "08:00~08:20",
+          "periods": "20",
+          "sem": "全",
+          "desc": "全校各班小健將精神抖擻集結，會旗引導隊與聖火護衛隊引領進場行禮！"
+        },
+        {
+          "name": "慶祝大會開幕典禮與聖火引燃",
+          "nameEn": "Opening Ceremony & Torch Lighting",
+          "weeks": "08:20~08:30",
+          "periods": "10",
+          "sem": "全",
+          "desc": "會旗冉冉升起、齊唱校歌、引燃雙二齊飛躍動聖火，運動員代表莊嚴宣誓！"
+        },
+        {
+          "name": "校長及來賓致詞與義工星光表揚",
+          "nameEn": "Principal Address & Volunteer Awards",
+          "weeks": "08:35~09:00",
+          "periods": "25",
+          "sem": "全",
+          "desc": "何信煒校長致詞、長官貴賓祝福，隆重表揚全校性績優義工與熱心家長志工！"
+        },
+        {
+          "name": "表演退場與田徑賽場準備",
+          "nameEn": "Show Dismissal & Track Preparation",
+          "weeks": "09:35~09:40",
+          "periods": "5",
+          "sem": "全",
+          "desc": "全體表演隊伍迅速整齊退場，田徑裁判執法團隊就位，準備各項競速爭霸！"
+        }
       ]
     },
     {
@@ -778,6 +812,48 @@ const DATA = {
             "explain": "完全正確！校慶專輯是凝聚親師生共同記憶、呈現教學成果與學校永續目標的重要里程碑！"
           }
         }
+      ],
+      "units": [
+        {
+          "name": "高峰天籟合唱團天籟開幕獻唱",
+          "nameEn": "Gao-Feng Choir Opening Melodies",
+          "weeks": "08:30~08:35",
+          "periods": "5",
+          "sem": "全",
+          "desc": "高峰天籟合唱團以純淨優美天籟獻唱，為 22 週年校慶揭開璀璨序幕。"
+        },
+        {
+          "name": "社區表演與非營利幼兒園萌力律動",
+          "nameEn": "Community Dance & Kindergarten Performance",
+          "weeks": "09:00~09:10",
+          "periods": "10",
+          "sem": "全",
+          "desc": "非營利幼兒園可愛律動、社區團體熱力舞動展演，親師生共襄盛舉！"
+        },
+        {
+          "name": "各年段大會舞展演（神氣小娃・扇耀高峰・旗開得勝）",
+          "nameEn": "Grade-Level Gymnastic & Ribbon Dances",
+          "weeks": "09:10~09:35",
+          "periods": "25",
+          "sem": "全",
+          "desc": "低年級「神氣小娃」、中年級「扇耀高峰」、高年級「旗開得勝」活力展演！"
+        },
+        {
+          "name": "兒童玻璃美術館特展與師生美展",
+          "nameEn": "Children's Glass Museum Exhibition",
+          "weeks": "13:10~14:00",
+          "periods": "50",
+          "sem": "全",
+          "desc": "全台唯一「兒童玻璃美術館」琉光成果展、新竹在地玻璃工藝與師生美育作品展出。"
+        },
+        {
+          "name": "廿二週年校慶專刊出刊與教學成果觀測",
+          "nameEn": "22nd Anniversary Special Issue Exhibition",
+          "weeks": "全天候",
+          "periods": "全日",
+          "sem": "全",
+          "desc": "展示 22 週年校慶專刊與學校簡介，呈現都市森林、玻璃美育與雙語教學成果。"
+        }
       ]
     },
     {
@@ -895,6 +971,56 @@ const DATA = {
             "answer": 0,
             "explain": "正確！實施計畫明訂個人賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀！"
           }
+        }
+      ],
+      "units": [
+        {
+          "name": "一年級 60m 團體跑走",
+          "nameEn": "Grade 1 60m Group Dash",
+          "weeks": "09:50~10:00",
+          "periods": "10",
+          "sem": "低",
+          "desc": "一年級小小運動員全力邁步衝刺 60 公尺綠茵跑道，展現朝氣與勇氣！"
+        },
+        {
+          "name": "二年級 60m 團體跑走",
+          "nameEn": "Grade 2 60m Group Dash",
+          "weeks": "10:00~10:10",
+          "periods": "10",
+          "sem": "低",
+          "desc": "二年級小健將奔馳 60 公尺賽道，步伐敏捷、朝氣蓬勃！"
+        },
+        {
+          "name": "三至六年級 60m / 100m 個人衝刺決賽",
+          "nameEn": "Grades 3-6 60m / 100m Individual Finals",
+          "weeks": "10:10~10:40",
+          "periods": "30",
+          "sem": "中高",
+          "desc": "預賽晉級各組前六名男女飛毛腿齊聚跑道，爭奪 60 公尺與 100 公尺個人賽獎牌！"
+        },
+        {
+          "name": "二年級 40m 折返大隊接力",
+          "nameEn": "Grade 2 40m Shuttle Relay",
+          "weeks": "11:40~11:50",
+          "periods": "10",
+          "sem": "低",
+          "desc": "二年級 40 公尺折返繞角椎接力賽（每班 19 棒：男 12 女 7），默契交接黃金接力棒！"
+        },
+        {
+          "name": "三、四年級 16 棒半圈大隊接力",
+          "nameEn": "Grades 3-4 16-Runner Lap Relay",
+          "weeks": "11:50~12:00",
+          "periods": "10",
+          "sem": "中",
+          "desc": "三、四年級班際 16 棒半圈大隊接力，第三棒接到棒子搶道超車，展現班級高度凝聚力！"
+        },
+        {
+          "name": "五、六年級 16 棒半圈大隊接力巔峰決戰",
+          "nameEn": "Grades 5-6 16-Runner Lap Relay Final",
+          "weeks": "12:00~12:05",
+          "periods": "5",
+          "sem": "高",
+          "desc": "五、六年級壓軸大隊接力巔峰決戰！各班飛毛腿全力衝刺壓線，爭奪學年總錦標金盃！"
         }
       ]
     },
@@ -1016,6 +1142,40 @@ const DATA = {
             "answer": 0,
             "explain": "完全正確！實施計畫明訂拔河賽各班男女各 10 名，以維公平，採 3 局 2 勝制，每局以 2 分鐘為限！"
           }
+        }
+      ],
+      "units": [
+        {
+          "name": "四年級趣味競賽：小巨人奔跑",
+          "nameEn": "Grade 4 Fun Obstacle: Little Giants Sprint",
+          "weeks": "11:10~11:20",
+          "periods": "10",
+          "sem": "中",
+          "desc": "四年級發揮團隊合作精神化身小巨人奔跑，步調一致衝向終點！"
+        },
+        {
+          "name": "五年級趣味競賽：高峰越野障礙賽",
+          "nameEn": "Grade 5 Fun Obstacle: Peak Cross-Country",
+          "weeks": "11:20~11:30",
+          "periods": "10",
+          "sem": "高",
+          "desc": "五年級小將突破重力障礙、穿越角椎矩陣與呼拉圈，身手矯健克服挑戰！"
+        },
+        {
+          "name": "六年級趣味競賽：高峰越野障礙賽",
+          "nameEn": "Grade 6 Fun Obstacle: Peak Cross-Country Final",
+          "weeks": "11:30~11:40",
+          "periods": "10",
+          "sem": "高",
+          "desc": "六年級畢業生代表全力挑戰高難度障礙越野賽，展現自信無畏的高峰精神！"
+        },
+        {
+          "name": "雨天備案：各學年班際拔河錦標賽",
+          "nameEn": "Rain Contingency: Inter-Class Tug of War",
+          "weeks": "雨天備案",
+          "periods": "30",
+          "sem": "全",
+          "desc": "如遇雨天於高峰館舉行班際拔河賽，每班男女各 10 名，採三局兩勝制爭奪冠軍！"
         }
       ]
     },
@@ -1139,6 +1299,32 @@ const DATA = {
             "answer": 0,
             "explain": "完全正確！神箭闖江湖是考驗學童專注力、手眼協調與目標投射命中率的經典競賽！"
           }
+        }
+      ],
+      "units": [
+        {
+          "name": "一年級趣味競賽：動物滾大球",
+          "nameEn": "Grade 1 Fun Obstacle: Animal Giant Ball Rolling",
+          "weeks": "10:40~10:50",
+          "periods": "10",
+          "sem": "低",
+          "desc": "一年級小朋友齊心協力推動行星巨球，歡笑聲中培養團隊協作好默契！"
+        },
+        {
+          "name": "二年級趣味競賽：動物滾大球接力賽",
+          "nameEn": "Grade 2 Fun Obstacle: Giant Ball Relay Race",
+          "weeks": "10:50~11:00",
+          "periods": "10",
+          "sem": "低",
+          "desc": "二年級各班接力滾球，手眼協調、敏捷換手繞過折返點，全場加油聲沸騰！"
+        },
+        {
+          "name": "三年級趣味競賽：神箭闖江湖",
+          "nameEn": "Grade 3 Fun Obstacle: Magic Arrow Odyssey",
+          "weeks": "11:00~11:10",
+          "periods": "10",
+          "sem": "中",
+          "desc": "三年級小選手瞄準目標射擊神箭，考驗專注力、手眼協調與命中精準度！"
         }
       ]
     },
@@ -1269,6 +1455,40 @@ const DATA = {
             "explain": "答對了！12:05 嚴格落實場地復原與不留垃圾，體現高峰學子愛護自然環境、實踐 SDGs 的良好品德！"
           }
         }
+      ],
+      "units": [
+        {
+          "name": "健康促進學校宣導站（口腔保健與健康體位）",
+          "nameEn": "Health Promotion Kiosk (Oral & Body Health)",
+          "weeks": "全天候",
+          "periods": "全日",
+          "sem": "全",
+          "desc": "推動健康體位與口腔保健宣導，建立正確潔牙與營養運動好習慣。"
+        },
+        {
+          "name": "未來科技教室百變機器人成果展示",
+          "nameEn": "Future Tech Robotics Lab Showcase",
+          "weeks": "全天候",
+          "periods": "全日",
+          "sem": "全",
+          "desc": "展現高峰國小未來科技教室成果，包含程式設計與雙語樂高機器人互動。"
+        },
+        {
+          "name": "校慶特色紀念服飾與文創展售",
+          "nameEn": "Anniversary Souvenirs & T-Shirt Booth",
+          "weeks": "全天候",
+          "periods": "全日",
+          "sem": "全",
+          "desc": "展售高峰 22 週年限量特色排汗衫與紀念文創小物，兼具美感與實用性。"
+        },
+        {
+          "name": "全校環境整理與場地復原行動",
+          "nameEn": "Whole School Campus Recovery Action",
+          "weeks": "12:05~12:10",
+          "periods": "5",
+          "sem": "全",
+          "desc": "落實 SDGs 綠色永續校園，全校親師生場地復原、椅子歸位、垃圾不留地！"
+        }
       ]
     },
     {
@@ -1394,6 +1614,40 @@ const DATA = {
             "answer": 0,
             "explain": "答對了！實施計畫明訂大隊接力與趣味競賽各學年取優勝一班，頒發獎狀與獎品，激勵班級團隊向心力！"
           }
+        }
+      ],
+      "units": [
+        {
+          "name": "個人賽決賽前六名星光即時頒獎典禮",
+          "nameEn": "Individual Finals Top 6 Starlight Awards",
+          "weeks": "10:10~12:00",
+          "periods": "即時",
+          "sem": "全",
+          "desc": "個人徑賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀之星光頒獎典禮。"
+        },
+        {
+          "name": "大會學年優勝總錦標金盃頒發",
+          "nameEn": "Grade Overall Championship Trophy Ceremony",
+          "weeks": "12:00~12:05",
+          "periods": "5",
+          "sem": "全",
+          "desc": "統計各學年優勝總積分最高之班級，由大會頒發總錦標大會金盃與錦旗！"
+        },
+        {
+          "name": "星際賽況即時量子公報告示",
+          "nameEn": "Live Quantum Race Bulletin & Results",
+          "weeks": "全天候",
+          "periods": "全日",
+          "sem": "全",
+          "desc": "即時連線 11/09~11/13 預賽週與 11/21 校慶各組徑賽榜單，提供賽果資訊！"
+        },
+        {
+          "name": "全景 3D 超新星勝利煙火引燃",
+          "nameEn": "Supernova 3D Victory Fireworks Finale",
+          "weeks": "13:20",
+          "periods": "終局",
+          "sem": "全",
+          "desc": "探索集滿星核挑戰後，於主星港與榮耀港上空引燃 3D 勝利煙火並頒發金牌證書！"
         }
       ]
     }
@@ -2926,6 +3180,6 @@ const DATA = {
   ]
 };
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = DATA;
 }

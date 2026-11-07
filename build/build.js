@@ -279,8 +279,9 @@ rep(
 
 // 右側清單與搜尋面板 (#ui-side)
 rep('<div class="ui-eyebrow" data-en="DIRECTORY · TEXT VERSION">校園目錄・文字版</div>', '<div class="ui-eyebrow" data-en="ARENA DIRECTORY">運動會賽區目錄</div>');
+rep('const units = q ? (d.units || []).map((u, idx) => ({ u, idx })).filter(({ idx }) => rowMatch(terms, X.units[idx], X.doc)) : [];', 'const units = (d.units || []).map((u, idx) => ({ u, idx })).filter(({ idx }) => !q || islHit || rowMatch(terms, X.units[idx], X.doc));');
 rep('placeholder="搜尋課程、單元、新聞、教育家…"', 'placeholder="搜尋賽程、趣味競賽、紫色跑道、運動明星…"');
-rep('<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Isles">課程與活動</button>', '<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Arena Isles">六大賽區島嶼</button>');
+rep('<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Isles">課程與活動</button>', '<button class="ui-tab" role="tab" id="ui-tab-themes" aria-selected="true" aria-controls="ui-side-list" type="button" data-en="Arena Isles">七大賽區島嶼</button>');
 rep('<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Isle stories">島與島的故事</button>', '<button class="ui-tab" role="tab" id="ui-tab-flows" aria-selected="false" tabindex="-1" aria-controls="ui-side-list" type="button" data-en="Relay routes">賽場動線與傳承</button>');
 rep('課程：大庄國小 公開課程資訊與校園新聞；新聞：新竹市教育新聞網・本站為教學展示，非學校官方網站。', '依據：新竹市東區高峰國小 115 學年度暨 22 週年校慶運動會程序表與競賽規程・本站為 3D 互動導覽展示。', true);
 rep("tr('特色課程', 'SIGNATURE COURSES')", "tr('校慶競賽與展演島', 'COMPETITION & SHOW ISLES')", true);
@@ -288,7 +289,7 @@ rep("tr('年度活動', 'YEARLY EVENTS')", "tr('校慶典禮與接力島', 'CERE
 rep("tr('這個條件下沒有課程。', 'No courses match.')", "tr('這個條件下沒有符合的賽區。', 'No arena isles match.')");
 rep("tr('這個年級沒有專屬的年度活動。', 'No yearly events for this grade.')", "tr('這個年級沒有專屬的典禮島。', 'No ceremony isles for this grade.')");
 rep("tr('低年級,高年級,陶藝,射箭,樂樂棒球,得獎', 'Grade 7,AI,club,reading,sports')", "tr('紫色跑道,大隊接力,趣味競賽,扇耀舞台,紀政,李小龍', 'Purple track,Relay,Fun games,Dance,Chi Cheng,Bruce Lee')");
-rep("tr('島與島的故事是讓地圖生動的故事設定；實線＝課程計畫寫明，其他是延伸連結。', 'Isle stories are a story layer; solid lines are written in the curriculum plan, others are further links.')", "tr('6 位世界運動傳奇巨星（古柏坦、李小龍、紀政、歐文斯、喬丹、楊傳廣）擔任各島島主，帶領高峰親師生在賽場間傳遞聖火與賽事裝備！', 'Six sports legends lead Gao-Feng athletes and families across the six Sports Day arenas.')");
+rep("tr('島與島的故事是讓地圖生動的故事設定；實線＝課程計畫寫明，其他是延伸連結。', 'Isle stories are a story layer; solid lines are written in the curriculum plan, others are further links.')", "tr('7 大賽區駐島領航員（含 6 位世界體育傳奇與高峰小健將）帶領高峰親師生在賽場間傳遞聖火與賽事裝備！', 'Six sports legends lead Gao-Feng athletes and families across the six Sports Day arenas.')");
 
 // 依年級看卡片 (gradeCard)
 rep("tr(g + '年級一覽', 'Grade ' + num + ' at a glance')", "tr(g + '年級賽程與闖關一覽', 'Grade ' + num + ' Sports Day schedule')");
@@ -350,14 +351,14 @@ rep(
 );
 
 // 說明面板 (#ui-help) 與關於面板 (#ui-about)
-rep('<h2 id="ui-help-title" data-en="Fourteen isles, one school year">十四座島，一整個大庄學年</h2>', '<h2 id="ui-help-title" data-en="Six Arena Isles, One Glorious Sports Day">六座森林賽場島，一場熱血的 22 週年校慶運動會</h2>');
+rep('<h2 id="ui-help-title" data-en="Fourteen isles, one school year">十四座島，一整個大庄學年</h2>', '<h2 id="ui-help-title" data-en="Seven Arena Isles, One Glorious Sports Day">七座賽博生態賽場島，一場熱血的 22 週年校慶運動會</h2>');
 rep(
   '每座六角島是大庄國小的一門特色課程或一個年度活動。古今中外的教育家擔任島主，帶著學生、老師、家長、志工與童軍走過小橋，把一門課需要的東西送到下一站。',
   '每座六角島代表高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」的一大主題賽區（包含綠茵活力環形跑道、玻璃藝能大舞台、生態趣味探索島、薪傳接力競技場與金銀銅頒獎台）。6 位世界運動傳奇巨星（古柏坦、李小龍、紀政、歐文斯、喬丹、楊傳廣）擔任駐島島主，帶著高峰小選手、裁判老師、應援家長、校慶志工與森林護衛隊在賽場間奔馳！'
 );
 rep(
   '「故事設定」：島主教育家、走來走去的小人和島與島之間的協作線，是讓地圖生動的故事元素；課程內容本身依學校課程計畫。',
-  '「故事設定」：6 位運動傳奇巨星島主與賽場間奔馳的小健將動線為趣味故事元素；32 項節目時間、個人賽與大隊接力規則皆依據高峰國小 22 週年校慶運動會正式程序表與競賽規程。'
+  '「故事設定」：6 位運動傳奇巨星島主與賽場間奔馳的小健將動線為趣味故事元素；17 項當日節目程序、個人賽與大隊接力規則皆依據高峰國小 22 週年校慶運動會正式程序表與競賽規程。'
 );
 rep('<div class="ui-eyebrow" data-en="ABOUT DAZHUANG">關於大庄</div>', '<div class="ui-eyebrow" data-en="ABOUT SPORTS DAY">大會簡介</div>');
 rep('<button class="ui-tab" role="tab" id="ui-abtab-intro" aria-selected="true" aria-controls="ui-about-intro" type="button" data-en="The school">學校簡介</button>', '<button class="ui-tab" role="tab" id="ui-abtab-intro" aria-selected="true" aria-controls="ui-about-intro" type="button" data-en="Overview">大會總覽</button>');
@@ -367,7 +368,7 @@ rep('<section id="ui-journey" class="ui-glass" aria-label="六年旅程" data-en
 rep('<li><b data-en="Click">點選</b><span data-en="an isle or a building to open its card: what students learn, how they are assessed, units and related news. Esc closes it.">島或建物，左側會開卡片：學什麼、怎麼評量、課程單元與相關新聞；Esc 關閉。</span></li>', '<li><b data-en="Click">點選</b><span data-en="an isle or landmark to open its card: event schedules, 5-Power Quest challenges, and race highlights. Esc closes it.">賽區島嶼或 3D 地標，左側會開卡片：賽場地標、校慶地標挑戰、賽程項目與完賽英雄榜；Esc 關閉。</span></li>');
 rep('<li><b data-en="By grade">依年級看</b><span data-en="see what lower, middle or upper grades takes each week; the other isles dim on the map.">看低、中、高年級各上哪些課、幾節、怎麼評量；地圖上其他島會變暗。</span></li>', '<li><b data-en="By grade">依年級看賽程</b><span data-en="see what lower, middle or upper grades participate in on Sports Day.">查看低、中、高年級各自的舞蹈表演、趣味競賽、個人賽與大隊接力時段。</span></li>');
 rep('<li><b data-en="Journey">六年旅程</b><span data-en="a guided ride from first day to graduation, with captions you can pause.">從新生入學到畢業典禮的自動導覽，有字幕，可暫停、下一站。</span></li>', '<li><b data-en="Tour">運動會全覽</b><span data-en="a guided ride from opening ceremony to victory fireworks, with captions you can pause.">從開幕進場、六學年舞蹈、趣味競賽、紫色跑道個人賽、大隊接力到閉幕頒獎的自動導覽。</span></li>');
-rep('<li><b data-en="List">清單</b><span data-en="browse courses by grade and yearly events; search units and news titles too.">依年級瀏覽特色課程與年度活動；也能搜尋單元名稱與新聞標題。</span></li>', '<li><b data-en="List">清單</b><span data-en="browse the 6 arena isles by grade; search events, purple track, and sports legends.">依年級瀏覽六大賽區島嶼與賽場傳承動線；也能搜尋賽程項目與駐島運動傳奇巨星。</span></li>');
+rep('<li><b data-en="List">清單</b><span data-en="browse courses by grade and yearly events; search units and news titles too.">依年級瀏覽特色課程與年度活動；也能搜尋單元名稱與新聞標題。</span></li>', '<li><b data-en="List">清單</b><span data-en="browse the 7 arena isles by grade; search events, purple track, and sports legends.">依年級瀏覽七大賽區島嶼與賽場傳承動線；也能搜尋賽程項目與駐島運動傳奇巨星。</span></li>');
 rep('<span><i class="ui-lgd-num" aria-hidden="true">01</i><span data-en="Signature course">特色課程</span></span>', '<span><i class="ui-lgd-num" aria-hidden="true">02</i><span data-en="Competition & Show Isle">校慶競賽與展演島</span></span>');
 rep('<span><i class="ui-lgd-num is-event" aria-hidden="true">10</i><span data-en="Yearly event (gold ring)">年度活動（金框）</span></span>', '<span><i class="ui-lgd-num is-event" aria-hidden="true">01</i><span data-en="Ceremony & Relay Isle (gold ring)">校慶盛典與接力島（金框）</span></span>');
 rep("grp(tr('特色課程', 'Signature courses'), isl.filter(d => d.kind !== 'event'))}${grp(tr('年度活動', 'Yearly events')", "grp(tr('校慶競賽與展演島', 'Competition Isles'), isl.filter(d => d.kind !== 'event'))}${grp(tr('校慶盛典與接力島', 'Ceremony Isles')");
