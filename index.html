@@ -3855,7 +3855,9 @@ const DATA = {
               "起跑前專心注視前方跑道"
             ],
             "answer": 0,
-            "explain": "完全正確！短距離分道跑中全程不得串道，必須在自己道次內全力衝刺，確保競賽公平與安全！"
+            "explain": "完全正確！短距離分道跑中全程不得串道，必須在自己道次內全力衝刺，確保競賽公平與安全！",
+            "power": "峰湧體能力",
+            "questId": "q_vitality"
           }
         },
         {
@@ -3884,7 +3886,8 @@ const DATA = {
               "全程分道跑，不可以搶道"
             ],
             "answer": 0,
-            "explain": "完全正確！實施計畫明訂三至六年級每人跑半圈，第三棒接到棒子後開始搶道，考驗速度與進道策略！"
+            "explain": "完全正確！實施計畫明訂三至六年級每人跑半圈，第三棒接到棒子後開始搶道，考驗速度與進道策略！",
+            "power": "峰湧體能力"
           }
         },
         {
@@ -3913,7 +3916,8 @@ const DATA = {
               "只有第一名有獎勵"
             ],
             "answer": 0,
-            "explain": "正確！實施計畫明訂個人賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀！"
+            "explain": "正確！實施計畫明訂個人賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀！",
+            "power": "峰湧體能力"
           }
         }
       ],
@@ -4029,7 +4033,9 @@ const DATA = {
               "比誰跳得最高"
             ],
             "answer": 0,
-            "explain": "答對了！小巨人奔跑講求全班節奏統一，隊員彼此信任、步調一致才能迅速衝刺！"
+            "explain": "答對了！小巨人奔跑講求全班節奏統一，隊員彼此信任、步調一致才能迅速衝刺！",
+            "power": "高峰群體力",
+            "questId": "q_positive"
           }
         },
         {
@@ -4058,7 +4064,8 @@ const DATA = {
               "騎乘自行車"
             ],
             "answer": 0,
-            "explain": "完全正確！高峰越野障礙賽結合角椎繞行與敏捷障礙穿梭，考驗小選手的靈活體魄！"
+            "explain": "完全正確！高峰越野障礙賽結合角椎繞行與敏捷障礙穿梭，考驗小選手的靈活體魄！",
+            "power": "高峰群體力"
           }
         },
         {
@@ -4087,7 +4094,8 @@ const DATA = {
               "每班不限人數自由參加"
             ],
             "answer": 0,
-            "explain": "完全正確！實施計畫明訂拔河賽各班男女各 10 名，以維公平，採 3 局 2 勝制，每局以 2 分鐘為限！"
+            "explain": "完全正確！實施計畫明訂拔河賽各班男女各 10 名，以維公平，採 3 局 2 勝制，每局以 2 分鐘為限！",
+            "power": "高峰群體力"
           }
         }
       ],
@@ -4186,7 +4194,8 @@ const DATA = {
               "站在原地不動看大球滾動"
             ],
             "answer": 0,
-            "explain": "完全正確！動物滾大球講求小朋友齊心協力用雙手合力推動大球順暢翻滾！"
+            "explain": "完全正確！動物滾大球講求小朋友齊心協力用雙手合力推動大球順暢翻滾！",
+            "power": "峰湧體能力"
           }
         },
         {
@@ -4218,7 +4227,8 @@ const DATA = {
               "比誰推球聲音最大"
             ],
             "answer": 0,
-            "explain": "答對了！折返時順暢換手交接大球，能讓推球節奏不中斷，爭取最佳班級成績！"
+            "explain": "答對了！折返時順暢換手交接大球，能讓推球節奏不中斷，爭取最佳班級成績！",
+            "power": "高峰群體力"
           }
         },
         {
@@ -4247,7 +4257,8 @@ const DATA = {
               "游泳憋氣"
             ],
             "answer": 0,
-            "explain": "完全正確！神箭闖江湖是考驗學童專注力、手眼協調與目標投射命中率的經典競賽！"
+            "explain": "完全正確！神箭闖江湖是考驗學童專注力、手眼協調與目標投射命中率的經典競賽！",
+            "power": "峰湧體能力"
           }
         }
       ],
@@ -13996,7 +14007,7 @@ function initSportsQuest(ctx) {
       '<div class="sq-bldg-quest ' + (isCleared ? 'is-cleared' : '') + '" id="sq-bldg-quest-card">' +
         '<div class="sq-bq-head">' +
           '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">' +
-            '<span class="sq-bq-tag">🎯 建築關卡｜' + ch.power + '</span>' +
+            '<span class="sq-bq-tag">🎯 建築關卡｜' + powerName + '</span>' +
             '<span class="sq-bq-diff-badge ' + diff.tagClass + '">' + diff.star + ' ' + curRole + '（' + diff.name + '）</span>' +
           '</div>' +
           '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? '✅ 本建築已過關' : '⏳ 待闖關挑戰') + '</span>' +
@@ -14015,7 +14026,7 @@ function initSportsQuest(ctx) {
             ).join('') +
           '</div>' +
           '<div class="sq-bq-fb" id="sq-bq-fb" ' + (isCleared ? '' : 'hidden') + '>' +
-            (isCleared ? '🎖️ <strong>已通過本建築關卡並蓋下【' + ch.power + '】印章！</strong><br>' + ch.explain : '') +
+            (isCleared ? '🎖️ <strong>已通過本建築關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain : '') +
           '</div>' +
         '</div>' +
         '<div class="sq-bq-foot">' +
@@ -14154,7 +14165,7 @@ function initSportsQuest(ctx) {
 
           if (fbEl) {
             fbEl.hidden = false;
-            fbEl.innerHTML = '🎉 <strong>恭喜過關！成功通過「' + it.name + '」關卡並蓋下【' + ch.power + '】印章！</strong><br>' + ch.explain;
+            fbEl.innerHTML = '🎉 <strong>恭喜過關！成功通過「' + it.name + '」關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain;
           }
 
           if (newStamped >= (DATA.quests || []).length && !state.celebrated) {

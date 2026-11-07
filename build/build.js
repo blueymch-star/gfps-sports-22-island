@@ -2388,7 +2388,7 @@ function initSportsQuest(ctx) {
       '<div class="sq-bldg-quest ' + (isCleared ? 'is-cleared' : '') + '" id="sq-bldg-quest-card">' +
         '<div class="sq-bq-head">' +
           '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">' +
-            '<span class="sq-bq-tag">🎯 建築關卡｜' + ch.power + '</span>' +
+            '<span class="sq-bq-tag">🎯 建築關卡｜' + powerName + '</span>' +
             '<span class="sq-bq-diff-badge ' + diff.tagClass + '">' + diff.star + ' ' + curRole + '（' + diff.name + '）</span>' +
           '</div>' +
           '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? '✅ 本建築已過關' : '⏳ 待闖關挑戰') + '</span>' +
@@ -2407,7 +2407,7 @@ function initSportsQuest(ctx) {
             ).join('') +
           '</div>' +
           '<div class="sq-bq-fb" id="sq-bq-fb" ' + (isCleared ? '' : 'hidden') + '>' +
-            (isCleared ? '🎖️ <strong>已通過本建築關卡並蓋下【' + ch.power + '】印章！</strong><br>' + ch.explain : '') +
+            (isCleared ? '🎖️ <strong>已通過本建築關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain : '') +
           '</div>' +
         '</div>' +
         '<div class="sq-bq-foot">' +
@@ -2546,7 +2546,7 @@ function initSportsQuest(ctx) {
 
           if (fbEl) {
             fbEl.hidden = false;
-            fbEl.innerHTML = '🎉 <strong>恭喜過關！成功通過「' + it.name + '」關卡並蓋下【' + ch.power + '】印章！</strong><br>' + ch.explain;
+            fbEl.innerHTML = '🎉 <strong>恭喜過關！成功通過「' + it.name + '」關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain;
           }
 
           if (newStamped >= (DATA.quests || []).length && !state.celebrated) {
