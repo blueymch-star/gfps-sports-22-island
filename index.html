@@ -12990,8 +12990,8 @@ function initUI(ctx) {
   const help = $('ui-help'), about = $('ui-about');
   const bg = () => ['app', 'ui-top', 'ui-card', 'ui-side', 'ui-log', 'ui-hud', 'ui-tour'].map($).filter(Boolean);
   // 共用 modal：focus trap、背景 inert、Esc／點背景關閉、關閉後焦點回到開啟鈕
-  function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); first.focus(); }
-  function closeModal(m, back) { m.hidden = true; bg().forEach(e => e.inert = false); if (back) back.focus(); }
+  function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); if (first && first.focus) first.focus(); }
+  function closeModal(m, back) { m.hidden = true; bg().forEach(e => e.inert = false); if (back && back.focus) back.focus(); }
   function trapModal(m, close) {
     m.addEventListener('click', e => { if (e.target === m) close(); });
     m.addEventListener('keydown', e => {
@@ -13271,7 +13271,7 @@ function initUI(ctx) {
     } else if (!lsGet(UI_TOUR_KEY) && !QS.has('notour')) setTimeout(() => {
       // 使用者已經在點、或已選了東西、或開著面板：不再跳導覽打擾
       if (st.interacted || ctx.selection || !side.hidden || !help.hidden || !about.hidden || st.journey || ctx.settings.log && uiIsMobile()) return;
-      if (TRV && !lsGet(UI_TRAV_KEY)) openTrav(true); else startTour();
+      /* GFPS Sports Island: no legacy traveler modal */
     }, 700);
   });
   syncLangHref();
@@ -13436,6 +13436,17 @@ function initUI(ctx) {
 function initSportsQuest(ctx) {
   window.__ctx = ctx;
   const STORAGE_KEY = 'sq-passport-v1';
+
+  // 徹底確保手機端與所有裝置上，3D 畫布與頂部動態島永不被 inert 鎖定
+  const unlockInert = () => {
+    ['app', 'ui-top', 'ui-brand', 'ui-card', 'ui-side', 'ui-log', 'ui-hud', 'ui-tour'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.inert = false;
+    });
+  };
+  unlockInert();
+  setTimeout(unlockInert, 300);
+  setTimeout(unlockInert, 1000);
   let state = {
     name: '',
     role: '低年級小選手',
@@ -13557,6 +13568,14 @@ function initSportsQuest(ctx) {
     if (!regDlg.open) regDlg.showModal();
   });
 
+  document.querySelectorAll('[data-sq-close="sq-reg-dialog"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.registered = true;
+      saveState();
+      unlockInert();
+    });
+  });
+
   // 重新設定／清除闖關資料（全部重新集章）
   function resetQuestData() {
     const ok = window.confirm('確定要重新開始闖關嗎？\n\n這將會清除您目前所有建築物的過關紀錄，讓您可以重新挑戰地標！\n（運動員姓名與身分設定會保留）');
@@ -13593,6 +13612,7 @@ function initSportsQuest(ctx) {
     saveState();
     renderHud();
     if (regDlg.open) regDlg.close();
+    unlockInert();
     // 依據新身分立即刷新當前建築關卡難度
     if (ctx.selection && ctx.selection.type === 'item') {
       mountBuildingChallenge(ctx.selection.id);
@@ -14771,13 +14791,17 @@ function initSportsQuest(ctx) {
 
   renderHud();
 
-  // 首次進入島嶼時自動彈出「運動員註冊卡」
+  // 手機版：初始直接預設收合為精巧動態島膠囊，釋放完整 3D 賽場視野！
+  if (window.innerWidth <= 768) {
+    collapseBrand();
+  }
+
+  // 首次進入時不彈出阻擋畫面的對話框，改以非同步友善 Toast 歡迎，釋放 3D 畫布完全自由操作
   if (!state.registered) {
     setTimeout(() => {
-      const origTrav = document.getElementById('ui-trav');
-      if (origTrav) origTrav.hidden = true;
-      if (!regDlg.open) regDlg.showModal();
-    }, 900);
+      unlockInert();
+      showToast('🏃 歡迎登上高峰 22 週年 3D 動態島！點擊上方「選手設定」可登錄姓名。');
+    }, 800);
   }
 }
 

@@ -1851,12 +1851,37 @@ const customHtml = `
 
 rep('<script type="importmap">', customHtml + '\n<script type="importmap">');
 
+// 徹底解除模板舊旅人彈窗對手機端 3D 畫布與頂部動態島的 inert 鎖定
+rep(
+  'if (TRV && !lsGet(UI_TRAV_KEY)) openTrav(true); else startTour();',
+  '/* GFPS Sports Island: no legacy traveler modal */'
+);
+rep(
+  'function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); first.focus(); }',
+  'function openModal(m, first) { m.hidden = false; bg().forEach(e => e.inert = true); if (first && first.focus) first.focus(); }'
+);
+rep(
+  'function closeModal(m, back) { m.hidden = true; bg().forEach(e => e.inert = false); if (back) back.focus(); }',
+  'function closeModal(m, back) { m.hidden = true; bg().forEach(e => e.inert = false); if (back && back.focus) back.focus(); }'
+);
+
 // ---- 7. 注入榮譽證書互動邏輯、3D 勝利煙火粒子系統與金牌證書繪製引擎 ----
 const customLogic = `
 // ================= 地標挑戰護照（Quest Passport）＆ 3D 勝利煙火系統 =================
 function initSportsQuest(ctx) {
   window.__ctx = ctx;
   const STORAGE_KEY = 'sq-passport-v1';
+
+  // 徹底確保手機端與所有裝置上，3D 畫布與頂部動態島永不被 inert 鎖定
+  const unlockInert = () => {
+    ['app', 'ui-top', 'ui-brand', 'ui-card', 'ui-side', 'ui-log', 'ui-hud', 'ui-tour'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.inert = false;
+    });
+  };
+  unlockInert();
+  setTimeout(unlockInert, 300);
+  setTimeout(unlockInert, 1000);
   let state = {
     name: '',
     role: '低年級小選手',
@@ -1978,6 +2003,14 @@ function initSportsQuest(ctx) {
     if (!regDlg.open) regDlg.showModal();
   });
 
+  document.querySelectorAll('[data-sq-close="sq-reg-dialog"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.registered = true;
+      saveState();
+      unlockInert();
+    });
+  });
+
   // 重新設定／清除闖關資料（全部重新集章）
   function resetQuestData() {
     const ok = window.confirm('確定要重新開始闖關嗎？\\n\\n這將會清除您目前所有建築物的過關紀錄，讓您可以重新挑戰地標！\\n（運動員姓名與身分設定會保留）');
@@ -2014,6 +2047,7 @@ function initSportsQuest(ctx) {
     saveState();
     renderHud();
     if (regDlg.open) regDlg.close();
+    unlockInert();
     // 依據新身分立即刷新當前建築關卡難度
     if (ctx.selection && ctx.selection.type === 'item') {
       mountBuildingChallenge(ctx.selection.id);
@@ -3192,13 +3226,17 @@ function initSportsQuest(ctx) {
 
   renderHud();
 
-  // 首次進入島嶼時自動彈出「運動員註冊卡」
+  // 手機版：初始直接預設收合為精巧動態島膠囊，釋放完整 3D 賽場視野！
+  if (window.innerWidth <= 768) {
+    collapseBrand();
+  }
+
+  // 首次進入時不彈出阻擋畫面的對話框，改以非同步友善 Toast 歡迎，釋放 3D 畫布完全自由操作
   if (!state.registered) {
     setTimeout(() => {
-      const origTrav = document.getElementById('ui-trav');
-      if (origTrav) origTrav.hidden = true;
-      if (!regDlg.open) regDlg.showModal();
-    }, 900);
+      unlockInert();
+      showToast('🏃 歡迎登上高峰 22 週年 3D 動態島！點擊上方「選手設定」可登錄姓名。');
+    }, 800);
   }
 }
 `;
