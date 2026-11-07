@@ -481,6 +481,60 @@ const customStyles = `
 .ui-isl-tags summary { font-size: 13.5px; font-weight: 800; color: #0284c7; }
 .ui-help-note { line-height: 1.6; font-size: 13px; color: #334155; }
 
+/* 賽場重點 (Facts Highlights) 文字方塊全要素居中排版 */
+.ui-tiles {
+  display: grid !important;
+  grid-template-columns: repeat(var(--n, 3), 1fr) !important;
+  gap: 8px !important;
+}
+.ui-tile {
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 12px 6px 10px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ui-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+.ui-tile-pre,
+.ui-tile-suf {
+  font-size: 11.5px !important;
+  line-height: 1.35 !important;
+  color: #64748b !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: block !important;
+  word-break: break-word !important;
+}
+.ui-tile-num {
+  font-family: inherit !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  font-size: 28px !important;
+  line-height: 1.1 !important;
+  color: #c2410c !important;
+  letter-spacing: -0.5px !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: block !important;
+  margin: 3px 0 !important;
+}
+.ui-tile-num.is-long {
+  font-size: 20px !important;
+}
+.ui-tile-num.is-xlong {
+  font-size: 14px !important;
+}
+
 /* Modern Web Guidance: Prevent scroll chaining on modal dialogs and their backdrops */
 dialog:modal {
   overscroll-behavior: contain;
