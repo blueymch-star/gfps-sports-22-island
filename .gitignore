@@ -16,3 +16,7 @@ Thumbs.db
 .vercel
 tmp/
 temp_*
+gfps_*.html
+siteserver_summary.txt
+theme_dump.json
+build/*.py
