@@ -13960,6 +13960,7 @@ function initSportsQuest(ctx) {
     const it = ref.item;
     const isl = ref.island.data;
     const ch = it.challenge;
+    const powerName = ch.power || '峰湧體能力';
     const isCleared = !!state.clearedItems[it.id];
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps[q.id]).length;
