@@ -1122,7 +1122,7 @@ const DATA = {
         },
         {
           "id": "s04i3",
-          "model": "flagpole",
+          "model": "climbing_course",
           "name": "六年級極限越野與拔河爭霸台",
           "desc": "六年級畢業生【高峰越野障礙賽】及全校雨天備案【班際拔河賽】專屬場地，考驗最強韌性與班級榮譽心！",
           "facts": [
@@ -1281,7 +1281,7 @@ const DATA = {
         },
         {
           "id": "s05i3",
-          "model": "stall",
+          "model": "shooting_range",
           "name": "三年級神箭闖江湖光子射擊靶場",
           "desc": "三年級趣味競賽【神箭闖江湖】比賽專區！小健將手持神箭瞄準光子靶心投射，專注力與敏捷身手大考驗！",
           "facts": [
