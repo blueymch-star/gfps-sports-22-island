@@ -65,13 +65,13 @@ function kitMPurpleTrack(p, o) {
   // 清爽青草地基底
   p.rbox(0, 0, 0, 1, G, 1, '#86efac');
   // 立體紫色橡膠跑道底層（加厚立體感 0.012）
-  p.box(0, G, cz, hl * 2, 0.012, R * 2, S.purpleD);
-  for (const s of [-1, 1]) p.cyl(s * hl, G, cz, R, 0.012, S.purpleD);
+  p.box(0, G, cz, hl * 2, 0.012, R * 2, '#991b1b');
+  for (const s of [-1, 1]) p.cyl(s * hl, G, cz, R, 0.012, '#991b1b');
   // 六道紫色跑道面與交替色階
   const laneW = (R - ri) / 6; // 6 個跑道
   for (let lane = 5; lane >= 0; lane--) {
     const rOuter = ri + (lane + 1) * laneW;
-    const col = lane % 2 === 0 ? S.purple1 : S.purple2;
+    const col = lane % 2 === 0 ? '#dc2626' : '#ef4444';
     const h = 0.013 + (5 - lane) * 0.0003;
     p.box(0, G, cz, hl * 2, h, rOuter * 2, col);
     for (const s of [-1, 1]) p.cyl(s * hl, G, cz, rOuter, h, col);
@@ -310,4 +310,57 @@ function kitMCalendarKiosk(p, o) {
   p.box(0, G + 0.38, -0.02, 0.34, 0.04, 0.16, S.gold);
   kitMini(p, 0, G + 0.02, 0.18, S.seaBlue, { hat: 'cap' });
   p.spill(0, 0, 0.6, 0.6, G + 0.02, 0.8);
+}
+
+// 12. clocktower：星際電子計時鐘樓 (Electronic Timing Clock Tower)
+function kitMClocktower(p, o) {
+  const G = kitG, S = sqC, C = kitC;
+  // 1. 底座：三層高科技階梯石質基座
+  p.rbox(0, 0, 0, 0.88, G, 0.88, '#334155');
+  p.rbox(0, G, 0, 0.58, 0.04, 0.58, '#475569');
+  p.box(0, G + 0.04, 0, 0.46, 0.03, 0.46, '#64748b');
+
+  // 2. 鐘樓主塔身：方形立體高塔
+  const towerH = 0.50;
+  const towerY = G + 0.07;
+  p.box(0, towerY, 0, 0.36, towerH, 0.36, '#1e293b');
+  // 四角包邊全息立柱（青藍發光飾條）
+  for (const sx of [-1, 1]) {
+    for (const sz of [-1, 1]) {
+      p.box(sx * 0.175, towerY, sz * 0.175, 0.035, towerH, 0.035, '#00f2fe');
+    }
+  }
+
+  // 3. 正面大型 LED 賽況計時數位看板（黑底發光螢幕）
+  p.box(0, towerY + 0.08, 0.185, 0.26, 0.13, 0.015, '#0f172a');
+  p.box(0, towerY + 0.08, 0.194, 0.22, 0.09, 0.005, '#22c55e'); // 綠色發光數字看板
+  // 正面計時起跑/衝刺微型指示燈
+  p.box(-0.08, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#ef4444');
+  p.box(0, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#f59e0b');
+  p.box(0.08, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#22c55e');
+
+  // 4. 上層鐘樓四面全息時鐘機芯（圓形鐘盤）
+  const clockY = towerY + towerH;
+  p.box(0, clockY, 0, 0.42, 0.22, 0.42, '#0f172a');
+  // 四面圓形大鐘面
+  for (const rot of [0, Math.PI / 2, Math.PI, -Math.PI / 2]) {
+    const rx = Math.sin(rot) * 0.215;
+    const rz = Math.cos(rot) * 0.215;
+    p.cyl(rx, clockY + 0.11, rz, 0.088, 0.012, '#f59e0b', rot);
+    p.cyl(rx, clockY + 0.11, rz, 0.076, 0.015, '#ffffff', rot);
+    p.box(rx, clockY + 0.11, rz, 0.012, 0.048, 0.018, '#0f172a');
+    p.box(rx, clockY + 0.11, rz, 0.016, 0.016, 0.022, '#ef4444');
+  }
+
+  // 5. 屋頂塔尖：歐式全息尖塔與金色避雷信號針
+  const roofY = clockY + 0.22;
+  p.cone(0, roofY, 0, 0.28, 0.24, '#0284c7');
+  p.box(0, roofY + 0.24, 0, 0.035, 0.08, 0.035, '#facc15');
+  p.cyl(0, roofY + 0.32, 0, 0.008, 0.16, '#ffffff');
+
+  // 6. 裁判與小選手在地標旁檢視成績
+  kitMini(p, 0.26, G + 0.04, 0.22, '#0284c7', { hat: 'cap' });
+  kitMini(p, -0.24, G + 0.04, 0.22, '#ef4444');
+
+  p.spill(0, 0, 0.88, 0.88, G + 0.04, 0.88);
 }

@@ -69,7 +69,7 @@ const knownModels = [
   'podium', 'lectern', 'parade', 'kiln', 'archery', 'teeball', 'mullet', 'smartclass', 'tennis',
   // 本專案新增客製 3D 模型
   'torch_altar', 'fan_ribbon', 'bulletin', 'baton_relay', 'stand', 'hula_barrel', 'mascot_corner',
-  'podium_award', 'trophy_cup', 'calendar_kiosk'
+  'podium_award', 'trophy_cup', 'calendar_kiosk', 'clocktower'
 ];
 
 const islandIds = new Set(DATA.islands.map(d => d.id));
@@ -104,7 +104,7 @@ rep('function kitModel(name) {', modelsCode + '\nfunction kitModel(name) {');
 rep('track: kitMTrack,', 'track: kitMPurpleTrack,');
 rep(
   'smartclass: kitMSmartclass, tennis: kitMTennis',
-  'smartclass: kitMSmartclass, tennis: kitMTennis,\n    torch_altar: kitMTorchAltar, fan_ribbon: kitMFanRibbon, bulletin: kitMBulletin, baton_relay: kitMBatonRelay, stand: kitMStand, hula_barrel: kitMHulaBarrel, mascot_corner: kitMMascotCorner, podium_award: kitMPodiumAward, trophy_cup: kitMTrophyCup, calendar_kiosk: kitMCalendarKiosk'
+  'smartclass: kitMSmartclass, tennis: kitMTennis,\n    torch_altar: kitMTorchAltar, fan_ribbon: kitMFanRibbon, bulletin: kitMBulletin, baton_relay: kitMBatonRelay, stand: kitMStand, hula_barrel: kitMHulaBarrel, mascot_corner: kitMMascotCorner, podium_award: kitMPodiumAward, trophy_cup: kitMTrophyCup, calendar_kiosk: kitMCalendarKiosk, clocktower: kitMClocktower'
 );
 
 // ---- 4. 更新標題、Meta 與預設導覽順序 ----
@@ -293,9 +293,21 @@ rep("tr('島與島的故事是讓地圖生動的故事設定；實線＝課程�
 
 // 依年級看卡片 (gradeCard)
 rep("tr(g + '年級一覽', 'Grade ' + num + ' at a glance')", "tr(g + '年級賽程與闖關一覽', 'Grade ' + num + ' Sports Day schedule')");
-rep("<thead><tr><th scope=\"col\">${tr('課名', 'Course')}</th><th scope=\"col\">${tr('節數', 'Periods')}</th><th scope=\"col\">${tr('評量摘要', 'Assessment')}</th></tr></thead>", "<thead><tr><th scope=\"col\">${tr('賽場島嶼', 'Arena Isle')}</th><th scope=\"col\">${tr('登場時段', 'Schedule')}</th><th scope=\"col\">${tr('五力闖關任務', 'Quest Task')}</th></tr></thead>");
+rep("<thead><tr><th scope=\"col\">${tr('課名', 'Course')}</th><th scope=\"col\">${tr('節數', 'Periods')}</th><th scope=\"col\">${tr('評量摘要', 'Assessment')}</th></tr></thead>", "<thead><tr><th scope=\"col\">${tr('賽場島嶼', 'Arena Isle')}</th><th scope=\"col\">${tr('登場時段', 'Schedule')}</th><th scope=\"col\">${tr('地標挑戰任務', 'Quest Task')}</th></tr></thead>");
 rep("<span>${tr('年度活動', 'Yearly events')}</span>", "<span>${tr('典禮與接力賽區', 'Ceremony & Relay')}</span>");
 rep("tr('每週節數怎麼排', 'HOW THE WEEK IS SPLIT')", "tr('本年段參賽與表演時程重點', 'SCHEDULE HIGHLIGHTS')");
+rep(
+  "const rows = cs.map(i => { const d = i.data, a = L(d, 'assess'); return `<tr><th scope=\"row\">${isl(d)}</th><td>${uiEsc(uiPeriodsShort(d))}</td><td>${a ? uiEsc(uiFirstSentence(a, 40)) : '<span class=\"ui-muted\">—</span>'}</td></tr>`; }).join('');",
+  "const gsList = DATA.gradeSchedule && DATA.gradeSchedule[num]; const rows = (gsList ? gsList.map(entry => { const i = ctx.islandById.get(entry.island); const d = i ? i.data : { num: '', name: entry.island, color: '#3b82f6' }; return `<tr><th scope=\"row\">${isl(d)}</th><td style=\"font-size:12px;line-height:1.45;color:var(--ink-light);\">⏱️ ${uiEsc(entry.schedule)}</td><td style=\"font-size:12px;line-height:1.45;\">🎯 ${uiEsc(entry.task)}</td></tr>`; }) : cs.map(i => { const d = i.data, a = L(d, 'assess'); return `<tr><th scope=\"row\">${isl(d)}</th><td>${uiEsc(uiPeriodsShort(d))}</td><td>${a ? uiEsc(uiFirstSentence(a, 40)) : '<span class=\"ui-muted\">—</span>'}</td></tr>`; })).join('');"
+);
+rep(
+  "const table = cs.length ?",
+  "const table = (gsList || cs.length) ?"
+);
+rep(
+  "const ev = es.length ? `<div class=\"ui-gt-ev\"><span>${tr('典禮與接力賽區', 'Ceremony & Relay')}</span>${es.map(i => isl(i.data)).join('')}</div>` : '';",
+  "const ev = '';"
+);
 
 // 島嶼卡片、細項地標卡、動線卡、人物卡 (islandCard, itemCard, flowCard, walkerCard, unitsBlock)
 rep("function uiKindName(k) { return k === 'event' ? tr('年度活動', 'YEARLY EVENT') : tr('特色課程', 'SIGNATURE COURSE'); }", "function uiKindName(k) { return k === 'event' ? tr('校慶盛典與接力島', 'CEREMONY & RELAY ISLE') : tr('校慶競賽與展演島', 'COMPETITION & SHOW ISLE'); }");

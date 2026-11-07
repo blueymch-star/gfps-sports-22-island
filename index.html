@@ -3401,7 +3401,9 @@ const DATA = {
           "sem": "全",
           "desc": "全體表演隊伍迅速整齊退場，田徑裁判執法團隊就位，準備各項競速爭霸！"
         }
-      ]
+      ],
+      "periods": "08:00~09:00",
+      "assess": "【友善品格試煉】大會宣誓、聖火充能與全校性績優義工感謝程序"
     },
     {
       "id": "s02",
@@ -3573,7 +3575,9 @@ const DATA = {
           "sem": "全",
           "desc": "展示 22 週年校慶專刊與學校簡介，呈現都市森林、玻璃美育與雙語教學成果。"
         }
-      ]
+      ],
+      "periods": "08:30~09:35 / 13:10~14:00",
+      "assess": "【玻璃美感試煉】合唱天籟共鳴、各年段大會舞展演與玻璃美術館特展"
     },
     {
       "id": "s03",
@@ -3664,23 +3668,23 @@ const DATA = {
         },
         {
           "id": "s03i3",
-          "model": "tent",
-          "name": "光子計時終點衝刺線",
-          "desc": "裁判組精準攝影判讀終點名次與成績，見證個人賽金銀銅牌誕生與大隊接力衝線榮耀時刻。",
+          "model": "clocktower",
+          "name": "星際電子計時鐘樓",
+          "desc": "矗立於終點的四面電子計時鐘樓！四面全息電子時鐘與巨型 LED 跑道計時看板，精準計時發令與終點壓線判定，見證個人賽與大隊接力紀錄誕生！",
           "facts": [
-            "終點裁判精密計時",
-            "個人前三名頒發獎牌獎品",
-            "大隊接力各學年取優勝一班"
+            "四面全息電子時鐘",
+            "巨型 LED 跑道計時看板",
+            "終點精密計時與壓線判讀"
           ],
           "when": "10:10–12:05 徑賽終點判讀",
           "phase": 2,
           "challenge": {
             "mode": "tap_charge",
             "targetCount": 4,
-            "title": "【終點衝線挑戰】極速壓線蓄力挑戰",
-            "taskDesc": "連點 4 下「🏁 飛躍終點壓線」刷新個人與班級最佳 PB！",
-            "actionBtn": "🏁 飛躍終點壓線",
-            "actionDone": "🏁 完美衝過終點線！精準紀錄載入大會史冊！",
+            "title": "【計時鐘樓挑戰】極速壓線精準計時挑戰",
+            "taskDesc": "連點 4 下「⏱️ 終點飛躍壓線打卡」精準記錄完賽成績！",
+            "actionBtn": "⏱️ 終點飛躍壓線打卡",
+            "actionDone": "⏱️ 終點壓線成績鎖定！精準紀錄載入大會史冊！",
             "question": "個人賽決賽取前六名優勝，其中第幾名可同時獲得獎牌、獎狀與獎品？",
             "options": [
               "前三名頒發獎牌、獎狀與獎品，四至六名頒發獎狀",
@@ -3741,7 +3745,9 @@ const DATA = {
           "sem": "高",
           "desc": "五、六年級壓軸大隊接力巔峰決戰！各班飛毛腿全力衝刺壓線，爭奪學年總錦標金盃！"
         }
-      ]
+      ],
+      "periods": "09:50~12:05",
+      "assess": "【峰湧體能試煉】60m/100m 個人決賽衝刺與各學年大隊接力搶道"
     },
     {
       "id": "s04",
@@ -3896,7 +3902,9 @@ const DATA = {
           "sem": "全",
           "desc": "如遇雨天於高峰館舉行班際拔河賽，每班男女各 10 名，採三局兩勝制爭奪冠軍！"
         }
-      ]
+      ],
+      "periods": "11:10~11:40",
+      "assess": "【團隊競技試煉】四年級小巨人奔跑、五六年級越野障礙與班際拔河"
     },
     {
       "id": "s05",
@@ -4045,7 +4053,9 @@ const DATA = {
           "sem": "中",
           "desc": "三年級小選手瞄準目標射擊神箭，考驗專注力、手眼協調與命中精準度！"
         }
-      ]
+      ],
+      "periods": "10:40~11:10",
+      "assess": "【童趣冒險試煉】低年級動物滾大球翻滾與三年級神箭闖江湖射擊"
     },
     {
       "id": "s06",
@@ -4208,7 +4218,9 @@ const DATA = {
           "sem": "全",
           "desc": "落實 SDGs 綠色永續校園，全校親師生場地復原、椅子歸位、垃圾不留地！"
         }
-      ]
+      ],
+      "periods": "全天候 / 12:05~12:10",
+      "assess": "【全球永續試煉】口腔健促宣導、百變機器人展示與 12:05 場地復原"
     },
     {
       "id": "s07",
@@ -4368,7 +4380,9 @@ const DATA = {
           "sem": "全",
           "desc": "探索集滿星核挑戰後，於主星港與榮耀港上空引燃 3D 勝利煙火並頒發金牌證書！"
         }
-      ]
+      ],
+      "periods": "10:10~12:05 / 13:20",
+      "assess": "【榮耀登頂試煉】學年總錦標金盃爭奪、個人獎牌頒發與 3D 勝利煙火"
     }
   ],
   "flows": [
@@ -5987,6 +6001,109 @@ const DATA = {
       "desc": "如遇天候不佳，於高峰館進行各學年班際拔河錦標賽。"
     }
   ],
+  "gradeSchedule": {
+    "7": [
+      {
+        "island": "s01",
+        "schedule": "08:00~09:00 開幕進場・宣誓致詞義工表揚",
+        "task": "【聖火台關卡】雙二齊飛星核充能挑戰"
+      },
+      {
+        "island": "s02",
+        "schedule": "08:30 合唱開幕｜09:10 低年級大會舞「神氣小娃」｜13:10 玻璃展",
+        "task": "【琉光舞台關卡】點亮兒童玻璃美術館美感力"
+      },
+      {
+        "island": "s03",
+        "schedule": "09:50 一年級 60m 團體跑｜10:00 二年級 60m 團體跑｜11:40 二年級 40m 折返大隊接力",
+        "task": "【起跑反應挑戰】光速起跑測驗｜【接力挑戰】黃金接力棒默契交接"
+      },
+      {
+        "island": "s05",
+        "schedule": "10:40 一年級動物滾大球｜10:50 二年級動物滾大球接力",
+        "task": "【滾大球挑戰】合力推球翻滾｜【換手挑戰】敏捷推球接力"
+      },
+      {
+        "island": "s06",
+        "schedule": "全天候 口腔體位健促宣導｜12:05~12:10 全校環境整理",
+        "task": "【健康宣導關卡】口腔體位充能｜【無痕校園】場地復原淨化挑戰"
+      },
+      {
+        "island": "s07",
+        "schedule": "12:00 各學年總錦標頒獎｜13:20 引燃 3D 勝利煙火",
+        "task": "【榮譽金盃關卡】學年總錦標金盃爭霸與全景煙火"
+      }
+    ],
+    "8": [
+      {
+        "island": "s01",
+        "schedule": "08:00~09:00 運動員集結進場・開幕典禮・義工表揚",
+        "task": "【司令台關卡】升旗敬禮蓄力｜【躍遷門】星際進場秩序"
+      },
+      {
+        "island": "s02",
+        "schedule": "08:30 合唱天籟｜09:20 中年級大會舞「扇耀高峰」｜13:10 師生美展",
+        "task": "【音律共振關卡】天籟合唱展演排序｜【校慶專刊】觀測出刊"
+      },
+      {
+        "island": "s03",
+        "schedule": "10:10~10:40 三四年級 60m/100m 個人決賽｜11:50 三四年級 16 棒半圈大隊接力",
+        "task": "【終點鐘樓挑戰】極速壓線衝刺｜【接力挑戰】第三棒搶道超車"
+      },
+      {
+        "island": "s04",
+        "schedule": "11:10~11:20 四年級趣味競賽：小巨人奔跑｜雨天備案：班際拔河賽",
+        "task": "【小巨人挑戰】班級步調協同流程｜【爭霸台】拔河蓄力挑戰"
+      },
+      {
+        "island": "s05",
+        "schedule": "11:00~11:10 三年級趣味競賽：神箭闖江湖",
+        "task": "【神箭射擊挑戰】手眼協調凝神瞄準光子靶心投射"
+      },
+      {
+        "island": "s06",
+        "schedule": "全天候 百變機器人展・特色紀念服飾｜12:05 環境整理",
+        "task": "【科技紀念關卡】機器人成果展示｜【無痕復原】垃圾不留地"
+      },
+      {
+        "island": "s07",
+        "schedule": "10:10~12:00 個人決賽即時頒獎｜12:00 學年總錦標頒發",
+        "task": "【星光頒獎台】前三名金銀銅牌頒發｜【公報看板】賽況即時更新"
+      }
+    ],
+    "9": [
+      {
+        "island": "s01",
+        "schedule": "08:00~09:00 運動員進場・升會旗宣誓・校長致詞義工表揚",
+        "task": "【品格力印章】守護高峰感謝程序｜【聖火晶塔】星核滿載引燃"
+      },
+      {
+        "island": "s02",
+        "schedule": "08:30 合唱開幕｜09:30 高年級大會舞「旗開得勝」｜13:10 玻璃展",
+        "task": "【美感力印章】點亮兒童玻璃美術館｜【大會舞】旗開得勝共振"
+      },
+      {
+        "island": "s03",
+        "schedule": "10:10~10:40 五六年級 60m/100m 個人決賽｜12:00 五六年級 16 棒大隊接力巔峰決戰",
+        "task": "【起跑反應挑戰】量子發令起跑｜【終點鐘樓】飛躍壓線刷新 PB"
+      },
+      {
+        "island": "s04",
+        "schedule": "11:20 五年級越野障礙賽｜11:30 六年級越野障礙賽｜雨天備案：班際拔河賽",
+        "task": "【越野穿梭挑戰】敏捷跨越重力障礙｜【極限爭霸】頂峰衝刺拔河"
+      },
+      {
+        "island": "s06",
+        "schedule": "全天候 未來科技教室展示｜健促口腔體位｜12:05 全校場地復原",
+        "task": "【永續力印章】實踐健康生活充能｜【無痕校園】場地清潔完璧歸還"
+      },
+      {
+        "island": "s07",
+        "schedule": "10:10~12:00 個人決賽前六名頒獎｜12:00 高年級學年總錦標金盃",
+        "task": "【榮耀頒獎台】頒發獎牌獎狀獎品｜【超新星煙火】引燃勝利煙火"
+      }
+    ]
+  },
   "evidence": {
     "plan": {
       "name": "大會程序表正式依據（實線橋）",
@@ -8974,13 +9091,13 @@ function kitMPurpleTrack(p, o) {
   // 清爽青草地基底
   p.rbox(0, 0, 0, 1, G, 1, '#86efac');
   // 立體紫色橡膠跑道底層（加厚立體感 0.012）
-  p.box(0, G, cz, hl * 2, 0.012, R * 2, S.purpleD);
-  for (const s of [-1, 1]) p.cyl(s * hl, G, cz, R, 0.012, S.purpleD);
+  p.box(0, G, cz, hl * 2, 0.012, R * 2, '#991b1b');
+  for (const s of [-1, 1]) p.cyl(s * hl, G, cz, R, 0.012, '#991b1b');
   // 六道紫色跑道面與交替色階
   const laneW = (R - ri) / 6; // 6 個跑道
   for (let lane = 5; lane >= 0; lane--) {
     const rOuter = ri + (lane + 1) * laneW;
-    const col = lane % 2 === 0 ? S.purple1 : S.purple2;
+    const col = lane % 2 === 0 ? '#dc2626' : '#ef4444';
     const h = 0.013 + (5 - lane) * 0.0003;
     p.box(0, G, cz, hl * 2, h, rOuter * 2, col);
     for (const s of [-1, 1]) p.cyl(s * hl, G, cz, rOuter, h, col);
@@ -9221,6 +9338,59 @@ function kitMCalendarKiosk(p, o) {
   p.spill(0, 0, 0.6, 0.6, G + 0.02, 0.8);
 }
 
+// 12. clocktower：星際電子計時鐘樓 (Electronic Timing Clock Tower)
+function kitMClocktower(p, o) {
+  const G = kitG, S = sqC, C = kitC;
+  // 1. 底座：三層高科技階梯石質基座
+  p.rbox(0, 0, 0, 0.88, G, 0.88, '#334155');
+  p.rbox(0, G, 0, 0.58, 0.04, 0.58, '#475569');
+  p.box(0, G + 0.04, 0, 0.46, 0.03, 0.46, '#64748b');
+
+  // 2. 鐘樓主塔身：方形立體高塔
+  const towerH = 0.50;
+  const towerY = G + 0.07;
+  p.box(0, towerY, 0, 0.36, towerH, 0.36, '#1e293b');
+  // 四角包邊全息立柱（青藍發光飾條）
+  for (const sx of [-1, 1]) {
+    for (const sz of [-1, 1]) {
+      p.box(sx * 0.175, towerY, sz * 0.175, 0.035, towerH, 0.035, '#00f2fe');
+    }
+  }
+
+  // 3. 正面大型 LED 賽況計時數位看板（黑底發光螢幕）
+  p.box(0, towerY + 0.08, 0.185, 0.26, 0.13, 0.015, '#0f172a');
+  p.box(0, towerY + 0.08, 0.194, 0.22, 0.09, 0.005, '#22c55e'); // 綠色發光數字看板
+  // 正面計時起跑/衝刺微型指示燈
+  p.box(-0.08, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#ef4444');
+  p.box(0, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#f59e0b');
+  p.box(0.08, towerY + 0.16, 0.186, 0.02, 0.02, 0.01, '#22c55e');
+
+  // 4. 上層鐘樓四面全息時鐘機芯（圓形鐘盤）
+  const clockY = towerY + towerH;
+  p.box(0, clockY, 0, 0.42, 0.22, 0.42, '#0f172a');
+  // 四面圓形大鐘面
+  for (const rot of [0, Math.PI / 2, Math.PI, -Math.PI / 2]) {
+    const rx = Math.sin(rot) * 0.215;
+    const rz = Math.cos(rot) * 0.215;
+    p.cyl(rx, clockY + 0.11, rz, 0.088, 0.012, '#f59e0b', rot);
+    p.cyl(rx, clockY + 0.11, rz, 0.076, 0.015, '#ffffff', rot);
+    p.box(rx, clockY + 0.11, rz, 0.012, 0.048, 0.018, '#0f172a');
+    p.box(rx, clockY + 0.11, rz, 0.016, 0.016, 0.022, '#ef4444');
+  }
+
+  // 5. 屋頂塔尖：歐式全息尖塔與金色避雷信號針
+  const roofY = clockY + 0.22;
+  p.cone(0, roofY, 0, 0.28, 0.24, '#0284c7');
+  p.box(0, roofY + 0.24, 0, 0.035, 0.08, 0.035, '#facc15');
+  p.cyl(0, roofY + 0.32, 0, 0.008, 0.16, '#ffffff');
+
+  // 6. 裁判與小選手在地標旁檢視成績
+  kitMini(p, 0.26, G + 0.04, 0.22, '#0284c7', { hat: 'cap' });
+  kitMini(p, -0.24, G + 0.04, 0.22, '#ef4444');
+
+  p.spill(0, 0, 0.88, 0.88, G + 0.04, 0.88);
+}
+
 function kitModel(name) {
   return ({
     academy: kitMAcademy, stall: kitMStall, busstop: kitMBusstop, pavilion: kitMPavilion, library: kitMLibrary, bigbook: kitMBigbook,
@@ -9230,7 +9400,7 @@ function kitModel(name) {
     newsroom: kitMNewsroom, windvane: kitMWindvane, flagpole: kitMFlagpole, podium: kitMPodium,
     lectern: kitMLectern, parade: kitMParade,
     kiln: kitMKiln, archery: kitMArchery, teeball: kitMTeeball, mullet: kitMMullet, smartclass: kitMSmartclass, tennis: kitMTennis,
-    torch_altar: kitMTorchAltar, fan_ribbon: kitMFanRibbon, bulletin: kitMBulletin, baton_relay: kitMBatonRelay, stand: kitMStand, hula_barrel: kitMHulaBarrel, mascot_corner: kitMMascotCorner, podium_award: kitMPodiumAward, trophy_cup: kitMTrophyCup, calendar_kiosk: kitMCalendarKiosk
+    torch_altar: kitMTorchAltar, fan_ribbon: kitMFanRibbon, bulletin: kitMBulletin, baton_relay: kitMBatonRelay, stand: kitMStand, hula_barrel: kitMHulaBarrel, mascot_corner: kitMMascotCorner, podium_award: kitMPodiumAward, trophy_cup: kitMTrophyCup, calendar_kiosk: kitMCalendarKiosk, clocktower: kitMClocktower
   })[name] || kitMHouse;
 }
 
@@ -12072,9 +12242,9 @@ function initUI(ctx) {
     const legend = gc ? `<div class="ui-glegend" aria-label="${uiEsc(tr('地圖年級色', 'Grade colors on the map'))}">${['7', '8', '9', 'all'].filter(k => gc[k]).map(k => `<span class="${k === num ? 'is-cur' : ''}"><i style="background:${uiEsc(gc[k])}"></i>${k === 'all' ? tr('全校', 'All') : tr(gZh(k) + '年級', 'G' + k)}</span>`).join('')}</div>` : '';
     const story = gs ? `<div class="ui-gstory"><b>${uiEsc(L(gs, 'title') || '')}</b><p>${uiEsc(LANG === 'en' ? gs.en || gs.zh : gs.zh)}</p></div>` : '';
     const isl = d => `<button class="ui-gt-isl" type="button" data-sel="island:${d.id}"><span class="ui-dot" style="--c:${d.color}"></span>${d.num} ${uiEsc(L(d, 'name'))}</button>`;
-    const rows = cs.map(i => { const d = i.data, a = L(d, 'assess'); return `<tr><th scope="row">${isl(d)}</th><td>${uiEsc(uiPeriodsShort(d))}</td><td>${a ? uiEsc(uiFirstSentence(a, 40)) : '<span class="ui-muted">—</span>'}</td></tr>`; }).join('');
-    const table = cs.length ? `<table class="ui-gtable"><caption class="ui-sr">${uiEsc(ttl)}</caption><thead><tr><th scope="col">${tr('賽場島嶼', 'Arena Isle')}</th><th scope="col">${tr('登場時段', 'Schedule')}</th><th scope="col">${tr('地標挑戰任務', 'Quest Task')}</th></tr></thead><tbody>${rows}</tbody></table>` : '';
-    const ev = es.length ? `<div class="ui-gt-ev"><span>${tr('典禮與接力賽區', 'Ceremony & Relay')}</span>${es.map(i => isl(i.data)).join('')}</div>` : '';
+    const gsList = DATA.gradeSchedule && DATA.gradeSchedule[num]; const rows = (gsList ? gsList.map(entry => { const i = ctx.islandById.get(entry.island); const d = i ? i.data : { num: '', name: entry.island, color: '#3b82f6' }; return `<tr><th scope="row">${isl(d)}</th><td style="font-size:12px;line-height:1.45;color:var(--ink-light);">⏱️ ${uiEsc(entry.schedule)}</td><td style="font-size:12px;line-height:1.45;">🎯 ${uiEsc(entry.task)}</td></tr>`; }) : cs.map(i => { const d = i.data, a = L(d, 'assess'); return `<tr><th scope="row">${isl(d)}</th><td>${uiEsc(uiPeriodsShort(d))}</td><td>${a ? uiEsc(uiFirstSentence(a, 40)) : '<span class="ui-muted">—</span>'}</td></tr>`; })).join('');
+    const table = (gsList || cs.length) ? `<table class="ui-gtable"><caption class="ui-sr">${uiEsc(ttl)}</caption><thead><tr><th scope="col">${tr('賽場島嶼', 'Arena Isle')}</th><th scope="col">${tr('登場時段', 'Schedule')}</th><th scope="col">${tr('地標挑戰任務', 'Quest Task')}</th></tr></thead><tbody>${rows}</tbody></table>` : '';
+    const ev = '';
     const note = gg ? `<details class="ui-fold ui-gnote"><summary><span class="ui-eyebrow">${tr('本年段參賽與表演時程重點', 'SCHEDULE HIGHLIGHTS')}</span></summary><p>${uiEsc(LANG === 'en' ? gg.en || gg.zh : gg.zh)}</p></details>` : '';
     return `<section class="ui-gcard" aria-label="${uiEsc(ttl)}"><h3>${uiEsc(ttl)}</h3>${story}${table}${ev}${legend}${note}</section>`;
   }
