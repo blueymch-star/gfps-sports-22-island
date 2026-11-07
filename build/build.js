@@ -2038,8 +2038,8 @@ const customHtml = `
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:6px;padding:12px 14px;background:#eff6ff;border-radius:12px;border:1.5px solid #bfdbfe;">
         <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🏅</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#1e40af;margin-bottom:2px;">即時頒發・高解析榮譽金牌艦長證書</div>
-          <div style="color:#1e3a8a;">隨時點擊<strong>「🏅 榮譽證書」</strong>即可預覽專屬你的金牌證書，證書會即時記錄你的姓名、身分、已解鎖的願景金鋼印與 22 地標探索進度，並支援免費下載高畫質 PNG 保存分享！</div>
+          <div style="font-weight:800;font-size:15px;color:#1e40af;margin-bottom:2px;">隆重頒發・高解析榮譽金牌艦長證書</div>
+          <div style="color:#1e3a8a;">隨時點擊<strong>「🏅 榮譽證書」</strong>即可預覽專屬你的金牌證書，證書會完整記錄你的姓名、身分、已解鎖的願景金鋼印與 22 地標探索進度，並支援免費下載高畫質 PNG 保存分享！</div>
         </div>
       </div>
     </div>
@@ -3493,6 +3493,18 @@ html = html.split('Dazhuang').join('Gao-Feng');
 html = html.split('高峰五力').join('四大願景');
 html = html.split('五力護照').join('榮譽證書');
 html = html.split('五力印章').join('地標印記');
+html = html.split('星際賽況即時量子公報看板').join('星際賽況量子公報看板');
+html = html.split('大會成績即時公布流程').join('大會成績公布流程');
+html = html.split('電子公報即時刊登').join('電子公報刊登');
+html = html.split('即時成績登錄完成').join('成績登錄完成');
+html = html.split('即時連線').join('連線');
+html = html.split('即時更新賽況').join('全天更新賽況');
+html = html.split('即時賽況').join('大會賽況');
+html = html.split('即時頒發').join('隆重頒發');
+html = html.split('即時動態').join('最新動態');
+html = html.split('即時記錄').join('完整記錄');
+html = html.split('即時公布').join('大會公布');
+html = html.split('即時').join('');
 html = html.split('五力闖關').join('地標挑戰');
 html = html.split('五力星核').join('四大願景');
 html = html.split('五力均備').join('五育均備');

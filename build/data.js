@@ -1560,7 +1560,7 @@ module.exports = {
             "金銀銅獎牌榮譽頒發",
             "親師生共同見證喝采"
           ],
-          "when": "各項決賽後即時隆重頒獎",
+          "when": "各項決賽後隆重頒獎",
           "phase": 3,
           "challenge": {
             "mode": "tap_charge",
@@ -1613,27 +1613,27 @@ module.exports = {
         {
           "id": "s07i3",
           "model": "calendar_kiosk",
-          "name": "星際賽況即時量子公報看板",
-          "desc": "即時連線 11/09~11/13 預賽週與 11/21 校慶各組徑賽榜單，提供賽果資訊！",
+          "name": "星際賽況量子公報看板",
+          "desc": "連線 11/09~11/13 預賽週與 11/21 校慶各組徑賽榜單，提供賽果資訊！",
           "facts": [
             "全校賽事資訊看板",
             "個人賽去識別化公報",
-            "一鍵查詢即時賽況"
+            "一鍵查詢大會賽況"
           ],
-          "when": "全天候即時更新賽況",
+          "when": "全天候更新賽況",
           "phase": 3,
           "challenge": {
             "mode": "sequence",
             "power": "高峰群體力",
-            "title": "【公報看板關卡】大會成績即時公布流程",
+            "title": "【公報看板關卡】大會成績公布流程",
             "taskDesc": "請按順序點擊成績公告程序：",
             "steps": [
               "裁判組終點攝影判讀",
               "記錄組成績核算造冊",
-              "電子公報即時刊登",
+              "電子公報刊登",
               "頒獎台領獎表揚"
             ],
-            "actionDone": "📊 即時成績登錄完成！大會賽況全面更新！",
+            "actionDone": "📊 成績登錄完成！大會賽況全面更新！",
             "question": "運動會當天三至六年級大隊接力與趣味競賽，各學年錄取幾班優勝？",
             "options": [
               "各學年取優勝一班，頒發獎狀、獎品",
@@ -1647,10 +1647,10 @@ module.exports = {
       ],
       "units": [
         {
-          "name": "個人賽決賽前六名星光即時頒獎典禮",
+          "name": "個人賽決賽前六名星光頒獎典禮",
           "nameEn": "Individual Finals Top 6 Starlight Awards",
           "weeks": "10:10~12:00",
-          "periods": "即時",
+          "periods": "大會",
           "sem": "全",
           "desc": "個人徑賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀之星光頒獎典禮。"
         },
@@ -1663,12 +1663,12 @@ module.exports = {
           "desc": "統計各學年優勝總積分最高之班級，由大會頒發總錦標大會金盃與錦旗！"
         },
         {
-          "name": "星際賽況即時量子公報告示",
+          "name": "星際賽況量子公報告示",
           "nameEn": "Live Quantum Race Bulletin & Results",
           "weeks": "全天候",
           "periods": "全日",
           "sem": "全",
-          "desc": "即時連線 11/09~11/13 預賽週與 11/21 校慶各組徑賽榜單，提供賽果資訊！"
+          "desc": "連線 11/09~11/13 預賽週與 11/21 校慶各組徑賽榜單，提供賽果資訊！"
         },
         {
           "name": "全景 3D 超新星勝利煙火引燃",
@@ -1786,7 +1786,7 @@ module.exports = {
       "carry": "medal",
       "evidence": "plan",
       "phase": 3,
-      "note": "【12:10 榮耀加冕】亞洲鐵人楊傳廣護送個人賽前六名獎牌、獎狀與即時成績榜單至超新星榮耀港，登上星光頒獎台接受全校喝采！",
+      "note": "【12:10 榮耀加冕】亞洲鐵人楊傳廣護送個人賽前六名獎牌、獎狀與大會成績榜單至超新星榮耀港，登上星光頒獎台接受全校喝采！",
       "noteEn": "Podium Coronation: C.K. Yang escorts individual sprint medals and diplomas to the Star Terminal for the grand awards ceremony."
     },
     {
@@ -2036,7 +2036,7 @@ module.exports = {
       "titleEn": "Stop 7: Supernova Starlight Terminal (Championship & Fireworks)",
       "zh": "登頂超新星榮耀港！個人賽前六名登上星光頒獎台榮獲獎牌獎狀，12:00 閉幕頒發學年優勝總錦標大會金盃；集滿星核挑戰將引燃全景 3D 超新星勝利煙火，生成金牌榮譽艦長證書！",
       "en": "Reach the pinnacle of glory! Individual medal ceremonies on the podium, presenting the overall championship trophies, and igniting the 3D supernova victory fireworks finale!",
-      "desc": "個人賽前六名頒獎台、大會學年優勝總錦標金盃頒發、即時賽況公報看板、全景 3D 勝利煙火。"
+      "desc": "個人賽前六名頒獎台、大會學年優勝總錦標金盃頒發、賽況公報看板、全景 3D 勝利煙火。"
     }
   ],
   "travelers": {
@@ -3444,8 +3444,8 @@ module.exports = {
       },
       {
         "island": "s07",
-        "schedule": "10:10~12:00 個人決賽即時頒獎｜12:00 學年總錦標頒發",
-        "task": "【星光頒獎台】前三名金銀銅牌頒發｜【公報看板】賽況即時更新"
+        "schedule": "10:10~12:00 個人決賽頒獎｜12:00 學年總錦標頒發",
+        "task": "【星光頒獎台】前三名金銀銅牌頒發｜【公報看板】賽況全面更新"
       }
     ],
     "9": [
