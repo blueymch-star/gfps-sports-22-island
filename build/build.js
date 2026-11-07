@@ -216,7 +216,9 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
         <div class="ui-brand-sub ui-brand-mob" id="ui-brand-mob"></div>
         <button class="ui-trav-badge" id="ui-trav-badge" type="button" hidden></button>
         <div class="sq-brand-actions" id="sq-brand-actions">
-          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/22關</span></button>
+          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
+          <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明">📖 集章說明</button>
+          <button type="button" class="sq-brand-pill is-fireworks" id="sq-btn-fireworks-top" title="隨時施放 3D 聖火勝利煙火慶祝（無須集滿 5 章）">🎆 施放煙火</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表">📅 程序表(17)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label">選手設定</span></button>
         </div>
@@ -615,6 +617,26 @@ dialog::backdrop {
   background: linear-gradient(135deg, #fef3c7, #fde68a);
   border-color: #f59e0b;
   color: #92400e;
+}
+.sq-brand-pill.is-cyan {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border-color: #0284c7;
+  color: #0369a1;
+}
+.sq-brand-pill.is-cyan:hover {
+  background: #bae6fd;
+  color: #075985;
+  transform: translateY(-1px);
+}
+.sq-brand-pill.is-fireworks {
+  background: linear-gradient(135deg, #fce7f3, #fed7aa);
+  border-color: #f43f5e;
+  color: #be123c;
+}
+.sq-brand-pill.is-fireworks:hover {
+  background: #fbcfe8;
+  color: #9f1239;
+  transform: translateY(-1px);
 }
 
 /* 建築卡片內「登場時段」醒目膠囊 */
@@ -1734,12 +1756,79 @@ const customHtml = `
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-cert-dialog" aria-label="關閉">✕</button>
     </div>
-    <p id="sq-cert-hint" style="margin:0 0 12px;font-size:13.5px;color:#334155;"></p>
+    <p id="sq-cert-hint" style="margin:0 0 12px;font-size:13.5px;color:#334155;line-height:1.6;"></p>
     <canvas id="sq-cert-canvas" width="1200" height="820" class="sq-cert-preview"></canvas>
     <div class="sq-cert-actions">
       <button type="button" class="sq-primary-btn" id="sq-btn-dl-cert">💾 下載高畫質金牌證書 (PNG)</button>
-      <button type="button" class="sq-act-btn is-gold" id="sq-btn-fireworks" style="justify-content:center;font-size:14.5px;padding:11px 16px;">🎆 飛往聖火台・再次施放 3D 勝利煙火！</button>
+      <button type="button" class="sq-act-btn is-gold" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;">🎆 施放 3D 勝利煙火（隨時可施放）</button>
       <button type="button" class="sq-danger-btn" id="sq-btn-reset-cert" style="justify-content:center;">🔄 重設闖關紀錄（重新開始）</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- 5. 集章說明 Dialog -->
+<dialog id="sq-guide-dialog" class="sq-dialog sq-dialog-wide" closedby="any" aria-labelledby="sq-guide-title">
+  <div class="sq-dlg-inner">
+    <div class="sq-dlg-head">
+      <div>
+        <span class="sq-dlg-kicker">🌟 校慶五力集章與 22 星際地標探索指南</span>
+        <h2 class="sq-dlg-title" id="sq-guide-title">📖 如何收集印章與榮獲金牌榮譽？</h2>
+      </div>
+      <button type="button" class="sq-dlg-close" data-sq-close="sq-guide-dialog" aria-label="關閉">✕</button>
+    </div>
+
+    <div style="font-size:14px;line-height:1.7;color:#334155;">
+      <!-- Step 1 -->
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+        <div style="width:30px;height:30px;border-radius:50%;background:#0284c7;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;">點選 3D 地標建築物</div>
+          <div>在 3D 星際太空浮島中，點擊任意島嶼上的建築地標（或使用右上方巡禮動線），視角將自動飛向該地標，並於右側滑出地標資訊卡。</div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+        <div style="width:30px;height:30px;border-radius:50%;background:#0284c7;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;">進行闖關挑戰，收集 5 大願景印章</div>
+          <div>在地標資訊卡中點擊<strong>「🎯 進行地標闖關挑戰」</strong>，完成題目或互動挑戰，即可解鎖該地標並點亮對應願景印章！</div>
+        </div>
+      </div>
+
+      <!-- 5 大印章位置說明卡片 -->
+      <div style="margin:14px 0;padding:14px 16px;background:linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);border-radius:14px;border:1.5px solid #a7f3d0;">
+        <div style="font-weight:800;font-size:14.5px;color:#065f46;margin-bottom:8px;">🎯 5 大願景印章解鎖地點指引：</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));gap:8px;font-size:13px;">
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #3b82f6;"><strong>💖 友善品格印章</strong>：中央【雙二盛典星港】➜ 校長致詞與義工星光表揚台</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #06b6d4;"><strong>🎨 玻璃美感印章</strong>：東軌【琉光玻璃藝島】➜ 兒童玻璃美術館琉光大舞台</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #10b981;"><strong>⚡ 峰湧體能印章</strong>：東北軌【競速接力星道】➜ 星芒光速競速跑道</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #f97316;"><strong>🤝 高峰群體印章</strong>：北軌【越野障礙賽場】➜ 四年級小巨人奔跑賽道</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #14b8a6;"><strong>🌍 全球永續印章</strong>：西南軌【生態科技綠站】➜ 口腔與健康體位健促光亭</div>
+        </div>
+      </div>
+
+      <!-- Step 3 & 4: 煙火與證書說明 -->
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#fffbeb;border-radius:12px;border:1.5px solid #fde68a;">
+        <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🎆</div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#92400e;margin-bottom:2px;">隨時施放 3D 勝利煙火（無須集滿 5 章！）</div>
+          <div style="color:#78350f;">在任何時候，你都可以點擊<strong>「🎆 施放煙火」</strong>按鍵，鏡頭會立即飛往中央主聖火台，在上空為你綻放全景 3D 絢爛煙火，享受校慶慶典氣氛！</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:6px;padding:12px 14px;background:#eff6ff;border-radius:12px;border:1.5px solid #bfdbfe;">
+        <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🏅</div>
+        <div>
+          <div style="font-weight:800;font-size:15px;color:#1e40af;margin-bottom:2px;">即時頒發・高解析榮譽金牌艦長證書</div>
+          <div style="color:#1e3a8a;">隨時點擊<strong>「🏅 榮譽證書」</strong>即可預覽專屬你的金牌證書，證書會即時記錄你的姓名、身分、已解鎖的願景金鋼印與 22 地標探索進度，並支援免費下載高畫質 PNG 保存分享！</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
+      <button type="button" class="sq-act-btn is-gold" id="sq-guide-btn-start" style="padding:9px 18px;font-size:13.5px;">🚀 前往中央星港開始集章</button>
+      <button type="button" class="sq-primary-btn" data-sq-close="sq-guide-dialog" style="padding:9px 18px;font-size:13.5px;">✕ 了解並關閉</button>
     </div>
   </div>
 </dialog>
@@ -1804,6 +1893,7 @@ function initSportsQuest(ctx) {
   const quizDlg = document.getElementById('sq-quiz-dialog');
   const schedDlg = document.getElementById('sq-schedule-dialog');
   const certDlg = document.getElementById('sq-cert-dialog');
+  const guideDlg = document.getElementById('sq-guide-dialog');
 
   // 更新左上品牌卡內嵌的微型護照進度（不再佔用畫面頂部中央狀態條）
   function renderHud() {
@@ -2668,23 +2758,31 @@ function initSportsQuest(ctx) {
     ctx.markDirty();
   });
 
-  // 5. 繪製高解析「奔馳榮耀・五力金牌證書」Canvas
+  // 5. 繪製高解析「雙二齊飛・賽博生態金牌榮譽艦長證書」Canvas
   function drawCertificate() {
     const canvas = document.getElementById('sq-cert-canvas');
     if (!canvas) return;
     const c = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
 
-    // 星際宇宙深空星雲漸層背景
-    const bg = c.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#04081c');
-    bg.addColorStop(0.3, '#0a163a');
-    bg.addColorStop(0.7, '#141238');
-    bg.addColorStop(1, '#050c26');
+    // 1. 深邃星際宇宙深空星雲漸層背景
+    const bg = c.createLinearGradient(0, 0, 0, H);
+    bg.addColorStop(0, '#030718');
+    bg.addColorStop(0.35, '#081432');
+    bg.addColorStop(0.7, '#0c1b3a');
+    bg.addColorStop(1, '#04091a');
     c.fillStyle = bg;
     c.fillRect(0, 0, W, H);
 
-    // 繪製背景閃爍星群
+    // 2. 中央放射狀金曜光暈 (Spotlight)
+    const radial = c.createRadialGradient(W / 2, 380, 40, W / 2, 380, 560);
+    radial.addColorStop(0, 'rgba(245, 158, 11, 0.15)');
+    radial.addColorStop(0.45, 'rgba(56, 189, 248, 0.06)');
+    radial.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    c.fillStyle = radial;
+    c.fillRect(0, 0, W, H);
+
+    // 3. 繪製微星粒子群
     c.fillStyle = 'rgba(255, 255, 255, 0.85)';
     for (let si = 0; si < 90; si++) {
       const sx = (si * 137.5) % W;
@@ -2695,83 +2793,251 @@ function initSportsQuest(ctx) {
       c.fill();
     }
 
-    // 雙層全息霓虹金與曲速青藍邊框
-    c.strokeStyle = '#00f2fe';
-    c.lineWidth = 8;
-    c.strokeRect(28, 28, W - 56, H - 56);
-    c.strokeStyle = '#f59e0b';
+    // 4. 高級金屬金與曲速青藍科技雙重框
+    // 外框：耀金漸層
+    const goldGrad = c.createLinearGradient(24, 24, W - 24, H - 24);
+    goldGrad.addColorStop(0, '#fbbf24');
+    goldGrad.addColorStop(0.5, '#f59e0b');
+    goldGrad.addColorStop(1, '#d97706');
+    c.strokeStyle = goldGrad;
     c.lineWidth = 4;
-    c.strokeRect(42, 42, W - 84, H - 84);
+    c.strokeRect(26, 26, W - 52, H - 52);
 
-    // 頂部標題橫幅
-    c.fillStyle = '#38bdf8';
-    c.font = 'bold 28px "Microsoft JhengHei", sans-serif';
-    c.textAlign = 'center';
-    c.fillText('新竹市東區高峰國民小學 22 週年校慶運動會', W / 2, 115);
+    // 內框：細緻青藍科技線
+    c.strokeStyle = 'rgba(56, 189, 248, 0.6)';
+    c.lineWidth = 1.5;
+    c.strokeRect(38, 38, W - 76, H - 76);
 
-    c.fillStyle = '#f8fafc';
-    c.font = 'bold 52px "Microsoft JhengHei", sans-serif';
-    c.fillText('🚀【雙二齊飛・馳騁高峰】賽博生態金牌榮譽艦長證書 🚀', W / 2, 185);
-
-    c.fillStyle = '#00f2fe';
-    c.font = 'bold 22px "Segoe UI", sans-serif';
-    c.fillText("Gao-Feng 22nd Anniversary: Global · Friendly · Positive · SDGs", W / 2, 225);
-
-    // 參賽者姓名與身分
-    const playerName = state.name || '高峰運動小健將';
-    c.fillStyle = '#1e293b';
-    c.font = '28px "Microsoft JhengHei", sans-serif';
-    const curDiff = getRoleDifficulty(state.role);
-    c.fillText('茲證明　' + state.icon + ' 【' + state.role + '】（挑戰難度：' + curDiff.star + ' ' + curDiff.name + '）', W / 2, 295);
-
-    c.fillStyle = '#0284c7';
-    c.font = 'bold 60px "Microsoft JhengHei", sans-serif';
-    c.fillText(playerName, W / 2, 372);
-
-    c.strokeStyle = '#f59e0b';
-    c.lineWidth = 3;
-    c.beginPath();
-    c.moveTo(W / 2 - 220, 392);
-    c.lineTo(W / 2 + 220, 392);
-    c.stroke();
-
-    c.fillStyle = '#334155';
-    c.font = '25px "Microsoft JhengHei", sans-serif';
-    c.fillText('於高峰國小「雙二齊飛、馳騁高峰」3D 動態運動會島嶼探險中，', W / 2, 445);
-    c.fillText('完成全台唯一兒童玻璃美術館、綠茵跑道與生態科技巡禮，表現優異！', W / 2, 485);
-
-    // 高峰四大願景 GFPS 榮譽印章列
-    const visions = [
-      { key: 'G', name: '全球視野', en: 'Global Vision' },
-      { key: 'F', name: '友善品格', en: 'Friendly' },
-      { key: 'P', name: '積極正向', en: 'Positive' },
-      { key: 'S', name: '永續發展', en: 'SDGs' }
+    // 四個角落幾何科技角標裝飾 (Sci-Fi Gold Corner Accents)
+    const corners = [
+      [26, 26, 1, 1],
+      [W - 26, 26, -1, 1],
+      [26, H - 26, 1, -1],
+      [W - 26, H - 26, -1, -1]
     ];
-    const startX = 225, gap = 250, cy = 590;
-    visions.forEach((v, idx) => {
-      const x = startX + idx * gap;
-      c.save();
+    corners.forEach(([cx, cy, dx, dy]) => {
+      c.strokeStyle = '#fbbf24';
+      c.lineWidth = 3;
       c.beginPath();
-      c.arc(x, cy, 62, 0, Math.PI * 2);
-      c.fillStyle = '#fef3c7';
-      c.fill();
-      c.lineWidth = 5;
-      c.strokeStyle = '#f59e0b';
+      c.moveTo(cx, cy + dy * 28);
+      c.lineTo(cx, cy);
+      c.lineTo(cx + dx * 28, cy);
       c.stroke();
 
-      c.fillStyle = '#b45309';
-      c.font = 'bold 25px "Microsoft JhengHei", sans-serif';
-      c.fillText(v.name, x, cy - 6);
-      c.font = 'bold 15px "Segoe UI", sans-serif';
-      c.fillText(v.en, x, cy + 22);
+      c.fillStyle = '#38bdf8';
+      c.beginPath();
+      c.arc(cx + dx * 10, cy + dy * 10, 3, 0, Math.PI * 2);
+      c.fill();
+    });
+
+    c.textAlign = 'center';
+
+    // 5. 頂部徽章橫幅
+    c.fillStyle = '#38bdf8';
+    c.font = 'bold 15px "Segoe UI", sans-serif';
+    c.fillText('★  GFPS 22ND ANNIVERSARY 2026 · CYBER-FOREST ARENA  ★', W / 2, 72);
+
+    // 學校全稱
+    c.fillStyle = '#f8fafc';
+    c.font = 'bold 26px "Microsoft JhengHei", sans-serif';
+    c.fillText('新竹市東區高峰國民小學 22 週年校慶運動會', W / 2, 110);
+
+    // 大會主標題（帶光暈金色大字）
+    c.save();
+    c.shadowColor = '#f59e0b';
+    c.shadowBlur = 16;
+    c.fillStyle = '#fde047';
+    c.font = 'bold 44px "Microsoft JhengHei", sans-serif';
+    c.fillText('【雙二齊飛・馳騁高峰】賽博生態金牌榮譽艦長證書', W / 2, 168);
+    c.restore();
+
+    // 願景英文標語
+    c.fillStyle = '#93c5fd';
+    c.font = 'bold 16px "Segoe UI", sans-serif';
+    c.fillText("Global Vision · Friendly Character · Positive Energy · SDGs Sustainability", W / 2, 204);
+
+    // 6. 選手身分證明區域
+    const curDiff = getRoleDifficulty(state.role);
+    c.fillStyle = '#fef08a';
+    c.font = 'bold 21px "Microsoft JhengHei", sans-serif';
+    c.fillText('茲證明　' + (state.icon || '🏃') + ' 【' + (state.role || '高峰小健將') + '】（挑戰難度：' + curDiff.star + ' ' + curDiff.name + '）', W / 2, 260);
+
+    // 獲獎人姓名（超醒目高對比發光字）
+    const playerName = state.name || '高峰運動小健將';
+    c.save();
+    c.shadowColor = 'rgba(56, 189, 248, 0.8)';
+    c.shadowBlur = 14;
+    c.fillStyle = '#ffffff';
+    c.font = 'bold 54px "Microsoft JhengHei", sans-serif';
+    c.fillText(playerName, W / 2, 335);
+    c.restore();
+
+    // 姓名下金曜流光飾線
+    const lineGrad = c.createLinearGradient(W / 2 - 240, 0, W / 2 + 240, 0);
+    lineGrad.addColorStop(0, 'rgba(245, 158, 11, 0)');
+    lineGrad.addColorStop(0.5, '#fbbf24');
+    lineGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+    c.strokeStyle = lineGrad;
+    c.lineWidth = 3;
+    c.beginPath();
+    c.moveTo(W / 2 - 240, 355);
+    c.lineTo(W / 2 + 240, 355);
+    c.stroke();
+
+    // 飾線中央小菱形
+    c.fillStyle = '#38bdf8';
+    c.beginPath();
+    c.moveTo(W / 2, 350);
+    c.lineTo(W / 2 + 5, 355);
+    c.lineTo(W / 2, 360);
+    c.lineTo(W / 2 - 5, 355);
+    c.closePath();
+    c.fill();
+
+    // 7. 讚賞內文（超高對比銀白柔光，字字清晰易讀）
+    c.fillStyle = '#f1f5f9';
+    c.font = '22px "Microsoft JhengHei", sans-serif';
+    c.fillText('於高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」3D 動態運動會島嶼探險中，', W / 2, 408);
+    c.fillText('勇於挑戰 7 座賽博生態浮島，歷經綠茵競速跑道、兒童玻璃工藝與越野冒險，表現非凡！', W / 2, 444);
+
+    // 8. 五大願景榮譽鋼印列 (5 Stamps Dynamic Display)
+    const stampsData = [
+      { key: 'q_friendly', icon: '💖', name: '友善品格', en: 'Friendly' },
+      { key: 'q_aesthetics', icon: '🎨', name: '玻璃美感', en: 'Aesthetics' },
+      { key: 'q_vitality', icon: '⚡', name: '峰湧體能', en: 'Vitality' },
+      { key: 'q_positive', icon: '🤝', name: '高峰群體', en: 'Positive' },
+      { key: 'q_sdgs', icon: '🌍', name: '全球永續', en: 'SDGs' }
+    ];
+
+    const stampY = 560;
+    const startX = 180, gapX = 210;
+
+    stampsData.forEach((s, idx) => {
+      const x = startX + idx * gapX;
+      const isUnlocked = !!(state.stamps && state.stamps[s.key]);
+
+      c.save();
+      if (isUnlocked) {
+        // 已解鎖：曜金耀光鋼印
+        const sGrad = c.createRadialGradient(x, stampY - 5, 10, x, stampY - 5, 52);
+        sGrad.addColorStop(0, 'rgba(254, 240, 138, 0.35)');
+        sGrad.addColorStop(0.8, 'rgba(245, 158, 11, 0.25)');
+        sGrad.addColorStop(1, 'rgba(180, 83, 9, 0.15)');
+        c.fillStyle = sGrad;
+        c.beginPath();
+        c.arc(x, stampY - 5, 50, 0, Math.PI * 2);
+        c.fill();
+
+        // 雙層金圈
+        c.strokeStyle = '#fbbf24';
+        c.lineWidth = 3.5;
+        c.stroke();
+
+        c.strokeStyle = '#f59e0b';
+        c.lineWidth = 1.5;
+        c.beginPath();
+        c.arc(x, stampY - 5, 44, 0, Math.PI * 2);
+        c.stroke();
+
+        // 圖示與文字
+        c.font = '24px "Segoe UI Emoji", sans-serif';
+        c.fillText(s.icon, x, stampY - 22);
+
+        c.fillStyle = '#fde047';
+        c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
+        c.fillText(s.name, x, stampY + 4);
+
+        c.fillStyle = '#fef3c7';
+        c.font = 'bold 12px "Segoe UI", sans-serif';
+        c.fillText(s.en, x, stampY + 22);
+
+        // 已點亮標籤膠囊
+        c.fillStyle = '#16a34a';
+        c.beginPath();
+        c.roundRect(x - 38, stampY + 36, 76, 20, 10);
+        c.fill();
+        c.fillStyle = '#ffffff';
+        c.font = 'bold 11px "Microsoft JhengHei", sans-serif';
+        c.fillText('✔ 已解鎖', x, stampY + 50);
+      } else {
+        // 未解鎖：科技虛線待探索鋼印
+        c.fillStyle = 'rgba(15, 23, 42, 0.55)';
+        c.beginPath();
+        c.arc(x, stampY - 5, 50, 0, Math.PI * 2);
+        c.fill();
+
+        c.setLineDash([5, 4]);
+        c.strokeStyle = 'rgba(148, 163, 184, 0.45)';
+        c.lineWidth = 2;
+        c.stroke();
+        c.setLineDash([]);
+
+        // 灰階圖示與文字
+        c.font = '22px "Segoe UI Emoji", sans-serif';
+        c.fillText(s.icon, x, stampY - 22);
+
+        c.fillStyle = '#94a3b8';
+        c.font = 'bold 17px "Microsoft JhengHei", sans-serif';
+        c.fillText(s.name, x, stampY + 4);
+
+        c.fillStyle = '#64748b';
+        c.font = '12px "Segoe UI", sans-serif';
+        c.fillText(s.en, x, stampY + 22);
+
+        // 待解鎖標籤膠囊
+        c.fillStyle = 'rgba(51, 65, 85, 0.7)';
+        c.beginPath();
+        c.roundRect(x - 34, stampY + 36, 68, 20, 10);
+        c.fill();
+        c.fillStyle = '#94a3b8';
+        c.font = '11px "Microsoft JhengHei", sans-serif';
+        c.fillText('探索中', x, stampY + 50);
+      }
       c.restore();
     });
 
-    // 底部簽章與日期
-    const clearedTotal = Object.keys(state.cleared || {}).length;
+    // 9. 底部資訊與官方朱紅官印 (Footer with Official Seal)
+    const clearedTotal = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
+    const quests = DATA.quests || [];
+    const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
+
+    // 左下：探索進度與集章數據
+    c.textAlign = 'left';
+    c.fillStyle = '#38bdf8';
+    c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
+    c.fillText('🚀 22 座星際地標探索：' + clearedTotal + ' / 22 地標達成', 70, 725);
+
+    c.fillStyle = '#fbbf24';
+    c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
+    c.fillText('🏅 願景能量印章：' + stampedCount + ' / 5 枚解鎖', 70, 755);
+
+    // 右下：校長名義與正式朱紅方印
+    c.textAlign = 'right';
     c.fillStyle = '#f8fafc';
-    c.font = 'bold 24px "Microsoft JhengHei", sans-serif';
-    c.fillText('地標探索進度：' + clearedTotal + ' / 22 地標　｜　校長：何信煒　｜　中華民國 115 年 12 月 12 日', W / 2, 735);
+    c.font = 'bold 22px "Microsoft JhengHei", sans-serif';
+    c.fillText('大會校長：何信煒', W - 165, 730);
+
+    c.fillStyle = '#94a3b8';
+    c.font = '15px "Microsoft JhengHei", sans-serif';
+    c.fillText('中華民國 115 年 12 月 12 日', W - 165, 758);
+
+    // 正式朱紅官印（方正篆刻風格）
+    const sealX = W - 145, sealY = 700, sealSize = 65;
+    c.save();
+    c.fillStyle = 'rgba(220, 38, 38, 0.15)';
+    c.strokeStyle = '#dc2626';
+    c.lineWidth = 3;
+    c.beginPath();
+    c.roundRect(sealX, sealY, sealSize, sealSize, 8);
+    c.fill();
+    c.stroke();
+
+    c.textAlign = 'center';
+    c.fillStyle = '#ef4444';
+    c.font = 'bold 20px "Microsoft JhengHei", serif';
+    c.fillText('何信', sealX + sealSize / 2, sealY + 28);
+    c.fillText('煒印', sealX + sealSize / 2, sealY + 52);
+    c.restore();
   }
 
   function triggerGrandFinale() {
@@ -2779,21 +3045,39 @@ function initSportsQuest(ctx) {
     spawn3DFireworks();
     drawCertificate();
     const quests = DATA.quests || [];
-    const stampedCount = quests.filter(q => state.stamps[q.id]).length;
+    const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
+    const clearedTotal = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
     document.getElementById('sq-cert-hint').innerHTML = stampedCount >= quests.length
-      ? '🎉 <strong>太棒了！你已完成所有 22 座星際地標挑戰！</strong>中央「廿二高峰耀動聖火台」已為你點燃 3D 勝利煙火，你可以直接截圖或點擊下方按鈕下載證書保存！'
-      : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚印章。集滿 5 章即可解鎖全金徽章與聖火台煙火！（你也可以隨時預覽或下載目前證書）';
+      ? '🎉 <strong>太棒了！你已集滿 5 大願景印章與完成探索！</strong>榮獲金牌榮譽艦長最高榮耀！中央聖火晶塔正為你盛大綻放勝利煙火，可點擊下方按鈕下載高畫質證書保存！'
+      : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚願景印章、完成 <strong>' + clearedTotal + ' / 22</strong> 座地標探索。（<strong>貼心提醒：隨時皆可點擊「🎆 施放 3D 勝利煙火」欣賞盛典，無須集滿即可搶先體驗！</strong>完成挑戰可點亮證書金鋼印）';
     if (!certDlg.open) certDlg.showModal();
   }
 
-  document.getElementById('sq-btn-cert').addEventListener('click', () => {
+  document.getElementById('sq-btn-cert')?.addEventListener('click', () => {
     triggerGrandFinale();
   });
 
-  document.getElementById('sq-btn-fireworks').addEventListener('click', () => {
+  document.getElementById('sq-btn-guide')?.addEventListener('click', () => {
+    if (guideDlg && !guideDlg.open) guideDlg.showModal();
+  });
+
+  document.getElementById('sq-guide-btn-start')?.addEventListener('click', () => {
+    if (guideDlg && guideDlg.open) guideDlg.close();
+    if (ctx.frameIsland) ctx.frameIsland('s01');
+    showToast('🚀 已前往中央「雙二盛典星港」！點擊島上地標開始闖關！');
+  });
+
+  document.getElementById('sq-btn-fireworks-top')?.addEventListener('click', () => {
+    if (ctx.frameIsland) ctx.frameIsland('s01');
+    spawn3DFireworks();
+    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
+  });
+
+  document.getElementById('sq-btn-fireworks')?.addEventListener('click', () => {
     if (certDlg.open) certDlg.close();
     if (ctx.frameIsland) ctx.frameIsland('s01');
     spawn3DFireworks();
+    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
   });
 
   document.getElementById('sq-btn-dl-cert').addEventListener('click', () => {
