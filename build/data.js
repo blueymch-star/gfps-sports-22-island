@@ -1900,39 +1900,67 @@ const DATA = {
   },
   "tour": [
     {
+      "island": "s01",
       "islandId": "s01",
-      "title": "第一站：雙二盛典星港",
-      "desc": "在雙二齊飛聖火晶塔前集結，見證運動員進場宣誓與全校績優義工表揚。"
+      "title": "第一站：雙二盛典星港（開幕盛典・聖火引燃）",
+      "titleEn": "Stop 1: Gao-Feng Gala Flagship (Opening & Torch Lighting)",
+      "zh": "歡迎蒞臨雙二盛典星港！08:00 會旗引導隊引領運動員集結進場，08:20 升會旗、唱校歌並引燃主聖火晶塔。08:35 何信煒校長致詞、長官祝福，隆重頒發表揚全校性績優義工與熱心志工！",
+      "en": "Welcome to the Gao-Feng Gala Flagship! Witness the opening athlete procession at 08:00, the lighting of the Dual-22 Torch at 08:20, and Principal He Xin-Wei honoring our outstanding campus volunteers.",
+      "desc": "大會開幕典禮、運動員進場宣誓、何信煒校長致詞與全校績優義工溫馨表揚。"
     },
     {
+      "island": "s02",
       "islandId": "s02",
-      "title": "第二站：琉光玻璃藝島",
-      "desc": "聆聽合唱團天籟開幕，探訪全台唯一兒童玻璃美術館特展與 22 週年專刊。"
+      "title": "第二站：琉光玻璃藝島（美育展演・玻璃藝術）",
+      "titleEn": "Stop 2: Children's Glass Museum Isle (Arts & Choir)",
+      "zh": "飛抵琉光玻璃藝島！08:30 由高峰天籟合唱團純淨美聲開幕獻唱，隨後幼兒園與各年段大會舞活力展演；下午 13:10 於全台唯一兒童玻璃美術館舉行琉光成果展、師生美展與 22 週年校慶專刊成果展！",
+      "en": "Soar to the Children's Glass Museum Isle! Enjoy the pristine choir opening at 08:30, festive grade dances, and the unique glass art and 22nd anniversary magazine showcase at 13:10.",
+      "desc": "高峰天籟合唱團開幕獻唱、各年段大會舞展演、全台唯一兒童玻璃美術館特展。"
     },
     {
+      "island": "s03",
       "islandId": "s03",
-      "title": "第三站：競速接力星道",
-      "desc": "踏上星芒光速跑道，觀賞 60m 團體跑與三至六年級 60m/100m 飛毛腿金牌戰。"
+      "title": "第三站：競速接力星道（綠茵衝刺・大隊接力）",
+      "titleEn": "Stop 3: Cyber-Emerald Sprint Speedway (Sprint & Relay)",
+      "zh": "曲速破風！一二年級 60m 團體跑熱血出發，10:10 三至六年級 60m 與 100m 個人賽決賽角逐前三名獎牌；11:40 二年級 40m 折返大隊接力與中高年級 16 棒大隊接力第三棒搶道超車，巔峰衝刺壓線！",
+      "en": "Sprint into hyper-speed! Cheer for 1st-2nd grade 60m dash, grades 3-6 individual sprint finals, Grade 2 shuttle relay, and grades 3-6 16-runner lap relay cut-in battles!",
+      "desc": "一二年級 60m 跑、個人賽 60m/100m 決賽、二年級 40m 折返與三至六年級大隊接力搶道。"
     },
     {
+      "island": "s04",
       "islandId": "s04",
-      "title": "第四站：越野障礙賽場",
-      "desc": "看台熱血加油！二年級 40m 折返接力與中高年級 16 棒大隊接力第三棒搶道狂奔！"
+      "title": "第四站：越野障礙賽場（小巨人奔跑・越野拔河）",
+      "titleEn": "Stop 4: Obstacle Adventure Arena (Little Giants & Obstacle)",
+      "zh": "挑戰極限！11:10 四年級【小巨人奔跑】同心奔馳賽道，五、六年級挑戰【高峰越野障礙賽】敏捷穿梭角椎與呼拉圈矩陣；以及雨天備案高峰館班際拔河錦標賽，展現最高昂的班級榮譽心！",
+      "en": "Overcome gravity challenges! Grade 4 'Little Giants' team sprint, grades 5-6 peak obstacle adventure course, and the rain contingency inter-class tug-of-war championship!",
+      "desc": "四年級趣味競賽小巨人奔跑、五六年級高峰越野障礙賽、雨天備案班際拔河賽。"
     },
     {
+      "island": "s05",
       "islandId": "s05",
-      "title": "第五站：古奇童趣星域",
-      "desc": "滾大球、神箭闖江湖、小巨人奔跑與越野障礙，古奇峰特色趣味競賽歡笑不斷！"
+      "title": "第五站：古奇童趣星域（動物滾大球・神箭江湖）",
+      "titleEn": "Stop 5: Guqi Peak Gravity Odyssey (Giant Ball & Magic Arrow)",
+      "zh": "古奇童趣樂園！10:40 一年級合力推動巨型行星大球，10:50 二年級敏捷折返換手推球接力，歡笑聲此起彼落；11:00 三年級【神箭闖江湖】凝神瞄準光子靶心投射，手眼協調大考驗！",
+      "en": "Joyful gravity fun! Grades 1 & 2 giant planetary ball rolling and shuttle relay, followed by Grade 3 'Magic Arrow Odyssey' precision target shooting!",
+      "desc": "一年級與二年級趣味競賽【動物滾大球】、三年級趣味競賽【神箭闖江湖】。"
     },
     {
+      "island": "s06",
       "islandId": "s06",
-      "title": "第六站：生態科技綠站",
-      "desc": "高峰植物園生態探索、未來科技機器人展示、口腔體位健促與 12:05 無痕復原。"
+      "title": "第六站：生態科技綠站（都市森林・無痕復原）",
+      "titleEn": "Stop 6: Bio-Forest & Eco-Station (Robotics & SDGs Campus)",
+      "zh": "探訪都市森林小學！探索高峰植物園生態，參觀未來科技教室百變機器人成果展與校慶特色紀念服飾；落實健康促進口腔保健與健康體位宣導，並於 12:05 全校實踐場地復原、垃圾不留地！",
+      "en": "Explore Gao-Feng's urban forest! Visit robotics tech showcases, health promotion kiosks, and join the 12:05 zero-waste campus cleanup action for SDGs sustainability.",
+      "desc": "高峰植物園自然生態、未來科技百變機器人展示、健促口腔體位宣導、12:05 全校場地復原。"
     },
     {
+      "island": "s07",
       "islandId": "s07",
-      "title": "第七站：超新星榮耀港",
-      "desc": "登上金牌頒獎台，高舉學年優勝總錦標金盃，引燃 3D 超新星全景勝利煙火！"
+      "title": "第七站：超新星榮耀港（總錦標金盃・勝利煙火）",
+      "titleEn": "Stop 7: Supernova Starlight Terminal (Championship & Fireworks)",
+      "zh": "登頂超新星榮耀港！個人賽前六名登上星光頒獎台榮獲獎牌獎狀，12:00 閉幕頒發學年優勝總錦標大會金盃；集滿星核挑戰將引燃全景 3D 超新星勝利煙火，生成金牌榮譽艦長證書！",
+      "en": "Reach the pinnacle of glory! Individual medal ceremonies on the podium, presenting the overall championship trophies, and igniting the 3D supernova victory fireworks finale!",
+      "desc": "個人賽前六名頒獎台、大會學年優勝總錦標金盃頒發、即時賽況公報看板、全景 3D 勝利煙火。"
     }
   ],
   "travelers": {
