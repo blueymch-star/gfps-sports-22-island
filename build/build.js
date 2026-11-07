@@ -230,6 +230,7 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
         <div class="ui-brand-sub ui-brand-mob" id="ui-brand-mob"></div>
         <button class="ui-trav-badge" id="ui-trav-badge" type="button" hidden></button>
         <div class="sq-brand-actions" id="sq-brand-actions">
+          <button type="button" class="sq-brand-pill is-primary" id="sq-btn-start-quest" style="background:#0284c7;color:#ffffff;border-color:#0369a1;font-weight:800;" title="直接進入下一個未完成的建築關卡">🎯 進入闖關 (<span id="sq-quest-btn-num">1/22</span>)</button>
           <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
           <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明">📖 集章說明</button>
           <button type="button" class="sq-brand-pill is-fireworks is-locked" id="sq-btn-fireworks-top" title="集滿 5 個章才可以施放煙火">🔒 煙火(0/5)</button>
@@ -2156,6 +2157,13 @@ function initSportsQuest(ctx) {
     if (lbEl) lbEl.textContent = state.name || state.role;
     if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/22關';
     if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/22關';
+    const questBtnNum = document.getElementById('sq-quest-btn-num');
+    if (questBtnNum) {
+      questBtnNum.textContent = clearedCount >= 22 ? '22/22 完賽' : (clearedCount + 1) + '/22';
+    }
+    if (questBtnNum) {
+      questBtnNum.textContent = clearedCount >= 22 ? '22/22 完賽' : (clearedCount + 1) + '/22';
+    }
 
     const topFwBtn = document.getElementById('sq-btn-fireworks-top');
     if (topFwBtn) {
@@ -2237,6 +2245,12 @@ function initSportsQuest(ctx) {
       const curMount = document.getElementById('sq-item-quest-mount');
       if (curMount && curMount.dataset.itemId) {
         mountBuildingChallenge(curMount.dataset.itemId);
+      } else {
+        const nextItem = findNextTargetItem();
+        if (nextItem && ctx.select) {
+          ctx.select('item', nextItem.id);
+          showToast('🎯 歡迎！已為你開啟「' + nextItem.name + '」闖關關卡！');
+        }
       }
     }
 
@@ -2654,15 +2668,17 @@ function initSportsQuest(ctx) {
     if (banner) banner.remove();
     banner = document.createElement('div');
     banner.className = 'sq-card-quest-cta';
+    const targetItem = (isl.items || []).find(it => !state.clearedItems[it.id]) || isl.items[0];
     banner.innerHTML =
       '<div>' +
         '<strong style="font-size:13.5px;color:#0369a1;">' + (q ? q.icon + ' 本島五力印章：【' + q.power + '】' : '🏆 五力榮耀星光總部') + (stampDone ? '（✅ 已蓋章）' : '（⏳ 待蓋章）') + '</strong>' +
         '<div style="font-size:12px;color:#475569;">本島共有 <strong>' + totalBldgs + ' 座建築關卡</strong>（已完成 ' + doneBldgs + '/' + totalBldgs + '），點選下方任一建築即可進入專屬闖關！</div>' +
       '</div>' +
-      '<button type="button">' + (doneBldgs < totalBldgs ? '🎯 前往建築闖關' : '🏅 查看建築關卡') + '</button>';
-    banner.querySelector('button').addEventListener('click', () => {
-      const targetItem = (isl.items || []).find(it => !state.clearedItems[it.id]) || isl.items[0];
-      if (targetItem && ctx.select) ctx.select('item', targetItem.id);
+      '<button type="button" class="sq-btn-enter-quest" data-sel="item:' + (targetItem ? targetItem.id : '') + '" style="cursor:pointer;background:#0284c7;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800;white-space:nowrap;box-shadow:0 2px 6px rgba(2,132,199,0.3);">' + (doneBldgs < totalBldgs ? '🎯 前往建築闖關' : '🏅 查看建築關卡') + '</button>';
+    const enterBtn = banner.querySelector('button');
+    enterBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (ctx.select && targetItem) ctx.select('item', targetItem.id);
     });
     const tabsEl = cardBody.querySelector('.ui-ctabs');
     if (tabsEl) tabsEl.parentNode.insertBefore(banner, tabsEl);
@@ -3383,10 +3399,22 @@ function initSportsQuest(ctx) {
     if (guideDlg && !guideDlg.open) guideDlg.showModal();
   });
 
+  document.getElementById('sq-btn-start-quest')?.addEventListener('click', () => {
+    const nextItem = findNextTargetItem();
+    if (nextItem && ctx.select) {
+      ctx.select('item', nextItem.id);
+      showToast('🎯 已為你開啟「' + nextItem.name + '」闖關關卡！');
+    }
+  });
+
   document.getElementById('sq-guide-btn-start')?.addEventListener('click', () => {
     if (guideDlg && guideDlg.open) guideDlg.close();
-    if (ctx.frameIsland) ctx.frameIsland('s01');
-    showToast('🚀 已前往中央「雙二盛典星港」！點擊島上地標開始闖關！');
+    unlockInert();
+    const nextItem = findNextTargetItem();
+    if (nextItem && ctx.select) {
+      ctx.select('item', nextItem.id);
+      showToast('🎯 已為你開啟「' + nextItem.name + '」闖關關卡！');
+    }
   });
 
   document.getElementById('sq-btn-fireworks-top')?.addEventListener('click', () => {
