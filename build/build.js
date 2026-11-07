@@ -2898,6 +2898,28 @@ html = html.split('香山海風吹過柴窯與射箭場：點一座島，看懂�
 html = html.split('高峰國小的簡介、沿革與各處室業務。').join('高峰國小的簡介、願景、特色與校慶運動會規程。');
 html = html.split('六年的風景都在這裡了').join('高峰 22 週年校慶全景勝利煙火與金牌艦長證書已為你解鎖');
 
+// 去除賽程快訊「看原文 ↗」按鈕與完賽英雄榜「近 3 學年 10 則」字樣
+// 1. 移除島卡片中的「看原文 ↗」按鈕
+const newsLinkStart = html.indexOf('<a class="ui-news-link" href="${uiEsc(n.url || uiNewsUrl(n))}"');
+if (newsLinkStart !== -1) {
+  const newsLinkEnd = html.indexOf('</a>', newsLinkStart) + 4;
+  html = html.slice(0, newsLinkStart) + html.slice(newsLinkEnd);
+}
+
+// 2. 移除底欄快訊列表中的「↗」按鈕與看原文宣告
+const newsSrcStart = html.indexOf('<a class="ui-news-src" href="${uiEsc(n.url || uiNewsUrl(n))}"');
+if (newsSrcStart !== -1) {
+  const newsSrcEnd = html.indexOf('</a>', newsSrcStart) + 4;
+  html = html.slice(0, newsSrcStart) + html.slice(newsSrcEnd);
+}
+html = html.replace("const src = n.url ? tr('看原文', 'Read the original (Chinese)') : tr('原文搜尋', 'Find the original (Chinese)');", "");
+
+// 3. 完賽英雄榜去除「近 3 學年 10 則」字樣
+html = html.replace("$('ui-news-count').textContent = tr(scope + ' ' + rows.length + ' 則', scope + ': ' + rows.length);", "$('ui-news-count').textContent = '';");
+
+// 4. 統計欄位去除「近 3 學年」字樣
+html = html.replace("${scope + tr('榮譽', ' honors')}", "${tr('大會榮譽', ' honors')}");
+
 fs.writeFileSync(OUT, html, 'utf8');
 
 // 語法檢查

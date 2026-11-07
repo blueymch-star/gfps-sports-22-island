@@ -12209,7 +12209,7 @@ function initUI(ctx) {
     return `<details class="ui-news-item ${open ? 'is-hit' : ''}" data-news-card="${uiEsc(n.id)}" ${open ? 'open' : ''} ${hidden ? 'hidden' : ''}>
         <summary><span class="ui-news-date">${uiEsc(n.date)}</span><span class="ui-news-ttl">${uiEsc(L(n, 'title'))}</span></summary>
         <div class="ui-news-body"><p>${uiEsc(L(n, 'summary'))}</p>
-        <a class="ui-news-link" href="${uiEsc(n.url || uiNewsUrl(n))}" target="_blank" rel="noopener" hreflang="zh-Hant">${n.url ? tr('看原文', 'Read the original (Chinese)') : tr('原文搜尋', 'Find the original (Chinese)')} ↗<span class="ui-sr">${tr('（另開新視窗）', ' (opens in a new tab)')}</span></a></div>
+        </div>
       </details>`;
   }
   function honorItem(h, hit, hidden) {
@@ -12711,8 +12711,8 @@ function initUI(ctx) {
   function newsRow(n) {
     const d = ctx.islandById.get(n.island)?.data, t = L(n, 'title');
     const md = String(n.date || '').slice(5).replace('-', '/');
-    const src = n.url ? tr('看原文', 'Read the original (Chinese)') : tr('原文搜尋', 'Find the original (Chinese)');
-    return `<li class="ui-news-li"><button class="ui-log-row ui-news-row" type="button" tabindex="-1" data-news="${uiEsc(n.id)}" title="${uiEsc(t)}"><span class="ui-log-t"><span class="ui-sr">${uiEsc(n.date || '')}</span><span aria-hidden="true">${uiEsc(md)}</span></span><span class="ui-news-title">${islTag(d)}${uiEsc(t)}</span></button><a class="ui-news-src" href="${uiEsc(n.url || uiNewsUrl(n))}" target="_blank" rel="noopener" hreflang="zh-Hant" tabindex="-1" aria-label="${uiEsc(src + tr('（另開新視窗）：', ' (new tab): ') + t)}" title="${uiEsc(src)}">↗</a></li>`;
+    
+    return `<li class="ui-news-li"><button class="ui-log-row ui-news-row" type="button" tabindex="-1" data-news="${uiEsc(n.id)}" title="${uiEsc(t)}"><span class="ui-log-t"><span class="ui-sr">${uiEsc(n.date || '')}</span><span aria-hidden="true">${uiEsc(md)}</span></span><span class="ui-news-title">${islTag(d)}${uiEsc(t)}</span></button></li>`;
   }
   // 色點＋島名文字（色點不再是唯一資訊）；未掛島＝全校
   function islTag(d) { return `<span class="ui-isl-tag"><i class="ui-news-dot" style="--c:${d ? d.color : 'var(--stone)'}"></i>${uiEsc(d ? d.num + ' ' + L(d, 'name') : tr('全校', 'School'))}</span>`; }
@@ -12785,11 +12785,11 @@ function initUI(ctx) {
     const all = HONORS.filter(h => (!st.newsFilter || h.island === st.newsFilter) && (!st.honorKind || hKey(h) === st.honorKind) && logHit(h, 'h'));
     const rows = st.honorAll || !H_CUT ? all : all.filter(h => String(h.date) >= H_CUT), older = all.length - rows.length;
     const scope = st.honorAll || !H_CUT ? tr('全部', 'All') : tr('近 3 學年', 'Last 3 yrs');
-    $('ui-news-count').textContent = tr(scope + ' ' + rows.length + ' 則', scope + ': ' + rows.length);
+    $('ui-news-count').textContent = '';
     // 亮點數字：和清單同一範圍（時間＋島＋關鍵字）
     const rec = HONORS.filter(hScope);
     const tops = (TOPICS ? TOPICS.map(t => t.id) : Object.keys(DATA.honorKinds || {})).map(k => [k, rec.filter(h => hKey(h) === k).length]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]).slice(0, 2);
-    const stats = st.newsFilter || st.honorKind || logTerms.length ? '' : `<li class="ui-hstats" aria-hidden="false"><span><b>${rec.length}</b>${scope + tr('榮譽', ' honors')}</span>${tops.map(([k, n]) => `<span><b>${n}</b>${uiEsc(hkChipName(k))}</span>`).join('')}</li>`;
+    const stats = st.newsFilter || st.honorKind || logTerms.length ? '' : `<li class="ui-hstats" aria-hidden="false"><span><b>${rec.length}</b>${tr('大會榮譽', ' honors')}</span>${tops.map(([k, n]) => `<span><b>${n}</b>${uiEsc(hkChipName(k))}</span>`).join('')}</li>`;
     if (!rows.length) { honorList.innerHTML = `<li class="ui-empty">${tr('這個條件下還沒有榮譽紀錄。', 'No honors match yet.')}</li>` + (older > 0 ? moreHonors(older) : ''); return; }
     // 依學年分組（8/1 起算）
     let html = stats, yy = 0;
