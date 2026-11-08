@@ -1233,6 +1233,45 @@ dialog::backdrop {
   background: #e2e8f0;
   color: #475569;
 }
+.sq-brand-pill.is-audio {
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+  border-color: #a855f7;
+  color: #7e22ce;
+}
+.sq-brand-pill.is-audio:hover {
+  background: #e9d5ff;
+  color: #6b21a8;
+  transform: translateY(-1px);
+}
+.sq-brand-pill.is-audio.is-muted {
+  background: rgba(241, 245, 249, 0.95);
+  border-color: #cbd5e1;
+  color: #64748b;
+}
+.sq-bq-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f3e8ff;
+  border: 1px solid #c084fc;
+  color: #7e22ce;
+  border-radius: 9999px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+.sq-bq-audio-btn:hover {
+  background: #e9d5ff;
+  transform: scale(1.03);
+}
+.sq-bq-audio-btn.is-muted {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #64748b;
+}
 .sq-act-btn.is-gold.is-locked {
   background: #f1f5f9 !important;
   border-color: #cbd5e1 !important;
@@ -2290,6 +2329,7 @@ dialog::backdrop {
         <div class="sq-brand-actions" id="sq-brand-actions">
           <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
           <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明">📖 集章說明</button>
+          <button type="button" class="sq-brand-pill is-audio" id="sq-btn-audio" title="切換闖關背景音樂">🎵 闖關音樂🔊</button>
           <button type="button" class="sq-brand-pill is-fireworks is-locked" id="sq-btn-fireworks-top" title="集滿 5 個章才可以施放煙火">🔒 煙火(0/5)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表">📅 程序表(17)</button>
           <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label">選手設定</span></button>
@@ -13709,6 +13749,346 @@ function initSportsQuest(ctx) {
   unlockInert();
   setTimeout(unlockInert, 300);
   setTimeout(unlockInert, 1000);
+
+  // ====== 闖關 Web Audio 引擎（背景音樂 BGM ＆ 闖關音效 SFX） ======
+  const soundEngine = (() => {
+    let audioCtx = null;
+    let bgmBuffer = null;
+    let bgmSource = null;
+    let bgmGain = null;
+    let sfxGain = null;
+    let isPlaying = false;
+    let muted = false;
+    try {
+      muted = localStorage.getItem('sq-bgm-muted') === '1';
+    } catch(e) {}
+
+    const initContext = () => {
+      if (audioCtx) return audioCtx;
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return null;
+      try {
+        audioCtx = new AudioContextClass();
+        bgmGain = audioCtx.createGain();
+        bgmGain.gain.setValueAtTime(muted ? 0 : 0.26, audioCtx.currentTime);
+        bgmGain.connect(audioCtx.destination);
+
+        sfxGain = audioCtx.createGain();
+        sfxGain.gain.setValueAtTime(muted ? 0 : 0.35, audioCtx.currentTime);
+        sfxGain.connect(audioCtx.destination);
+      } catch(e) {
+        audioCtx = null;
+      }
+      return audioCtx;
+    };
+
+    // 合成 8 小節循環賽博活力運動會主題曲（~15.2 秒無縫循環 PCM 緩衝區）
+    const buildBgmBuffer = (ctx) => {
+      if (bgmBuffer) return bgmBuffer;
+      const sampleRate = 22050;
+      const bpm = 124;
+      const beatSec = 60 / bpm;
+      const sSec = beatSec / 4; // 十六分音符
+
+      const noteFreq = {
+        'Bb2': 116.54, 'C3': 130.81, 'D3': 146.83, 'E3': 164.81, 'F3': 174.61, 'G3': 196.00, 'A3': 220.00, 'Bb3': 233.08,
+        'C4': 261.63, 'D4': 293.66, 'E4': 329.63, 'F4': 349.23, 'G4': 392.00, 'A4': 440.00, 'Bb4': 466.16,
+        'C5': 523.25, 'D5': 587.33, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'A5': 880.00, 'Bb5': 932.33, 'C6': 1046.50,
+        '-': 0
+      };
+
+      const chords = [
+        ['F3','A3','C4','F4'],
+        ['C3','E3','G3','C4'],
+        ['D3','F3','A3','D4'],
+        ['Bb2','D3','F3','Bb3'],
+        ['F3','A3','C4','F4'],
+        ['G3','Bb3','D4','G4'],
+        ['C3','E3','G3','C4'],
+        ['F3','A3','C4','F4']
+      ];
+      const bassNotes = ['F2','C3','D2','Bb2','F2','G2','C3','F2'];
+      const melNotes = [
+        'F4','-','A4','-','C5','-','D5','-','C5','-','A4','-','F4','-','G4','-',
+        'G4','-','A4','-','G4','-','E4','-','C4','-','D4','-','E4','-','G4','-',
+        'A4','-','C5','-','D5','-','F5','-','E5','-','D5','-','C5','-','A4','-',
+        'Bb4','-','C5','-','D5','-','F5','-','G5','-','F5','-','D5','-','C5','-',
+        'A5','-','-','-','F5','-','-','-','C5','-','-','-','A4','-','C5','-',
+        'Bb4','-','C5','-','D5','-','F5','-','G5','-','A5','-','G5','-','F5','-',
+        'E5','-','F5','-','G5','-','Bb5','-','A5','-','G5','-','E5','-','G4','-',
+        'F4','-','A4','-','C5','-','F5','-','F5','-','-','-','-','-','-','-'
+      ];
+
+      const totalSteps = 128;
+      const totalSamples = Math.floor(totalSteps * sSec * sampleRate);
+      const audioBuf = ctx.createBuffer(1, totalSamples, sampleRate);
+      const pcm = audioBuf.getChannelData(0);
+
+      let melPhase = 0, arpPhase = 0, bassPhase = 0;
+      for (let i = 0; i < totalSamples; i++) {
+        const t = i / sampleRate;
+        const step = Math.floor(t / sSec);
+        const bar = Math.floor(step / 16) % 8;
+        const stepInBar = step % 16;
+        const stepFrac = (t % sSec) / sSec;
+
+        // 主旋律
+        const mNote = melNotes[step % melNotes.length];
+        const mFreq = noteFreq[mNote] || 0;
+        let mSample = 0;
+        if (mFreq > 0) {
+          melPhase += mFreq / sampleRate;
+          const pulse = (melPhase % 1) < 0.38 ? 1 : -1;
+          const env = Math.exp(-stepFrac * 2.6);
+          mSample = pulse * env * 0.28;
+        }
+
+        // 琶音伴奏
+        const chord = chords[bar];
+        const arpIdx = [0, 1, 2, 3, 2, 1, 0, 1, 2, 3, 2, 1, 0, 1, 2, 3][stepInBar];
+        const aFreq = noteFreq[chord[arpIdx]] || 0;
+        let aSample = 0;
+        if (aFreq > 0) {
+          arpPhase += aFreq / sampleRate;
+          const tri = 2 * Math.abs(2 * (arpPhase % 1) - 1) - 1;
+          const aEnv = Math.exp(-stepFrac * 4.2);
+          aSample = tri * aEnv * 0.16;
+        }
+
+        // 重低音貝斯
+        const bFreq = (noteFreq[bassNotes[bar]] || 100) * (stepInBar % 8 < 4 ? 1 : 1.5);
+        bassPhase += bFreq / sampleRate;
+        const bTri = 2 * Math.abs(2 * (bassPhase % 1) - 1) - 1;
+        const bEnv = Math.exp(-((t % (sSec * 2)) / (sSec * 2)) * 3.0);
+        const bSample = bTri * bEnv * 0.22;
+
+        // 節奏鼓點
+        let dSample = 0;
+        const beatFrac = (t % (sSec * 4)) / (sSec * 4);
+        const beatInBar = Math.floor(stepInBar / 4);
+        if (beatInBar === 0 || beatInBar === 2) {
+          const kFreq = Math.max(45, 140 * Math.exp(-beatFrac * 25));
+          dSample += Math.sin(2 * Math.PI * kFreq * t) * Math.exp(-beatFrac * 18) * 0.34;
+        }
+        if (beatInBar === 1 || beatInBar === 3) {
+          const noise = (Math.random() * 2 - 1) * Math.exp(-beatFrac * 14);
+          const punch = Math.sin(2 * Math.PI * 180 * t) * Math.exp(-beatFrac * 22);
+          dSample += (noise * 0.25 + punch * 0.2) * 0.45;
+        }
+        if (stepInBar % 2 === 1) {
+          const hat = (Math.random() * 2 - 1) * Math.exp(-stepFrac * 28);
+          dSample += hat * 0.08;
+        }
+
+        const mix = mSample + aSample + bSample + dSample;
+        pcm[i] = Math.tanh(mix);
+      }
+      bgmBuffer = audioBuf;
+      return audioBuf;
+    };
+
+    const startBgm = () => {
+      const actx = initContext();
+      if (!actx) return;
+      if (actx.state === 'suspended') {
+        actx.resume();
+      }
+      if (isPlaying || muted) return;
+      try {
+        const buf = buildBgmBuffer(actx);
+        bgmSource = actx.createBufferSource();
+        bgmSource.buffer = buf;
+        bgmSource.loop = true;
+        bgmSource.connect(bgmGain);
+        bgmGain.gain.cancelScheduledValues(actx.currentTime);
+        bgmGain.gain.setValueAtTime(0, actx.currentTime);
+        bgmGain.gain.linearRampToValueAtTime(0.26, actx.currentTime + 0.5);
+        bgmSource.start();
+        isPlaying = true;
+        updateButtons();
+      } catch(e) {}
+    };
+
+    const stopBgm = () => {
+      if (!audioCtx || !isPlaying || !bgmSource) return;
+      try {
+        bgmGain.gain.cancelScheduledValues(audioCtx.currentTime);
+        bgmGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.3);
+        setTimeout(() => {
+          if (bgmSource) {
+            try { bgmSource.stop(); } catch(e) {}
+            bgmSource.disconnect();
+            bgmSource = null;
+          }
+          isPlaying = false;
+          updateButtons();
+        }, 320);
+      } catch(e) {
+        isPlaying = false;
+        updateButtons();
+      }
+    };
+
+    const toggleMute = () => {
+      muted = !muted;
+      try { localStorage.getItem('sq-bgm-muted', muted ? '1' : '0'); } catch(e) {}
+      if (audioCtx) {
+        if (muted) {
+          stopBgm();
+          if (sfxGain) sfxGain.gain.setValueAtTime(0, audioCtx.currentTime);
+        } else {
+          if (sfxGain) sfxGain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+          startBgm();
+        }
+      } else if (!muted) {
+        startBgm();
+      }
+      updateButtons();
+    };
+
+    const playSfx = (type, param) => {
+      if (muted) return;
+      const actx = initContext();
+      if (!actx) return;
+      if (actx.state === 'suspended') actx.resume();
+      const now = actx.currentTime;
+      try {
+        if (type === 'tap') {
+          // 點擊蓄力上升音
+          const osc = actx.createOscillator();
+          const g = actx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+          g.gain.setValueAtTime(0.3, now);
+          g.gain.linearRampToValueAtTime(0.01, now + 0.08);
+          osc.connect(g);
+          g.connect(sfxGain);
+          osc.start(now);
+          osc.stop(now + 0.09);
+        } else if (type === 'step') {
+          // 順序考驗階梯音
+          const scale = [349.23, 392.00, 440.00, 466.16, 523.25, 587.33];
+          const freq = scale[Math.min(scale.length - 1, param || 0)];
+          const osc = actx.createOscillator();
+          const g = actx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          g.gain.setValueAtTime(0.35, now);
+          g.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+          osc.connect(g);
+          g.connect(sfxGain);
+          osc.start(now);
+          osc.stop(now + 0.16);
+        } else if (type === 'wrong') {
+          // 錯誤低沉警示音
+          const osc = actx.createOscillator();
+          const g = actx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(160, now);
+          osc.frequency.linearRampToValueAtTime(110, now + 0.18);
+          g.gain.setValueAtTime(0.25, now);
+          g.gain.linearRampToValueAtTime(0.01, now + 0.18);
+          osc.connect(g);
+          g.connect(sfxGain);
+          osc.start(now);
+          osc.stop(now + 0.19);
+        } else if (type === 'correct') {
+          // 答對過關和弦琶音 (F - A - C - F)
+          const freqs = [349.23, 440.00, 523.25, 698.46];
+          freqs.forEach((f, idx) => {
+            const osc = actx.createOscillator();
+            const g = actx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(f, now + idx * 0.07);
+            g.gain.setValueAtTime(0, now + idx * 0.07);
+            g.gain.linearRampToValueAtTime(0.3, now + idx * 0.07 + 0.02);
+            g.gain.exponentialRampToValueAtTime(0.01, now + idx * 0.07 + 0.28);
+            osc.connect(g);
+            g.connect(sfxGain);
+            osc.start(now + idx * 0.07);
+            osc.stop(now + idx * 0.07 + 0.3);
+          });
+        } else if (type === 'fanfare') {
+          // 印章/終極過關勝利號角
+          const fanNotes = [
+            { f: 349.23, t: 0, d: 0.12 },
+            { f: 440.00, t: 0.12, d: 0.12 },
+            { f: 523.25, t: 0.24, d: 0.15 },
+            { f: 698.46, t: 0.40, d: 0.45 }
+          ];
+          fanNotes.forEach(n => {
+            const osc = actx.createOscillator();
+            const g = actx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(n.f, now + n.t);
+            g.gain.setValueAtTime(0.25, now + n.t);
+            g.gain.exponentialRampToValueAtTime(0.01, now + n.t + n.d);
+            osc.connect(g);
+            g.connect(sfxGain);
+            osc.start(now + n.t);
+            osc.stop(now + n.t + n.d + 0.02);
+          });
+        } else if (type === 'gun') {
+          // 鳴槍與哨音
+          const osc = actx.createOscillator();
+          const g = actx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(1800, now);
+          osc.frequency.exponentialRampToValueAtTime(2800, now + 0.2);
+          g.gain.setValueAtTime(0.4, now);
+          g.gain.linearRampToValueAtTime(0.01, now + 0.25);
+          osc.connect(g);
+          g.connect(sfxGain);
+          osc.start(now);
+          osc.stop(now + 0.26);
+        }
+      } catch(e) {}
+    };
+
+    const updateButtons = () => {
+      const topBtn = document.getElementById('sq-btn-audio');
+      if (topBtn) {
+        if (muted) {
+          topBtn.className = 'sq-brand-pill is-audio is-muted';
+          topBtn.innerHTML = '🔇 音樂(靜音)';
+          topBtn.title = '點擊開啟闖關背景音樂';
+        } else if (isPlaying) {
+          topBtn.className = 'sq-brand-pill is-audio is-playing';
+          topBtn.innerHTML = '🎵 闖關音樂🔊';
+          topBtn.title = '背景音樂播放中，點擊可靜音';
+        } else {
+          topBtn.className = 'sq-brand-pill is-audio';
+          topBtn.innerHTML = '🎵 闖關音樂🔊';
+          topBtn.title = '點擊播放闖關背景音樂';
+        }
+      }
+      const bqBtn = document.getElementById('sq-bq-audio-toggle');
+      if (bqBtn) {
+        if (muted) {
+          bqBtn.className = 'sq-bq-audio-btn is-muted';
+          bqBtn.innerHTML = '🔇 音樂已靜音';
+        } else {
+          bqBtn.className = 'sq-bq-audio-btn';
+          bqBtn.innerHTML = '🎵 闖關熱血音樂🔊';
+        }
+      }
+    };
+
+    return {
+      initContext,
+      startBgm,
+      stopBgm,
+      toggleMute,
+      playSfx,
+      updateButtons,
+      isMuted: () => muted,
+      isPlaying: () => isPlaying
+    };
+  })();
+
+  // 點擊頁面時預先解鎖 Web Audio Context
+  document.addEventListener('pointerdown', () => { soundEngine.initContext(); }, { once: true });
   let state = {
     name: '',
     role: '低年級小選手',
@@ -13776,6 +14156,7 @@ function initSportsQuest(ctx) {
     if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/22關';
     if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/22關';
 
+    soundEngine.updateButtons();
     const topFwBtn = document.getElementById('sq-btn-fireworks-top');
     if (topFwBtn) {
       if (stampedCount >= 5) {
@@ -13822,6 +14203,11 @@ function initSportsQuest(ctx) {
   }
 
   // 打開選手設定對話框時，同步目前的身分與姓名
+  document.getElementById('sq-btn-audio')?.addEventListener('click', () => {
+    soundEngine.toggleMute();
+    showToast(soundEngine.isMuted() ? '🔇 闖關背景音樂已靜音' : '🎵 闖關熱血音樂播放中！');
+  });
+
   document.getElementById('sq-btn-athlete')?.addEventListener('click', () => {
     nameInput.value = state.name || '';
     roleCards.forEach(c => {
@@ -13955,6 +14341,8 @@ function initSportsQuest(ctx) {
   function mountBuildingChallenge(itemId) {
     const mount = document.getElementById('sq-item-quest-mount');
     if (!mount) return;
+    soundEngine.startBgm();
+    soundEngine.updateButtons();
     const ref = ctx.itemById.get(itemId);
     if (!ref || !ref.item || !ref.item.challenge) return;
     const it = ref.item;
@@ -14064,6 +14452,9 @@ function initSportsQuest(ctx) {
           '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">' +
             '<span class="sq-bq-tag">🎯 建築關卡｜' + powerName + '</span>' +
             '<span class="sq-bq-diff-badge ' + diff.tagClass + '">' + diff.star + ' ' + curRole + '（' + diff.name + '）</span>' +
+            '<button type="button" class="sq-bq-audio-btn ' + (soundEngine.isMuted() ? 'is-muted' : '') + '" id="sq-bq-audio-toggle" title="切換闖關背景音樂">' +
+              (soundEngine.isMuted() ? '🔇 音樂已靜音' : '🎵 闖關熱血音樂🔊') +
+            '</button>' +
           '</div>' +
           '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? '✅ 本建築已過關' : '⏳ 待闖關挑戰') + '</span>' +
         '</div>' +
@@ -14095,17 +14486,23 @@ function initSportsQuest(ctx) {
       '</div>';
 
     // 綁定第一階段互動事件
+    document.getElementById('sq-bq-audio-toggle')?.addEventListener('click', () => {
+      soundEngine.toggleMute();
+      showToast(soundEngine.isMuted() ? '🔇 闖關背景音樂已靜音' : '🎵 闖關熱血音樂播放中！');
+    });
     const msgEl = document.getElementById('sq-bq-stage1-msg');
     if (ch.mode === 'tap_charge') {
       const actBtn = document.getElementById('sq-bq-act-btn');
       const numEl = document.getElementById('sq-bq-tap-num');
       const fillEl = document.getElementById('sq-bq-meter-fill');
       actBtn?.addEventListener('click', () => {
+        soundEngine.playSfx('tap');
         tapCount = Math.min(target, tapCount + 1);
         if (numEl) numEl.textContent = tapCount + '/' + target;
         if (fillEl) fillEl.style.width = Math.round((tapCount / target) * 100) + '%';
         if (tapCount >= target) {
           stage1Done = true;
+          soundEngine.playSfx('correct');
           if (msgEl) msgEl.hidden = false;
         }
       });
@@ -14117,6 +14514,7 @@ function initSportsQuest(ctx) {
           if (idx === seqIdx) {
             btn.classList.add('is-done');
             seqIdx++;
+            soundEngine.playSfx('step', seqIdx);
             if (msgEl) {
               msgEl.hidden = false;
               if (seqIdx < seqBtns.length) {
@@ -14128,10 +14526,12 @@ function initSportsQuest(ctx) {
             }
             if (seqIdx >= seqBtns.length) {
               stage1Done = true;
+              soundEngine.playSfx('correct');
             }
           } else if (idx < seqIdx) {
             btn.classList.add('is-done');
           } else {
+            soundEngine.playSfx('wrong');
             btn.classList.add('is-wrong');
             setTimeout(() => btn.classList.remove('is-wrong'), 450);
             if (msgEl) {
@@ -14159,18 +14559,21 @@ function initSportsQuest(ctx) {
           timerId = setTimeout(() => {
             waitingGun = false;
             gunTime = performance.now();
+            soundEngine.playSfx('gun');
             reactBtn.textContent = '🔫 砰！現在立刻點擊起跑！';
             reactBtn.style.background = '#d1fae5';
           }, 700 + Math.random() * 900);
         } else if (waitingGun) {
           clearTimeout(timerId);
           waitingGun = false;
+          soundEngine.playSfx('wrong');
           reactBtn.textContent = '⚠️ 搶跑犯規！點此重新預備起跑';
           reactBtn.style.background = '#fee2e2';
         } else if (gunTime) {
           const rt = ((performance.now() - gunTime) / 1000).toFixed(3);
           gunTime = 0;
           stage1Done = true;
+          soundEngine.playSfx('correct');
           reactBtn.textContent = '⚡ 起跑成功！反應時間：' + rt + ' 秒（點此可再測）';
           reactBtn.style.background = '#ffffff';
           if (msgEl) {
@@ -14186,6 +14589,7 @@ function initSportsQuest(ctx) {
     mount.querySelectorAll('.sq-bq-opt').forEach(btn => {
       btn.addEventListener('click', () => {
         if (!stage1Done && !isCleared) {
+          soundEngine.playSfx('wrong');
           if (fbEl) {
             fbEl.hidden = false;
             let tip = '請先依順序點擊上方按鈕通過考驗！';
@@ -14198,6 +14602,7 @@ function initSportsQuest(ctx) {
         const idx = Number(btn.dataset.optIdx);
         if (idx === ch.answer) {
           btn.classList.add('is-correct');
+          soundEngine.playSfx('fanfare');
           state.clearedItems[it.id] = true;
           if (ch.questId === 'ALL') {
             (DATA.quests || []).forEach(q => { state.stamps[q.id] = true; });
@@ -14229,6 +14634,7 @@ function initSportsQuest(ctx) {
             setTimeout(() => triggerGrandFinale(), 1200);
           }
         } else {
+          soundEngine.playSfx('wrong');
           btn.classList.add('is-wrong');
           if (fbEl) {
             fbEl.hidden = false;
@@ -14953,6 +15359,7 @@ function initSportsQuest(ctx) {
   }
 
   function triggerGrandFinale() {
+    soundEngine.playSfx('fanfare');
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
     const clearedTotal = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
