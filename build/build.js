@@ -2307,7 +2307,7 @@ function initSportsQuest(ctx) {
   setTimeout(unlockInert, 300);
   setTimeout(unlockInert, 1000);
 
-// ====== 闖關 Web Audio 引擎（多曲風背景音樂 BGM ＆ 闖關音效 SFX） ======
+// ====== 闖關 Web Audio 引擎（8-Bit 像素懷舊闖關 ＆ 多曲風背景音樂 BGM ＆ 闖關音效 SFX） ======
   const soundEngine = (() => {
     let audioCtx = null;
     let bgmSource = null;
@@ -2316,17 +2316,42 @@ function initSportsQuest(ctx) {
     let isPlaying = false;
     let muted = false;
     let curVol = 0.38;
-    let curTrack = 0;
+    let curTrack = 0; // 預設曲目 0: 👾 8-Bit 像素懷舊闖關 (Chiptune Arcade Quest)
     const bgmBuffers = [null, null, null];
 
-    const TRACK_NAMES = ['🏃 熱血運動會進行曲', '🌲 高峰森活綠意律動', '👾 8-Bit 像素闖關曲'];
+    const TRACKS = [
+      {
+        id: 'chiptune',
+        icon: '👾',
+        name: '8-Bit 像素懷舊闖關',
+        fullTitle: '👾 8-Bit 像素懷舊闖關 (Chiptune Arcade Quest)',
+        desc: '復古紅白機電玩風格的快節奏方波節奏，增添冒險感。',
+        bpm: 146
+      },
+      {
+        id: 'march',
+        icon: '🏃',
+        name: '熱血運動會進行曲',
+        fullTitle: '🏃 熱血運動會進行曲 (Sports Day March)',
+        desc: '昂揚奔馳、青春活力的交響運動進行曲。',
+        bpm: 126
+      },
+      {
+        id: 'forest',
+        icon: '🌲',
+        name: '高峰森活綠意律動',
+        fullTitle: '🌲 高峰森活綠意律動 (Forest Vitality Lo-Fi)',
+        desc: '高峰都市森林、清爽悠揚的自然綠意旋律。',
+        bpm: 112
+      }
+    ];
 
     try {
       muted = localStorage.getItem('sq-bgm-muted') === '1';
       const savedVol = parseFloat(localStorage.getItem('sq-bgm-vol') || '0.38');
       if (!isNaN(savedVol) && savedVol >= 0 && savedVol <= 1) curVol = savedVol;
       const savedTrack = parseInt(localStorage.getItem('sq-bgm-track') || '0', 10);
-      if (!isNaN(savedTrack) && savedTrack >= 0 && savedTrack < 3) curTrack = savedTrack;
+      if (!isNaN(savedTrack) && savedTrack >= 0 && savedTrack < TRACKS.length) curTrack = savedTrack;
     } catch(e) {}
 
     const initContext = () => {
@@ -2349,15 +2374,94 @@ function initSportsQuest(ctx) {
     };
 
     const noteFreq = {
-      'C2': 65.41, 'D2': 73.42, 'E2': 82.41, 'F2': 87.31, 'G2': 98.00, 'A2': 110.00, 'Bb2': 116.54, 'B2': 123.47,
-      'C3': 130.81, 'D3': 146.83, 'Eb3': 155.56, 'E3': 164.81, 'F3': 174.61, 'G3': 196.00, 'A3': 220.00, 'Bb3': 233.08, 'B3': 246.94,
-      'C4': 261.63, 'D4': 293.66, 'Eb4': 311.13, 'E4': 329.63, 'F4': 349.23, 'G4': 392.00, 'A4': 440.00, 'Bb4': 466.16, 'B4': 493.88,
-      'C5': 523.25, 'D5': 587.33, 'Eb5': 622.25, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'A5': 880.00, 'Bb5': 932.33, 'B5': 987.77,
-      'C6': 1046.50, '-': 0
+      'A2': 110.00, 'B2': 123.47, 'C3': 130.81, 'D3': 146.83, 'Eb3': 155.56, 'E3': 164.81, 'F3': 174.61, 'G3': 196.00, 'Ab3': 207.65,
+      'A3': 220.00, 'B3': 246.94, 'C4': 261.63, 'D4': 293.66, 'Eb4': 311.13, 'E4': 329.63, 'F4': 349.23, 'G4': 392.00, 'Ab4': 415.30,
+      'A4': 440.00, 'B4': 493.88, 'C5': 523.25, 'D5': 587.33, 'Eb5': 622.25, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'Ab5': 830.61,
+      'A5': 880.00, 'B5': 987.77, 'C6': 1046.50, 'D6': 1174.66, 'E6': 1318.51, '-': 0
     };
 
-    // 生成曲目 0: 熱血運動會進行曲
+    // ====== 曲目 0: 👾 8-Bit 像素懷舊闖關 (Chiptune Arcade Quest) ======
+    // 復古紅白機電玩風格的快節奏方波節奏，增添冒險感 (146 BPM 雙方波 + 階梯三角波貝斯 + 1-Bit 噪聲鼓)
     const buildTrack0 = (ctx) => {
+      const sampleRate = 22050;
+      const bpm = 146;
+      const sSec = (60 / bpm) / 4;
+      const totalSamples = Math.floor(128 * sSec * sampleRate);
+      const audioBuf = ctx.createBuffer(1, totalSamples, sampleRate);
+      const pcm = audioBuf.getChannelData(0);
+
+      const chords = [
+        ['A3','C4','E4','A4'], ['F3','A3','C4','F4'], ['G3','B3','D4','G4'], ['C4','E4','G4','C5'],
+        ['D3','F3','A3','D4'], ['E3','Ab3','B3','E4'], ['A3','C4','E4','A4'], ['A3','C4','E4','A4']
+      ];
+      const bassRoots = ['A2','F2','G2','C3','D2','E2','A2','A2'];
+      const melNotes = [
+        'A4','-','C5','-','E5','-','D5','C5','B4','-','C5','-','A4','-','-','-',
+        'F4','-','A4','-','C5','-','D5','C5','A4','-','C5','-','F5','-','E5','D5',
+        'G4','-','B4','-','D5','-','E5','D5','B4','-','D5','-','G5','-','F5','E5',
+        'C5','-','E5','-','G5','-','A5','G5','E5','-','G5','-','C6','-','-','-',
+        'D5','-','F5','-','A5','-','G5','F5','E5','-','F5','-','D5','-','F5','-',
+        'E5','-','Ab4','-','B4','-','D5','-','E5','-','D5','-','B4','-','Ab4','-',
+        'A4','-','C5','-','E5','-','A5','-','G5','-','E5','-','C5','-','B4','-',
+        'A4','C5','E5','A5','C6','A5','E5','C5','A4','-','-','-','-','-','-','-'
+      ];
+
+      let melPhase = 0, arpPhase = 0, bassPhase = 0;
+      for (let i = 0; i < totalSamples; i++) {
+        const t = i / sampleRate;
+        const step = Math.floor(t / sSec);
+        const bar = Math.floor(step / 16) % 8;
+        const stepInBar = step % 16;
+        const stepFrac = (t % sSec) / sSec;
+
+        // 1. 紅白機 25% 脈衝主旋律（短促跳躍斷奏音色）
+        const mFreq = noteFreq[melNotes[step % melNotes.length]] || 0;
+        let mSample = 0;
+        if (mFreq > 0) {
+          melPhase += mFreq / sampleRate;
+          const pulse = (melPhase % 1) < 0.25 ? 1 : -1;
+          mSample = pulse * Math.max(0, 1 - stepFrac * 1.6) * 0.28;
+        }
+
+        // 2. 紅白機 12.5% 窄脈衝快速琶音（街機冒險閃耀琶音）
+        const chord = chords[bar];
+        const aFreq = (noteFreq[chord[stepInBar % 4]] || 0) * 2;
+        let aSample = 0;
+        if (aFreq > 0) {
+          arpPhase += aFreq / sampleRate;
+          const pulse = (arpPhase % 1) < 0.125 ? 1 : -1;
+          aSample = pulse * Math.max(0, 1 - stepFrac * 2.8) * 0.15;
+        }
+
+        // 3. NES 三角波貝斯（16分音符根音八度彈跳）
+        const baseFreq = noteFreq[bassRoots[bar]] || 110;
+        const bFreq = (stepInBar % 2 === 1) ? baseFreq * 2 : baseFreq;
+        bassPhase += bFreq / sampleRate;
+        const tri = 2 * Math.abs(2 * (bassPhase % 1) - 1) - 1;
+        const bSample = tri * Math.max(0, 1 - stepFrac * 1.2) * 0.25;
+
+        // 4. NES 1-Bit 顆粒噪聲打擊樂（紅白機小鼓、大鼓與鈸）
+        let dSample = 0;
+        const beatInBar = Math.floor(stepInBar / 4);
+        const beatFrac = (t % (sSec * 4)) / (sSec * 4);
+        if (beatInBar === 0 || beatInBar === 2) {
+          const kFreq = Math.max(38, 160 * Math.exp(-beatFrac * 30));
+          dSample += Math.sin(2 * Math.PI * kFreq * t) * Math.exp(-beatFrac * 22) * 0.38;
+        }
+        if (beatInBar === 1 || beatInBar === 3) {
+          dSample += (Math.random() > 0.5 ? 1 : -1) * Math.exp(-beatFrac * 16) * 0.28;
+        }
+        if (stepInBar % 2 === 1) {
+          dSample += (Math.random() > 0.5 ? 1 : -1) * Math.exp(-stepFrac * 25) * 0.09;
+        }
+
+        pcm[i] = Math.tanh(mSample + aSample + bSample + dSample);
+      }
+      return audioBuf;
+    };
+
+    // ====== 曲目 1: 🏃 熱血運動會進行曲 (Sports Day March) ======
+    const buildTrack1 = (ctx) => {
       const sampleRate = 22050;
       const bpm = 126;
       const sSec = (60 / bpm) / 4;
@@ -2425,8 +2529,8 @@ function initSportsQuest(ctx) {
       return audioBuf;
     };
 
-    // 生成曲目 1: 高峰森活綠意律動
-    const buildTrack1 = (ctx) => {
+    // ====== 曲目 2: 🌲 高峰森活綠意律動 (Forest Vitality Lo-Fi) ======
+    const buildTrack2 = (ctx) => {
       const sampleRate = 22050;
       const bpm = 112;
       const sSec = (60 / bpm) / 4;
@@ -2464,49 +2568,6 @@ function initSportsQuest(ctx) {
         }
         if ((step % 4) === 2) {
           dSample += (Math.random() * 2 - 1) * Math.exp(-stepFrac * 25) * 0.08;
-        }
-        pcm[i] = Math.tanh(mSample + bSample + dSample);
-      }
-      return audioBuf;
-    };
-
-    // 生成曲目 2: 8-Bit 像素闖關曲
-    const buildTrack2 = (ctx) => {
-      const sampleRate = 22050;
-      const bpm = 138;
-      const sSec = (60 / bpm) / 4;
-      const melNotes = [
-        'E5','E5','-','E5','-','C5','E5','-','G5','-','-','-','G4','-','-','-',
-        'C5','-','-','G4','-','-','E4','-','-','A4','-','B4','-','Bb4','A4','-',
-        'G4','E5','G5','A5','-','F5','G5','-','E5','-','C5','D5','B4','-','-','-',
-        'C5','-','-','G4','-','-','E4','-','-','A4','-','B4','-','Bb4','A4','-'
-      ];
-      const bassNotes = ['C3', 'G2', 'A2', 'F2'];
-      const totalSamples = Math.floor(64 * sSec * sampleRate);
-      const audioBuf = ctx.createBuffer(1, totalSamples, sampleRate);
-      const pcm = audioBuf.getChannelData(0);
-      let melPhase = 0, bassPhase = 0;
-      for (let i = 0; i < totalSamples; i++) {
-        const t = i / sampleRate;
-        const step = Math.floor(t / sSec);
-        const bar = Math.floor(step / 16) % 4;
-        const stepFrac = (t % sSec) / sSec;
-
-        const mFreq = noteFreq[melNotes[step % melNotes.length]] || 0;
-        let mSample = 0;
-        if (mFreq > 0) {
-          melPhase += mFreq / sampleRate;
-          const pulse = (melPhase % 1) < 0.5 ? 1 : -1;
-          mSample = pulse * Math.exp(-stepFrac * 3.5) * 0.30;
-        }
-        const bFreq = noteFreq[bassNotes[bar]] || 130.81;
-        bassPhase += bFreq / sampleRate;
-        const bSample = (2 * Math.abs(2 * (bassPhase % 1) - 1) - 1) * Math.exp(-((t % (sSec * 2)) / (sSec * 2)) * 3.0) * 0.25;
-
-        let dSample = 0;
-        const beatFrac = (t % (sSec * 4)) / (sSec * 4);
-        if ((step % 4) === 0) {
-          dSample += (Math.random() * 2 - 1) * Math.exp(-beatFrac * 20) * 0.35;
         }
         pcm[i] = Math.tanh(mSample + bSample + dSample);
       }
@@ -2589,6 +2650,35 @@ function initSportsQuest(ctx) {
       updateButtons();
     };
 
+    // 依序循環切換曲目 0 -> 1 -> 2 -> 靜音 -> 0
+    const cycleTrackOrMute = () => {
+      if (muted) {
+        muted = false;
+        try { localStorage.setItem('sq-bgm-muted', '0'); } catch(e) {}
+        if (sfxGain && audioCtx) sfxGain.gain.setValueAtTime(0.45, audioCtx.currentTime);
+        startBgm(curTrack);
+        const t = TRACKS[curTrack];
+        return { muted: false, track: t, msg: t.icon + ' 播放中：' + t.fullTitle + ' (' + t.desc + ')' };
+      }
+      const nextIdx = curTrack + 1;
+      if (nextIdx >= TRACKS.length) {
+        muted = true;
+        try { localStorage.setItem('sq-bgm-muted', '1'); } catch(e) {}
+        curTrack = 0;
+        try { localStorage.setItem('sq-bgm-track', '0'); } catch(e) {}
+        stopBgm();
+        if (sfxGain && audioCtx) sfxGain.gain.setValueAtTime(0, audioCtx.currentTime);
+        updateButtons();
+        return { muted: true, msg: '🔇 闖關背景音樂已靜音' };
+      } else {
+        curTrack = nextIdx;
+        try { localStorage.setItem('sq-bgm-track', String(curTrack)); } catch(e) {}
+        startBgm(curTrack);
+        const t = TRACKS[curTrack];
+        return { muted: false, track: t, msg: t.icon + ' 已切換為：' + t.fullTitle + ' (' + t.desc + ')' };
+      }
+    };
+
     const nextTrack = () => {
       curTrack = (curTrack + 1) % 3;
       try { localStorage.setItem('sq-bgm-track', String(curTrack)); } catch(e) {}
@@ -2657,14 +2747,14 @@ function initSportsQuest(ctx) {
           const osc = actx.createOscillator();
           const g = actx.createGain();
           osc.type = 'sawtooth';
-          osc.frequency.setValueAtTime(180, now);
-          osc.frequency.linearRampToValueAtTime(100, now + 0.22);
+          osc.frequency.setValueAtTime(160, now);
+          osc.frequency.linearRampToValueAtTime(105, now + 0.20);
           g.gain.setValueAtTime(0.3, now);
-          g.gain.linearRampToValueAtTime(0.01, now + 0.22);
+          g.gain.linearRampToValueAtTime(0.01, now + 0.20);
           osc.connect(g);
           g.connect(sfxGain);
           osc.start(now);
-          osc.stop(now + 0.23);
+          osc.stop(now + 0.21);
         } else if (type === 'correct') {
           const freqs = [349.23, 440.00, 523.25, 698.46];
           freqs.forEach((f, idx) => {
@@ -2717,20 +2807,21 @@ function initSportsQuest(ctx) {
 
     const updateButtons = () => {
       const eqHtml = '<span class="sq-eq"><i></i><i></i><i></i><i></i></span>';
+      const curTrk = TRACKS[curTrack] || TRACKS[0];
       const topBtn = document.getElementById('sq-btn-audio');
       if (topBtn) {
         if (muted) {
           topBtn.className = 'sq-brand-pill is-audio is-muted';
           topBtn.innerHTML = '🔇 音樂(靜音)';
-          topBtn.title = '點擊開啟闖關背景音樂 (可切換 3 首熱血曲風)';
+          topBtn.title = '點擊開啟闖關背景音樂 (可切換 3 首曲風)';
         } else if (isPlaying) {
           topBtn.className = 'sq-brand-pill is-audio is-playing';
-          topBtn.innerHTML = '🎵 ' + TRACK_NAMES[curTrack] + ' ' + eqHtml;
-          topBtn.title = '正在播放：' + TRACK_NAMES[curTrack] + ' (點擊切換曲目或展開控制盒)';
+          topBtn.innerHTML = curTrk.icon + ' ' + curTrk.name + ' ' + eqHtml;
+          topBtn.title = '正在播放：' + curTrk.fullTitle + ' — ' + curTrk.desc + '（點擊切換曲風）';
         } else {
           topBtn.className = 'sq-brand-pill is-audio';
-          topBtn.innerHTML = '🎵 開啟闖關音樂';
-          topBtn.title = '點擊播放闖關背景音樂';
+          topBtn.innerHTML = '🎵 ' + curTrk.icon + ' ' + curTrk.name;
+          topBtn.title = '點擊播放：' + curTrk.fullTitle;
         }
       }
       const bqBtn = document.getElementById('sq-bq-audio-toggle');
@@ -2740,33 +2831,13 @@ function initSportsQuest(ctx) {
           bqBtn.innerHTML = '🔇 音樂已靜音';
         } else if (isPlaying) {
           bqBtn.className = 'sq-bq-audio-btn is-playing';
-          bqBtn.innerHTML = '🎵 ' + TRACK_NAMES[curTrack] + ' ' + eqHtml;
+          bqBtn.innerHTML = curTrk.icon + ' ' + curTrk.name + ' ' + eqHtml;
+          bqBtn.title = '當前曲風：' + curTrk.fullTitle + '（點擊切換曲風）';
         } else {
           bqBtn.className = 'sq-bq-audio-btn';
-          bqBtn.innerHTML = '🎵 播放闖關音樂';
+          bqBtn.innerHTML = '🎵 ' + curTrk.icon + ' ' + curTrk.name;
         }
       }
-      const widgetBtn = document.getElementById('sq-music-main-btn');
-      const widgetName = document.getElementById('sq-music-name');
-      const widgetEq = document.getElementById('sq-music-eq');
-      if (widgetBtn) {
-        widgetBtn.classList.toggle('is-muted', muted);
-        widgetBtn.classList.toggle('is-playing', isPlaying);
-      }
-      if (widgetName) {
-        widgetName.textContent = muted ? '音樂靜音' : (isPlaying ? TRACK_NAMES[curTrack] : '點擊播放');
-      }
-      if (widgetEq) {
-        widgetEq.style.display = (isPlaying && !muted) ? 'inline-flex' : 'none';
-      }
-      document.querySelectorAll('.sq-mp-track').forEach(btn => {
-        const tIdx = parseInt(btn.dataset.track || '0', 10);
-        btn.classList.toggle('is-active', tIdx === curTrack);
-      });
-      document.querySelectorAll('.sq-mp-vol-btn').forEach(btn => {
-        const v = parseFloat(btn.dataset.vol || '0.38');
-        btn.classList.toggle('is-active', Math.abs(v - curVol) < 0.1);
-      });
     };
 
     return {
@@ -2774,6 +2845,7 @@ function initSportsQuest(ctx) {
       startBgm,
       stopBgm,
       toggleMute,
+      cycleTrackOrMute,
       nextTrack,
       setVolume,
       unlock,
@@ -2781,7 +2853,8 @@ function initSportsQuest(ctx) {
       updateButtons,
       isMuted: () => muted,
       isPlaying: () => isPlaying,
-      getTrackName: () => TRACK_NAMES[curTrack],
+      getTracks: () => TRACKS,
+      getTrackName: () => (TRACKS[curTrack] || TRACKS[0]).name,
       getTrackIndex: () => curTrack
     };
   })();
@@ -2903,8 +2976,8 @@ function initSportsQuest(ctx) {
 
   // 打開選手設定對話框時，同步目前的身分與姓名
   document.getElementById('sq-btn-audio')?.addEventListener('click', () => {
-    soundEngine.toggleMute();
-    showToast(soundEngine.isMuted() ? '🔇 闖關背景音樂已靜音' : '🎵 闖關熱血音樂播放中！');
+    const res = soundEngine.cycleTrackOrMute();
+    showToast(res.msg);
   });
 
   document.getElementById('sq-btn-athlete')?.addEventListener('click', () => {
@@ -3186,8 +3259,8 @@ function initSportsQuest(ctx) {
 
     // 綁定第一階段互動事件
     document.getElementById('sq-bq-audio-toggle')?.addEventListener('click', () => {
-      soundEngine.toggleMute();
-      showToast(soundEngine.isMuted() ? '🔇 闖關背景音樂已靜音' : '🎵 闖關熱血音樂播放中！');
+      const res = soundEngine.cycleTrackOrMute();
+      showToast(res.msg);
     });
     const msgEl = document.getElementById('sq-bq-stage1-msg');
     if (ch.mode === 'tap_charge') {
