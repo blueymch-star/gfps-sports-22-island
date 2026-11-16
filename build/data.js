@@ -131,7 +131,17 @@ module.exports = {
         "外太空無人巡邏機隊"
       ],
       "answer": 0,
-      "explain": "完全正確！大會程序表特別安排頒發表揚全校性績優義工與有功人員，展現高峰國小「Friendly 友善好品格」的人文關懷精神！"
+      "explain": "完全正確！大會程序表特別安排頒發表揚全校性績優義工與有功人員，展現高峰國小「Friendly 友善好品格」的人文關懷精神！",
+      "landmarkNameEn": "Principal & Volunteer Starlight Podium",
+      "titleEn": "[Friendly Character Stamp] Grandstand Volunteer Appreciation",
+      "clueEn": "Central Starport [Gao-Feng Gala Flagship]: Find the Principal & Volunteer Starlight Podium.",
+      "questionEn": "The Sports Day schedule includes PTA & Volunteer Appreciation Awards. Which GFPS vision does this reflect?",
+      "optionsEn": [
+        "Friendly Character — Gratitude for campus volunteers",
+        "Racing faster than classmates",
+        "Only awarding the tallest student"
+      ],
+      "explainEn": "Correct! Expressing gratitude to volunteers who protect students embodies GFPS's Friendly Character!"
     },
     {
       "id": "q_aesthetics",
@@ -151,7 +161,17 @@ module.exports = {
         "極地冰雕研究館，下午安排溜冰特技展"
       ],
       "answer": 0,
-      "explain": "完全正確！高峰國小是全台唯一設有「兒童玻璃美術館」的小學，榮獲教育部藝術教育貢獻獎，校慶當天下午特別舉辦玻璃藝術展及師生作品展！"
+      "explain": "完全正確！高峰國小是全台唯一設有「兒童玻璃美術館」的小學，榮獲教育部藝術教育貢獻獎，校慶當天下午特別舉辦玻璃藝術展及師生作品展！",
+      "landmarkNameEn": "Children's Glass Museum Luminous Stage",
+      "titleEn": "[Glass Aesthetics Stamp] Children's Glass Museum Showcase",
+      "clueEn": "East Wing [Children's Glass Museum Isle]: Find the Luminous Stage.",
+      "questionEn": "Gao-Feng is the only elementary school in Taiwan with which signature arts venue?",
+      "optionsEn": [
+        "Children's Glass Museum (promoting Hsinchu glass craft & aesthetics)",
+        "Indoor Ski Resort",
+        "Submarine Launch Dock"
+      ],
+      "explainEn": "Spot on! Our Children's Glass Museum integrates Hsinchu glass heritage into inspiring arts education!"
     },
     {
       "id": "q_vitality",
@@ -171,7 +191,17 @@ module.exports = {
         "舉行 400 公尺跨欄，隨機抽籤進入決賽"
       ],
       "answer": 0,
-      "explain": "完全正確！實施計畫明訂三、四、五、六年級舉行 60 公尺與 100 公尺賽跑，於預賽週計時取前六名於運動會當天舉行決賽，前三名頒發獎牌、獎狀與獎品！"
+      "explain": "完全正確！實施計畫明訂三、四、五、六年級舉行 60 公尺與 100 公尺賽跑，於預賽週計時取前六名於運動會當天舉行決賽，前三名頒發獎牌、獎狀與獎品！",
+      "landmarkNameEn": "Starlight Emerald Sprint Track",
+      "titleEn": "[Peak Vitality Stamp] 60m/100m Sprint & Relay Break-In",
+      "clueEn": "Northeast Track [Cyber-Emerald Sprint Speedway]: Find the Starlight Sprint Track.",
+      "questionEn": "In Grades 3–6's 16-runner relay, when can teams break into the inside lane?",
+      "optionsEn": [
+        "After Runner 3 receives the baton and passes the break-in marker",
+        "Runner 1 can cut into Lane 1 immediately",
+        "Runners may never change lanes"
+      ],
+      "explainEn": "Correct! Each runner covers half a lap, and Lane 1 break-in begins after Runner 3 receives the baton!"
     },
     {
       "id": "q_positive",
@@ -211,7 +241,17 @@ module.exports = {
         "為了慶祝校慶，全天禁止刷牙與洗手"
       ],
       "answer": 0,
-      "explain": "完全正確！高峰國小緊鄰高峰植物園與十八尖山，校慶推動口腔保健與健康體位宣導，並於 12:05 嚴格落實環境整理、場地復原與不留垃圾，實踐 SDGs 永續責任！"
+      "explain": "完全正確！高峰國小緊鄰高峰植物園與十八尖山，校慶推動口腔保健與健康體位宣導，並於 12:05 嚴格落實環境整理、場地復原與不留垃圾，實踐 SDGs 永續責任！",
+      "landmarkNameEn": "Health & Oral Care Promotion Kiosk",
+      "titleEn": "[Global SDGs Stamp] Health Promotion & Leave-No-Trace",
+      "clueEn": "Southwest Station [Bio-Forest & Eco-Station]: Find the Health Promotion Kiosk.",
+      "questionEn": "At 12:05–12:10, what eco-friendly SDGs action does the entire school perform together?",
+      "optionsEn": [
+        "Rest-area cleanup, restoring chairs, and leaving zero litter",
+        "Leaving all trash on the track",
+        "Playing loud music during nap time"
+      ],
+      "explainEn": "Correct! Restoring the campus with zero litter shows Gao-Feng's commitment to green SDGs!"
     }
   ],
   "programSchedule": [
@@ -227,7 +267,14 @@ module.exports = {
       "icon": "🎵",
       "host": "李小龍（琉光美學大師）",
       "island": "s02",
-      "desc": "高峰天籟合唱團以純淨優美歌聲獻唱，為 22 週年校慶揭開璀璨序幕。"
+      "desc": "高峰天籟合唱團以純淨優美歌聲獻唱，為 22 週年校慶揭開璀璨序幕。",
+      "titleEn": "School Choir Opening",
+      "performerEn": "Gao-Feng Choir",
+      "groupEn": "Choir",
+      "catEn": "Ceremony",
+      "stageEn": "Opening",
+      "powerEn": "Aesthetics",
+      "descEn": "Pure celestial vocals by the Gao-Feng Choir open the 22nd Anniversary celebration."
     },
     {
       "no": 2,
@@ -241,7 +288,14 @@ module.exports = {
       "icon": "🏅",
       "host": "何信煒 校長",
       "island": "s01",
-      "desc": "何信煒校長致詞、長官貴賓祝福，並隆重頒發表揚全校性績優義工與愛心志工！"
+      "desc": "何信煒校長致詞、長官貴賓祝福，並隆重頒發表揚全校性績優義工與愛心志工！",
+      "titleEn": "Principal & Guest Remarks + Volunteer Awards",
+      "performerEn": "All Teachers & Students",
+      "groupEn": "All Campus",
+      "catEn": "Ceremony",
+      "stageEn": "Opening",
+      "powerEn": "Character",
+      "descEn": "Principal Hsin-Wei Ho's remarks, guest blessings, and Outstanding Volunteer awards."
     },
     {
       "no": 3,
@@ -255,7 +309,14 @@ module.exports = {
       "icon": "🪭",
       "host": "低中高年級親師生",
       "island": "s02",
-      "desc": "非營利幼兒園可愛律動、低年級「神氣小娃」、中年級「扇耀高峰」、高年級「旗開得勝」及社區團體熱力展演！"
+      "desc": "非營利幼兒園可愛律動、低年級「神氣小娃」、中年級「扇耀高峰」、高年級「旗開得勝」及社區團體熱力展演！",
+      "titleEn": "Community, Grade-Level & Preschool Dances",
+      "performerEn": "All Students & Community",
+      "groupEn": "All Campus",
+      "catEn": "Show",
+      "stageEn": "Showcase",
+      "powerEn": "Aesthetics",
+      "descEn": "Community dance, cheerful preschool dance, and energetic lower/mid/upper grade routines!"
     },
     {
       "no": 4,
@@ -269,7 +330,14 @@ module.exports = {
       "icon": "🚩",
       "host": "大會司儀與體育組",
       "island": "s01",
-      "desc": "全校表演隊伍迅速整齊退場，田徑裁判與工作人員就位，準備各項競速爭霸！"
+      "desc": "全校表演隊伍迅速整齊退場，田徑裁判與工作人員就位，準備各項競速爭霸！",
+      "titleEn": "Show Dismissal & Field Reset",
+      "performerEn": "All Teachers & Students",
+      "groupEn": "All Campus",
+      "catEn": "Transition",
+      "stageEn": "Transition",
+      "powerEn": "Teamwork",
+      "descEn": "Performer exit and track officiating crew setup for sprint & fun race finals."
     },
     {
       "no": 5,
@@ -283,7 +351,14 @@ module.exports = {
       "icon": "⚡",
       "host": "紀政（曲速破風傳奇）",
       "island": "s03",
-      "desc": "一年級小小運動員全力邁步衝刺 60 公尺綠茵跑道，展現活力與勇氣！"
+      "desc": "一年級小小運動員全力邁步衝刺 60 公尺綠茵跑道，展現活力與勇氣！",
+      "titleEn": "Grade 1 60m Group Dash",
+      "performerEn": "Grade 1",
+      "groupEn": "Grade 1",
+      "catEn": "Track",
+      "stageEn": "Competition",
+      "powerEn": "Vitality",
+      "descEn": "Grade 1 young runners dash 60m down the track with courage and joy!"
     },
     {
       "no": 6,
@@ -297,7 +372,14 @@ module.exports = {
       "icon": "⚡",
       "host": "紀政（曲速破風傳奇）",
       "island": "s03",
-      "desc": "二年級小健將奔馳 60 公尺賽道，步伐敏捷、朝氣蓬勃！"
+      "desc": "二年級小健將奔馳 60 公尺賽道，步伐敏捷、朝氣蓬勃！",
+      "titleEn": "Grade 2 60m Group Dash",
+      "performerEn": "Grade 2",
+      "groupEn": "Grade 2",
+      "catEn": "Track",
+      "stageEn": "Competition",
+      "powerEn": "Vitality",
+      "descEn": "Grade 2 runners sprint 60m with agile strides and high energy!"
     },
     {
       "no": 7,
@@ -311,7 +393,14 @@ module.exports = {
       "icon": "🔥",
       "host": "紀政（曲速破風傳奇）",
       "island": "s03",
-      "desc": "預賽晉級之各年級男女飛毛腿齊聚跑道，爭奪 60 公尺與 100 公尺個人賽校慶獎牌！"
+      "desc": "預賽晉級之各年級男女飛毛腿齊聚跑道，爭奪 60 公尺與 100 公尺個人賽校慶獎牌！",
+      "titleEn": "Grades 3–6 60m & 100m Sprint Finals",
+      "performerEn": "Grades 3–6",
+      "groupEn": "Grades 3–6",
+      "catEn": "Track",
+      "stageEn": "Competition",
+      "powerEn": "Vitality",
+      "descEn": "Top 6 preliminary qualifiers per division battle for 60m and 100m medals!"
     },
     {
       "no": 8,
@@ -325,7 +414,14 @@ module.exports = {
       "icon": "🐾",
       "host": "喬丹（重力極限破風者）",
       "island": "s05",
-      "desc": "一年級小朋友齊心協力推動行星巨球，歡笑聲中培養團隊協作好默契！"
+      "desc": "一年級小朋友齊心協力推動行星巨球，歡笑聲中培養團隊協作好默契！",
+      "titleEn": "Grade 1 Fun Race: Animal Giant Ball",
+      "performerEn": "Grade 1",
+      "groupEn": "Grade 1",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Teamwork",
+      "descEn": "Grade 1 classmates team up to push giant planetary balls amid cheers!"
     },
     {
       "no": 9,
@@ -339,7 +435,14 @@ module.exports = {
       "icon": "🐾",
       "host": "喬丹（重力極限破風者）",
       "island": "s05",
-      "desc": "二年級各班接力滾球，手眼協調、敏捷換手，全場加油聲不斷！"
+      "desc": "二年級各班接力滾球，手眼協調、敏捷換手，全場加油聲不斷！",
+      "titleEn": "Grade 2 Fun Race: Animal Giant Ball",
+      "performerEn": "Grade 2",
+      "groupEn": "Grade 2",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Teamwork",
+      "descEn": "Grade 2 teams relay giant balls smoothly around turning cones!"
     },
     {
       "no": 10,
@@ -353,7 +456,14 @@ module.exports = {
       "icon": "🎯",
       "host": "喬丹（重力極限破風者）",
       "island": "s05",
-      "desc": "三年級小選手瞄準目標射擊神箭，考驗專注力、肌耐力與命中精準度！"
+      "desc": "三年級小選手瞄準目標射擊神箭，考驗專注力、肌耐力與命中精準度！",
+      "titleEn": "Grade 3 Fun Race: Magic Arrow Odyssey",
+      "performerEn": "Grade 3",
+      "groupEn": "Grade 3",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Vitality",
+      "descEn": "Grade 3 sharpshooters aim and toss arrows at luminous targets!"
     },
     {
       "no": 11,
@@ -367,7 +477,14 @@ module.exports = {
       "icon": "🏃",
       "host": "喬丹（重力極限破風者）",
       "island": "s04",
-      "desc": "四年級發揮團隊合作精神化身小巨人奔跑，步調一致衝向終點！"
+      "desc": "四年級發揮團隊合作精神化身小巨人奔跑，步調一致衝向終點！",
+      "titleEn": "Grade 4 Fun Race: Little Giants Sprint",
+      "performerEn": "Grade 4",
+      "groupEn": "Grade 4",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Teamwork",
+      "descEn": "Grade 4 teammates synchronize giant strides toward the finish line!"
     },
     {
       "no": 12,
@@ -381,7 +498,14 @@ module.exports = {
       "icon": "🧗",
       "host": "喬丹（重力極限破風者）",
       "island": "s04",
-      "desc": "五年級小將突破重力障礙、穿越角椎與呼拉圈，身手矯健克服挑戰！"
+      "desc": "五年級小將突破重力障礙、穿越角椎與呼拉圈，身手矯健克服挑戰！",
+      "titleEn": "Grade 5 Fun Race: Peak Cross-Country",
+      "performerEn": "Grade 5",
+      "groupEn": "Grade 5",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Vitality",
+      "descEn": "Grade 5 athletes weave through cones and agility obstacles!"
     },
     {
       "no": 13,
@@ -395,7 +519,14 @@ module.exports = {
       "icon": "🧗",
       "host": "喬丹（重力極限破風者）",
       "island": "s04",
-      "desc": "六年級畢業生代表全力挑戰高難度障礙越野賽，展現自信無畏的高峰精神！"
+      "desc": "六年級畢業生代表全力挑戰高難度障礙越野賽，展現自信無畏的高峰精神！",
+      "titleEn": "Grade 6 Fun Race: Peak Cross-Country",
+      "performerEn": "Grade 6",
+      "groupEn": "Grade 6",
+      "catEn": "Fun Race",
+      "stageEn": "Fun Stage",
+      "powerEn": "Vitality",
+      "descEn": "Grade 6 graduates conquer high-speed obstacle runs with confidence!"
     },
     {
       "no": 14,
@@ -409,7 +540,14 @@ module.exports = {
       "icon": "🤝",
       "host": "歐文斯（星軌傳承守護者）",
       "island": "s03",
-      "desc": "二年級 40 公尺折返繞角椎接力賽（每班 19 棒：男 12 女 7），默契交接黃金接力棒！"
+      "desc": "二年級 40 公尺折返繞角椎接力賽（每班 19 棒：男 12 女 7），默契交接黃金接力棒！",
+      "titleEn": "Grade 2 40m Shuttle Relay",
+      "performerEn": "Grade 2",
+      "groupEn": "Grade 2",
+      "catEn": "Relay",
+      "stageEn": "Legacy",
+      "powerEn": "Teamwork",
+      "descEn": "Grade 2 19-runner shuttle relay around cones with golden baton passes!"
     },
     {
       "no": 15,
@@ -423,7 +561,14 @@ module.exports = {
       "icon": "🎽",
       "host": "歐文斯（星軌傳承守護者）",
       "island": "s03",
-      "desc": "三、四年級班際 16 棒半圈大隊接力，第三棒搶道超車，展現班級高度凝聚力！"
+      "desc": "三、四年級班際 16 棒半圈大隊接力，第三棒搶道超車，展現班級高度凝聚力！",
+      "titleEn": "Grades 3–4 16-Runner Lap Relay",
+      "performerEn": "Grades 3 & 4",
+      "groupEn": "Grades 3–4",
+      "catEn": "Relay",
+      "stageEn": "Legacy",
+      "powerEn": "Teamwork",
+      "descEn": "Grades 3–4 16-runner half-lap relays featuring Runner 3 Lane 1 break-ins!"
     },
     {
       "no": 16,
@@ -437,7 +582,14 @@ module.exports = {
       "icon": "🏆",
       "host": "歐文斯（星軌傳承守護者）",
       "island": "s03",
-      "desc": "五、六年級壓軸大隊接力巔峰決戰！各班飛毛腿全力衝刺，爭奪學年總錦標金盃！"
+      "desc": "五、六年級壓軸大隊接力巔峰決戰！各班飛毛腿全力衝刺，爭奪學年總錦標金盃！",
+      "titleEn": "Grades 5–6 16-Runner Lap Relay Final",
+      "performerEn": "Grades 5 & 6",
+      "groupEn": "Grades 5–6",
+      "catEn": "Relay",
+      "stageEn": "Legacy",
+      "powerEn": "Teamwork",
+      "descEn": "Grand finale 16-runner relays competing for the Grade Overall Championship!"
     },
     {
       "no": 17,
@@ -451,7 +603,14 @@ module.exports = {
       "icon": "🌱",
       "host": "高峰小健將（生態護衛先鋒）",
       "island": "s06",
-      "desc": "落實 SDGs 永續低碳校園，全校親師生落實環境復原、垃圾不落地，場地清潔完璧歸還！"
+      "desc": "落實 SDGs 永續低碳校園，全校親師生落實環境復原、垃圾不落地，場地清潔完璧歸還！",
+      "titleEn": "Campus Cleanup & Leave-No-Trace",
+      "performerEn": "All Teachers & Students",
+      "groupEn": "All Campus",
+      "catEn": "SDGs",
+      "stageEn": "Sustainability",
+      "powerEn": "SDGs",
+      "descEn": "Whole-school cleanup, returning chairs, and leaving zero litter!"
     }
   ],
   "preEvents": [
@@ -460,28 +619,48 @@ module.exports = {
       "stage": "預賽第一日",
       "item": "三年級 60m / 100m 計時預賽",
       "time": "08:00~08:40",
-      "status": "已完賽 (晉級6位英雄已產生)"
+      "status": "已完賽 (晉級6位英雄已產生)",
+      "dateEn": "2026.11.09 (Mon)",
+      "stageEn": "Prelim Day 1",
+      "itemEn": "Grade 3 60m / 100m Timed Prelims",
+      "timeEn": "08:00~08:40",
+      "statusEn": "Completed (Top 6 Qualified)"
     },
     {
       "date": "115.11.10 (二)",
       "stage": "預賽第二日",
       "item": "四年級 60m / 100m 計時預賽",
       "time": "08:00~08:40",
-      "status": "已完賽 (晉級6位英雄已產生)"
+      "status": "已完賽 (晉級6位英雄已產生)",
+      "dateEn": "2026.11.10 (Tue)",
+      "stageEn": "Prelim Day 2",
+      "itemEn": "Grade 4 60m / 100m Timed Prelims",
+      "timeEn": "08:00~08:40",
+      "statusEn": "Completed (Top 6 Qualified)"
     },
     {
       "date": "115.11.11 (三)",
       "stage": "預賽第三日",
       "item": "五年級 60m / 100m 計時預賽",
       "time": "08:00~08:40",
-      "status": "已完賽 (晉級6位英雄已產生)"
+      "status": "已完賽 (晉級6位英雄已產生)",
+      "dateEn": "2026.11.11 (Wed)",
+      "stageEn": "Prelim Day 3",
+      "itemEn": "Grade 5 60m / 100m Timed Prelims",
+      "timeEn": "08:00~08:40",
+      "statusEn": "Completed (Top 6 Qualified)"
     },
     {
       "date": "115.11.13 (五)",
       "stage": "預賽第四日",
       "item": "六年級 60m / 100m 計時預賽",
       "time": "08:00~08:40",
-      "status": "已完賽 (晉級6位英雄已產生)"
+      "status": "已完賽 (晉級6位英雄已產生)",
+      "dateEn": "2026.11.13 (Fri)",
+      "stageEn": "Prelim Day 4",
+      "itemEn": "Grade 6 60m / 100m Timed Prelims",
+      "timeEn": "08:00~08:40",
+      "statusEn": "Completed (Top 6 Qualified)"
     }
   ],
   "islands": [
@@ -544,8 +723,28 @@ module.exports = {
               "深海探險・巨鯨啟航"
             ],
             "answer": 0,
-            "explain": "完全正確！高峰國小 22 週年校慶主題即為「雙二齊飛、馳騁高峰」，象徵 22 載光輝歲月與小健將昂首奔馳的英姿！"
-          }
+            "explain": "完全正確！高峰國小 22 週年校慶主題即為「雙二齊飛、馳騁高峰」，象徵 22 載光輝歲月與小健將昂首奔馳的英姿！",
+            "powerEn": "Friendly Character",
+            "titleEn": "[Torch Quest] Dual-22 Star-Core Charging Challenge",
+            "taskDescEn": "Tap 5 times on \"🔥 Inject Star-Core Energy\" to charge the torch to 100%, then answer the theme quiz!",
+            "actionBtnEn": "🔥 Inject Star-Core Energy",
+            "actionDoneEn": "🔥 Star-Core 100% Charged! Gao-Feng 22nd \"Dual-22 Soaring\" Torch burns bright!",
+            "questionEn": "What is the official theme slogan of Gao-Feng Primary School's 22nd Anniversary Sports Day?",
+            "optionsEn": [
+              "Dual-22 Soaring, Galloping to the Peak (雙二齊飛、馳騁高峰)",
+              "Frozen Wonders · Icebound Castle",
+              "Deep Sea Voyage · Giant Whale Launch"
+            ],
+            "explainEn": "Spot on! The 22nd Anniversary theme is \"Dual-22 Soaring, Galloping to the Peak\", symbolizing 22 brilliant years and spirited young athletes!"
+          },
+          "nameEn": "Dual-22 Flame Crystal Tower",
+          "descEn": "Gao-Feng 22nd Anniversary Main Cauldron! Built with an anti-gravity base, luminous glass crystals, and alloy sculptures. Complete landmark quests to ignite panoramic 3D Supernova Victory Fireworks!",
+          "factsEn": [
+            "22nd Anniversary Main Torch",
+            "Luminous Glass & Anti-Gravity Base",
+            "Collect 5 Stamps for 3D Fireworks"
+          ],
+          "whenEn": "08:20 Torch Lighting | 13:20 Victory Fireworks"
         },
         {
           "id": "s01i2",
@@ -578,8 +777,33 @@ module.exports = {
               "隨意奔跑穿越草坪"
             ],
             "answer": 0,
-            "explain": "答對了！進場展現班級紀律與團隊朝氣，正是「Friendly 友善好品格」的最佳展現！"
-          }
+            "explain": "答對了！進場展現班級紀律與團隊朝氣，正是「Friendly 友善好品格」的最佳展現！",
+            "powerEn": "Friendly Character",
+            "titleEn": "[Warp Gate Quest] Athlete March-In Order",
+            "taskDescEn": "Tap the entrance procession steps in the correct order:",
+            "stepsEn": [
+              "Flag Bearers",
+              "Torch Escort Team",
+              "Class Athletes",
+              "Salute the Grandstand"
+            ],
+            "actionDoneEn": "🎉 Perfect Formation! All classes march in with high spirits!",
+            "questionEn": "What attitude should each class show when marching past the Grandstand?",
+            "optionsEn": [
+              "March neatly in high spirits and salute the Principal & guests",
+              "Look down at phones and scatter",
+              "Run randomly across the grass"
+            ],
+            "explainEn": "Correct! Disciplined, energetic march-in showcases class unity and \"Friendly\" character!"
+          },
+          "nameEn": "Quantum Welcome Warp Gate",
+          "descEn": "A holographic rainbow warp gate welcoming young athletes and guests into the arena, symbolizing vitality stepping into a bright future.",
+          "factsEn": [
+            "Must-Pass Athlete Entrance Landmark",
+            "Holographic Rainbow Glow",
+            "Top Photo Check-In Spot"
+          ],
+          "whenEn": "08:00–08:20 Athlete March-In"
         },
         {
           "id": "s01i3",
@@ -608,8 +832,28 @@ module.exports = {
               "比賽落後就找裁判抗議"
             ],
             "answer": 1,
-            "explain": "完全正確！宣誓代表對賽事規則與對手的尊重，勝不驕、敗不餒，發揚純粹的運動家精神！"
-          }
+            "explain": "完全正確！宣誓代表對賽事規則與對手的尊重，勝不驕、敗不餒，發揚純粹的運動家精神！",
+            "powerEn": "Friendly Character",
+            "titleEn": "[Grandstand Quest] Flag-Raising Salute Charge",
+            "taskDescEn": "Tap 5 times on \"🚩 Stand at Attention & Salute\" to complete the flag ceremony!",
+            "actionBtnEn": "🚩 Stand at Attention & Salute",
+            "actionDoneEn": "🚩 The school flag rises proudly under Gao-Feng's blue sky!",
+            "questionEn": "What is the core spirit of the Athlete's Oath?",
+            "optionsEn": [
+              "Win at all costs by any means",
+              "Respect rules, obey referees, and uphold true sportsmanship",
+              "Argue with referees whenever falling behind"
+            ],
+            "explainEn": "Exactly right! The oath represents respect for rules and opponents—humble in victory, gracious in defeat!"
+          },
+          "nameEn": "Flagship Starship Grandstand",
+          "descEn": "The central command grandstand for flag-raising, school anthem singing, and athlete oath-taking, hosted by the Principal and honored guests.",
+          "factsEn": [
+            "Flag-Raising Ceremony Hub",
+            "Athlete Oath Stage",
+            "Command & Guest Grandstand"
+          ],
+          "whenEn": "08:30–09:05 Ceremony Program"
         },
         {
           "id": "s01i4",
@@ -643,8 +887,33 @@ module.exports = {
               "商業營收倍增計畫"
             ],
             "answer": 0,
-            "explain": "答對了！感謝親師志工長年為校園付出，正是高峰國小 F (Friendly) 友善好品格的具體實踐！"
-          }
+            "explain": "答對了！感謝親師志工長年為校園付出，正是高峰國小 F (Friendly) 友善好品格的具體實踐！",
+            "powerEn": "Friendly Character",
+            "titleEn": "[Character Stamp] Gao-Feng Gratitude Ceremony Order",
+            "taskDescEn": "Tap the appreciation ceremony steps in order:",
+            "stepsEn": [
+              "PTA Committee",
+              "Love Volunteer Team",
+              "Civil Defense Patrol",
+              "School-Wide Applause"
+            ],
+            "actionDoneEn": "💝 Overflowing Gratitude! Saluting all teachers and volunteers who protect Gao-Feng!",
+            "questionEn": "Which GFPS core vision does the Volunteer Appreciation ceremony embody?",
+            "optionsEn": [
+              "Friendly (Kindness, Character & Gratitude)",
+              "Hyper-Light Warp Engineering",
+              "Commercial Revenue Expansion"
+            ],
+            "explainEn": "Correct! Honoring parent and community volunteers reflects GFPS's core vision: F for Friendly!"
+          },
+          "nameEn": "Principal & Volunteer Starlight Podium",
+          "descEn": "The honor podium where the Principal delivers the opening remarks and presents awards to outstanding school volunteers and contributors.",
+          "factsEn": [
+            "Volunteer Appreciation Stage",
+            "PTA Certificate Presentation",
+            "Core Anniversary Landmark"
+          ],
+          "whenEn": "08:35–09:00 Remarks & Awards"
         }
       ],
       "units": [
@@ -682,7 +951,14 @@ module.exports = {
         }
       ],
       "periods": "08:00~09:00",
-      "assess": "【友善品格試煉】大會宣誓、聖火充能與全校性績優義工感謝程序"
+      "assess": "【友善品格試煉】大會宣誓、聖火充能與全校性績優義工感謝程序",
+      "fullEn": "Gao-Feng Gala Flagship · Ceremony Hub & Friendly Character",
+      "gradeEn": "All Grades",
+      "periodsEn": "08:00~09:00",
+      "hostEn": "Coubertin",
+      "leadEn": "Cyber Command · Gala Opening | Dual-22 Flame Crystal Tower, Quantum Welcome Arch, Grandstand & Volunteer Awards",
+      "summaryEn": "The Cyber Flagship Starport for Gao-Feng 22nd Anniversary! Centered around the Dual-22 Flame Crystal Tower, witness athlete oath-taking, the Principal's address, and Outstanding Volunteer awards. Complete the challenges to ignite Supernova 3D Victory Fireworks!",
+      "assessEn": "[Friendly Character Trial] Athlete Oath, Torch Charging & Volunteer Appreciation Ceremony"
     },
     {
       "id": "s02",
@@ -743,8 +1019,28 @@ module.exports = {
               "外太空採礦工程知識"
             ],
             "answer": 0,
-            "explain": "答對了！高峰國小結合新竹在地悠久的玻璃文化，建置兒童玻璃美術館，啟發孩子觀察、創造與欣賞生活美學！"
-          }
+            "explain": "答對了！高峰國小結合新竹在地悠久的玻璃文化，建置兒童玻璃美術館，啟發孩子觀察、創造與欣賞生活美學！",
+            "powerEn": "Glass Aesthetics",
+            "titleEn": "[Aesthetic Stamp] Illuminate the Glass Museum",
+            "taskDescEn": "Tap 5 times on \"✨ Illuminate Children's Glass Museum\" to awaken its luminous artistry!",
+            "actionBtnEn": "✨ Illuminate Children's Glass Museum",
+            "actionDoneEn": "✨ Crystal-clear brilliance! Hsinchu's local glass artistry shines brightly!",
+            "questionEn": "What core literacy does Gao-Feng cultivate through Taiwan's only Children's Glass Museum?",
+            "optionsEn": [
+              "Aesthetic Literacy & Local Cultural Identity",
+              "Heavy Industrial Steel Smelting",
+              "Deep-Space Asteroid Mining"
+            ],
+            "explainEn": "Correct! Integrating Hsinchu's rich glass craft heritage inspires students to observe, create, and appreciate everyday beauty!"
+          },
+          "nameEn": "Children's Glass Museum Luminous Stage",
+          "descEn": "The grand stage of Taiwan's only Children's Glass Museum! Showcasing sandblasted, fused, and stained glass artistry alongside student art exhibitions.",
+          "factsEn": [
+            "Taiwan's Only Children's Glass Museum",
+            "Hsinchu Glass Craft Heritage",
+            "Aesthetic Power Trial Point"
+          ],
+          "whenEn": "13:10–14:00 Glass Art & Class Exhibits"
         },
         {
           "id": "s02i2",
@@ -777,8 +1073,33 @@ module.exports = {
               "特技飛車特技隊"
             ],
             "answer": 0,
-            "explain": "正確！大會程序表 08:30~08:35 由高峰館合唱團獻上純淨天籟，揭開 22 週年慶祝大會序幕！"
-          }
+            "explain": "正確！大會程序表 08:30~08:35 由高峰館合唱團獻上純淨天籟，揭開 22 週年慶祝大會序幕！",
+            "powerEn": "Glass Aesthetics",
+            "titleEn": "[Resonance Quest] Opening Performance Order",
+            "taskDescEn": "Tap the opening show sequence in the right order:",
+            "stepsEn": [
+              "Vocal Pitch Check",
+              "Choir Celestial Singing",
+              "Community Energetic Dance",
+              "Preschool & Elementary Dance"
+            ],
+            "actionDoneEn": "🎶 Perfect Harmony! The choir and dance performances were a roaring success!",
+            "questionEn": "Which team performs the very first opening program at the celebration ceremony?",
+            "optionsEn": [
+              "Gao-Feng Primary School Choir",
+              "Heavy Metal Rock Guitar Band",
+              "Stunt Motorcycle Squad"
+            ],
+            "explainEn": "Correct! At 08:30–08:35, the Gao-Feng Choir opens the 22nd Anniversary celebration with pure melodies!"
+          },
+          "nameEn": "Celestial Choir & Resonance Corner",
+          "descEn": "08:30–08:35 Opening celebration begins with the Gao-Feng Choir's heavenly voices, followed by community dance performances!",
+          "factsEn": [
+            "Opening Choir Performance",
+            "Community Dance Stage",
+            "Musical Aesthetics Corner"
+          ],
+          "whenEn": "08:30–09:35 Choir & Dance Show"
         },
         {
           "id": "s02i3",
@@ -811,8 +1132,33 @@ module.exports = {
               "刊登課外補習班招生簡章"
             ],
             "answer": 0,
-            "explain": "完全正確！校慶專輯是凝聚親師生共同記憶、呈現教學成果與學校永續目標的重要里程碑！"
-          }
+            "explain": "完全正確！校慶專輯是凝聚親師生共同記憶、呈現教學成果與學校永續目標的重要里程碑！",
+            "powerEn": "Glass Aesthetics",
+            "titleEn": "[Anniversary Journal Quest] Publishing Workflow",
+            "taskDescEn": "Tap the publication workflow steps in order:",
+            "stepsEn": [
+              "Compile School Highlights",
+              "Collect Class Stories",
+              "Edit, Proof & Print",
+              "Anniversary Release"
+            ],
+            "actionDoneEn": "📚 Classic Legacy! The 22nd Anniversary Special Issue is officially published!",
+            "questionEn": "What is the main purpose of publishing the 22nd Anniversary Special Issue?",
+            "optionsEn": [
+              "Showcase teaching achievements, school features & class stories",
+              "Sell commercial advertisements",
+              "Print cram school flyers"
+            ],
+            "explainEn": "Exactly! The anniversary journal preserves shared memories and highlights Gao-Feng's educational achievements!"
+          },
+          "nameEn": "22nd Anniversary Journal Pavilion",
+          "descEn": "Displaying the 22nd Anniversary Special Issue and school brochure, showcasing rich teaching achievements and class highlights.",
+          "factsEn": [
+            "22nd Anniversary Special Issue",
+            "Class & Teaching Showcases",
+            "Campus Heritage Timeline"
+          ],
+          "whenEn": "All-Day Exhibition & Reading"
         }
       ],
       "units": [
@@ -858,7 +1204,14 @@ module.exports = {
         }
       ],
       "periods": "08:30~09:35 / 13:10~14:00",
-      "assess": "【玻璃美感試煉】合唱天籟共鳴、各年段大會舞展演與玻璃美術館特展"
+      "assess": "【玻璃美感試煉】合唱天籟共鳴、各年段大會舞展演與玻璃美術館特展",
+      "fullEn": "Children's Glass Museum Isle · Glass Art & Choir Melodies",
+      "gradeEn": "All Grades",
+      "periodsEn": "08:30~09:35 / 13:10~14:00",
+      "hostEn": "Bruce Lee",
+      "leadEn": "Luminous Artistry · Aesthetic Campus | Taiwan's Only Children's Glass Museum, Choir & Anniversary Journal",
+      "summaryEn": "Gao-Feng Primary School is the only elementary school in Taiwan with a \"Children's Glass Museum\" and has won the MOE Arts Education Contribution Award. Afternoon features glass art & student exhibitions, while morning opens with the celestial Gao-Feng Choir!",
+      "assessEn": "[Glass Aesthetics Trial] Choir Opening, Grade Dances & Glass Museum Showcase"
     },
     {
       "id": "s03",
@@ -919,8 +1272,28 @@ module.exports = {
             "answer": 0,
             "explain": "完全正確！短距離分道跑中全程不得串道，必須在自己道次內全力衝刺，確保競賽公平與安全！",
             "power": "峰湧體能力",
-            "questId": "q_vitality"
-          }
+            "questId": "q_vitality",
+            "powerEn": "Peak Vitality",
+            "titleEn": "[Start Reaction Quest] Quantum Starter Gun Test",
+            "taskDescEn": "Watch the signal! When it turns green with \"💥 Bang! Sprint!\", tap immediately (under 0.35s)!",
+            "actionBtnEn": "🔫 Start Gun Reaction Test (Tap to Ready)",
+            "actionDoneEn": "⚡ Lightning Start! Perfect reaction to the starter's gun!",
+            "questionEn": "In laned short-distance sprints, what violation must runners strictly avoid?",
+            "optionsEn": [
+              "Crossing into another runner's lane mid-race",
+              "Sprinting straight in their assigned lane",
+              "Focusing ahead before the starting signal"
+            ],
+            "explainEn": "Spot on! Runners must stay strictly in their own lane throughout laned sprints for fairness and safety!"
+          },
+          "nameEn": "Starlight Emerald Sprint Track",
+          "descEn": "A 6-lane oval running track hosting 60m group dashes, Grades 3–6 60m/100m individual finals, and upper-grade relay break-in battles!",
+          "factsEn": [
+            "Individual Sprint Finals Arena",
+            "Relay Break-In Hotspot",
+            "Cradle of Track Champions"
+          ],
+          "whenEn": "09:50–12:05 Track & Relay Events"
         },
         {
           "id": "s03i2",
@@ -949,8 +1322,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "完全正確！實施計畫明訂三至六年級每人跑半圈，第三棒接到棒子後開始搶道，考驗速度與進道策略！",
-            "power": "峰湧體能力"
-          }
+            "power": "峰湧體能力",
+            "powerEn": "Peak Vitality",
+            "titleEn": "[Baton Exchange Quest] Seamless Golden Baton Pass",
+            "taskDescEn": "Tap 5 times on \"🤝 Pass Golden Baton Smoothly\" for a zero-drop exchange!",
+            "actionBtnEn": "🤝 Pass Golden Baton Smoothly",
+            "actionDoneEn": "🤝 Clean Baton Pass! Unstoppable momentum along the track!",
+            "questionEn": "In the Grades 3–6 relay, after which runner receives the baton can teams break into Lane 1?",
+            "optionsEn": [
+              "After Runner 3 receives the baton and passes the break-in marker",
+              "Runner 1 can cut in right from the start",
+              "Stay in lanes the entire race, no break-in allowed"
+            ],
+            "explainEn": "Correct! Rules state each runner runs half a lap, and Lane 1 break-in begins after Runner 3 receives the baton!"
+          },
+          "nameEn": "Nano-Alloy Golden Relay Baton",
+          "descEn": "Standing tall in the exchange zone, symbolizing unity and baton-passing heritage in Grade 2's 40m shuttle relay and Grades 3–6's 16-runner relays!",
+          "factsEn": [
+            "Grade 2 40m Shuttle Relay",
+            "Grades 3–6 16-Runner Lap Relay",
+            "Leg 3 Lane Break-In Zone"
+          ],
+          "whenEn": "11:40–12:05 Grade Relay Finals"
         },
         {
           "id": "s03i3",
@@ -979,8 +1372,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "正確！實施計畫明訂個人賽 1~3 名頒發獎牌、獎狀與獎品，4~6 名頒發獎狀！",
-            "power": "峰湧體能力"
-          }
+            "power": "峰湧體能力",
+            "powerEn": "Peak Vitality",
+            "titleEn": "[Timing Tower Quest] Photo-Finish Precision Tap",
+            "taskDescEn": "Tap 5 times on \"⏱️ Cross Finish Line & Clock In\" to lock official split times!",
+            "actionBtnEn": "⏱️ Cross Finish Line & Clock In",
+            "actionDoneEn": "⏱️ Finish Time Locked! Official record entered into Sports Day history!",
+            "questionEn": "Out of the top 6 finalists in individual sprints, which places receive medals, certificates, AND prizes?",
+            "optionsEn": [
+              "Top 3 receive medals, certificates & prizes; 4th–6th receive certificates",
+              "All participants receive gold medals",
+              "Only 1st place receives an award"
+            ],
+            "explainEn": "Correct! Top 3 winners receive medals, certificates, and prizes, while 4th–6th places receive merit certificates!"
+          },
+          "nameEn": "Interstellar Timing Clocktower",
+          "descEn": "A four-sided electronic timing tower at the finish line with giant LED track boards, recording photo-finish splits and official race results!",
+          "factsEn": [
+            "4-Sided Holographic Clock",
+            "Giant LED Track Timer Board",
+            "Photo-Finish Precision Timing"
+          ],
+          "whenEn": "10:10–12:05 Finish Line Timing"
         }
       ],
       "units": [
@@ -1034,7 +1447,14 @@ module.exports = {
         }
       ],
       "periods": "09:50~12:05",
-      "assess": "【峰湧體能試煉】60m/100m 個人決賽衝刺與各學年大隊接力搶道"
+      "assess": "【峰湧體能試煉】60m/100m 個人決賽衝刺與各學年大隊接力搶道",
+      "fullEn": "Cyber-Emerald Sprint Speedway · Track & Relay Finals",
+      "gradeEn": "All Grades",
+      "periodsEn": "09:50~12:05",
+      "hostEn": "Chi Cheng",
+      "leadEn": "Wind-Breaking Sprint · Track Arena | 60m Group Runs, 60m/100m Finals & 16-Runner Relays",
+      "summaryEn": "The sacred ground for track & relay glory! Grades 1–2 dash in 60m group runs, Grades 3–6 battle in 60m/100m sprint finals, Grade 2 runs 40m shuttle relays, and Grades 3–6 sprint in thrilling 16-runner relays!",
+      "assessEn": "[Peak Vitality Trial] 60m/100m Sprint Finals & Relay Baton Break-In"
     },
     {
       "id": "s04",
@@ -1097,8 +1517,32 @@ module.exports = {
             "answer": 0,
             "explain": "答對了！小巨人奔跑講求全班節奏統一，隊員彼此信任、步調一致才能迅速衝刺！",
             "power": "高峰群體力",
-            "questId": "q_positive"
-          }
+            "questId": "q_positive",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Little Giants Quest] Synchronized Stride Flow",
+            "taskDescEn": "Tap the keys to Little Giants victory in the right order:",
+            "stepsEn": [
+              "Line Up & Hold Gear Firmly",
+              "Chant Cadence Together",
+              "Stride Across Finish Line"
+            ],
+            "actionDoneEn": "🤝 Perfect Sync! Grade 4 Little Giants sprint across the finish line together!",
+            "questionEn": "What skill does Grade 4's \"Little Giants Sprint\" value most among classmates?",
+            "optionsEn": [
+              "Unified rhythm and seamless team cooperation",
+              "Solo sprinting ahead of teammates",
+              "Jumping as high as possible"
+            ],
+            "explainEn": "Correct! Little Giants Sprint relies on unified cadence and mutual trust to sprint swiftly as one!"
+          },
+          "nameEn": "Grade 4 Little Giants Grandstand Track",
+          "descEn": "Dedicated arena for Grade 4's \"Little Giants Sprint\"! Teammates synchronize giant strides toward the finish line amid cheering crowds!",
+          "factsEn": [
+            "Grade 4 Fun Race Arena",
+            "Synchronized Giant Strides",
+            "Grandstand Cheering Zone"
+          ],
+          "whenEn": "11:10–11:20 Middle Grade Fun Race"
         },
         {
           "id": "s04i2",
@@ -1127,8 +1571,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "完全正確！高峰越野障礙賽結合角椎繞行與敏捷障礙穿梭，考驗小選手的靈活體魄！",
-            "power": "高峰群體力"
-          }
+            "power": "高峰群體力",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Cross-Country Quest] Obstacle Leap Charge",
+            "taskDescEn": "Tap 5 times on \"🧗 Leap Over Gravity Obstacles\"!",
+            "actionBtnEn": "🧗 Leap Over Gravity Obstacles",
+            "actionDoneEn": "🧗 All Obstacles Cleared! Outstanding agility and speed!",
+            "questionEn": "In Grade 5's \"Peak Cross-Country Obstacle\", what obstacles must runners navigate?",
+            "optionsEn": [
+              "Cone slalom weaving and agility obstacles",
+              "Rock climbing walls and swimming pools",
+              "Riding bicycles"
+            ],
+            "explainEn": "Spot on! Peak Cross-Country combines cone slalom and agility obstacles to test speed and coordination!"
+          },
+          "nameEn": "Grade 5 Peak Cross-Country Obstacle Course",
+          "descEn": "Dedicated arena for Grade 5's \"Peak Cross-Country Obstacle\"! Athletes weave through cones and hoop matrices with agility!",
+          "factsEn": [
+            "Grade 5 Fun Race Zone",
+            "Cone Weaving & Obstacles",
+            "Tests Agility & Stamina"
+          ],
+          "whenEn": "11:20–11:30 Upper Grade Fun Race"
         },
         {
           "id": "s04i3",
@@ -1157,8 +1621,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "完全正確！實施計畫明訂拔河賽各班男女各 10 名，以維公平，採 3 局 2 勝制，每局以 2 分鐘為限！",
-            "power": "高峰群體力"
-          }
+            "power": "高峰群體力",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Extreme Showdown] Peak Sprint & Tug-of-War Charge",
+            "taskDescEn": "Tap 5 times on \"🔥 Unleash Team Power & Sprint\"!",
+            "actionBtnEn": "🔥 Unleash Team Power & Sprint",
+            "actionDoneEn": "🔥 Incredible Team Power! Creating unforgettable Grade 6 memories!",
+            "questionEn": "In the rain-day Tug of War rules, how many players per gender from each class compete, and what is the match format?",
+            "optionsEn": [
+              "10 boys and 10 girls per class, best 2 out of 3 rounds",
+              "1 boy and 1 girl, single elimination round",
+              "Unlimited players per class"
+            ],
+            "explainEn": "Exact! Rules specify 10 boys and 10 girls per class for fairness, playing best 2 of 3 rounds (2 minutes max per round)!"
+          },
+          "nameEn": "Grade 6 Extreme Obstacle & Tug-of-War Arena",
+          "descEn": "Arena for Grade 6's \"Peak Cross-Country Obstacle\" and the school-wide rain-contingency \"Inter-Class Tug of War Championship\"!",
+          "factsEn": [
+            "Grade 6 Graduates Showdown",
+            "Rain Contingency Tug of War",
+            "10 Boys & 10 Girls · Best of 3"
+          ],
+          "whenEn": "11:30–11:40 Graduates Finale"
         }
       ],
       "units": [
@@ -1196,7 +1680,14 @@ module.exports = {
         }
       ],
       "periods": "11:10~11:40",
-      "assess": "【團隊競技試煉】四年級小巨人奔跑、五六年級越野障礙與班際拔河"
+      "assess": "【團隊競技試煉】四年級小巨人奔跑、五六年級越野障礙與班際拔河",
+      "fullEn": "Obstacle Adventure Arena · Cross-Country & Tug of War",
+      "gradeEn": "All Grades",
+      "periodsEn": "11:10~11:40",
+      "hostEn": "Jesse Owens",
+      "leadEn": "Obstacle Dash · Ultimate Showdown | Grade 4 Little Giants, Grades 5–6 Cross-Country & Tug of War",
+      "summaryEn": "The fun adventure arena for middle & upper grades! Grade 4 dashes in \"Little Giants Sprint\", Grades 5–6 conquer \"Peak Cross-Country Obstacle\", plus the rain-day Inter-Class Tug of War Championship!",
+      "assessEn": "[Teamwork Arena Trial] Little Giants Sprint, Peak Cross-Country & Tug of War"
     },
     {
       "id": "s05",
@@ -1257,8 +1748,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "完全正確！動物滾大球講求小朋友齊心協力用雙手合力推動大球順暢翻滾！",
-            "power": "峰湧體能力"
-          }
+            "power": "峰湧體能力",
+            "powerEn": "Peak Vitality",
+            "titleEn": "[Giant Ball Quest] Team Push Around the Cone",
+            "taskDescEn": "Tap 5 times on \"🌐 Push Giant Ball Together\" past the turn line!",
+            "actionBtnEn": "🌐 Push Giant Ball Together",
+            "actionDoneEn": "🌐 Giant Ball Rolled Smoothly! 100% Teamwork Score!",
+            "questionEn": "What is the key for Grade 1 students in \"Animal Giant Ball Rolling\"?",
+            "optionsEn": [
+              "Coordinate steps and push the giant ball smoothly with both hands",
+              "Kick the ball hard with feet",
+              "Stand still and watch the ball roll"
+            ],
+            "explainEn": "Spot on! Animal Giant Ball Rolling is all about teaming up and guiding the giant ball smoothly with both hands!"
+          },
+          "nameEn": "Grade 1 Animal Giant Ball Rolling Park",
+          "descEn": "Dedicated arena for Grade 1's \"Animal Giant Ball Rolling\"! Young kids team up to push giant planetary balls amid laughter!",
+          "factsEn": [
+            "Grade 1 Fun Race Zone",
+            "Animal Giant Ball Race",
+            "Team Pushing Coordination"
+          ],
+          "whenEn": "10:40–10:50 Grade 1 Fun Race"
         },
         {
           "id": "s05i2",
@@ -1290,8 +1801,32 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "答對了！折返時順暢換手交接大球，能讓推球節奏不中斷，爭取最佳班級成績！",
-            "power": "高峰群體力"
-          }
+            "power": "高峰群體力",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Ball Relay Quest] Giant Ball Hand-Off Flow",
+            "taskDescEn": "Tap the winning ball-relay steps in order:",
+            "stepsEn": [
+              "Roll Ball Forward Steadily",
+              "Round Cone & Slow Down",
+              "Hand Off Cleanly to Next Pair"
+            ],
+            "actionDoneEn": "🐾 Smooth Hand-Off! Grade 2 athletes nailed the relay pass!",
+            "questionEn": "What matters most at the turn-around hand-off in Grade 2's \"Animal Giant Ball Rolling\"?",
+            "optionsEn": [
+              "Smooth hand-off between teammates so the ball stays in the lane",
+              "Toss the ball high into the air",
+              "Shout the loudest while pushing"
+            ],
+            "explainEn": "Correct! Clean hand-offs keep momentum going without losing control of the ball!"
+          },
+          "nameEn": "Grade 2 Giant Ball Relay Track",
+          "descEn": "Relay track for Grade 2's \"Animal Giant Ball Rolling\"! Teams pass the ball smoothly around turning cones amid loud cheers!",
+          "factsEn": [
+            "Grade 2 Fun Race Zone",
+            "Turn-Cone Agile Relay",
+            "Class Championship Race"
+          ],
+          "whenEn": "10:50–11:00 Grade 2 Fun Race"
         },
         {
           "id": "s05i3",
@@ -1320,8 +1855,28 @@ module.exports = {
             ],
             "answer": 0,
             "explain": "完全正確！神箭闖江湖是考驗學童專注力、手眼協調與目標投射命中率的經典競賽！",
-            "power": "峰湧體能力"
-          }
+            "power": "峰湧體能力",
+            "powerEn": "Peak Vitality",
+            "titleEn": "[Archery Quest] Aim & Hit the Bullseye",
+            "taskDescEn": "Tap 5 times on \"🎯 Focus & Hit the Bullseye\"!",
+            "actionBtnEn": "🎯 Focus & Hit the Bullseye",
+            "actionDoneEn": "🎯 Bullseye! 100% accuracy from our sharp-eyed archers!",
+            "questionEn": "What core skill does Grade 3's \"Magic Arrow Odyssey\" primarily test?",
+            "optionsEn": [
+              "Hand-eye coordination and accurate target throwing",
+              "Long-distance marathon endurance",
+              "Underwater breath-holding"
+            ],
+            "explainEn": "Spot on! Magic Arrow Odyssey is a classic test of focus, hand-eye coordination, and target precision!"
+          },
+          "nameEn": "Grade 3 Magic Arrow Photon Range",
+          "descEn": "Dedicated range for Grade 3's \"Magic Arrow Odyssey\"! Young archers aim at luminous targets, testing focus and precision!",
+          "factsEn": [
+            "Grade 3 Fun Race Zone",
+            "Magic Arrow Target Toss",
+            "Timed Class Accuracy Race"
+          ],
+          "whenEn": "11:00–11:10 Grade 3 Fun Race"
         }
       ],
       "units": [
@@ -1351,7 +1906,14 @@ module.exports = {
         }
       ],
       "periods": "10:40~11:10",
-      "assess": "【童趣冒險試煉】低年級動物滾大球翻滾與三年級神箭闖江湖射擊"
+      "assess": "【童趣冒險試煉】低年級動物滾大球翻滾與三年級神箭闖江湖射擊",
+      "fullEn": "Guqi Peak Gravity Odyssey · Giant Ball & Magic Arrow",
+      "gradeEn": "All Grades",
+      "periodsEn": "10:40~11:10",
+      "hostEn": "Michael Jordan",
+      "leadEn": "Playful Odyssey · Joyful Rolling | Grades 1–2 Animal Giant Ball & Grade 3 Magic Arrow Range",
+      "summaryEn": "Fun adventure park for Grades 1–3! Grades 1 and 2 team up to roll giant planetary balls, while Grade 3 aims at photon targets in \"Magic Arrow Odyssey\"!",
+      "assessEn": "[Playful Adventure Trial] Giant Ball Rolling & Magic Arrow Target Shooting"
     },
     {
       "id": "s06",
@@ -1413,8 +1975,28 @@ module.exports = {
               "碳酸飲料暢飲優惠宣導"
             ],
             "answer": 0,
-            "explain": "答對了！實施計畫系列活動明訂宣導健康體位、口腔保健與反菸拒檳，培養孩子終身受益的健康生活習慣！"
-          }
+            "explain": "答對了！實施計畫系列活動明訂宣導健康體位、口腔保健與反菸拒檳，培養孩子終身受益的健康生活習慣！",
+            "powerEn": "Global SDGs",
+            "titleEn": "[SDGs Stamp] Healthy Living Energy Charge",
+            "taskDescEn": "Tap 5 times on \"🦷 Practice Oral Care & Healthy Living\"!",
+            "actionBtnEn": "🦷 Practice Oral Care & Healthy Living",
+            "actionDoneEn": "🦷 Healthy Energy Full! Embracing balanced fitness and bright smiles!",
+            "questionEn": "Which key Health Promotion School topics are highlighted in the Sports Day advocacy booth?",
+            "optionsEn": [
+              "Healthy weight, oral health, and anti-tobacco/betel-nut advocacy",
+              "Video game cheat-code guides",
+              "Unlimited soda discount promotions"
+            ],
+            "explainEn": "Correct! Promoting healthy weight, oral care, and tobacco/betel-nut refusal builds lifelong healthy habits!"
+          },
+          "nameEn": "Health & Oral Care Promotion Kiosk",
+          "descEn": "2026.11.21 Sports Day special booth: Health Promotion School advocacy (Healthy Weight, Oral Health, Anti-Tobacco & Anti-Betel Nut)!",
+          "factsEn": [
+            "Health Promotion Booth",
+            "Healthy Body & Oral Care",
+            "Global SDGs Stamp Trial"
+          ],
+          "whenEn": "All-Day Health Tips & Advocacy"
         },
         {
           "id": "s06i2",
@@ -1447,8 +2029,33 @@ module.exports = {
               "隨機購買公版現成商品"
             ],
             "answer": 0,
-            "explain": "完全正確！計畫明訂配合高峰都市森林學校特色，設計兼具美感創意與日常穿著實用性的紀念服飾！"
-          }
+            "explain": "完全正確！計畫明訂配合高峰都市森林學校特色，設計兼具美感創意與日常穿著實用性的紀念服飾！",
+            "powerEn": "Global SDGs",
+            "titleEn": "[Tech & Merch Quest] Anniversary Apparel Workflow",
+            "taskDescEn": "Tap the commemorative apparel preparation steps in order:",
+            "stepsEn": [
+              "Integrate School Identity",
+              "Select Eco-Friendly Fabric",
+              "Produce Anniversary Apparel",
+              "Students & Staff Keepsake"
+            ],
+            "actionDoneEn": "🤖 Tech Apparel Ready! Showcasing eco-friendliness and Gao-Feng style!",
+            "questionEn": "What is the design principle for Gao-Feng's anniversary apparel and souvenirs?",
+            "optionsEn": [
+              "Match school character with creative and practical daily-use designs",
+              "Make them as expensive as possible regardless of cost",
+              "Buy random generic templates"
+            ],
+            "explainEn": "Spot on! The plan highlights creative, practical designs reflecting Gao-Feng's urban forest campus spirit!"
+          },
+          "nameEn": "Future Tech Robotics Energy Station",
+          "descEn": "Showcasing Gao-Feng's Future Tech Lab, LEGO Robotics, and 22nd Anniversary commemorative apparel—highlighting tech innovation!",
+          "factsEn": [
+            "Future Tech Lab & Robots",
+            "Anniversary Commemorative Shirts",
+            "Creative & Practical Design"
+          ],
+          "whenEn": "All-Day Tech Demo & Souvenirs"
         },
         {
           "id": "s06i3",
@@ -1478,8 +2085,28 @@ module.exports = {
               "比賽結束直接離開不整理"
             ],
             "answer": 0,
-            "explain": "答對了！12:05 嚴格落實場地復原與不留垃圾，體現高峰學子愛護自然環境、實踐 SDGs 的良好品德！"
-          }
+            "explain": "答對了！12:05 嚴格落實場地復原與不留垃圾，體現高峰學子愛護自然環境、實踐 SDGs 的良好品德！",
+            "powerEn": "Global SDGs",
+            "titleEn": "[Green Campus Quest] Leave-No-Trace Cleanup",
+            "taskDescEn": "Tap 5 times on \"🌿 Restore Grounds & Leave No Trash\"!",
+            "actionBtnEn": "🌿 Restore Grounds & Leave No Trash",
+            "actionDoneEn": "🌿 Field Spotless! Gao-Feng protects our green urban forest campus!",
+            "questionEn": "What does the 12:05–12:10 schedule require for the campus environment cleanup?",
+            "optionsEn": [
+              "Restore grounds, return chairs, and leave zero litter behind",
+              "Pile all trash in front of the grandstand",
+              "Leave immediately without cleaning up"
+            ],
+            "explainEn": "Correct! Restoring the campus with zero litter demonstrates our students' environmental care and SDGs commitment!"
+          },
+          "nameEn": "Botanical Garden Leave-No-Trace Pod",
+          "descEn": "At 12:05–12:10, the whole school unites for rest-area cleanup, restoring chairs, and leaving zero trash before quiet lunch.",
+          "factsEn": [
+            "12:05 Rest-Area Cleanup",
+            "Restore Grounds & Zero Trash",
+            "SDGs Green Campus Action"
+          ],
+          "whenEn": "12:05–12:40 Cleanup & Lunch"
         }
       ],
       "units": [
@@ -1517,7 +2144,14 @@ module.exports = {
         }
       ],
       "periods": "全天候 / 12:05~12:10",
-      "assess": "【全球永續試煉】口腔健促宣導、百變機器人展示與 12:05 場地復原"
+      "assess": "【全球永續試煉】口腔健促宣導、百變機器人展示與 12:05 場地復原",
+      "fullEn": "Bio-Forest & Eco-Station · Robotics, Health & SDGs",
+      "gradeEn": "All Grades",
+      "periodsEn": "All Day / 12:05~12:10",
+      "hostEn": "Gao-Feng Athlete",
+      "leadEn": "Urban Forest · Future Tech | Botanical Garden Ecology, Robotics Lab, Health Kiosk & Leave-No-Trace",
+      "summaryEn": "Adjacent to Gao-Feng Botanical Garden & Shibajian Mountain! Featuring the Future Tech Robotics Lab, Health Promotion Kiosk (Body Health, Oral Care & Tobacco/Betel-Nut Prevention), Anniversary Merch, and 12:05 Leave-No-Trace Campus Recovery!",
+      "assessEn": "[Global SDGs Trial] Health Promotion, Robotics Showcase & 12:05 Campus Cleanup"
     },
     {
       "id": "s07",
@@ -1577,8 +2211,28 @@ module.exports = {
               "一桶速食炸雞"
             ],
             "answer": 0,
-            "explain": "答對了！實施計畫第四條明訂個人賽 1~3 名頒發獎牌、獎狀及獎品，肯定選手全力以赴的堅持！"
-          }
+            "explain": "答對了！實施計畫第四條明訂個人賽 1~3 名頒發獎牌、獎狀及獎品，肯定選手全力以赴的堅持！",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Podium Quest] Ascend the Peak of Honor",
+            "taskDescEn": "Tap 5 times on \"🏅 Step onto Podium & Cheer\"!",
+            "actionBtnEn": "🏅 Step onto Podium & Cheer",
+            "actionDoneEn": "🏅 Thunderous Applause! Wearing gold with pride for your class!",
+            "questionEn": "What awards do 1st to 3rd place winners in individual sprint finals receive?",
+            "optionsEn": [
+              "Medals, certificates, and prizes",
+              "Verbal praise only",
+              "A bucket of fried chicken"
+            ],
+            "explainEn": "Correct! Top 3 sprint finalists receive medals, certificates, and prizes to celebrate their dedication!"
+          },
+          "nameEn": "Dual-22 Starlight Award Podium",
+          "descEn": "The honor podium awarding medals, certificates, and prizes to Top 3 sprint finalists, and certificates to 4th–6th place finishers!",
+          "factsEn": [
+            "Track Hero Crowning Stage",
+            "Gold, Silver & Bronze Medals",
+            "Shared Joy with Parents & Peers"
+          ],
+          "whenEn": "Awarded After Each Final"
         },
         {
           "id": "s07i2",
@@ -1607,8 +2261,28 @@ module.exports = {
               "一張手寫便條紙"
             ],
             "answer": 0,
-            "explain": "完全正確！統計各學年優勝總錦標，頒發象徵至高團隊凝聚力的大會錦旗與實用獎品！"
-          }
+            "explain": "完全正確！統計各學年優勝總錦標，頒發象徵至高團隊凝聚力的大會錦旗與實用獎品！",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Championship Quest] Lift the Grade Overall Trophy",
+            "taskDescEn": "Tap 5 times on \"🏆 Lift the Championship Trophy\"!",
+            "actionBtnEn": "🏆 Lift the Championship Trophy",
+            "actionDoneEn": "🏆 Trophy Raised High! The whole grade cheers in triumph!",
+            "questionEn": "What honor symbols are awarded to the overall championship class of each grade?",
+            "optionsEn": [
+              "Championship pennant and prizes",
+              "10-year homework exemption pass",
+              "A handwritten sticky note"
+            ],
+            "explainEn": "Spot on! Top overall classes earn the championship pennant and prizes honoring teamwork!"
+          },
+          "nameEn": "Grade Overall Championship Golden Trophy",
+          "descEn": "Tallies overall grade championship points to award pennants and trophies. Completing this landmark unlocks full-island Supernova Fireworks!",
+          "factsEn": [
+            "Highest Grade Team Honor",
+            "Championship Pennant & Trophy",
+            "Finale Fireworks Core Trigger"
+          ],
+          "whenEn": "12:00 Closing Trophy Ceremony"
         },
         {
           "id": "s07i3",
@@ -1641,8 +2315,33 @@ module.exports = {
               "所有班級皆並列第一名"
             ],
             "answer": 0,
-            "explain": "答對了！實施計畫明訂大隊接力與趣味競賽各學年取優勝一班，頒發獎狀與獎品，激勵班級團隊向心力！"
-          }
+            "explain": "答對了！實施計畫明訂大隊接力與趣味競賽各學年取優勝一班，頒發獎狀與獎品，激勵班級團隊向心力！",
+            "powerEn": "Team Synergy",
+            "titleEn": "[Bulletin Quest] Official Results Publication Flow",
+            "taskDescEn": "Tap the official score publishing steps in order:",
+            "stepsEn": [
+              "Judges Photo-Finish Review",
+              "Recorders Tally & Verify",
+              "Publish Digital Bulletin",
+              "Podium Award Ceremony"
+            ],
+            "actionDoneEn": "📊 Results Logged! Sports Day leaderboards updated!",
+            "questionEn": "In Sports Day relays and fun races for Grades 3–6, how many winning classes are recognized per grade?",
+            "optionsEn": [
+              "1 winning class per grade receives certificates and prizes",
+              "10 winning classes per grade",
+              "All classes tie for 1st place"
+            ],
+            "explainEn": "Correct! One champion class per grade is awarded certificates and prizes to inspire class spirit!"
+          },
+          "nameEn": "Quantum Race Results Bulletin",
+          "descEn": "Connected to 11/09–11/13 Preliminary Week and 11/21 Sports Day track leaderboards with privacy-safe athlete results!",
+          "factsEn": [
+            "School-Wide Results Board",
+            "Privacy-Safe Track Bulletin",
+            "One-Tap Race Lookup"
+          ],
+          "whenEn": "Updated Throughout Race Day"
         }
       ],
       "units": [
@@ -1680,7 +2379,14 @@ module.exports = {
         }
       ],
       "periods": "10:10~12:05 / 13:20",
-      "assess": "【榮耀登頂試煉】學年總錦標金盃爭奪、個人獎牌頒發與 3D 勝利煙火"
+      "assess": "【榮耀登頂試煉】學年總錦標金盃爭奪、個人獎牌頒發與 3D 勝利煙火",
+      "fullEn": "Supernova Starlight Terminal · Trophies & Honor Bulletin",
+      "gradeEn": "All Grades",
+      "periodsEn": "10:10~12:05 / 13:20",
+      "hostEn": "C.K. Yang",
+      "leadEn": "Supernova Glory · Triumphant Return | Grade Overall Trophy, Starlight Podium & Live Bulletin",
+      "summaryEn": "The interstellar hall honoring Gao-Feng 22nd champions! Crowning overall grade champions with trophies and pennants, awarding top 6 sprint finalists, igniting 3D fireworks, and issuing Gold Captain Certificates!",
+      "assessEn": "[Pinnacle Glory Trial] Grade Overall Trophy, Sprint Medals & 3D Fireworks"
     }
   ],
   "flows": [
@@ -1697,7 +2403,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 1,
       "note": "【08:30 序幕傳遞】星艦總指揮官率領小健將，將大會程序手冊送往琉光舞台，由高峰天籟合唱團純淨獻唱揭開 22 週年盛典！",
-      "noteEn": "Opening Handover: Commander Coubertin delivers the Program Handbook to the Glass Stage for the celestial Choir Opening."
+      "noteEn": "Opening Handover: Commander Coubertin delivers the Program Handbook to the Glass Stage for the celestial Choir Opening.",
+      "crewEn": "Coubertin & Flag Bearers",
+      "carryEn": "Anniversary Program & Choir Baton",
+      "phaseEn": "Opening Ceremony"
     },
     {
       "id": "f02",
@@ -1712,7 +2421,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 1,
       "note": "【09:50 聖火引領】琉光美學大師護送躍動聖火火炬飛越星橋抵達綠茵跑道，宣告一二年級 60m 團體跑與三至六年級個人決賽全面燃起！",
-      "noteEn": "Torch Relay to Sprint: Bruce Lee carries the Dual-22 Sacred Torch to the track, igniting the 60m/100m sprint finals."
+      "noteEn": "Torch Relay to Sprint: Bruce Lee carries the Dual-22 Sacred Torch to the track, igniting the 60m/100m sprint finals.",
+      "crewEn": "Bruce Lee & Glass Artists",
+      "carryEn": "Dual-22 Torch Flame",
+      "phaseEn": "Track Sprint"
     },
     {
       "id": "f03",
@@ -1727,7 +2439,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 2,
       "note": "【10:40 冒險啟航】曲速破風傳奇紀政將趣味道具箱送達古奇童趣星域，啟動一二年級【動物滾大球】與三年級【神箭闖江湖】！",
-      "noteEn": "Fun Games Launch: Chi Cheng transports the gear box to Guqi Odyssey, kicking off Giant Ball rolling and Magic Arrow shooting."
+      "noteEn": "Fun Games Launch: Chi Cheng transports the gear box to Guqi Odyssey, kicking off Giant Ball rolling and Magic Arrow shooting.",
+      "crewEn": "Chi Cheng & Sprint Squad",
+      "carryEn": "Fun Race Props Crate",
+      "phaseEn": "Lower Fun Race"
     },
     {
       "id": "f04",
@@ -1742,7 +2457,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 2,
       "note": "【11:10 越野穿梭】重力極限破風者喬丹引領小健將，將黃金接力棒傳往越野障礙賽場，展開四年級【小巨人奔跑】與五六年級【高峰越野障礙賽】！",
-      "noteEn": "Obstacle Challenge: Michael Jordan delivers the golden baton to the arena, fueling Grade 4 Little Giants and Grades 5-6 Obstacle sprints."
+      "noteEn": "Obstacle Challenge: Michael Jordan delivers the golden baton to the arena, fueling Grade 4 Little Giants and Grades 5-6 Obstacle sprints.",
+      "crewEn": "Michael Jordan & Junior Team",
+      "carryEn": "Golden Relay Baton",
+      "phaseEn": "Obstacle Dash"
     },
     {
       "id": "f05",
@@ -1757,7 +2475,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 2,
       "note": "【11:40 薪傳決戰】星軌傳承守護者歐文斯將黃金接力棒傳回跑道交接區，開啟二年級 40m 折返與中高年級 16 棒大隊接力搶道巔峰決戰！",
-      "noteEn": "Relay Showdown: Jesse Owens brings the relay baton to the track zone, unleashing the 16-runner lap relay cut-in finale!"
+      "noteEn": "Relay Showdown: Jesse Owens brings the relay baton to the track zone, unleashing the 16-runner lap relay cut-in finale!",
+      "crewEn": "Jesse Owens & Obstacle Team",
+      "carryEn": "Golden Baton Return",
+      "phaseEn": "16-Runner Relay"
     },
     {
       "id": "f06",
@@ -1772,7 +2493,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 3,
       "note": "【12:05 無痕復原】大隊接力壓線後，高峰小健將號召全校親師生，執行 12:05 休息區環境整理、場地復原、垃圾不留地 SDGs 永續行動！",
-      "noteEn": "No-Trace Campus Action: GFPS students rally the school for the 12:05 campus recovery and zero-waste cleanup."
+      "noteEn": "No-Trace Campus Action: GFPS students rally the school for the 12:05 campus recovery and zero-waste cleanup.",
+      "crewEn": "Gao-Feng Eco Guards",
+      "carryEn": "Leave-No-Trace Green Kit",
+      "phaseEn": "SDGs Cleanup"
     },
     {
       "id": "f07",
@@ -1787,7 +2511,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 3,
       "note": "【12:10 榮耀加冕】亞洲鐵人楊傳廣護送個人賽前六名獎牌、獎狀與大會成績榜單至超新星榮耀港，登上星光頒獎台接受全校喝采！",
-      "noteEn": "Podium Coronation: C.K. Yang escorts individual sprint medals and diplomas to the Star Terminal for the grand awards ceremony."
+      "noteEn": "Podium Coronation: C.K. Yang escorts individual sprint medals and diplomas to the Star Terminal for the grand awards ceremony.",
+      "crewEn": "C.K. Yang & Referees",
+      "carryEn": "Sprint Medals & Certificates",
+      "phaseEn": "Podium Awards"
     },
     {
       "id": "f08",
@@ -1802,7 +2529,10 @@ module.exports = {
       "evidence": "plan",
       "phase": 3,
       "note": "【12:15 總錦標金盃】何信煒校長與大會裁判長將象徵最高集體榮譽的【大會學年優勝總錦標金盃】與錦旗送抵榮耀港，頒發學年總冠軍！",
-      "noteEn": "Championship Trophy: Principal He and the chief referee present the Overall Championship Gold Trophy to the winning grade."
+      "noteEn": "Championship Trophy: Principal He and the chief referee present the Overall Championship Gold Trophy to the winning grade.",
+      "crewEn": "Principal Ho & Head Referee",
+      "carryEn": "Grade Overall Trophy & Pennant",
+      "phaseEn": "Grand Finale"
     },
     {
       "id": "f09",
@@ -1817,7 +2547,10 @@ module.exports = {
       "evidence": "link",
       "phase": 1,
       "note": "【友善與永續傳承 (Friendly & SDGs)】中央星港將全校性績優義工感謝狀與健康促進指引送達綠站，傳承感恩好品格與環境責任。",
-      "noteEn": "Friendly & SDGs Legacy: Handing over volunteer appreciation certificates and health guidelines, honoring lifelong dedication."
+      "noteEn": "Friendly & SDGs Legacy: Handing over volunteer appreciation certificates and health guidelines, honoring lifelong dedication.",
+      "crewEn": "Friendly & SDGs Ambassadors",
+      "carryEn": "Volunteer Awards & Health Guide",
+      "phaseEn": "Character Legacy"
     },
     {
       "id": "f10",
@@ -1831,7 +2564,10 @@ module.exports = {
       "evidence": "link",
       "phase": 3,
       "note": "【美學與科技跨界融合 (Arts & Tech)】兒童玻璃美術館與未來科技教室雙向互聯，將在地玻璃藝術靈感注入機器人科技教育，啟發多元創造力！",
-      "noteEn": "Arts & Tech Fusion: Glass art aesthetics meet robotics tech, bridging creative craftsmanship and future innovation."
+      "noteEn": "Arts & Tech Fusion: Glass art aesthetics meet robotics tech, bridging creative craftsmanship and future innovation.",
+      "crewEn": "Glass Museum & Robotics Team",
+      "carryEn": "Arts × Tech Fusion Core",
+      "phaseEn": "Cross-Disciplinary"
     },
     {
       "id": "f11",
@@ -1845,7 +2581,10 @@ module.exports = {
       "evidence": "link",
       "phase": 2,
       "note": "【積極正向運動家精神 (Positive Spirit)】四年級小巨人奔跑與越野拔河爭霸，將班級高度凝聚的運動家精神轉化為榮耀港上的璀璨星光！",
-      "noteEn": "Positive Sportsmanship: Transforming teamwork from obstacle challenges and tug-of-war into triumphant starlight."
+      "noteEn": "Positive Sportsmanship: Transforming teamwork from obstacle challenges and tug-of-war into triumphant starlight.",
+      "crewEn": "Cross-Country & Tug-of-War",
+      "carryEn": "Positive Team Spirit",
+      "phaseEn": "Positive Energy"
     },
     {
       "id": "f12",
@@ -1860,7 +2599,10 @@ module.exports = {
       "evidence": "link",
       "phase": 3,
       "note": "【雙二齊飛・終局勝利迴圈 (Dual-22 Complete Cycle)】全島星核集滿引燃 3D 超新星勝利煙火，金盃能量迴流中央星艦星港，世代傳承高峰卓越薪火！",
-      "noteEn": "Dual-22 Victory Loop: The championship triumph flows back to Flagship Isle, igniting 3D fireworks to protect Gao-Feng across generations."
+      "noteEn": "Dual-22 Victory Loop: The championship triumph flows back to Flagship Isle, igniting 3D fireworks to protect Gao-Feng across generations.",
+      "crewEn": "All 7 Isles Champions",
+      "carryEn": "Supernova Fireworks Energy",
+      "phaseEn": "Dual-22 Complete"
     }
   ],
   "dayCycle": [
@@ -1870,7 +2612,8 @@ module.exports = {
         "s01i1",
         "s01i2",
         "s01i3"
-      ]
+      ],
+      "labelEn": "08:00 Athlete March-In & Torch"
     },
     {
       "label": "08:30 天籟合唱與義工表揚",
@@ -1878,7 +2621,8 @@ module.exports = {
         "s01i4",
         "s02i2",
         "s06i1"
-      ]
+      ],
+      "labelEn": "08:30 Choir & Volunteer Awards"
     },
     {
       "label": "09:00 大會舞展演與校慶專刊",
@@ -1886,14 +2630,16 @@ module.exports = {
         "s02i1",
         "s02i3",
         "s06i2"
-      ]
+      ],
+      "labelEn": "09:00 Grade Dances & Journal"
     },
     {
       "label": "09:50 綠茵競速衝刺決賽",
       "items": [
         "s03i1",
         "s03i3"
-      ]
+      ],
+      "labelEn": "09:50 Emerald Track Sprint Finals"
     },
     {
       "label": "10:40 古奇童趣冒險爭霸",
@@ -1901,7 +2647,8 @@ module.exports = {
         "s05i1",
         "s05i2",
         "s05i3"
-      ]
+      ],
+      "labelEn": "10:40 Guqi Fun Races & Archery"
     },
     {
       "label": "11:10 越野障礙與極限拔河",
@@ -1909,14 +2656,16 @@ module.exports = {
         "s04i1",
         "s04i2",
         "s04i3"
-      ]
+      ],
+      "labelEn": "11:10 Obstacle & Tug of War"
     },
     {
       "label": "11:40 星軌大隊接力巔峰決戰",
       "items": [
         "s03i1",
         "s03i2"
-      ]
+      ],
+      "labelEn": "11:40 16-Runner Relay Showdown"
     },
     {
       "label": "12:05 無痕復原與星光頒獎",
@@ -1925,7 +2674,8 @@ module.exports = {
         "s07i1",
         "s07i2",
         "s07i3"
-      ]
+      ],
+      "labelEn": "12:05 Cleanup & Starlight Awards"
     }
   ],
   "glossary": {
@@ -1946,18 +2696,39 @@ module.exports = {
   "gradeStory": {
     "7": {
       "title": "低年級・賽博初航萌芽",
-      "desc": "一年級與二年級小健將初登賽博生態賽場！參加 60 公尺團體跑體驗奔馳快感，在【動物滾大球】趣味競賽中合力推進彩色巨球，二年級更挑戰 40m 角椎折返接力！"
+      "desc": "一年級與二年級小健將初登賽博生態賽場！參加 60 公尺團體跑體驗奔馳快感，在【動物滾大球】趣味競賽中合力推進彩色巨球，二年級更挑戰 40m 角椎折返接力！",
+      "titleEn": "Grades 1–2 · Cyber Launch & Playful Energy",
+      "zh": "一年級與二年級小健將初登賽博生態賽場！參加 60 公尺團體跑體驗奔馳快感，在【動物滾大球】趣味競賽中合力推進彩色巨球，二年級更挑戰 40m 角椎折返接力！",
+      "en": "Grades 1 & 2 young athletes debut on the Cyber-Forest Arena! Dash 60m in group runs, roll giant planetary balls in Animal Giant Ball, and Grade 2 takes on the 40m Shuttle Relay!"
     },
     "8": {
       "title": "中年級・神箭破風躍進",
-      "desc": "三年級與四年級選手全面展開 60m 與 100m 個人賽巔峰對決，體驗【神箭闖江湖】與【小巨人奔跑】趣味競賽，並在 16 棒大隊接力第三棒展開熱血搶道！"
+      "desc": "三年級與四年級選手全面展開 60m 與 100m 個人賽巔峰對決，體驗【神箭闖江湖】與【小巨人奔跑】趣味競賽，並在 16 棒大隊接力第三棒展開熱血搶道！",
+      "titleEn": "Grades 3–4 · Magic Arrow & Wind-Breaking",
+      "zh": "三年級與四年級選手全面展開 60m 與 100m 個人賽巔峰對決，體驗【神箭闖江湖】與【小巨人奔跑】趣味競賽，並在 16 棒大隊接力第三棒展開熱血搶道！",
+      "en": "Grades 3 & 4 athletes clash in 60m & 100m sprint finals, aim true in Magic Arrow Odyssey & Little Giants Sprint, and break into Lane 1 on Leg 3 of the 16-runner relay!"
     },
     "9": {
       "title": "高年級・曲速領航傳承",
-      "desc": "五、六年級學長姐挑戰難度最高的【高峰越野障礙賽】與激烈的 16 棒半圈大隊接力決賽，角逐學年總錦標金盃與個人賽金銀銅牌榮譽！"
+      "desc": "五、六年級學長姐挑戰難度最高的【高峰越野障礙賽】與激烈的 16 棒半圈大隊接力決賽，角逐學年總錦標金盃與個人賽金銀銅牌榮譽！",
+      "titleEn": "Grades 5–6 · Warp Speed & Legacy Triumph",
+      "zh": "五、六年級學長姐挑戰難度最高的【高峰越野障礙賽】與激烈的 16 棒半圈大隊接力決賽，角逐學年總錦標金盃與個人賽金銀銅牌榮譽！",
+      "en": "Grades 5 & 6 seniors conquer the Peak Cross-Country Obstacle Course and battle in the ultimate 16-runner relay finals for the Grade Overall Championship Trophy!"
     }
   },
   "gradeGuide": {
+    "7": {
+      "zh": "參與 60m 團體跑、動物滾大球趣味競賽與二年級 40m 折返大隊接力，養成熱愛運動的好習慣！ 在闖關問答中隨時點擊【答題錦囊】獲得提示，輕鬆完成校慶挑戰！",
+      "en": "Grades 1–2: Join 60m Group Dashes, Animal Giant Ball Rolling, and Grade 2's 40m Shuttle Relay! Tap the hint box anytime during landmark quests for easy guidance."
+    },
+    "8": {
+      "zh": "挑戰 60m 與 100m 個人衝刺預決賽、神箭闖江湖、小巨人奔跑，與班級 16 棒大隊接力！ 記住大隊接力第三棒開始搶道的關鍵戰術，穩紮穩打完成接棒！",
+      "en": "Grades 3–4: Compete in 60m/100m Sprint Finals, Magic Arrow Odyssey, Little Giants Sprint, and 16-runner relays! Remember: Lane 1 break-in begins at Leg 3."
+    },
+    "9": {
+      "zh": "迎戰 60m/100m 飛毛腿金牌戰、高峰越野障礙賽、大隊接力總決賽，為班級奪下學年總錦標！ 挑戰無提示快速答題與 0.35 秒光速起跑反應，登上星光金牌頒獎台！",
+      "en": "Grades 5–6: Challenge 60m/100m gold medal sprints, Peak Cross-Country Obstacles, and the 16-runner relay finals! Test your 0.35s reaction speed and win the Overall Trophy!"
+    },
     "low": {
       "title": "萌力星艦領航員（低年級 1–2 年級）",
       "focus": "參與 60m 團體跑、動物滾大球趣味競賽與二年級 40m 折返大隊接力，養成熱愛運動的好習慣！",
@@ -2064,19 +2835,19 @@ module.exports = {
         "k": "學校全稱",
         "kEn": "School Name",
         "v": "新竹市東區高峰國民小學",
-        "vEn": "Gao-Feng Elementary School, East District, Hsinchu City"
+        "vEn": "Gao-Feng Primary School, East Dist., Hsinchu City (GFPS)"
       },
       {
         "k": "大會校長",
         "kEn": "Principal",
         "v": "何信煒 校長",
-        "vEn": "Principal He Xin-Wei"
+        "vEn": "Principal Hsin-Wei Ho"
       },
       {
         "k": "校慶屆數",
         "kEn": "Anniversary",
         "v": "22 週年（民國 93 年創校）",
-        "vEn": "22nd Anniversary (Est. 2004)"
+        "vEn": "22nd Anniversary (Founded ROC 93 / 2004)"
       },
       {
         "k": "學校電話",
@@ -2094,31 +2865,31 @@ module.exports = {
         "k": "四大願景",
         "kEn": "GFPS Visions",
         "v": "Global 全球視野 · Friendly 友善品格 · Positive 積極正向 · SDGs 永續發展",
-        "vEn": "Global · Friendly · Positive · SDGs"
+        "vEn": "Global Vision · Friendly · Positive · SDGs"
       },
       {
         "k": "辦學特色",
-        "kEn": "Features",
+        "kEn": "School Highlights",
         "v": "都市森林生態小學 ✕ 全台唯一兒童玻璃美術館 ✕ 雙語機器人科技",
-        "vEn": "Urban Forest ✕ Children's Glass Museum ✕ Robotics"
+        "vEn": "Urban Forest School · Children's Glass Museum · Bilingual Robotics"
       }
     ],
     "sections": [
       {
         "title": "大會主題：雙二齊飛、馳騁高峰",
-        "titleEn": "Theme: Dual-Twenty-Two Soaring",
+        "titleEn": "Urban Forest & Children's Glass Museum",
         "body": [
           "新竹市東區高峰國小 22 週年校慶運動會，以 7 座賽博生態浮島、星芒綠茵跑道與 24 項時程賽事展開冒險！",
           "全校親師生、志工夥伴與運動歷史傳奇巨星（古柏坦、李小龍、紀政、歐文斯、喬丹、楊傳廣）在賽場間傳遞聖火，奔馳角逐榮耀！"
         ],
         "bodyEn": [
-          "Gao-Feng ES 22nd Sports Day unfolds across 7 Cyber-Forest floating isles and 24 program events.",
-          "Athletes, coaches, parents, and legends unite to celebrate sportsmanship and community!"
+          "Founded in 2004 and nestled beside Shibajian Mountain and Gao-Feng Botanical Garden, Gao-Feng Primary School is Hsinchu's signature Urban Forest School.",
+          "Home to Taiwan's only Children's Glass Museum and Future Tech Robotics Lab, Gao-Feng nurtures students with Global Vision, Friendly Character, Positive Energy, and SDGs literacy."
         ]
       },
       {
         "title": "高峰四大願景 GFPS",
-        "titleEn": "Gao-Feng Four Visions GFPS",
+        "titleEn": "How to Explore the 7 Cyber-Forest Isles",
         "body": [
           "G - Global vision（全球視野）：素養導向、雙語科技、國際永續。",
           "F - Friendly（友善好品格）：品德實踐、同理感恩、全校性績優義工溫馨表揚。",
@@ -2126,10 +2897,8 @@ module.exports = {
           "S - SDGs（永續發展）：健康體位口腔宣導、低碳無痕校園、場地復原垃圾不留地。"
         ],
         "bodyEn": [
-          "G - Global Vision: Literacy, bilingual tech, global sustainability.",
-          "F - Friendly: Good character, gratitude, volunteer awards.",
-          "P - Positive: Athletic vitality, challenge, relay teamwork.",
-          "S - SDGs: Health & fitness, low-carbon no-trace campus."
+          "Explore 7 floating islands and 22 landmarks! Tap any landmark to enter its interactive challenge and earn all 5 GFPS Power Stamps.",
+          "Collecting all 5 Power Stamps unlocks panoramic 3D Supernova Victory Fireworks and your personalized Gold Captain Certificate!"
         ]
       },
       {
@@ -2212,7 +2981,11 @@ module.exports = {
           "Parent cheer squads, race check-in & volunteer dedication"
         ]
       }
-    ]
+    ],
+    "titleEn": "About Gao-Feng 22nd Anniversary · \"Dual-22 Soaring\"",
+    "leadEn": "Celebrating the 22nd Anniversary of Gao-Feng Primary School (East Dist., Hsinchu City, est. 2004 / ROC 93), blending Urban Forest Ecology, Taiwan's only Children's Glass Museum, and Bilingual Robotics into 7 Cyber-Forest 3D Isles & 22 Interactive Landmarks!",
+    "visionEn": "GFPS Four Visions: Global Vision · Friendly Character · Positive Energy · SDGs Sustainability",
+    "sourceEn": "Based on Gao-Feng Primary School 115th Academic Year & 22nd Anniversary Sports Day Official Program & Rules."
   },
   "honorKinds": {
     "champion": {
@@ -2231,19 +3004,23 @@ module.exports = {
   "honorTopics": [
     {
       "id": "relay",
-      "name": "大隊接力總錦標"
+      "name": "大隊接力總錦標",
+      "nameEn": "Overall Relay Championship"
     },
     {
       "id": "sprint",
-      "name": "個人徑賽飛毛腿"
+      "name": "個人徑賽飛毛腿",
+      "nameEn": "Individual Track Sprinters"
     },
     {
       "id": "spirit",
-      "name": "運動精神總錦標"
+      "name": "運動精神總錦標",
+      "nameEn": "Sportsmanship & Character"
     },
     {
       "id": "games",
-      "name": "趣味競賽學年優勝"
+      "name": "趣味競賽學年優勝",
+      "nameEn": "Fun Games Grade Champions"
     }
   ],
   "honors": [
@@ -2257,7 +3034,10 @@ module.exports = {
       "award": "大會學年總錦標金盃、冠軍錦旗與優勝獎品",
       "who": "六年級優勝班級代表隊",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 6 16-Runner Lap Relay Overall Champion",
+      "awardEn": "Overall Championship Trophy, Pennant & Prizes",
+      "whoEn": "Grade 6 Champion Class Team"
     },
     {
       "id": "h02",
@@ -2269,7 +3049,10 @@ module.exports = {
       "award": "大會學年總錦標金盃、冠軍錦旗與優勝獎品",
       "who": "五年級優勝班級代表隊",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 5 16-Runner Lap Relay Overall Champion",
+      "awardEn": "Overall Championship Trophy, Pennant & Prizes",
+      "whoEn": "Grade 5 Champion Class Team"
     },
     {
       "id": "h03",
@@ -2281,7 +3064,10 @@ module.exports = {
       "award": "大會學年總錦標金盃、冠軍錦旗與優勝獎品",
       "who": "四年級優勝班級代表隊",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 4 16-Runner Lap Relay Overall Champion",
+      "awardEn": "Overall Championship Trophy, Pennant & Prizes",
+      "whoEn": "Grade 4 Champion Class Team"
     },
     {
       "id": "h04",
@@ -2293,7 +3079,10 @@ module.exports = {
       "award": "大會學年總錦標金盃、冠軍錦旗與優勝獎品",
       "who": "三年級優勝班級代表隊",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 3 16-Runner Lap Relay Overall Champion",
+      "awardEn": "Overall Championship Trophy, Pennant & Prizes",
+      "whoEn": "Grade 3 Champion Class Team"
     },
     {
       "id": "h05",
@@ -2305,7 +3094,10 @@ module.exports = {
       "award": "大會接力優勝錦旗與優勝獎品",
       "who": "二年級優勝班級代表隊",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 2 40m Shuttle Relay Champion",
+      "awardEn": "Relay Championship Pennant & Prizes",
+      "whoEn": "Grade 2 Champion Class Team"
     },
     {
       "id": "h06",
@@ -2317,7 +3109,10 @@ module.exports = {
       "award": "個人賽金銀銅獎牌、大會獎狀與優勝獎品",
       "who": "各年段男女飛毛腿菁英選手",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grades 3–6 60m / 100m Sprint Finals Top 6",
+      "awardEn": "Gold/Silver/Bronze Medals, Certificates & Prizes",
+      "whoEn": "Boys & Girls Top 6 Finalists"
     },
     {
       "id": "h07",
@@ -2329,7 +3124,10 @@ module.exports = {
       "award": "大會獎狀與優勝體育獎品",
       "who": "低年級同心協力優勝班級",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grades 1–2 Animal Giant Ball Fun Race Champion",
+      "awardEn": "Merit Certificates & Sports Prizes",
+      "whoEn": "Lower-Grade Champion Classes"
     },
     {
       "id": "h08",
@@ -2341,7 +3139,10 @@ module.exports = {
       "award": "大會獎狀與神射手優勝獎品",
       "who": "三年級手眼協調命中率優勝班級",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 3 Magic Arrow Photon Shooting Champion",
+      "awardEn": "Merit Certificates & Archer Prizes",
+      "whoEn": "Grade 3 Accuracy Champion Class"
     },
     {
       "id": "h09",
@@ -2353,7 +3154,10 @@ module.exports = {
       "award": "大會獎狀與敏捷障礙挑戰優勝獎品",
       "who": "中高年級敏捷越野優勝班級",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "Grade 4 Little Giants & Grades 5–6 Cross-Country Champions",
+      "awardEn": "Merit Certificates & Agility Prizes",
+      "whoEn": "Middle & Upper-Grade Champions"
     },
     {
       "id": "h10",
@@ -2365,7 +3169,10 @@ module.exports = {
       "award": "大會運動家風範最高榮譽錦旗",
       "who": "服從裁判、勝不驕敗不餒、12:05 落實無痕復原之典範班級",
       "year": "115",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "School-Wide Friendly Sportsmanship & Character Award",
+      "awardEn": "Highest Sportsmanship Honor Pennant",
+      "whoEn": "Exemplary Clean-Up & Fair-Play Classes"
     }
   ],
   "news": [
@@ -2375,7 +3182,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【大會開幕】高峰 22 週年「雙二齊飛、馳騁高峰」慶祝大會盛大啟航！",
       "summary": "08:00 運動員整齊進場行禮，何信煒校長致詞宣布大會開始，引燃雙二齊飛躍動聖火晶塔，並隆重頒發表揚全校性績優義工與愛心志工，七大賽博生態浮島全面開放探索！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Opening] Gao-Feng 22nd \"Dual-22 Soaring\" Sports Day Launches!",
+      "summaryEn": "Athletes march in with pride, Principal Hsin-Wei Ho lights the Dual-22 Torch, and outstanding volunteers are honored."
     },
     {
       "id": "n02",
@@ -2383,7 +3192,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【美育天籟】高峰天籟合唱團純淨開幕獻唱，幼兒園與各年段大會舞展演！",
       "summary": "08:30 合唱團以宛如天籟的美聲揭開序幕，隨後幼兒園萌力律動、低年級「神氣小娃」、中年級「扇耀高峰」、高年級「旗開得勝」活力展演，親師生掌聲雷動！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Arts & Choir] Gao-Feng Choir Opens & Grade-Level Dances Shine!",
+      "summaryEn": "Pure choral harmonies kick off the ceremony, followed by community, preschool, and grade-level dances."
     },
     {
       "id": "n03",
@@ -2391,7 +3202,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【綠茵競速】一二年級 60m 團體跑熱血破風，三至六年級個人衝刺決賽誕生！",
       "summary": "09:50 一二年級小健將邁開大步挑戰 60 公尺跑道；10:10 預賽晉級之各年級男女飛毛腿齊聚紅色跑道，由星際電子計時鐘樓精準記錄衝刺壓線成績，爭奪金銀銅牌！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Track Sprint] Grades 1–2 60m Dashes & Grades 3–6 Sprint Finals!",
+      "summaryEn": "Young sprinters blaze down the emerald track as top 6 finalists from each division vie for sprint medals."
     },
     {
       "id": "n04",
@@ -2399,7 +3212,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【童趣盛況】一年級與二年級動物滾大球翻滾樂園，三年級神箭闖江湖光子射擊！",
       "summary": "10:40 一、二年級小健將齊心合力推動彩色行星大球敏捷折返換手，歡笑聲響徹操場；11:00 三年級手持神箭凝神瞄準光子靶心投射，專注力與手眼協調滿分！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Fun Odyssey] Giant Ball Rolling & Grade 3 Magic Arrow Range!",
+      "summaryEn": "Grades 1–2 roll planetary balls together while Grade 3 archers test focus and accuracy."
     },
     {
       "id": "n05",
@@ -2407,7 +3222,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【極限爭霸】四年級小巨人奔跑同心向前，五六年級高峰越野障礙賽敏捷穿梭！",
       "summary": "11:10 四年級化身巨步小巨人協同步伐奔馳；五、六年級突破重力障礙穿梭角椎與呼拉圈矩陣；雨天備案拔河台繩網高架更展現六年級畢業生的最強韌性與班級凝聚力！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Obstacle Showdown] Little Giants Sprint & Peak Cross-Country!",
+      "summaryEn": "Grade 4 teams synchronize strides while Grades 5–6 weave swiftly through cross-country obstacles."
     },
     {
       "id": "n06",
@@ -2415,7 +3232,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【薪傳巔峰】二年級 40m 折返大隊接力與中高年級 16 棒半圈接力第三棒搶道超車！",
       "summary": "11:40 二年級 40 公尺折返繞角椎接力默契交接黃金棒；11:50 三至六年級壓軸大隊接力，第三棒接到接力棒全速搶道切入內道，全場家長看台吶喊沸騰！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Relay Climax] Grade 2 Shuttle Relay & 16-Runner Lane Break-In!",
+      "summaryEn": "Thrilling baton passes and Leg 3 Lane 1 break-in sprints ignite cheers across the stadium."
     },
     {
       "id": "n07",
@@ -2423,7 +3242,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【綠色永續】12:05 全校場地復原清潔、垃圾不留地，高峰都市森林實踐 SDGs！",
       "summary": "賽事壓線後，全校親師生與森林護衛隊迅速行動，確實落實休息區場地復原、椅子歸位與無痕清潔，健康促進宣導站與百變機器人展示圓滿成功！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[SDGs Green Campus] 12:05 Whole-School Leave-No-Trace Cleanup!",
+      "summaryEn": "Teachers and students restore chairs and leave zero litter, practicing Urban Forest SDGs."
     },
     {
       "id": "n08",
@@ -2431,7 +3252,9 @@ module.exports = {
       "date": "2026-11-21",
       "title": "【榮耀凱旋】大會學年優勝總錦標金盃頒發，全景 3D 超新星勝利煙火璀璨引燃！",
       "summary": "個人賽前六名榮登星光頒獎台加冕，何信煒校長隆重授予各學年總錦標金盃與大會錦旗；終局全景 3D 超新星勝利煙火震撼引燃，頒發專屬賽博生態金牌榮譽證書！",
-      "url": "https://www.gfps.hc.edu.tw/"
+      "url": "https://www.gfps.hc.edu.tw/",
+      "titleEn": "[Grand Triumph] Championship Trophies & 3D Supernova Fireworks!",
+      "summaryEn": "Grade champions lift the Golden Trophy as panoramic 3D Supernova Victory Fireworks light up the sky!"
     }
   ],
   "individualRaces": [
@@ -2448,7 +3271,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 9.42s (Q)",
           "score": "9.31s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -2456,7 +3282,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 9.55s (Q)",
           "score": "9.48s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2464,7 +3293,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 9.68s (Q)",
           "score": "9.62s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2472,7 +3304,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 9.75s (q)",
           "score": "9.71s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2480,7 +3315,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 9.88s (q)",
           "score": "9.83s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2488,9 +3326,15 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 9.94s (q)",
           "score": "9.90s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 3",
+      "genderEn": "Boys",
+      "nameEn": "Grade 3 Boys 60m Final"
     },
     {
       "id": "r_g3_f_60",
@@ -2505,7 +3349,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 9.61s (Q)",
           "score": "9.52s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -2513,7 +3360,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 9.74s (Q)",
           "score": "9.66s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2521,7 +3371,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 9.82s (Q)",
           "score": "9.78s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2529,7 +3382,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 9.91s (q)",
           "score": "9.87s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 6,
@@ -2537,7 +3393,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 10.05s (q)",
           "score": "10.01s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 1,
@@ -2545,9 +3404,15 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 10.12s (q)",
           "score": "10.08s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 3",
+      "genderEn": "Girls",
+      "nameEn": "Grade 3 Girls 60m Final"
     },
     {
       "id": "r_g3_m_100",
@@ -2562,7 +3427,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 15.60s (Q)",
           "score": "15.42s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -2570,7 +3438,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 15.85s (Q)",
           "score": "15.71s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2578,7 +3449,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 16.12s (Q)",
           "score": "16.03s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2586,7 +3460,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 16.30s (q)",
           "score": "16.24s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2594,7 +3471,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 16.48s (q)",
           "score": "16.40s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2602,9 +3482,15 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 16.65s (q)",
           "score": "16.58s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 3",
+      "genderEn": "Boys",
+      "nameEn": "Grade 3 Boys 100m Final"
     },
     {
       "id": "r_g3_f_100",
@@ -2619,7 +3505,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 16.05s (Q)",
           "score": "15.91s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -2627,7 +3516,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 16.28s (Q)",
           "score": "16.15s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2635,7 +3527,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 16.50s (Q)",
           "score": "16.42s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2643,7 +3538,10 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 16.72s (q)",
           "score": "16.67s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2651,7 +3549,10 @@ module.exports = {
           "cls": "302",
           "qualified": "預賽 16.89s (q)",
           "score": "16.81s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2659,9 +3560,15 @@ module.exports = {
           "cls": "301",
           "qualified": "預賽 17.02s (q)",
           "score": "16.95s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 3 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 3",
+      "genderEn": "Girls",
+      "nameEn": "Grade 3 Girls 100m Final"
     },
     {
       "id": "r_g4_m_60",
@@ -2676,7 +3583,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 8.92s (Q)",
           "score": "8.81s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -2684,7 +3594,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.08s (Q)",
           "score": "8.99s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2692,7 +3605,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 9.21s (Q)",
           "score": "9.15s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2700,7 +3616,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.35s (q)",
           "score": "9.28s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2708,7 +3627,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 9.42s (q)",
           "score": "9.39s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2716,9 +3638,15 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.50s (q)",
           "score": "9.45s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 4",
+      "genderEn": "Boys",
+      "nameEn": "Grade 4 Boys 60m Final"
     },
     {
       "id": "r_g4_f_60",
@@ -2733,7 +3661,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.15s (Q)",
           "score": "9.05s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -2741,7 +3672,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 9.30s (Q)",
           "score": "9.22s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2749,7 +3683,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.44s (Q)",
           "score": "9.38s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2757,7 +3694,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 9.58s (q)",
           "score": "9.51s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 6,
@@ -2765,7 +3705,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 9.69s (q)",
           "score": "9.62s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 1,
@@ -2773,9 +3716,15 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 9.77s (q)",
           "score": "9.73s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 4",
+      "genderEn": "Girls",
+      "nameEn": "Grade 4 Girls 60m Final"
     },
     {
       "id": "r_g4_m_100",
@@ -2790,7 +3739,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 14.80s (Q)",
           "score": "14.65s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -2798,7 +3750,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 15.02s (Q)",
           "score": "14.90s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2806,7 +3761,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 15.25s (Q)",
           "score": "15.18s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2814,7 +3772,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 15.44s (q)",
           "score": "15.36s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2822,7 +3783,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 15.62s (q)",
           "score": "15.55s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2830,9 +3794,15 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 15.78s (q)",
           "score": "15.70s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 4",
+      "genderEn": "Boys",
+      "nameEn": "Grade 4 Boys 100m Final"
     },
     {
       "id": "r_g4_f_100",
@@ -2847,7 +3817,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 15.20s (Q)",
           "score": "15.08s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -2855,7 +3828,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 15.42s (Q)",
           "score": "15.31s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2863,7 +3839,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 15.68s (Q)",
           "score": "15.59s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2871,7 +3850,10 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 15.88s (q)",
           "score": "15.80s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2879,7 +3861,10 @@ module.exports = {
           "cls": "402",
           "qualified": "預賽 16.05s (q)",
           "score": "15.98s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2887,9 +3872,15 @@ module.exports = {
           "cls": "401",
           "qualified": "預賽 16.22s (q)",
           "score": "16.14s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 4 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 4",
+      "genderEn": "Girls",
+      "nameEn": "Grade 4 Girls 100m Final"
     },
     {
       "id": "r_g5_m_60",
@@ -2904,7 +3895,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 8.45s (Q)",
           "score": "8.32s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -2912,7 +3906,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 8.60s (Q)",
           "score": "8.51s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2920,7 +3917,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 8.78s (Q)",
           "score": "8.70s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2928,7 +3928,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 8.89s (q)",
           "score": "8.82s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -2936,7 +3939,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 8.98s (q)",
           "score": "8.94s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -2944,9 +3950,15 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 9.07s (q)",
           "score": "9.02s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 5",
+      "genderEn": "Boys",
+      "nameEn": "Grade 5 Boys 60m Final"
     },
     {
       "id": "r_g5_f_60",
@@ -2961,7 +3973,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 8.75s (Q)",
           "score": "8.65s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -2969,7 +3984,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 8.90s (Q)",
           "score": "8.81s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -2977,7 +3995,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 9.05s (Q)",
           "score": "8.98s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -2985,7 +4006,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 9.18s (q)",
           "score": "9.12s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 6,
@@ -2993,7 +4017,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 9.29s (q)",
           "score": "9.24s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 1,
@@ -3001,9 +4028,15 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 9.38s (q)",
           "score": "9.31s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 5",
+      "genderEn": "Girls",
+      "nameEn": "Grade 5 Girls 60m Final"
     },
     {
       "id": "r_g5_m_100",
@@ -3018,7 +4051,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 13.90s (Q)",
           "score": "13.75s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -3026,7 +4062,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 14.15s (Q)",
           "score": "14.02s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3034,7 +4073,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 14.38s (Q)",
           "score": "14.28s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3042,7 +4084,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 14.59s (q)",
           "score": "14.51s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -3050,7 +4095,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 14.78s (q)",
           "score": "14.70s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -3058,9 +4106,15 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 14.95s (q)",
           "score": "14.88s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 5",
+      "genderEn": "Boys",
+      "nameEn": "Grade 5 Boys 100m Final"
     },
     {
       "id": "r_g5_f_100",
@@ -3075,7 +4129,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 14.30s (Q)",
           "score": "14.18s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -3083,7 +4140,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 14.52s (Q)",
           "score": "14.41s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3091,7 +4151,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 14.80s (Q)",
           "score": "14.72s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3099,7 +4162,10 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 15.02s (q)",
           "score": "14.95s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -3107,7 +4173,10 @@ module.exports = {
           "cls": "502",
           "qualified": "預賽 15.22s (q)",
           "score": "15.15s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -3115,9 +4184,15 @@ module.exports = {
           "cls": "501",
           "qualified": "預賽 15.40s (q)",
           "score": "15.32s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 5 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 5",
+      "genderEn": "Girls",
+      "nameEn": "Grade 5 Girls 100m Final"
     },
     {
       "id": "r_g6_m_60",
@@ -3132,7 +4207,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 8.12s (Q)",
           "score": "8.01s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -3140,7 +4218,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.28s (Q)",
           "score": "8.18s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3148,7 +4229,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 8.42s (Q)",
           "score": "8.35s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3156,7 +4240,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.58s (q)",
           "score": "8.50s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -3164,7 +4251,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 8.70s (q)",
           "score": "8.65s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -3172,9 +4262,15 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.82s (q)",
           "score": "8.76s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 6",
+      "genderEn": "Boys",
+      "nameEn": "Grade 6 Boys 60m Final"
     },
     {
       "id": "r_g6_f_60",
@@ -3189,7 +4285,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.35s (Q)",
           "score": "8.24s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -3197,7 +4296,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 8.50s (Q)",
           "score": "8.41s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3205,7 +4307,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.68s (Q)",
           "score": "8.60s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3213,7 +4318,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 8.81s (q)",
           "score": "8.75s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 6,
@@ -3221,7 +4329,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 8.95s (q)",
           "score": "8.89s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 1,
@@ -3229,9 +4340,15 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 9.08s (q)",
           "score": "9.02s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 6",
+      "genderEn": "Girls",
+      "nameEn": "Grade 6 Girls 60m Final"
     },
     {
       "id": "r_g6_m_100",
@@ -3246,7 +4363,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 13.20s (Q)",
           "score": "13.05s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 4,
@@ -3254,7 +4374,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 13.45s (Q)",
           "score": "13.31s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3262,7 +4385,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 13.72s (Q)",
           "score": "13.62s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3270,7 +4396,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 13.95s (q)",
           "score": "13.88s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -3278,7 +4407,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 14.15s (q)",
           "score": "14.07s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -3286,9 +4418,15 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 14.32s (q)",
           "score": "14.25s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 6",
+      "genderEn": "Boys",
+      "nameEn": "Grade 6 Boys 100m Final"
     },
     {
       "id": "r_g6_f_100",
@@ -3303,7 +4441,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 13.60s (Q)",
           "score": "13.48s",
-          "rank": 1
+          "rank": 1,
+          "nameEn": "Finalist #1 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #1 Medal & Certificate"
         },
         {
           "lane": 3,
@@ -3311,7 +4452,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 13.85s (Q)",
           "score": "13.72s",
-          "rank": 2
+          "rank": 2,
+          "nameEn": "Finalist #2 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #2 Medal & Certificate"
         },
         {
           "lane": 2,
@@ -3319,7 +4463,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 14.12s (Q)",
           "score": "14.03s",
-          "rank": 3
+          "rank": 3,
+          "nameEn": "Finalist #3 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #3 Medal & Certificate"
         },
         {
           "lane": 5,
@@ -3327,7 +4474,10 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 14.35s (q)",
           "score": "14.28s",
-          "rank": 4
+          "rank": 4,
+          "nameEn": "Finalist #4 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #4 Certificate"
         },
         {
           "lane": 1,
@@ -3335,7 +4485,10 @@ module.exports = {
           "cls": "602",
           "qualified": "預賽 14.55s (q)",
           "score": "14.47s",
-          "rank": 5
+          "rank": 5,
+          "nameEn": "Finalist #5 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #5 Certificate"
         },
         {
           "lane": 6,
@@ -3343,9 +4496,15 @@ module.exports = {
           "cls": "601",
           "qualified": "預賽 14.72s (q)",
           "score": "14.65s",
-          "rank": 6
+          "rank": 6,
+          "nameEn": "Finalist #6 (Privacy Protected)",
+          "classEn": "Grade 6 Qualifier",
+          "noteEn": "Rank #6 Certificate"
         }
-      ]
+      ],
+      "gradeEn": "Grade 6",
+      "genderEn": "Girls",
+      "nameEn": "Grade 6 Girls 100m Final"
     }
   ],
   "seriesActivities": [
@@ -3354,28 +4513,44 @@ module.exports = {
       "name": "議題宣導：健康體位與口腔保健",
       "dept": "學務處衛保組",
       "loc": "高峰植物園補給亭",
-      "desc": "結合體位與口腔衛教闖關，發送健促能量飲。"
+      "desc": "結合體位與口腔衛教闖關，發送健促能量飲。",
+      "nameEn": "Health Advocacy: Body Weight, Oral Care & Anti-Tobacco",
+      "deptEn": "Student Affairs Health Section",
+      "locEn": "Botanical Garden Eco Pod",
+      "descEn": "Promoting healthy weight, dental hygiene, and tobacco/betel-nut refusal on Sports Day."
     },
     {
       "id": 2,
       "name": "校慶特色紀念服飾與實用紀念品",
       "dept": "校慶籌備委員會",
       "loc": "雙二盛典旗艦星港",
-      "desc": "展售高峰 22 週年限量賽博排汗衫與紀念文創小物。"
+      "desc": "展售高峰 22 週年限量賽博排汗衫與紀念文創小物。",
+      "nameEn": "Anniversary Commemorative Apparel & Souvenirs",
+      "deptEn": "Anniversary Prep Committee",
+      "locEn": "Gao-Feng Gala Flagship",
+      "descEn": "Creative and practical 22nd Anniversary athletic shirts and keepsakes."
     },
     {
       "id": 3,
       "name": "22 週年校慶專刊出刊與學校簡介",
       "dept": "教務處與各班",
       "loc": "兒童玻璃美術館",
-      "desc": "記錄高峰 22 年都市森林、玻璃美育與雙語科技風華。"
+      "desc": "記錄高峰 22 年都市森林、玻璃美育與雙語科技風華。",
+      "nameEn": "22nd Anniversary Journal & School Brochure",
+      "deptEn": "Academic Affairs & Classes",
+      "locEn": "Children's Glass Museum",
+      "descEn": "Showcasing teaching excellence, bilingual robotics, and class achievements."
     },
     {
       "id": 4,
       "name": "雨天備案：班際拔河錦標賽",
       "dept": "學務處體育組",
       "loc": "高峰館",
-      "desc": "如遇天候不佳，於高峰館進行各學年班際拔河錦標賽。"
+      "desc": "如遇天候不佳，於高峰館進行各學年班際拔河錦標賽。",
+      "nameEn": "Rain Contingency: Inter-Class Tug of War",
+      "deptEn": "Student Affairs PE Section",
+      "locEn": "Gao-Feng Gym",
+      "descEn": "Indoor 10-boy + 10-girl class Tug of War best-of-3 championship if it rains."
     }
   ],
   "gradeSchedule": {
@@ -3383,101 +4558,139 @@ module.exports = {
       {
         "island": "s01",
         "schedule": "08:00~09:00 開幕進場・宣誓致詞義工表揚",
-        "task": "【聖火台關卡】雙二齊飛星核充能挑戰"
+        "task": "【聖火台關卡】雙二齊飛星核充能挑戰",
+        "scheduleEn": "08:00–09:00 March-In, Torch Lighting & Volunteer Awards",
+        "taskEn": "[Torch Quest] Charge Dual-22 Flame | [Gratitude] Salute Volunteers"
       },
       {
         "island": "s02",
         "schedule": "08:30 合唱開幕｜09:10 低年級大會舞「神氣小娃」｜13:10 玻璃展",
-        "task": "【琉光舞台關卡】點亮兒童玻璃美術館美感力"
+        "task": "【琉光舞台關卡】點亮兒童玻璃美術館美感力",
+        "scheduleEn": "08:30 Choir | 09:10–09:35 Grade Dances | 13:10 Glass Museum",
+        "taskEn": "[Aesthetics] Illuminate Glass Museum | [Choir] Show Order"
       },
       {
         "island": "s03",
         "schedule": "09:50 一年級 60m 團體跑｜10:00 二年級 60m 團體跑｜11:40 二年級 40m 折返大隊接力",
-        "task": "【起跑反應挑戰】光速起跑測驗｜【接力挑戰】黃金接力棒默契交接"
+        "task": "【起跑反應挑戰】光速起跑測驗｜【接力挑戰】黃金接力棒默契交接",
+        "scheduleEn": "09:50–10:10 60m Group Dash | 10:10–10:40 Sprint Finals | 11:40–12:05 Relays",
+        "taskEn": "[Reaction] 0.35s Gun Start | [Baton] Smooth Relay Exchange"
       },
       {
         "island": "s05",
         "schedule": "10:40 一年級動物滾大球｜10:50 二年級動物滾大球接力",
-        "task": "【滾大球挑戰】合力推球翻滾｜【換手挑戰】敏捷推球接力"
+        "task": "【滾大球挑戰】合力推球翻滾｜【換手挑戰】敏捷推球接力",
+        "scheduleEn": "10:40–11:10 Animal Giant Ball & Magic Arrow Odyssey",
+        "taskEn": "[Giant Ball] Roll & Hand Off | [Magic Arrow] Hit Bullseye"
       },
       {
         "island": "s06",
         "schedule": "全天候 口腔體位健促宣導｜12:05~12:10 全校環境整理",
-        "task": "【健康宣導關卡】口腔體位充能｜【無痕校園】場地復原淨化挑戰"
+        "task": "【健康宣導關卡】口腔體位充能｜【無痕校園】場地復原淨化挑戰",
+        "scheduleEn": "All Day Robotics & Health Kiosk | 12:05 Campus Cleanup",
+        "taskEn": "[SDGs] Healthy Living Charge | [Leave-No-Trace] Spotless Field"
       },
       {
         "island": "s07",
         "schedule": "12:00 各學年總錦標頒獎｜13:20 引燃 3D 勝利煙火",
-        "task": "【榮譽金盃關卡】學年總錦標金盃爭霸與全景煙火"
+        "task": "【榮譽金盃關卡】學年總錦標金盃爭霸與全景煙火",
+        "scheduleEn": "10:10–12:00 Sprint Awards | 12:00 Overall Trophy Ceremony",
+        "taskEn": "[Podium] Medals & Trophies | [Finale] Supernova 3D Fireworks"
       }
     ],
     "8": [
       {
         "island": "s01",
         "schedule": "08:00~09:00 運動員集結進場・開幕典禮・義工表揚",
-        "task": "【司令台關卡】升旗敬禮蓄力｜【躍遷門】星際進場秩序"
+        "task": "【司令台關卡】升旗敬禮蓄力｜【躍遷門】星際進場秩序",
+        "scheduleEn": "08:00–09:00 March-In, Torch Lighting & Volunteer Awards",
+        "taskEn": "[Torch Quest] Charge Dual-22 Flame | [Gratitude] Salute Volunteers"
       },
       {
         "island": "s02",
         "schedule": "08:30 合唱天籟｜09:20 中年級大會舞「扇耀高峰」｜13:10 師生美展",
-        "task": "【音律共振關卡】天籟合唱展演排序｜【校慶專刊】觀測出刊"
+        "task": "【音律共振關卡】天籟合唱展演排序｜【校慶專刊】觀測出刊",
+        "scheduleEn": "08:30 Choir | 09:10–09:35 Grade Dances | 13:10 Glass Museum",
+        "taskEn": "[Aesthetics] Illuminate Glass Museum | [Choir] Show Order"
       },
       {
         "island": "s03",
         "schedule": "10:10~10:40 三四年級 60m/100m 個人決賽｜11:50 三四年級 16 棒半圈大隊接力",
-        "task": "【終點鐘樓挑戰】極速壓線衝刺｜【接力挑戰】第三棒搶道超車"
+        "task": "【終點鐘樓挑戰】極速壓線衝刺｜【接力挑戰】第三棒搶道超車",
+        "scheduleEn": "09:50–10:10 60m Group Dash | 10:10–10:40 Sprint Finals | 11:40–12:05 Relays",
+        "taskEn": "[Reaction] 0.35s Gun Start | [Baton] Smooth Relay Exchange"
       },
       {
         "island": "s04",
         "schedule": "11:10~11:20 四年級趣味競賽：小巨人奔跑｜雨天備案：班際拔河賽",
-        "task": "【小巨人挑戰】班級步調協同流程｜【爭霸台】拔河蓄力挑戰"
+        "task": "【小巨人挑戰】班級步調協同流程｜【爭霸台】拔河蓄力挑戰",
+        "scheduleEn": "11:10–11:40 Little Giants & Peak Cross-Country Obstacle",
+        "taskEn": "[Little Giants] Sync Stride | [Cross-Country] Leap Obstacles"
       },
       {
         "island": "s05",
         "schedule": "11:00~11:10 三年級趣味競賽：神箭闖江湖",
-        "task": "【神箭射擊挑戰】手眼協調凝神瞄準光子靶心投射"
+        "task": "【神箭射擊挑戰】手眼協調凝神瞄準光子靶心投射",
+        "scheduleEn": "10:40–11:10 Animal Giant Ball & Magic Arrow Odyssey",
+        "taskEn": "[Giant Ball] Roll & Hand Off | [Magic Arrow] Hit Bullseye"
       },
       {
         "island": "s06",
         "schedule": "全天候 百變機器人展・特色紀念服飾｜12:05 環境整理",
-        "task": "【科技紀念關卡】機器人成果展示｜【無痕復原】垃圾不留地"
+        "task": "【科技紀念關卡】機器人成果展示｜【無痕復原】垃圾不留地",
+        "scheduleEn": "All Day Robotics & Health Kiosk | 12:05 Campus Cleanup",
+        "taskEn": "[SDGs] Healthy Living Charge | [Leave-No-Trace] Spotless Field"
       },
       {
         "island": "s07",
         "schedule": "10:10~12:00 個人決賽頒獎｜12:00 學年總錦標頒發",
-        "task": "【星光頒獎台】前三名金銀銅牌頒發｜【公報看板】賽況全面更新"
+        "task": "【星光頒獎台】前三名金銀銅牌頒發｜【公報看板】賽況全面更新",
+        "scheduleEn": "10:10–12:00 Sprint Awards | 12:00 Overall Trophy Ceremony",
+        "taskEn": "[Podium] Medals & Trophies | [Finale] Supernova 3D Fireworks"
       }
     ],
     "9": [
       {
         "island": "s01",
         "schedule": "08:00~09:00 運動員進場・升會旗宣誓・校長致詞義工表揚",
-        "task": "【品格力印章】守護高峰感謝程序｜【聖火晶塔】星核滿載引燃"
+        "task": "【品格力印章】守護高峰感謝程序｜【聖火晶塔】星核滿載引燃",
+        "scheduleEn": "08:00–09:00 March-In, Torch Lighting & Volunteer Awards",
+        "taskEn": "[Torch Quest] Charge Dual-22 Flame | [Gratitude] Salute Volunteers"
       },
       {
         "island": "s02",
         "schedule": "08:30 合唱開幕｜09:30 高年級大會舞「旗開得勝」｜13:10 玻璃展",
-        "task": "【美感力印章】點亮兒童玻璃美術館｜【大會舞】旗開得勝共振"
+        "task": "【美感力印章】點亮兒童玻璃美術館｜【大會舞】旗開得勝共振",
+        "scheduleEn": "08:30 Choir | 09:10–09:35 Grade Dances | 13:10 Glass Museum",
+        "taskEn": "[Aesthetics] Illuminate Glass Museum | [Choir] Show Order"
       },
       {
         "island": "s03",
         "schedule": "10:10~10:40 五六年級 60m/100m 個人決賽｜12:00 五六年級 16 棒大隊接力巔峰決戰",
-        "task": "【起跑反應挑戰】量子發令起跑｜【終點鐘樓】飛躍壓線刷新 PB"
+        "task": "【起跑反應挑戰】量子發令起跑｜【終點鐘樓】飛躍壓線刷新 PB",
+        "scheduleEn": "09:50–10:10 60m Group Dash | 10:10–10:40 Sprint Finals | 11:40–12:05 Relays",
+        "taskEn": "[Reaction] 0.35s Gun Start | [Baton] Smooth Relay Exchange"
       },
       {
         "island": "s04",
         "schedule": "11:20 五年級越野障礙賽｜11:30 六年級越野障礙賽｜雨天備案：班際拔河賽",
-        "task": "【越野穿梭挑戰】敏捷跨越重力障礙｜【極限爭霸】頂峰衝刺拔河"
+        "task": "【越野穿梭挑戰】敏捷跨越重力障礙｜【極限爭霸】頂峰衝刺拔河",
+        "scheduleEn": "11:10–11:40 Little Giants & Peak Cross-Country Obstacle",
+        "taskEn": "[Little Giants] Sync Stride | [Cross-Country] Leap Obstacles"
       },
       {
         "island": "s06",
         "schedule": "全天候 未來科技教室展示｜健促口腔體位｜12:05 全校場地復原",
-        "task": "【永續力印章】實踐健康生活充能｜【無痕校園】場地清潔完璧歸還"
+        "task": "【永續力印章】實踐健康生活充能｜【無痕校園】場地清潔完璧歸還",
+        "scheduleEn": "All Day Robotics & Health Kiosk | 12:05 Campus Cleanup",
+        "taskEn": "[SDGs] Healthy Living Charge | [Leave-No-Trace] Spotless Field"
       },
       {
         "island": "s07",
         "schedule": "10:10~12:00 個人決賽前六名頒獎｜12:00 高年級學年總錦標金盃",
-        "task": "【榮耀頒獎台】頒發獎牌獎狀獎品｜【超新星煙火】引燃勝利煙火"
+        "task": "【榮耀頒獎台】頒發獎牌獎狀獎品｜【超新星煙火】引燃勝利煙火",
+        "scheduleEn": "10:10–12:00 Sprint Awards | 12:00 Overall Trophy Ceremony",
+        "taskEn": "[Podium] Medals & Trophies | [Finale] Supernova 3D Fireworks"
       }
     ]
   }

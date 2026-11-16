@@ -221,8 +221,8 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
       <div class="sq-brand-body" id="sq-brand-body">
         <div class="sq-brand-header-actions">
           <div class="ui-eyebrow" id="ui-brand-eyebrow" data-en="GAO-FENG 22ND · 6 ARENA ISLES · 32 EVENTS">22 週年校慶 · 7 座賽博生態浮島 · 17 項程序</div>
-          <button type="button" class="sq-fold-btn" id="sq-fold-btn" title="收起卡片，釋放 3D 賽場視野" aria-label="收起卡片">
-            <span class="sq-fold-txt">收合</span> <span class="sq-fold-icon">▲</span>
+          <button type="button" class="sq-fold-btn" id="sq-fold-btn" title="收起卡片，釋放 3D 賽場視野" data-en-title="Collapse card to view 3D arena" aria-label="收起卡片">
+            <span class="sq-fold-txt" data-en="Fold">收合</span> <span class="sq-fold-icon">▲</span>
           </button>
         </div>
         <h1 class="ui-brand-title" id="ui-brand-title" data-en="Dual-Twenty-Two Soaring Cosmic Isles">雙二齊飛・馳騁高峰</h1>
@@ -230,12 +230,12 @@ const sportsBrandHeader = `<header id="ui-brand" class="ui-glass sq-brand-root">
         <div class="ui-brand-sub ui-brand-mob" id="ui-brand-mob"></div>
         <button class="ui-trav-badge" id="ui-trav-badge" type="button" hidden></button>
         <div class="sq-brand-actions" id="sq-brand-actions">
-          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書">🏅 榮譽證書 <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
-          <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明">📖 集章說明</button>
-          <button type="button" class="sq-brand-pill is-audio" id="sq-btn-audio" title="切換闖關背景音樂">🎵 闖關音樂🔊</button>
-          <button type="button" class="sq-brand-pill is-fireworks is-locked" id="sq-btn-fireworks-top" title="集滿 5 個章才可以施放煙火">🔒 煙火(0/5)</button>
-          <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表">📅 程序表(17)</button>
-          <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label">選手設定</span></button>
+          <button type="button" class="sq-brand-pill is-gold" id="sq-btn-cert" title="查看校慶探索進度與領取榮譽金牌證書" data-en-title="View progress & Gold Captain Certificate">🏅 <span data-en="Certificate">榮譽證書</span> <span id="sq-progress-txt">0/5章 · 0/22關</span></button>
+          <button type="button" class="sq-brand-pill is-cyan" id="sq-btn-guide" title="查看 5 大願景印章與 22 地標闖關集章說明" data-en-title="How to collect stamps & unlock fireworks" data-en="📖 Quest Guide">📖 集章說明</button>
+          <button type="button" class="sq-brand-pill is-audio" id="sq-btn-audio" title="切換闖關背景音樂" data-en-title="Toggle Quest Background Music" data-en="🎵 Quest Music🔊">🎵 闖關音樂🔊</button>
+          <button type="button" class="sq-brand-pill is-fireworks is-locked" id="sq-btn-fireworks-top" title="集滿 5 個章才可以施放煙火" data-en-title="Collect all 5 stamps to launch fireworks" data-en="🔒 Fireworks(0/5)">🔒 煙火(0/5)</button>
+          <button type="button" class="sq-brand-pill" id="sq-btn-schedule" title="查看當日 08:30–12:10 完整 17 項程序表" data-en-title="View full 17-item Sports Day schedule" data-en="📅 Schedule(17)">📅 程序表(17)</button>
+          <button type="button" class="sq-brand-pill" id="sq-btn-athlete" title="設定運動員姓名與參賽身分" data-en-title="Set athlete name & role"><span id="sq-athlete-icon">🐯</span> <span id="sq-athlete-label" data-en="Athlete">選手設定</span></button>
         </div>
       </div>
     </header>`;
@@ -421,9 +421,9 @@ rep(
       \${tiles ? \`<div class="ui-sec"><span class="ui-eyebrow">\${tr('重點', 'HIGHLIGHTS')}</span><div class="ui-tiles" style="--n:\${facts.length}">\${tiles}</div></div>\` : ''}
       <div class="ui-sec"><span class="ui-eyebrow">\${tr('進行時間', 'WHEN')}</span><div class="ui-timeline">\${steps}</div></div>\`;`,
   `const phasesData = [
-      { p: 1, label: '第一階段', title: '開幕進場與美育展演', time: '08:00–09:40', icon: '🎺' },
-      { p: 2, label: '第二階段', title: '競速衝刺、趣味冒險與大隊接力', time: '09:50–12:05', icon: '🏃' },
-      { p: 3, label: '第三階段', title: '無痕校園、美展與星光頒獎', time: '12:05–14:00', icon: '🏆' }
+      { p: 1, label: tr('第一階段', 'Phase 1'), title: tr('開幕進場與美育展演', 'Opening & Arts Showcase'), time: '08:00–09:40', icon: '🎺' },
+      { p: 2, label: tr('第二階段', 'Phase 2'), title: tr('競速衝刺、趣味冒險與大隊接力', 'Sprints, Fun Races & Relays'), time: '09:50–12:05', icon: '🏃' },
+      { p: 3, label: tr('第三階段', 'Phase 3'), title: tr('無痕校園、美展與星光頒獎', 'Cleanup, Art Exhibit & Awards'), time: '12:05–14:00', icon: '🏆' }
     ];
     const steps = phasesData.map(ph => {
       const isCur = ph.p === it.phase;
@@ -436,14 +436,15 @@ rep(
           '<div class="sq-phase-top">' +
             '<span class="sq-phase-badge">' + ph.icon + ' ' + ph.label + '</span>' +
             '<span class="sq-phase-time">⏰ ' + ph.time + '</span>' +
-            (isCur ? '<span class="sq-phase-active-tag">🎯 當前登場</span>' : '') +
+            (isCur ? '<span class="sq-phase-active-tag">' + tr('🎯 當前登場', '🎯 Active Phase') + '</span>' : '') +
           '</div>' +
           '<div class="sq-phase-title">' + ph.title + '</div>' +
         '</div>' +
       '</div>';
     }).join('');
     const now = uiSlotItems().includes(id);
-    const whenHtml = it.when ? \`<div class="sq-when-badge">⏰ <strong>登場時段：</strong>\${uiEsc(it.when)}</div>\` : '';
+    const whenTxt = L(it, 'when');
+    const whenHtml = whenTxt ? \`<div class="sq-when-badge">⏰ <strong>\${tr('登場時段：', 'Event Time: ')}</strong>\${uiEsc(whenTxt)}</div>\` : '';
     return \`<button class="ui-back" type="button" data-sel="island:\${d.id}">\${uiSvg('back').replace('<svg', '<svg width="14" height="14" style="stroke:currentColor;fill:none;stroke-width:2.4"')}\${d.num} \${uiEsc(L(d, 'full'))}</button>
       <div class="ui-eyebrow">\${tr('賽場地標', 'LANDMARK')} \${UI_CIRCLED[r.index] || r.index + 1} <span data-now-flag="\${id}">\${now ? '· ' + NOW_TXT() : ''}</span></div>
       <h2>\${uiEsc(L(it, 'name'))}</h2>
@@ -1985,46 +1986,46 @@ const customHtml = `
   <div class="sq-dlg-inner">
     <div class="sq-dlg-head">
       <div>
-        <span class="sq-dlg-kicker">新竹市東區高峰國小 22 週年校慶運動會</span>
-        <h2 class="sq-dlg-title" id="sq-reg-title">🏃 運動員入場註冊・領取校慶探索日誌</h2>
+        <span class="sq-dlg-kicker" data-en="GFPS 22nd Anniversary Sports Day · Hsinchu City">新竹市東區高峰國小 22 週年校慶運動會</span>
+        <h2 class="sq-dlg-title" id="sq-reg-title" data-en="🏃 Athlete Check-In · Claim Your Quest Log">🏃 運動員入場註冊・領取校慶探索日誌</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-reg-dialog" aria-label="關閉">✕</button>
     </div>
-    <p style="margin:0 0 14px;font-size:14px;color:#334155;line-height:1.5;">
+    <p style="margin:0 0 14px;font-size:14px;color:#334155;line-height:1.5;" data-en="Welcome aboard the Dual-22 Cyber-Forest Isles! Enter your name and choose your role. Tap any of the 22 landmarks across 7 floating islands to complete interactive quests. Collect all 5 Power Stamps to ignite 3D Supernova Fireworks and earn your Gold Captain Certificate!">
       歡迎登上<strong>《雙二齊飛・賽博生態島》</strong>！請輸入你的姓名並選擇代表身分。點選地圖上 <strong>7 座島嶼中的 22 座星際地標</strong>，每座建築都有專屬的<strong>互動闖關任務</strong>，集滿 5 枚五力印章就能引燃中央聖火台<strong>全景 3D 勝利煙火</strong>並獲得專屬金牌證書！
     </p>
     <div class="sq-form-group">
-      <label class="sq-form-label" for="sq-input-name">✍️ 運動員／挑戰者姓名（將印製於金牌榮譽證書上）：</label>
-      <input type="text" id="sq-input-name" class="sq-name-input" placeholder="例如：王小明、三年甲班陳同學、熱血林爸爸" maxlength="20" />
+      <label class="sq-form-label" for="sq-input-name" data-en="✍️ Athlete / Challenger Name (printed on your Gold Certificate):">✍️ 運動員／挑戰者姓名（將印製於金牌榮譽證書上）：</label>
+      <input type="text" id="sq-input-name" class="sq-name-input" placeholder="例如：王小明、三年甲班陳同學、熱血林爸爸" data-en-ph="e.g. Alex Chen, Grade 3, Super Parent" maxlength="20" />
     </div>
     <div class="sq-form-group">
-      <label class="sq-form-label">🎽 選擇你的參賽代表身分：</label>
+      <label class="sq-form-label" data-en="🎽 Select Your Participant Role:">🎽 選擇你的參賽代表身分：</label>
       <div class="sq-role-grid" id="sq-role-grid">
         <button type="button" class="sq-role-card is-active" data-role="低年級小選手" data-icon="🐯">
-          <div class="sq-rc-top"><strong>🐯 低年級小選手</strong> <span class="sq-rc-diff diff-easy">⭐ 入門友善</span></div>
-          <span>難度入門：充能門檻減半、附專屬小選手答題錦囊，輕鬆集章！</span>
+          <div class="sq-rc-top"><strong data-en="🐯 Junior Sprinter (G1–2)">🐯 低年級小選手</strong> <span class="sq-rc-diff diff-easy" data-en="⭐ Easy">⭐ 入門友善</span></div>
+          <span data-en="Starter Mode: Lower tap goals & helpful quiz hints for easy stamp collecting!">難度入門：充能門檻減半、附專屬小選手答題錦囊，輕鬆集章！</span>
         </button>
         <button type="button" class="sq-role-card" data-role="中年級飛毛腿" data-icon="⚡">
-          <div class="sq-rc-top"><strong>⚡ 中年級飛毛腿</strong> <span class="sq-rc-diff diff-medium">⭐⭐ 標準進階</span></div>
-          <span>標準難度：標準賽程挑戰、紅色跑道起跑反應與運動常識考驗</span>
+          <div class="sq-rc-top"><strong data-en="⚡ Mid-Grade Flyer (G3–4)">⚡ 中年級飛毛腿</strong> <span class="sq-rc-diff diff-medium" data-en="⭐⭐ Standard">⭐⭐ 標準進階</span></div>
+          <span data-en="Standard Mode: Track reaction tests & balanced Sports Day knowledge challenges.">標準難度：標準賽程挑戰、紅色跑道起跑反應與運動常識考驗</span>
         </button>
         <button type="button" class="sq-role-card" data-role="高年級破風手" data-icon="🔥">
-          <div class="sq-rc-top"><strong>🔥 高年級破風手</strong> <span class="sq-rc-diff diff-hard">⭐⭐⭐ 競速破風</span></div>
-          <span>高難度挑戰：手速爆發連擊充能、嚴格起跑評等、專業賽事無提示！</span>
+          <div class="sq-rc-top"><strong data-en="🔥 Senior Pacebreaker (G5–6)">🔥 高年級破風手</strong> <span class="sq-rc-diff diff-hard" data-en="⭐⭐⭐ Pro">⭐⭐⭐ 競速破風</span></div>
+          <span data-en="Pro Mode: Rapid-tap charging, strict 0.35s reaction grading & no quiz hints!">高難度挑戰：手速爆發連擊充能、嚴格起跑評等、專業賽事無提示！</span>
         </button>
         <button type="button" class="sq-role-card" data-role="熱血應援家長" data-icon="📸">
-          <div class="sq-rc-top"><strong>📸 熱血應援家長</strong> <span class="sq-rc-diff diff-parent">⭐⭐ 親子應援</span></div>
-          <span>親子難度：活力應援鼓掌連擊、親子觀賽亮點小貼士與攝影視角</span>
+          <div class="sq-rc-top"><strong data-en="📸 Cheering Parent">📸 熱血應援家長</strong> <span class="sq-rc-diff diff-parent" data-en="⭐⭐ Family">⭐⭐ 親子應援</span></div>
+          <span data-en="Family Mode: Applause charging & parent viewing highlights across the arena.">親子難度：活力應援鼓掌連擊、親子觀賽亮點小貼士與攝影視角</span>
         </button>
         <button type="button" class="sq-role-card" data-role="親善校友貴賓" data-icon="🏅">
-          <div class="sq-rc-top"><strong>🏅 親善校友貴賓</strong> <span class="sq-rc-diff diff-alumni">⭐⭐⭐ 校友薪傳</span></div>
-          <span>傳承難度：薪傳蓄力連擊、校史榮耀考驗、重溫高峰 22 年風華！</span>
+          <div class="sq-rc-top"><strong data-en="🏅 Alumni & Guest">🏅 親善校友貴賓</strong> <span class="sq-rc-diff diff-alumni" data-en="⭐⭐⭐ Legacy">⭐⭐⭐ 校友薪傳</span></div>
+          <span data-en="Legacy Mode: Heritage charging & 22nd Anniversary school history challenges.">傳承難度：薪傳蓄力連擊、校史榮耀考驗、重溫高峰 22 年風華！</span>
         </button>
       </div>
     </div>
     <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
-      <button type="button" class="sq-primary-btn" id="sq-reg-submit" style="flex:1;">🚀 儲存身分設定，出發闖關！</button>
-      <button type="button" class="sq-danger-btn" id="sq-btn-reset-data" title="清除所有建築過關紀錄，重新開始">🔄 重設闖關紀錄（重新開始）</button>
+      <button type="button" class="sq-primary-btn" id="sq-reg-submit" style="flex:1;" data-en="🚀 Save Profile & Start Quest!">🚀 儲存身分設定，出發闖關！</button>
+      <button type="button" class="sq-danger-btn" id="sq-btn-reset-data" title="清除所有建築過關紀錄，重新開始" data-en-title="Clear all quest progress and restart" data-en="🔄 Reset Quest Progress">🔄 重設闖關紀錄（重新開始）</button>
     </div>
   </div>
 </dialog>
@@ -2055,24 +2056,24 @@ const customHtml = `
     <div class="sq-dlg-head">
       <div>
         <span class="sq-dlg-kicker">GFPS 22nd: Forest Vitality & Global Powers</span>
-        <h2 class="sq-dlg-title" id="sq-sched-title">📅 「雙二齊飛、馳騁高峰」校慶運動會程序表＆競賽規程</h2>
+        <h2 class="sq-dlg-title" id="sq-sched-title" data-en="📅 Dual-22 Soaring · Sports Day Program & Landmarks">📅 「雙二齊飛、馳騁高峰」校慶運動會程序表＆競賽規程</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-schedule-dialog" aria-label="關閉">✕</button>
     </div>
     <div class="sq-tabs">
-      <button type="button" class="sq-tab is-active" data-sq-tab="prog">📅 當日程序表（01–17 項）</button>
-      <button type="button" class="sq-tab" data-sq-tab="models">🗺️ 七島 22 座 3D 星際地標總覽</button>
+      <button type="button" class="sq-tab is-active" data-sq-tab="prog" data-en="📅 Day Program (01–17)">📅 當日程序表（01–17 項）</button>
+      <button type="button" class="sq-tab" data-sq-tab="models" data-en="🗺️ 7 Isles & 22 Landmarks">🗺️ 七島 22 座 3D 星際地標總覽</button>
     </div>
     <div id="sq-pane-prog">
       <div class="sq-table-wrap">
         <table class="sq-table">
           <thead>
             <tr>
-              <th>項目</th>
-              <th>時間</th>
-              <th>節目名稱</th>
-              <th>表演者／參賽者</th>
-              <th>3D 定位</th>
+              <th data-en="No.">項目</th>
+              <th data-en="Time">時間</th>
+              <th data-en="Program Event">節目名稱</th>
+              <th data-en="Participants">表演者／參賽者</th>
+              <th data-en="3D Isle">3D 定位</th>
             </tr>
           </thead>
           <tbody id="sq-prog-tbody"></tbody>
@@ -2165,11 +2166,12 @@ const customHtml = `
         <table class="sq-table">
           <thead>
             <tr>
-              <th>島嶼</th>
-                            <th>3D 模型代號</th>
-              <th>地標名稱</th>
-              <th>地標特色說明</th>
-              <th>飛往地標</th>
+              <th data-en="Isle">島嶼</th>
+              <th data-en="Power">能力印章</th>
+              <th data-en="Landmark">地標名稱</th>
+              <th data-en="Challenge / Info">地標特色說明</th>
+              <th data-en="Status">過關狀態</th>
+              <th data-en="Go">飛往地標</th>
             </tr>
           </thead>
           <tbody id="sq-models-tbody"></tbody>
@@ -2185,17 +2187,17 @@ const customHtml = `
   <div class="sq-dlg-inner">
     <div class="sq-dlg-head">
       <div>
-        <span class="sq-dlg-kicker">🎉 校慶探索榮耀達成・全景 3D 聖火煙火慶典</span>
-        <h2 class="sq-dlg-title" id="sq-cert-title">🏆 雙二齊飛・榮譽金牌證書</h2>
+        <span class="sq-dlg-kicker" data-en="🎉 Sports Day Exploration Honor · Panoramic 3D Fireworks">🎉 校慶探索榮耀達成・全景 3D 聖火煙火慶典</span>
+        <h2 class="sq-dlg-title" id="sq-cert-title" data-en="🏆 Dual-22 Soaring · Gold Honor Certificate">🏆 雙二齊飛・榮譽金牌證書</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-cert-dialog" aria-label="關閉">✕</button>
     </div>
     <p id="sq-cert-hint" style="margin:0 0 12px;font-size:13.5px;color:#334155;line-height:1.6;"></p>
     <canvas id="sq-cert-canvas" width="1200" height="820" class="sq-cert-preview"></canvas>
     <div class="sq-cert-actions">
-      <button type="button" class="sq-primary-btn" id="sq-btn-dl-cert">💾 下載高畫質金牌證書 (PNG)</button>
-      <button type="button" class="sq-act-btn is-gold is-locked" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;">🔒 3D 勝利煙火（集滿 5 章解鎖）</button>
-      <button type="button" class="sq-danger-btn" id="sq-btn-reset-cert" style="justify-content:center;">🔄 重設闖關紀錄（重新開始）</button>
+      <button type="button" class="sq-primary-btn" id="sq-btn-dl-cert" data-en="💾 Download Gold Certificate (PNG)">💾 下載高畫質金牌證書 (PNG)</button>
+      <button type="button" class="sq-act-btn is-gold is-locked" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;" data-en="🔒 3D Victory Fireworks (Collect 5 Stamps)">🔒 3D 勝利煙火（集滿 5 章解鎖）</button>
+      <button type="button" class="sq-danger-btn" id="sq-btn-reset-cert" style="justify-content:center;" data-en="🔄 Reset Quest Progress">🔄 重設闖關紀錄（重新開始）</button>
     </div>
   </div>
 </dialog>
@@ -2205,8 +2207,8 @@ const customHtml = `
   <div class="sq-dlg-inner">
     <div class="sq-dlg-head">
       <div>
-        <span class="sq-dlg-kicker">🌟 校慶五力集章與 22 星際地標探索指南</span>
-        <h2 class="sq-dlg-title" id="sq-guide-title">📖 如何收集印章與榮獲金牌榮譽？</h2>
+        <span class="sq-dlg-kicker" data-en="🌟 5-Power Stamp Collecting & 22 Landmarks Guide">🌟 校慶五力集章與 22 星際地標探索指南</span>
+        <h2 class="sq-dlg-title" id="sq-guide-title" data-en="📖 How to Collect Stamps & Earn Your Gold Certificate?">📖 如何收集印章與榮獲金牌榮譽？</h2>
       </div>
       <button type="button" class="sq-dlg-close" data-sq-close="sq-guide-dialog" aria-label="關閉">✕</button>
     </div>
@@ -2216,8 +2218,8 @@ const customHtml = `
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
         <div style="width:30px;height:30px;border-radius:50%;background:#0284c7;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;">1</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;">點選 3D 地標建築物</div>
-          <div>在 3D 星際太空浮島中，點擊任意島嶼上的建築地標（或使用右上方巡禮動線），視角將自動飛向該地標，並於右側滑出地標資訊卡。</div>
+          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;" data-en="Tap Any 3D Landmark">點選 3D 地標建築物</div>
+          <div data-en="Click any landmark across the 7 floating islands (or use the Tour routes). The camera glides there and opens its info & quest card.">在 3D 星際太空浮島中，點擊任意島嶼上的建築地標（或使用右上方巡禮動線），視角將自動飛向該地標，並於右側滑出地標資訊卡。</div>
         </div>
       </div>
 
@@ -2225,20 +2227,20 @@ const customHtml = `
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
         <div style="width:30px;height:30px;border-radius:50%;background:#0284c7;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;">2</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;">進行闖關挑戰，收集 5 大願景印章</div>
-          <div>在地標資訊卡中點擊<strong>「🎯 進行地標闖關挑戰」</strong>，完成題目或互動挑戰，即可解鎖該地標並點亮對應願景印章！</div>
+          <div style="font-weight:800;font-size:15px;color:#0f172a;margin-bottom:2px;" data-en="Complete Quests to Collect 5 Power Stamps">進行闖關挑戰，收集 5 大願景印章</div>
+          <div data-en="Complete the interactive mini-game and quiz in the landmark card to clear the landmark and light up its matching Vision Power Stamp!">在地標資訊卡中點擊<strong>「🎯 進行地標闖關挑戰」</strong>，完成題目或互動挑戰，即可解鎖該地標並點亮對應願景印章！</div>
         </div>
       </div>
 
       <!-- 5 大印章位置說明卡片 -->
       <div style="margin:14px 0;padding:14px 16px;background:linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);border-radius:14px;border:1.5px solid #a7f3d0;">
-        <div style="font-weight:800;font-size:14.5px;color:#065f46;margin-bottom:8px;">🎯 5 大願景印章解鎖地點指引：</div>
+        <div style="font-weight:800;font-size:14.5px;color:#065f46;margin-bottom:8px;" data-en="🎯 Where to Unlock the 5 Vision Power Stamps:">🎯 5 大願景印章解鎖地點指引：</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));gap:8px;font-size:13px;">
-          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #3b82f6;"><strong>💖 友善品格印章</strong>：中央【雙二盛典星港】➜ 校長致詞與義工星光表揚台</div>
-          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #06b6d4;"><strong>🎨 玻璃美感印章</strong>：東軌【琉光玻璃藝島】➜ 兒童玻璃美術館琉光大舞台</div>
-          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #10b981;"><strong>⚡ 峰湧體能印章</strong>：東北軌【競速接力星道】➜ 星芒光速競速跑道</div>
-          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #f97316;"><strong>🤝 高峰群體印章</strong>：北軌【越野障礙賽場】➜ 四年級小巨人奔跑賽道</div>
-          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #14b8a6;"><strong>🌍 全球永續印章</strong>：西南軌【生態科技綠站】➜ 口腔與健康體位健促光亭</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #3b82f6;" data-en="💖 Friendly Character: Central [Gao-Feng Gala Flagship] ➜ Principal & Volunteer Podium"><strong>💖 友善品格印章</strong>：中央【雙二盛典星港】➜ 校長致詞與義工星光表揚台</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #06b6d4;" data-en="🎨 Glass Aesthetics: East [Children's Glass Museum Isle] ➜ Luminous Stage"><strong>🎨 玻璃美感印章</strong>：東軌【琉光玻璃藝島】➜ 兒童玻璃美術館琉光大舞台</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #10b981;" data-en="⚡ Peak Vitality: Northeast [Cyber-Emerald Sprint Speedway] ➜ Starlight Sprint Track"><strong>⚡ 峰湧體能印章</strong>：東北軌【競速接力星道】➜ 星芒光速競速跑道</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #f97316;" data-en="🤝 Team Synergy: North [Obstacle Adventure Arena] ➜ Little Giants Track"><strong>🤝 高峰群體印章</strong>：北軌【越野障礙賽場】➜ 四年級小巨人奔跑賽道</div>
+          <div style="padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid #14b8a6;" data-en="🌍 Global SDGs: Southwest [Bio-Forest & Eco-Station] ➜ Health Promotion Kiosk"><strong>🌍 全球永續印章</strong>：西南軌【生態科技綠站】➜ 口腔與健康體位健促光亭</div>
         </div>
       </div>
 
@@ -2246,23 +2248,23 @@ const customHtml = `
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;padding:12px 14px;background:#fffbeb;border-radius:12px;border:1.5px solid #fde68a;">
         <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🎆</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#92400e;margin-bottom:2px;">集滿 5 個章解鎖 3D 勝利煙火！</div>
-          <div style="color:#78350f;">只要在各島嶼收集齊全 <strong>5 枚願景能量印章</strong>，即可成功解鎖中央聖火晶塔的 <strong>3D 超新星勝利煙火</strong>，在宇宙星空下盛大綻放慶典煙火！</div>
+          <div style="font-weight:800;font-size:15px;color:#92400e;margin-bottom:2px;" data-en="Collect All 5 Stamps to Unlock 3D Victory Fireworks!">集滿 5 個章解鎖 3D 勝利煙火！</div>
+          <div style="color:#78350f;" data-en="Once you collect all 5 Vision Power Stamps across the islands, you unlock panoramic 3D Supernova Victory Fireworks over the central Flame Crystal Tower!">只要在各島嶼收集齊全 <strong>5 枚願景能量印章</strong>，即可成功解鎖中央聖火晶塔的 <strong>3D 超新星勝利煙火</strong>，在宇宙星空下盛大綻放慶典煙火！</div>
         </div>
       </div>
 
       <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:6px;padding:12px 14px;background:#eff6ff;border-radius:12px;border:1.5px solid #bfdbfe;">
         <div style="font-weight:800;font-size:20px;line-height:1;margin-top:2px;">🏅</div>
         <div>
-          <div style="font-weight:800;font-size:15px;color:#1e40af;margin-bottom:2px;">隆重頒發・高解析榮譽金牌艦長證書</div>
-          <div style="color:#1e3a8a;">隨時點擊<strong>「🏅 榮譽證書」</strong>即可預覽專屬你的金牌證書，證書會完整記錄你的姓名、身分、已解鎖的願景金鋼印與 22 地標探索進度，並支援免費下載高畫質 PNG 保存分享！</div>
+          <div style="font-weight:800;font-size:15px;color:#1e40af;margin-bottom:2px;" data-en="High-Resolution Gold Captain Honor Certificate">隆重頒發・高解析榮譽金牌艦長證書</div>
+          <div style="color:#1e3a8a;" data-en="Click '🏅 Certificate' anytime to preview your personalized Gold Captain Certificate with your name, role, unlocked stamps, and 22-landmark progress—downloadable as a crisp PNG!">隨時點擊<strong>「🏅 榮譽證書」</strong>即可預覽專屬你的金牌證書，證書會完整記錄你的姓名、身分、已解鎖的願景金鋼印與 22 地標探索進度，並支援免費下載高畫質 PNG 保存分享！</div>
         </div>
       </div>
     </div>
 
     <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
-      <button type="button" class="sq-act-btn is-gold" id="sq-guide-btn-start" style="padding:9px 18px;font-size:13.5px;">🚀 前往中央星港開始集章</button>
-      <button type="button" class="sq-primary-btn" data-sq-close="sq-guide-dialog" style="padding:9px 18px;font-size:13.5px;">✕ 了解並關閉</button>
+      <button type="button" class="sq-act-btn is-gold" id="sq-guide-btn-start" style="padding:9px 18px;font-size:13.5px;" data-en="🚀 Fly to Central Starport & Start">🚀 前往中央星港開始集章</button>
+      <button type="button" class="sq-primary-btn" data-sq-close="sq-guide-dialog" style="padding:9px 18px;font-size:13.5px;" data-en="✕ Got It & Close">✕ 了解並關閉</button>
     </div>
   </div>
 </dialog>
@@ -2323,25 +2325,25 @@ function initSportsQuest(ctx) {
       {
         id: 'chiptune',
         icon: '👾',
-        name: '8-Bit 像素懷舊闖關',
-        fullTitle: '👾 8-Bit 像素懷舊闖關 (Chiptune Arcade Quest)',
-        desc: '復古紅白機電玩風格的快節奏方波節奏，增添冒險感。',
+        name: tr('8-Bit 像素懷舊闖關', '8-Bit Arcade Quest'),
+        fullTitle: tr('👾 8-Bit 像素懷舊闖關 (Chiptune Arcade Quest)', '👾 Chiptune Arcade Quest (8-Bit Retro)'),
+        desc: tr('復古紅白機電玩風格的快節奏方波節奏，增添冒險感。', 'Fast-paced retro Famicom square-wave adventure theme.'),
         bpm: 146
       },
       {
         id: 'march',
         icon: '🏃',
-        name: '熱血運動會進行曲',
-        fullTitle: '🏃 熱血運動會進行曲 (Sports Day March)',
-        desc: '昂揚奔馳、青春活力的交響運動進行曲。',
+        name: tr('熱血運動會進行曲', 'Sports Day March'),
+        fullTitle: tr('🏃 熱血運動會進行曲 (Sports Day March)', '🏃 Sports Day March'),
+        desc: tr('昂揚奔馳、青春活力的交響運動進行曲。', 'Uplifting and energetic stadium march anthem.'),
         bpm: 126
       },
       {
         id: 'forest',
         icon: '🌲',
-        name: '高峰森活綠意律動',
-        fullTitle: '🌲 高峰森活綠意律動 (Forest Vitality Lo-Fi)',
-        desc: '高峰都市森林、清爽悠揚的自然綠意旋律。',
+        name: tr('高峰森活綠意律動', 'Forest Vitality Lo-Fi'),
+        fullTitle: tr('🌲 高峰森活綠意律動 (Forest Vitality Lo-Fi)', '🌲 Forest Vitality Lo-Fi'),
+        desc: tr('高峰都市森林、清爽悠揚的自然綠意旋律。', 'Breezy, relaxing Urban Forest groove.'),
         bpm: 112
       }
     ];
@@ -2658,7 +2660,7 @@ function initSportsQuest(ctx) {
         if (sfxGain && audioCtx) sfxGain.gain.setValueAtTime(0.45, audioCtx.currentTime);
         startBgm(curTrack);
         const t = TRACKS[curTrack];
-        return { muted: false, track: t, msg: t.icon + ' 播放中：' + t.fullTitle + ' (' + t.desc + ')' };
+        return { muted: false, track: t, msg: t.icon + ' ' + tr('播放中：', 'Playing: ') + t.fullTitle + ' (' + t.desc + ')' };
       }
       const nextIdx = curTrack + 1;
       if (nextIdx >= TRACKS.length) {
@@ -2669,13 +2671,13 @@ function initSportsQuest(ctx) {
         stopBgm();
         if (sfxGain && audioCtx) sfxGain.gain.setValueAtTime(0, audioCtx.currentTime);
         updateButtons();
-        return { muted: true, msg: '🔇 闖關背景音樂已靜音' };
+        return { muted: true, msg: tr('🔇 闖關背景音樂已靜音', '🔇 Quest background music muted') };
       } else {
         curTrack = nextIdx;
         try { localStorage.setItem('sq-bgm-track', String(curTrack)); } catch(e) {}
         startBgm(curTrack);
         const t = TRACKS[curTrack];
-        return { muted: false, track: t, msg: t.icon + ' 已切換為：' + t.fullTitle + ' (' + t.desc + ')' };
+        return { muted: false, track: t, msg: t.icon + ' ' + tr('已切換為：', 'Switched to: ') + t.fullTitle + ' (' + t.desc + ')' };
       }
     };
 
@@ -2812,27 +2814,27 @@ function initSportsQuest(ctx) {
       if (topBtn) {
         if (muted) {
           topBtn.className = 'sq-brand-pill is-audio is-muted';
-          topBtn.innerHTML = '🔇 音樂(靜音)';
-          topBtn.title = '點擊開啟闖關背景音樂 (可切換 3 首曲風)';
+          topBtn.innerHTML = tr('🔇 音樂(靜音)', '🔇 Muted');
+          topBtn.title = tr('點擊開啟闖關背景音樂 (可切換 3 首曲風)', 'Tap to turn on quest music (3 tracks)');
         } else if (isPlaying) {
           topBtn.className = 'sq-brand-pill is-audio is-playing';
           topBtn.innerHTML = curTrk.icon + ' ' + curTrk.name + ' ' + eqHtml;
-          topBtn.title = '正在播放：' + curTrk.fullTitle + ' — ' + curTrk.desc + '（點擊切換曲風）';
+          topBtn.title = tr('正在播放：', 'Playing: ') + curTrk.fullTitle + ' — ' + curTrk.desc;
         } else {
           topBtn.className = 'sq-brand-pill is-audio';
           topBtn.innerHTML = '🎵 ' + curTrk.icon + ' ' + curTrk.name;
-          topBtn.title = '點擊播放：' + curTrk.fullTitle;
+          topBtn.title = tr('點擊播放：', 'Tap to play: ') + curTrk.fullTitle;
         }
       }
       const bqBtn = document.getElementById('sq-bq-audio-toggle');
       if (bqBtn) {
         if (muted) {
           bqBtn.className = 'sq-bq-audio-btn is-muted';
-          bqBtn.innerHTML = '🔇 音樂已靜音';
+          bqBtn.innerHTML = tr('🔇 音樂已靜音', '🔇 Muted');
         } else if (isPlaying) {
           bqBtn.className = 'sq-bq-audio-btn is-playing';
           bqBtn.innerHTML = curTrk.icon + ' ' + curTrk.name + ' ' + eqHtml;
-          bqBtn.title = '當前曲風：' + curTrk.fullTitle + '（點擊切換曲風）';
+          bqBtn.title = tr('當前曲風：', 'Track: ') + curTrk.fullTitle;
         } else {
           bqBtn.className = 'sq-bq-audio-btn';
           bqBtn.innerHTML = '🎵 ' + curTrk.icon + ' ' + curTrk.name;
@@ -2915,6 +2917,16 @@ function initSportsQuest(ctx) {
   const guideDlg = document.getElementById('sq-guide-dialog');
 
   // 更新左上品牌卡內嵌的微型護照進度（不再佔用畫面頂部中央狀態條）
+  const ROLE_EN_MAP = {
+    '低年級小選手': 'Junior Sprinter',
+    '中年級飛毛腿': 'Mid-Grade Flyer',
+    '高年級破風手': 'Senior Pacebreaker',
+    '熱血應援家長': 'Cheering Parent',
+    '親善校友貴賓': 'Alumni & Guest'
+  };
+  const roleLabel = r => tr(r || '低年級小選手', ROLE_EN_MAP[r] || 'Athlete');
+  if (typeof uiApplyLang === 'function') uiApplyLang(document);
+
   function renderHud() {
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps[q.id]).length;
@@ -2924,20 +2936,20 @@ function initSportsQuest(ctx) {
     const prEl = document.getElementById('sq-progress-txt');
     const pillProgEl = document.getElementById('sq-pill-prog');
     if (icEl) icEl.textContent = state.icon || '🐯';
-    if (lbEl) lbEl.textContent = state.name || state.role;
-    if (prEl) prEl.textContent = stampedCount + '/5章 · ' + clearedCount + '/22關';
-    if (pillProgEl) pillProgEl.textContent = '🏅 ' + stampedCount + '/5章 · ' + clearedCount + '/22關';
-
+    if (lbEl) lbEl.textContent = state.name || roleLabel(state.role);
+    const progStr = tr(stampedCount + '/5章 · ' + clearedCount + '/22關', stampedCount + '/5 Stamps · ' + clearedCount + '/22 Quests');
+    if (prEl) prEl.textContent = progStr;
+    if (pillProgEl) pillProgEl.textContent = '🏅 ' + progStr;
     soundEngine.updateButtons();
     const topFwBtn = document.getElementById('sq-btn-fireworks-top');
     if (topFwBtn) {
       if (stampedCount >= 5) {
-        topFwBtn.innerHTML = '🎆 施放煙火';
-        topFwBtn.title = '集滿 5 章達成！點擊施放中央聖火台 3D 勝利煙火！';
+        topFwBtn.innerHTML = tr('🎆 施放煙火', '🎆 Fireworks');
+        topFwBtn.title = tr('集滿 5 章達成！點擊施放中央聖火台 3D 勝利煙火！', 'All 5 stamps collected! Launch 3D Victory Fireworks!');
         topFwBtn.classList.remove('is-locked');
       } else {
-        topFwBtn.innerHTML = '🔒 煙火(' + stampedCount + '/5)';
-        topFwBtn.title = '集滿 5 個章才可以施放煙火（目前已收集 ' + stampedCount + '/5）';
+        topFwBtn.innerHTML = tr('🔒 煙火(' + stampedCount + '/5)', '🔒 Fireworks(' + stampedCount + '/5)');
+        topFwBtn.title = tr('集滿 5 個章才可以施放煙火（目前已收集 ' + stampedCount + '/5）', 'Collect all 5 stamps to unlock fireworks (' + stampedCount + '/5)');
         topFwBtn.classList.add('is-locked');
       }
     }
@@ -2998,7 +3010,10 @@ function initSportsQuest(ctx) {
 
   // 重新設定／清除闖關資料（全部重新集章）
   function resetQuestData() {
-    const ok = window.confirm('確定要重新開始闖關嗎？\\n\\n這將會清除您目前所有建築物的過關紀錄，讓您可以重新挑戰地標！\\n（運動員姓名與身分設定會保留）');
+    const ok = window.confirm(tr(
+      '確定要重新開始闖關嗎？\\n\\n這將會清除您目前所有建築物的過關紀錄，讓您可以重新挑戰地標！\\n（運動員姓名與身分設定會保留）',
+      'Reset all quest progress and restart?\\n\\nThis clears all cleared landmarks and stamps so you can replay!\\n(Your athlete name and role will be kept.)'
+    ));
     if (!ok) return;
 
     state.stamps = {};
@@ -3020,14 +3035,14 @@ function initSportsQuest(ctx) {
     if (regDlg && regDlg.open) regDlg.close();
     if (certDlg && certDlg.open) certDlg.close();
 
-    showToast('🔄 闖關資料已重設！印章與關卡已歸零，可重新開始挑戰！');
+    showToast(tr('🔄 闖關資料已重設！印章與關卡已歸零，可重新開始挑戰！', '🔄 Quest progress reset! Stamps and landmarks cleared—ready to play again!'));
   }
 
   document.getElementById('sq-btn-reset-data')?.addEventListener('click', resetQuestData);
   document.getElementById('sq-btn-reset-cert')?.addEventListener('click', resetQuestData);
 
   document.getElementById('sq-reg-submit')?.addEventListener('click', () => {
-    state.name = (nameInput.value || '').trim() || '高峰小健將';
+    state.name = (nameInput.value || '').trim() || tr('高峰小健將', 'GFPS Athlete');
     state.registered = true;
     saveState();
     renderHud();
@@ -3050,61 +3065,60 @@ function initSportsQuest(ctx) {
       return {
         level: 1,
         star: '⭐',
-        name: '入門友善',
+        name: tr('入門友善', 'Easy'),
         tagClass: 'diff-easy',
         tapFactor: 0.6,
         minTap: 2,
-        actionLabel: '只要連點',
-        reactEvaluator: (rt) => '🌟 超棒起跑！小選手反應：' + rt + ' 秒！姿勢 100 分，體能潛力無限！'
+        actionLabel: tr('只要連點', 'Tap'),
+        reactEvaluator: (rt) => tr('🌟 超棒起跑！小選手反應：' + rt + ' 秒！姿勢 100 分，體能潛力無限！', '🌟 Awesome start! Reaction: ' + rt + 's! 100/100 form!')
       };
     } else if (role === '高年級破風手') {
       return {
         level: 3,
         star: '⭐⭐⭐',
-        name: '競速破風',
+        name: tr('競速破風', 'Pro'),
         tagClass: 'diff-hard',
         tapFactor: 1.5,
         minTap: 6,
-        actionLabel: '🔥 爆發連擊',
+        actionLabel: tr('🔥 爆發連擊', '🔥 Turbo Tap'),
         reactEvaluator: (rt) => {
-          if (rt <= 0.28) return '🔥【神級破風反應】破大會紀錄！反應 ' + rt + ' 秒！頂級爆發力！';
-          if (rt <= 0.38) return '⚡【甲組選手水準】起跑敏捷反應：' + rt + ' 秒！破風表現亮眼！';
-          return '🏃【標準起跑】反應：' + rt + ' 秒！高年級破風手目標是突破 0.3 秒以內！';
+          if (rt <= 0.28) return tr('🔥【神級破風反應】破大會紀錄！反應 ' + rt + ' 秒！頂級爆發力！', '🔥 [Record Speed!] Reaction: ' + rt + 's! Elite explosive start!');
+          if (rt <= 0.38) return tr('⚡【甲組選手水準】起跑敏捷反應：' + rt + ' 秒！破風表現亮眼！', '⚡ [Varsity Level] Crisp reaction: ' + rt + 's!');
+          return tr('🏃【標準起跑】反應：' + rt + ' 秒！高年級破風手目標是突破 0.3 秒以內！', '🏃 [Good Start] Reaction: ' + rt + 's! Pro goal: under 0.3s!');
         }
       };
     } else if (role === '熱血應援家長') {
       return {
         level: 2,
         star: '⭐⭐',
-        name: '親子應援',
+        name: tr('親子應援', 'Family'),
         tagClass: 'diff-parent',
         tapFactor: 1.0,
         minTap: 3,
-        actionLabel: '👏 應援掌聲',
-        reactEvaluator: (rt) => '📸 快門神捕捉！在第 ' + rt + ' 秒精準拍下孩子起跑的英姿！'
+        actionLabel: tr('👏 應援掌聲', '👏 Cheer'),
+        reactEvaluator: (rt) => tr('📸 快門神捕捉！在第 ' + rt + ' 秒精準拍下孩子起跑的英姿！', '📸 Great snap! Captured the sprint start at ' + rt + 's!')
       };
     } else if (role === '親善校友貴賓') {
       return {
         level: 3,
         star: '⭐⭐⭐',
-        name: '校友薪傳',
+        name: tr('校友薪傳', 'Legacy'),
         tagClass: 'diff-alumni',
         tapFactor: 1.3,
         minTap: 5,
-        actionLabel: '🏅 薪傳蓄力',
-        reactEvaluator: (rt) => '🏅 薪傳領跑！在第 ' + rt + ' 秒接棒衝刺，傳承高峰廿二風華！'
+        actionLabel: tr('🏅 薪傳蓄力', '🏅 Boost'),
+        reactEvaluator: (rt) => tr('🏅 薪傳領跑！在第 ' + rt + ' 秒接棒衝刺，傳承高峰廿二風華！', '🏅 Legacy pace! Sprinting into action at ' + rt + 's!')
       };
     } else {
-      // 預設 中年級飛毛腿
       return {
         level: 2,
         star: '⭐⭐',
-        name: '標準進階',
+        name: tr('標準進階', 'Standard'),
         tagClass: 'diff-medium',
         tapFactor: 1.0,
         minTap: 3,
-        actionLabel: '連擊充能',
-        reactEvaluator: (rt) => '⚡ 敏捷起跑！反應時間：' + rt + ' 秒！保持領先速度！'
+        actionLabel: tr('連擊充能', 'Charge'),
+        reactEvaluator: (rt) => tr('⚡ 敏捷起跑！反應時間：' + rt + ' 秒！保持領先速度！', '⚡ Quick start! Reaction time: ' + rt + 's! Keep leading!')
       };
     }
   }
@@ -3120,7 +3134,7 @@ function initSportsQuest(ctx) {
     const it = ref.item;
     const isl = ref.island.data;
     const ch = it.challenge;
-    const powerName = ch.power || '峰湧體能力';
+    const powerName = L(ch, 'power') || tr('峰湧體能力', 'Peak Vitality');
     const isCleared = !!state.clearedItems[it.id];
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps[q.id]).length;
@@ -3135,14 +3149,14 @@ function initSportsQuest(ctx) {
     // 依角色難度係數縮放連擊目標次數
     const target = Math.max(diff.minTap, Math.round(baseTarget * diff.tapFactor));
     let tapCount = isCleared ? target : 0;
-    const items = ch.steps || ch.sequenceItems || [];
+    const items = L(ch, 'steps') || ch.steps || ch.sequenceItems || [];
     let seqIdx = isCleared ? items.length : 0;
 
     let stage1Html = '';
     if (ch.mode === 'tap_charge') {
       const pct = Math.min(100, Math.round((tapCount / target) * 100));
-      const actLabel = ch.actionBtn || '🔥 注入星核能量';
-      const doneMsg = ch.actionDone || '🔥 星核能量滿載！高峰 22 週年聖火熊熊燃起！';
+      const actLabel = L(ch, 'actionBtn') || tr('🔥 注入星核能量', '🔥 Inject Star-Core Energy');
+      const doneMsg = L(ch, 'actionDone') || tr('🔥 星核能量滿載！高峰 22 週年聖火熊熊燃起！', '🔥 Energy 100% Charged!');
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<button type="button" class="sq-act-btn" id="sq-bq-act-btn" style="width:100%;justify-content:center;padding:8px 12px;font-size:13px;">' +
@@ -3152,7 +3166,6 @@ function initSportsQuest(ctx) {
           '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     } else if (ch.mode === 'sequence') {
-      // 隨機打亂排序按鈕的顯示位置（強迫玩家必須思考順序，不再只是由左至右盲點）
       const seqList = items.map((label, origIdx) => ({ label, origIdx }));
       if (seqList.length > 1) {
         let attempts = 0;
@@ -3164,10 +3177,10 @@ function initSportsQuest(ctx) {
           attempts++;
         } while (attempts < 10 && seqList.every((it, i) => it.origIdx === i));
       }
-      const doneMsg = ch.actionDone || '🎉 步驟順序完全正確！成功通過順序考驗！';
+      const doneMsg = L(ch, 'actionDone') || tr('🎉 步驟順序完全正確！成功通過順序考驗！', '🎉 Correct sequence! Stage 1 cleared!');
       stage1Html =
         '<div class="sq-bq-stage1">' +
-          '<div style="font-size:12px;color:#475569;margin-bottom:6px;font-weight:700;">🧩 順序考驗（按鈕位置已隨機打亂，請依正確先後步驟點擊）：</div>' +
+          '<div style="font-size:12px;color:#475569;margin-bottom:6px;font-weight:700;">' + tr('🧩 順序考驗（按鈕位置已隨機打亂，請依正確先後步驟點擊）：', '🧩 Sequence Challenge (buttons shuffled — tap in the correct order):') + '</div>' +
           '<div class="sq-bq-seq-row" id="sq-bq-seq-row">' +
             seqList.map(item =>
               '<button type="button" class="sq-bq-seq-btn ' + (isCleared ? 'is-done' : '') + '" data-seq-idx="' + item.origIdx + '">' + item.label + '</button>'
@@ -3176,40 +3189,39 @@ function initSportsQuest(ctx) {
           '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     } else if (ch.mode === 'reaction') {
-      const actLabel = ch.actionBtn || '🔫 聽槍起跑反應測驗（點擊開始預備）';
-      const doneMsg = ch.actionDone || '⚡ 疾風起跑！完美掌握聽槍瞬間起跑反應！';
+      const actLabel = L(ch, 'actionBtn') || tr('🔫 聽槍起跑反應測驗（點擊開始預備）', '🔫 Starter Gun Reaction Test (Tap to Start)');
+      const doneMsg = L(ch, 'actionDone') || tr('⚡ 疾風起跑！完美掌握聽槍瞬間起跑反應！', '⚡ Lightning start! Great reaction!');
       stage1Html =
         '<div class="sq-bq-stage1">' +
           '<button type="button" class="sq-act-btn" id="sq-bq-react-btn" style="width:100%;justify-content:center;padding:8px 12px;font-size:13px;">' +
-            (isCleared ? '⚡ 再次實測紅色跑道聽槍起跑反應' : actLabel) +
+            (isCleared ? tr('⚡ 再次實測紅色跑道聽槍起跑反應', '⚡ Retest Track Starting Gun Reaction') : actLabel) +
           '</button>' +
           '<div class="sq-bq-done-msg" id="sq-bq-stage1-msg" ' + (stage1Done ? '' : 'hidden') + '>' + doneMsg + '</div>' +
         '</div>';
     }
 
-    // 動態確保說明文字目標次數與下方按鈕目標次數 100% 絕對一致
-    let displayTaskDesc = ch.taskDesc || '';
+    let displayTaskDesc = L(ch, 'taskDesc') || '';
     if (ch.mode === 'tap_charge') {
-      displayTaskDesc = displayTaskDesc.replace(/連[點擊]\s*\d+\s*下/g, '連點 ' + target + ' 下');
+      displayTaskDesc = displayTaskDesc.replace(/連[點擊]s*d+s*下/g, '連點 ' + target + ' 下');
+      displayTaskDesc = displayTaskDesc.replace(/Taps*d+s*times/gi, 'Tap ' + target + ' times');
     }
 
-    // 依據角色難度生成問答錦囊提示
-    const correctOpt = (ch.options && ch.options[ch.answer]) ? ch.options[ch.answer] : '';
+    const optsArr = L(ch, 'options') || ch.options || [];
+    const correctOpt = optsArr[ch.answer] || '';
     let quizHintHtml = '';
     if (curRole === '低年級小選手') {
-      quizHintHtml = '<div class="sq-role-hint-box diff-easy">💡 <strong>低年級小選手錦囊：</strong>答案是「' + correctOpt + '」喔！找找看在哪個選項！</div>';
+      quizHintHtml = '<div class="sq-role-hint-box diff-easy">' + tr('💡 <strong>低年級小選手錦囊：</strong>答案是「' + correctOpt + '」喔！找找看在哪個選項！', '💡 <strong>Junior Hint:</strong> Look for "' + correctOpt + '"!') + '</div>';
     } else if (curRole === '高年級破風手') {
-      quizHintHtml = '<div class="sq-role-hint-box diff-hard">🔥 <strong>高年級破風手挑戰：</strong>無提示！請運用你對高峰校慶賽程與運動精神的專業理解作答！</div>';
+      quizHintHtml = '<div class="sq-role-hint-box diff-hard">' + tr('🔥 <strong>高年級破風手挑戰：</strong>無提示！請運用你對高峰校慶賽程與運動精神的專業理解作答！', '🔥 <strong>Pro Challenge:</strong> No hints! Use your Sports Day knowledge!') + '</div>';
     } else if (curRole === '熱血應援家長') {
-      quizHintHtml = '<div class="sq-role-hint-box diff-parent">📸 <strong>家長觀賽小貼士：</strong>此項目是大會親師生同樂的重要亮點，記得在看台為孩子們熱情喝采拍照！</div>';
+      quizHintHtml = '<div class="sq-role-hint-box diff-parent">' + tr('📸 <strong>家長觀賽小貼士：</strong>此項目是大會親師生同樂的重要亮點，記得在看台為孩子們熱情喝采拍照！', '📸 <strong>Parent Tip:</strong> A top highlight for families—cheer loud from the grandstand!') + '</div>';
     } else if (curRole === '親善校友貴賓') {
-      quizHintHtml = '<div class="sq-role-hint-box diff-alumni">🏅 <strong>校友薪傳記憶：</strong>22 年傳承風華，此項活動承載著高峰歷代師生的共同記憶與運動家精神！</div>';
+      quizHintHtml = '<div class="sq-role-hint-box diff-alumni">' + tr('🏅 <strong>校友薪傳記憶：</strong>22 年傳承風華，此項活動承載著高峰歷代師生的共同記憶與運動家精神！', '🏅 <strong>Alumni Memory:</strong> Celebrating 22 years of Gao-Feng spirit and heritage!') + '</div>';
     } else {
-      quizHintHtml = '<div class="sq-role-hint-box diff-medium">⚡ <strong>中年級飛毛腿提示：</strong>仔細閱讀題目與三個選項，選出真正符合高峰運動家精神的答案！</div>';
+      quizHintHtml = '<div class="sq-role-hint-box diff-medium">' + tr('⚡ <strong>中年級飛毛腿提示：</strong>仔細閱讀題目與三個選項，選出真正符合高峰運動家精神的答案！', '⚡ <strong>Standard Tip:</strong> Read carefully and choose the answer that fits true sportsmanship!') + '</div>';
     }
 
-    // 每次開啟關卡動態隨機打亂問答題選項（保證正確答案隨機落在 A, B, C，不固定為第一項）
-    const rawOpts = (ch.options || []).map((text, origIdx) => ({ text, origIdx }));
+    const rawOpts = optsArr.map((text, origIdx) => ({ text, origIdx }));
     const shuffledOpts = [...rawOpts];
     if (shuffledOpts.length > 1) {
       for (let i = shuffledOpts.length - 1; i > 0; i--) {
@@ -3222,19 +3234,19 @@ function initSportsQuest(ctx) {
       '<div class="sq-bldg-quest ' + (isCleared ? 'is-cleared' : '') + '" id="sq-bldg-quest-card">' +
         '<div class="sq-bq-head">' +
           '<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">' +
-            '<span class="sq-bq-tag">🎯 建築關卡｜' + powerName + '</span>' +
-            '<span class="sq-bq-diff-badge ' + diff.tagClass + '">' + diff.star + ' ' + curRole + '（' + diff.name + '）</span>' +
-            '<button type="button" class="sq-bq-audio-btn ' + (soundEngine.isMuted() ? 'is-muted' : '') + '" id="sq-bq-audio-toggle" title="切換闖關背景音樂">' +
-              (soundEngine.isMuted() ? '🔇 音樂已靜音' : '🎵 闖關熱血音樂🔊') +
+            '<span class="sq-bq-tag">' + tr('🎯 建築關卡｜', '🎯 Quest | ') + powerName + '</span>' +
+            '<span class="sq-bq-diff-badge ' + diff.tagClass + '">' + diff.star + ' ' + roleLabel(curRole) + ' (' + diff.name + ')</span>' +
+            '<button type="button" class="sq-bq-audio-btn ' + (soundEngine.isMuted() ? 'is-muted' : '') + '" id="sq-bq-audio-toggle" title="' + tr('切換闖關背景音樂', 'Toggle Quest Music') + '">' +
+              (soundEngine.isMuted() ? tr('🔇 音樂已靜音', '🔇 Muted') : tr('🎵 闖關熱血音樂🔊', '🎵 Quest Music🔊')) +
             '</button>' +
           '</div>' +
-          '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? '✅ 本建築已過關' : '⏳ 待闖關挑戰') + '</span>' +
+          '<span class="sq-bq-status" id="sq-bq-status">' + (isCleared ? tr('✅ 本建築已過關', '✅ Cleared') : tr('⏳ 待闖關挑戰', '⏳ Ready')) + '</span>' +
         '</div>' +
-        '<h3 class="sq-bq-title">' + ch.title + '</h3>' +
+        '<h3 class="sq-bq-title">' + L(ch, 'title') + '</h3>' +
         '<p class="sq-bq-desc">' + displayTaskDesc + '</p>' +
         stage1Html +
         '<div id="sq-bq-quiz-wrap">' +
-          '<p class="sq-bq-q">❓ ' + ch.question + '</p>' +
+          '<p class="sq-bq-q">❓ ' + L(ch, 'question') + '</p>' +
           quizHintHtml +
           '<div class="sq-bq-opts" id="sq-bq-opts">' +
             shuffledOpts.map((optItem, displayIdx) =>
@@ -3244,15 +3256,15 @@ function initSportsQuest(ctx) {
             ).join('') +
           '</div>' +
           '<div class="sq-bq-fb" id="sq-bq-fb" ' + (isCleared ? '' : 'hidden') + '>' +
-            (isCleared ? '🎖️ <strong>已通過本建築關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain : '') +
+            (isCleared ? tr('🎖️ <strong>已通過本建築關卡並蓋下【' + powerName + '】印章！</strong><br>', '🎖️ <strong>Landmark Cleared! Stamped [' + powerName + ']!</strong><br>') + L(ch, 'explain') : '') +
           '</div>' +
         '</div>' +
         '<div class="sq-bq-foot">' +
-          '<span id="sq-bq-prog-foot">🗺️ 地標挑戰進度：<strong>' + clearedCount + '/22</strong></span>' +
-          '<div style="display:flex;gap:5px;">' +
-            '<button type="button" class="sq-brand-pill" id="sq-bq-next-btn">👉 下一個建築關卡</button>' +
-            '<button type="button" class="sq-brand-pill is-gold" id="sq-bq-cert-btn">🏆 護照與證書</button>' +
-            (it.id === 's03i3' ? '<button type="button" class="sq-brand-pill" id="sq-bq-races-btn" style="background:#7c3aed;color:#fff;border-color:#6d28d9;">🏃 查看 16 項個人賽成績</button>' : '') +
+          '<span id="sq-bq-prog-foot">' + tr('🗺️ 地標挑戰進度：', '🗺️ Quests: ') + '<strong>' + clearedCount + '/22</strong></span>' +
+          '<div style="display:flex;gap:5px;flex-wrap:wrap;">' +
+            '<button type="button" class="sq-brand-pill" id="sq-bq-next-btn">' + tr('👉 下一個建築關卡', '👉 Next Landmark') + '</button>' +
+            '<button type="button" class="sq-brand-pill is-gold" id="sq-bq-cert-btn">' + tr('🏆 護照與證書', '🏆 Certificate') + '</button>' +
+            (it.id === 's03i3' ? '<button type="button" class="sq-brand-pill" id="sq-bq-races-btn" style="background:#7c3aed;color:#fff;border-color:#6d28d9;">' + tr('🏃 查看 16 項個人賽成績', '🏃 16 Sprint Results') + '</button>' : '') +
           '</div>' +
         '</div>' +
       '</div>';
@@ -3290,10 +3302,10 @@ function initSportsQuest(ctx) {
             if (msgEl) {
               msgEl.hidden = false;
               if (seqIdx < seqBtns.length) {
-                msgEl.innerHTML = '✨ 步驟 ' + seqIdx + ' 正確！請繼續找出下一步！';
+                msgEl.innerHTML = tr('✨ 步驟 ' + seqIdx + ' 正確！請繼續找出下一步！', '✨ Step ' + seqIdx + ' right! Find the next step!');
               } else {
-                const doneMsg = ch.actionDone || '🎉 步驟順序完全正確！成功通過順序考驗！';
-                msgEl.innerHTML = doneMsg + '<br><span style="color:#059669;font-weight:700;">🔓 已解鎖第二階段問答題，請選出下方正確答案！</span>';
+                const doneMsg = L(ch, 'actionDone') || tr('🎉 步驟順序完全正確！成功通過順序考驗！', '🎉 Perfect sequence!');
+                msgEl.innerHTML = doneMsg + '<br><span style="color:#059669;font-weight:700;">' + tr('🔓 已解鎖第二階段問答題，請選出下方正確答案！', '🔓 Quiz unlocked! Choose the correct answer below!') + '</span>';
               }
             }
             if (seqIdx >= seqBtns.length) {
@@ -3309,12 +3321,11 @@ function initSportsQuest(ctx) {
             if (msgEl) {
               msgEl.hidden = false;
               if (curRole === '高年級破風手') {
-                // 高年級嚴格重置
                 seqIdx = 0;
                 seqBtns.forEach(b => b.classList.remove('is-done'));
-                msgEl.textContent = '⚠️ 順序錯誤！破風手難度：所有步驟重置，請重新由第一步開始點擊！';
+                msgEl.textContent = tr('⚠️ 順序錯誤！破風手難度：所有步驟重置，請重新由第一步開始點擊！', '⚠️ Wrong order! Pro Mode: Resetting to Step 1!');
               } else {
-                msgEl.textContent = '💡 順序不對喔！目前請先找出「第 ' + (seqIdx + 1) + ' 步」點擊！';
+                msgEl.textContent = tr('💡 順序不對喔！目前請先找出「第 ' + (seqIdx + 1) + ' 步」點擊！', '💡 Wrong order! Look for Step ' + (seqIdx + 1) + ' next!');
               }
             }
           }
@@ -3326,31 +3337,31 @@ function initSportsQuest(ctx) {
       reactBtn?.addEventListener('click', () => {
         if (!waitingGun && !gunTime) {
           waitingGun = true;
-          reactBtn.textContent = '⏳ 各就各位…預備…（等鳴槍變綠色立即點！）';
+          reactBtn.textContent = tr('⏳ 各就各位…預備…（等鳴槍變綠色立即點！）', '⏳ On your marks… Set… (Tap on green!)');
           reactBtn.style.background = '#fef3c7';
           timerId = setTimeout(() => {
             waitingGun = false;
             gunTime = performance.now();
             soundEngine.playSfx('gun');
-            reactBtn.textContent = '🔫 砰！現在立刻點擊起跑！';
+            reactBtn.textContent = tr('🔫 砰！現在立刻點擊起跑！', '🔫 BANG! TAP NOW TO SPRINT!');
             reactBtn.style.background = '#d1fae5';
           }, 700 + Math.random() * 900);
         } else if (waitingGun) {
           clearTimeout(timerId);
           waitingGun = false;
           soundEngine.playSfx('wrong');
-          reactBtn.textContent = '⚠️ 搶跑犯規！點此重新預備起跑';
+          reactBtn.textContent = tr('⚠️ 搶跑犯規！點此重新預備起跑', '⚠️ False Start! Tap to try again');
           reactBtn.style.background = '#fee2e2';
         } else if (gunTime) {
           const rt = ((performance.now() - gunTime) / 1000).toFixed(3);
           gunTime = 0;
           stage1Done = true;
           soundEngine.playSfx('correct');
-          reactBtn.textContent = '⚡ 起跑成功！反應時間：' + rt + ' 秒（點此可再測）';
+          reactBtn.textContent = tr('⚡ 起跑成功！反應時間：' + rt + ' 秒（點此可再測）', '⚡ Great Start! Reaction: ' + rt + 's (Tap to retest)');
           reactBtn.style.background = '#ffffff';
           if (msgEl) {
             msgEl.hidden = false;
-            msgEl.textContent = diff.reactEvaluator(rt) + ' 接著請回答下方問題：';
+            msgEl.textContent = diff.reactEvaluator(rt) + tr(' 接著請回答下方問題：', ' Now answer the quiz below:');
           }
         }
       });
@@ -3364,10 +3375,10 @@ function initSportsQuest(ctx) {
           soundEngine.playSfx('wrong');
           if (fbEl) {
             fbEl.hidden = false;
-            let tip = '請先依順序點擊上方按鈕通過考驗！';
-            if (ch.mode === 'tap_charge') tip = '請先連擊上方按鈕將能量蓄滿！';
-            if (ch.mode === 'reaction') tip = '請先點擊上方按鈕實測聽槍起跑反應！';
-            fbEl.innerHTML = '⚠️ <strong>尚未解鎖作答！</strong>' + tip;
+            let tip = tr('請先依順序點擊上方按鈕通過考驗！', 'Complete the step sequence above first!');
+            if (ch.mode === 'tap_charge') tip = tr('請先連擊上方按鈕將能量蓄滿！', 'Tap the charge button above to 100% first!');
+            if (ch.mode === 'reaction') tip = tr('請先點擊上方按鈕實測聽槍起跑反應！', 'Complete the reaction test above first!');
+            fbEl.innerHTML = tr('⚠️ <strong>尚未解鎖作答！</strong>', '⚠️ <strong>Quiz Locked!</strong> ') + tip;
           }
           return;
         }
@@ -3387,17 +3398,17 @@ function initSportsQuest(ctx) {
           const cardEl = document.getElementById('sq-bldg-quest-card');
           if (cardEl) cardEl.classList.add('is-cleared');
           const stEl = document.getElementById('sq-bq-status');
-          if (stEl) stEl.textContent = '✅ 本建築已過關';
+          if (stEl) stEl.textContent = tr('✅ 本建築已過關', '✅ Cleared');
           if (msgEl) msgEl.hidden = false;
 
           const newStamped = (DATA.quests || []).filter(q => state.stamps[q.id]).length;
           const newCleared = Object.keys(state.clearedItems || {}).filter(k => state.clearedItems[k]).length;
           const footEl = document.getElementById('sq-bq-prog-foot');
-          if (footEl) footEl.innerHTML = '🗺️ 地標挑戰進度：<strong>' + newCleared + '/22</strong>';
+          if (footEl) footEl.innerHTML = tr('🗺️ 地標挑戰進度：', '🗺️ Quests: ') + '<strong>' + newCleared + '/22</strong>';
 
           if (fbEl) {
             fbEl.hidden = false;
-            fbEl.innerHTML = '🎉 <strong>恭喜過關！成功通過「' + it.name + '」關卡並蓋下【' + powerName + '】印章！</strong><br>' + ch.explain;
+            fbEl.innerHTML = tr('🎉 <strong>恭喜過關！成功通過「' + L(it, 'name') + '」關卡並蓋下【' + powerName + '】印章！</strong><br>', '🎉 <strong>Quest Cleared! Passed "' + L(it, 'name') + '" & stamped [' + powerName + ']!</strong><br>') + L(ch, 'explain');
           }
 
           if (newStamped >= (DATA.quests || []).length && !state.celebrated) {
@@ -3410,7 +3421,7 @@ function initSportsQuest(ctx) {
           btn.classList.add('is-wrong');
           if (fbEl) {
             fbEl.hidden = false;
-            fbEl.innerHTML = '💡 差一點點！請看上方建築介紹與重點提示，再試另一個選項！';
+            fbEl.innerHTML = tr('💡 差一點點！請看上方建築介紹與重點提示，再試另一個選項！', '💡 Almost! Check the landmark info above and try another option!');
           }
         }
       });
@@ -3476,7 +3487,7 @@ function initSportsQuest(ctx) {
       if (tag) {
         tag.removeAttribute('data-now-item');
         tag.classList.add('sq-row-qtag');
-        tag.textContent = cleared ? '✅ 已過關' : '🎯 點此闖關';
+        tag.textContent = cleared ? tr('✅ 已過關', '✅ Cleared') : tr('🎯 點此闖關', '🎯 Start Quest');
         tag.style.background = cleared ? '#d1fae5' : '#e0f2fe';
         tag.style.color = cleared ? '#065f46' : '#0369a1';
         tag.style.fontWeight = '800';
@@ -3502,9 +3513,9 @@ function initSportsQuest(ctx) {
       return '<tr>' +
         '<td><strong>' + r.no + '</strong></td>' +
         '<td><strong>' + r.time + '</strong></td>' +
-        '<td>' + r.title + '</td>' +
-        '<td>' + r.performer + '</td>' +
-        '<td><button type="button" class="sq-chip" data-fly-isl="' + r.island + '">📍 ' + (isl ? isl.name : r.island) + '</button></td>' +
+        '<td>' + L(r, 'title') + '</td>' +
+        '<td>' + L(r, 'performer') + '</td>' +
+        '<td><button type="button" class="sq-chip" data-fly-isl="' + r.island + '">📍 ' + (isl ? L(isl, 'name') : r.island) + '</button></td>' +
       '</tr>';
     }).join('');
 
@@ -3538,17 +3549,19 @@ function initSportsQuest(ctx) {
     const modelRows = [];
     (DATA.islands || []).forEach(isl => {
       const q = (DATA.quests || []).find(x => x.islandId === isl.id);
-      const pName = q ? q.power : '挑戰成功';
+      const pClass = q ? q.power : '挑戰成功';
+      const pName = q ? L(q, 'power') : tr('挑戰成功', 'Quest');
       isl.items.forEach(it => {
         const cleared = !!state.clearedItems[it.id];
+        const ch = it.challenge;
         modelRows.push(
           '<tr>' +
-            '<td><strong>' + isl.num + ' ' + isl.name + '</strong></td>' +
-            '<td><span class="sq-power-badge sq-p-' + pName + '">' + pName + '</span></td>' +
-            '<td><strong>' + it.name + '</strong><div style="font-size:11.5px;color:#0369a1;margin-top:2px;">⏰ ' + (it.when || '') + '</div></td>' +
-            '<td>' + (it.challenge ? '<strong>' + it.challenge.title + '</strong><div style="font-size:11.5px;color:#475569;">' + it.challenge.taskDesc + '</div>' : it.desc) + '</td>' +
-            '<td>' + (cleared ? '<span style="color:#059669;font-weight:800;">✅ 已過關</span>' : '<span style="color:#d97706;font-weight:700;">⏳ 待闖關</span>') + '</td>' +
-            '<td><button type="button" class="sq-chip is-active" data-fly-item="' + it.id + '">🎯 前往建築闖關</button></td>' +
+            '<td><strong>' + isl.num + ' ' + L(isl, 'name') + '</strong></td>' +
+            '<td><span class="sq-power-badge sq-p-' + pClass + '">' + pName + '</span></td>' +
+            '<td><strong>' + L(it, 'name') + '</strong><div style="font-size:11.5px;color:#0369a1;margin-top:2px;">⏰ ' + (L(it, 'when') || '') + '</div></td>' +
+            '<td>' + (ch ? '<strong>' + L(ch, 'title') + '</strong><div style="font-size:11.5px;color:#475569;">' + L(ch, 'taskDesc') + '</div>' : L(it, 'desc')) + '</td>' +
+            '<td>' + (cleared ? '<span style="color:#059669;font-weight:800;">' + tr('✅ 已過關', '✅ Cleared') + '</span>' : '<span style="color:#d97706;font-weight:700;">' + tr('⏳ 待闖關', '⏳ Ready') + '</span>') + '</td>' +
+            '<td><button type="button" class="sq-chip is-active" data-fly-item="' + it.id + '">' + tr('🎯 前往建築闖關', '🎯 Go to Quest') + '</button></td>' +
           '</tr>'
         );
       });
@@ -3930,15 +3943,15 @@ function initSportsQuest(ctx) {
     // 學校全稱
     c.fillStyle = '#f8fafc';
     c.font = 'bold 26px "Microsoft JhengHei", sans-serif';
-    c.fillText('新竹市東區高峰國民小學 22 週年校慶運動會', W / 2, 110);
+    c.fillText(tr('新竹市東區高峰國民小學 22 週年校慶運動會', 'Gao-Feng Primary School 22nd Anniversary Sports Day'), W / 2, 110);
 
     // 大會主標題（帶光暈金色大字）
     c.save();
     c.shadowColor = '#f59e0b';
     c.shadowBlur = 16;
     c.fillStyle = '#fde047';
-    c.font = 'bold 44px "Microsoft JhengHei", sans-serif';
-    c.fillText('【雙二齊飛・馳騁高峰】賽博生態金牌榮譽艦長證書', W / 2, 168);
+    c.font = 'bold ' + (LANG === 'en' ? '34px' : '44px') + ' "Microsoft JhengHei", sans-serif';
+    c.fillText(tr('【雙二齊飛・馳騁高峰】賽博生態金牌榮譽艦長證書', 'Dual-22 Soaring · Cyber-Forest Gold Captain Certificate'), W / 2, 168);
     c.restore();
 
     // 願景英文標語
@@ -3950,10 +3963,10 @@ function initSportsQuest(ctx) {
     const curDiff = getRoleDifficulty(state.role);
     c.fillStyle = '#fef08a';
     c.font = 'bold 21px "Microsoft JhengHei", sans-serif';
-    c.fillText('茲證明　' + (state.icon || '🏃') + ' 【' + (state.role || '高峰小健將') + '】（挑戰難度：' + curDiff.star + ' ' + curDiff.name + '）', W / 2, 260);
+    c.fillText(tr('茲證明　', 'Awarded to  ') + (state.icon || '🏃') + ' [' + roleLabel(state.role) + '] (' + curDiff.star + ' ' + curDiff.name + ')', W / 2, 260);
 
     // 獲獎人姓名（超醒目高對比發光字）
-    const playerName = state.name || '高峰運動小健將';
+    const playerName = state.name || tr('高峰運動小健將', 'GFPS Champion Athlete');
     c.save();
     c.shadowColor = 'rgba(56, 189, 248, 0.8)';
     c.shadowBlur = 14;
@@ -3986,9 +3999,9 @@ function initSportsQuest(ctx) {
 
     // 7. 讚賞內文（超高對比銀白柔光，字字清晰易讀）
     c.fillStyle = '#f1f5f9';
-    c.font = '22px "Microsoft JhengHei", sans-serif';
-    c.fillText('於高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」3D 動態運動會島嶼探險中，', W / 2, 408);
-    c.fillText('勇於挑戰 7 座賽博生態浮島，歷經綠茵競速跑道、兒童玻璃工藝與越野冒險，表現非凡！', W / 2, 444);
+    c.font = (LANG === 'en' ? '19px' : '22px') + ' "Microsoft JhengHei", sans-serif';
+    c.fillText(tr('於高峰國小 22 週年校慶「雙二齊飛、馳騁高峰」3D 動態運動會島嶼探險中，', 'For outstanding exploration across the 7 Cyber-Forest Floating Isles of GFPS 22nd Sports Day,'), W / 2, 408);
+    c.fillText(tr('勇於挑戰 7 座賽博生態浮島，歷經綠茵競速跑道、兒童玻璃工藝與越野冒險，表現非凡！', "conquering track sprints, Children's Glass Museum quests, and obstacle adventures!"), W / 2, 444);
 
     // 8. 五大願景榮譽鋼印列 (5 Stamps Dynamic Display)
     const stampsData = [
@@ -4035,11 +4048,11 @@ function initSportsQuest(ctx) {
 
         c.fillStyle = '#fde047';
         c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
-        c.fillText(s.name, x, stampY + 4);
+        c.fillText(LANG === 'en' ? s.en : s.name, x, stampY + 4);
 
         c.fillStyle = '#fef3c7';
         c.font = 'bold 12px "Segoe UI", sans-serif';
-        c.fillText(s.en, x, stampY + 22);
+        c.fillText(LANG === 'en' ? 'Power Stamp' : s.en, x, stampY + 22);
 
         // 已點亮標籤膠囊
         c.fillStyle = '#16a34a';
@@ -4048,7 +4061,7 @@ function initSportsQuest(ctx) {
         c.fill();
         c.fillStyle = '#ffffff';
         c.font = 'bold 11px "Microsoft JhengHei", sans-serif';
-        c.fillText('✔ 已解鎖', x, stampY + 50);
+        c.fillText(tr('✔ 已解鎖', '✔ Unlocked'), x, stampY + 50);
       } else {
         // 未解鎖：科技虛線待探索鋼印
         c.fillStyle = 'rgba(15, 23, 42, 0.55)';
@@ -4068,11 +4081,11 @@ function initSportsQuest(ctx) {
 
         c.fillStyle = '#94a3b8';
         c.font = 'bold 17px "Microsoft JhengHei", sans-serif';
-        c.fillText(s.name, x, stampY + 4);
+        c.fillText(LANG === 'en' ? s.en : s.name, x, stampY + 4);
 
         c.fillStyle = '#64748b';
         c.font = '12px "Segoe UI", sans-serif';
-        c.fillText(s.en, x, stampY + 22);
+        c.fillText(LANG === 'en' ? 'Power Stamp' : s.en, x, stampY + 22);
 
         // 待解鎖標籤膠囊
         c.fillStyle = 'rgba(51, 65, 85, 0.7)';
@@ -4081,7 +4094,7 @@ function initSportsQuest(ctx) {
         c.fill();
         c.fillStyle = '#94a3b8';
         c.font = '11px "Microsoft JhengHei", sans-serif';
-        c.fillText('探索中', x, stampY + 50);
+        c.fillText(tr('探索中', 'Locked'), x, stampY + 50);
       }
       c.restore();
     });
@@ -4095,21 +4108,21 @@ function initSportsQuest(ctx) {
     c.textAlign = 'left';
     c.fillStyle = '#38bdf8';
     c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
-    c.fillText('🚀 22 座星際地標探索：' + clearedTotal + ' / 22 地標達成', 70, 725);
+    c.fillText(tr('🚀 22 座星際地標探索：' + clearedTotal + ' / 22 地標達成', '🚀 Landmarks Explored: ' + clearedTotal + ' / 22 Cleared'), 70, 725);
 
     c.fillStyle = '#fbbf24';
     c.font = 'bold 18px "Microsoft JhengHei", sans-serif';
-    c.fillText('🏅 願景能量印章：' + stampedCount + ' / 5 枚解鎖', 70, 755);
+    c.fillText(tr('🏅 願景能量印章：' + stampedCount + ' / 5 枚解鎖', '🏅 Vision Power Stamps: ' + stampedCount + ' / 5 Unlocked'), 70, 755);
 
     // 右下：校長名義與正式朱紅方印
     c.textAlign = 'right';
     c.fillStyle = '#f8fafc';
     c.font = 'bold 22px "Microsoft JhengHei", sans-serif';
-    c.fillText('大會校長：何信煒', W - 165, 730);
+    c.fillText(tr('大會校長：何信煒', 'Principal: Hsin-Wei Ho'), W - 165, 730);
 
     c.fillStyle = '#94a3b8';
     c.font = '15px "Microsoft JhengHei", sans-serif';
-    c.fillText('中華民國 115 年 11 月 21 日', W - 165, 758);
+    c.fillText(tr('中華民國 115 年 11 月 21 日', 'November 21, 2026 (ROC Year 115)'), W - 165, 758);
 
     // 正式朱紅官印（方正篆刻風格）
     const sealX = W - 145, sealY = 700, sealSize = 65;
@@ -4147,16 +4160,16 @@ function initSportsQuest(ctx) {
     if (fwBtn) {
       if (stampedCount >= 5) {
         fwBtn.classList.remove('is-locked');
-        fwBtn.innerHTML = '🎆 飛往聖火台・施放 3D 勝利煙火！';
+        fwBtn.innerHTML = tr('🎆 飛往聖火台・施放 3D 勝利煙火！', '🎆 Launch 3D Victory Fireworks!');
       } else {
         fwBtn.classList.add('is-locked');
-        fwBtn.innerHTML = '🔒 3D 勝利煙火（集滿 5 章解鎖，目前 ' + stampedCount + '/5）';
+        fwBtn.innerHTML = tr('🔒 3D 勝利煙火（集滿 5 章解鎖，目前 ' + stampedCount + '/5）', '🔒 3D Fireworks (Need 5 Stamps, ' + stampedCount + '/5)');
       }
     }
 
     document.getElementById('sq-cert-hint').innerHTML = stampedCount >= 5
-      ? '🎉 <strong>太棒了！你已集滿 5 大願景印章！</strong>榮獲金牌榮譽艦長最高榮耀！中央聖火晶塔 3D 勝利煙火已解鎖，可點擊下方按鈕施放或下載高畫質證書保存！'
-      : '💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚願景印章、完成 <strong>' + clearedTotal + ' / 22</strong> 座地標探索。<br><span style="color:#b45309;font-weight:800;">🔒【解鎖條件】必須集滿全部 5 個願景印章，才可以解鎖並施放中央聖火台 3D 勝利煙火！</span>';
+      ? tr('🎉 <strong>太棒了！你已集滿 5 大願景印章！</strong>榮獲金牌榮譽艦長最高榮耀！中央聖火晶塔 3D 勝利煙火已解鎖，可點擊下方按鈕施放或下載高畫質證書保存！', '🎉 <strong>Awesome! All 5 Power Stamps collected!</strong> You unlocked 3D Supernova Victory Fireworks and your Gold Captain Certificate!')
+      : tr('💡 目前已收集 <strong>' + stampedCount + ' / 5</strong> 枚願景印章、完成 <strong>' + clearedTotal + ' / 22</strong> 座地標探索。<br><span style="color:#b45309;font-weight:800;">🔒【解鎖條件】必須集滿全部 5 個願景印章，才可以解鎖並施放中央聖火台 3D 勝利煙火！</span>', '💡 Progress: <strong>' + stampedCount + ' / 5</strong> Power Stamps · <strong>' + clearedTotal + ' / 22</strong> Landmarks.<br><span style="color:#b45309;font-weight:800;">🔒 Collect all 5 Power Stamps to unlock panoramic 3D Victory Fireworks!</span>');
     if (!certDlg.open) certDlg.showModal();
   }
 
@@ -4164,13 +4177,13 @@ function initSportsQuest(ctx) {
     const quests = DATA.quests || [];
     const stampedCount = quests.filter(q => state.stamps && state.stamps[q.id]).length;
     if (stampedCount < 5) {
-      showToast('🔒 勝利煙火尚未解鎖！目前已收集 ' + stampedCount + ' / 5 枚印章，集滿 5 個章才可以施放煙火！點擊「📖 集章說明」查看闖關指引。');
+      showToast(tr('🔒 勝利煙火尚未解鎖！目前已收集 ' + stampedCount + ' / 5 枚印章，集滿 5 個章才可以施放煙火！點擊「📖 集章說明」查看闖關指引。', '🔒 Fireworks locked! Collected ' + stampedCount + '/5 stamps. Collect all 5 to launch!'));
       return false;
     }
     if (certDlg && certDlg.open) certDlg.close();
     if (ctx.frameIsland) ctx.frameIsland('s01');
     spawn3DFireworks();
-    showToast('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！');
+    showToast(tr('🎆 3D 超新星勝利煙火已於中央聖火晶塔盛大綻放！', '🎆 3D Supernova Victory Fireworks launched over the Central Torch!'));
     return true;
   }
 
@@ -4185,7 +4198,7 @@ function initSportsQuest(ctx) {
   document.getElementById('sq-guide-btn-start')?.addEventListener('click', () => {
     if (guideDlg && guideDlg.open) guideDlg.close();
     if (ctx.frameIsland) ctx.frameIsland('s01');
-    showToast('🚀 已前往中央「雙二盛典星港」！點擊島上地標開始闖關！');
+    showToast(tr('🚀 已前往中央「雙二盛典星港」！點擊島上地標開始闖關！', '🚀 Arrived at Central Starport! Tap any landmark to start your quest!'));
   });
 
   document.getElementById('sq-btn-fireworks-top')?.addEventListener('click', () => {
@@ -4335,6 +4348,16 @@ html = html.replace("$('ui-news-count').textContent = tr(scope + ' ' + rows.leng
 
 // 4. 統計欄位去除「近 3 學年」字樣
 html = html.replace("${scope + tr('榮譽', ' honors')}", "${tr('大會榮譽', ' honors')}");
+
+
+html = html.replace(
+  "const ttl = tr(g + '年級賽程與闖關一覽', 'Grade ' + num + ' Sports Day schedule');",
+  "const ttl = tr(g + '年級賽程與闖關一覽', ({'7':'Lower Grades (1–2)','8':'Middle Grades (3–4)','9':'Upper Grades (5–6)'}[num] || 'Grade ' + num) + ' Sports Day Schedule');"
+);
+html = html.replace(
+  "⏱️ ${uiEsc(entry.schedule)}</td><td style=\"font-size:12px;line-height:1.45;\">🎯 ${uiEsc(entry.task)}",
+  "⏱️ ${uiEsc(L(entry, 'schedule'))}</td><td style=\"font-size:12px;line-height:1.45;\">🎯 ${uiEsc(L(entry, 'task'))}"
+);
 
 fs.writeFileSync(OUT, html, 'utf8');
 
