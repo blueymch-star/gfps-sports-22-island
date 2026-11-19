@@ -2966,6 +2966,10 @@ dialog::backdrop {
       <button type="button" class="sq-act-btn is-gold is-locked" id="sq-btn-fireworks" style="justify-content:center;font-size:14px;padding:11px 16px;" data-en="🔒 3D Victory Fireworks (Collect 5 Stamps)">🔒 3D 勝利煙火（集滿 5 章解鎖）</button>
       <button type="button" class="sq-danger-btn" id="sq-btn-reset-cert" style="justify-content:center;" data-en="🔄 Reset Quest Progress">🔄 重設闖關紀錄（重新開始）</button>
     </div>
+    <div id="sq-cert-img-fallback" hidden style="margin-top:12px;padding:12px;background:#f0f9ff;border:1.5px dashed #0284c7;border-radius:12px;text-align:center;">
+      <div style="font-size:13px;font-weight:800;color:#0369a1;margin-bottom:8px;" data-en="📱 If your browser/LINE blocks auto-download, press and hold the image below to Save Image:">📱 若手機瀏覽器或 LINE 阻擋自動下載，請<strong>長按下方證書圖片</strong> ➜「儲存影像／加入照片」：</div>
+      <img id="sq-cert-save-img" alt="Certificate" style="width:100%;max-width:520px;border-radius:10px;box-shadow:0 4px 14px rgba(15,23,42,0.18);display:block;margin:0 auto;" />
+    </div>
   </div>
 </dialog>
 
@@ -16700,6 +16704,22 @@ function initSportsQuest(ctx) {
     const c = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
 
+    const rRect = (x, y, w, h, r) => {
+      if (typeof c.roundRect === 'function') {
+        c.roundRect(x, y, w, h, r);
+      } else {
+        c.moveTo(x + r, y);
+        c.lineTo(x + w - r, y);
+        c.quadraticCurveTo(x + w, y, x + w, y + r);
+        c.lineTo(x + w, y + h - r);
+        c.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        c.lineTo(x + r, y + h);
+        c.quadraticCurveTo(x, y + h, x, y + h - r);
+        c.lineTo(x, y + r);
+        c.quadraticCurveTo(x, y, x + r, y);
+      }
+    };
+
     // 1. 深邃星際宇宙深空星雲漸層背景
     const bg = c.createLinearGradient(0, 0, 0, H);
     bg.addColorStop(0, '#030718');
@@ -16889,7 +16909,7 @@ function initSportsQuest(ctx) {
         // 已點亮標籤膠囊
         c.fillStyle = '#16a34a';
         c.beginPath();
-        c.roundRect(x - 38, stampY + 36, 76, 20, 10);
+        rRect(x - 38, stampY + 36, 76, 20, 10);
         c.fill();
         c.fillStyle = '#ffffff';
         c.font = 'bold 11px "Microsoft JhengHei", sans-serif';
@@ -16922,7 +16942,7 @@ function initSportsQuest(ctx) {
         // 待解鎖標籤膠囊
         c.fillStyle = 'rgba(51, 65, 85, 0.7)';
         c.beginPath();
-        c.roundRect(x - 34, stampY + 36, 68, 20, 10);
+        rRect(x - 34, stampY + 36, 68, 20, 10);
         c.fill();
         c.fillStyle = '#94a3b8';
         c.font = '11px "Microsoft JhengHei", sans-serif';
@@ -16963,7 +16983,7 @@ function initSportsQuest(ctx) {
     c.strokeStyle = '#dc2626';
     c.lineWidth = 3;
     c.beginPath();
-    c.roundRect(sealX, sealY, sealSize, sealSize, 8);
+    rRect(sealX, sealY, sealSize, sealSize, 8);
     c.fill();
     c.stroke();
 
@@ -17041,13 +17061,80 @@ function initSportsQuest(ctx) {
     tryLaunchFireworks();
   });
 
-  document.getElementById('sq-btn-dl-cert').addEventListener('click', () => {
-    drawCertificate();
-    const canvas = document.getElementById('sq-cert-canvas');
-    const a = document.createElement('a');
-    a.download = '高峰國小22週年校慶_金牌榮譽證書_' + (state.name || '運動健將') + '.png';
-    a.href = canvas.toDataURL('image/png');
-    a.click();
+  document.getElementById('sq-btn-dl-cert')?.addEventListener('click', () => {
+    try {
+      drawCertificate();
+      const canvas = document.getElementById('sq-cert-canvas');
+      if (!canvas) return;
+      const safeName = (state.name || tr('運動健將', 'Athlete')).replace(/[\/:*?"<>|]/g, '_');
+      const fileName = tr('高峰國小22週年校慶_金牌榮譽證書_', 'GFPS_22nd_Gold_Certificate_') + safeName + '.png';
+
+      const showImgFallback = (imgSrc) => {
+        const box = document.getElementById('sq-cert-img-fallback');
+        const img = document.getElementById('sq-cert-save-img');
+        if (img && imgSrc) img.src = imgSrc;
+        if (box) {
+          box.hidden = false;
+          box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      };
+
+      const triggerAnchorDownload = (hrefUrl, isBlob) => {
+        const a = document.createElement('a');
+        a.href = hrefUrl;
+        a.download = fileName;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          a.remove();
+          if (isBlob) URL.revokeObjectURL(hrefUrl);
+        }, 2000);
+      };
+
+      const isMobileOrInApp = /iPad|iPhone|iPod|Android|Line|FBAN|FBAV|Instagram|MicroMessenger/i.test(navigator.userAgent);
+
+      if (typeof canvas.toBlob === 'function') {
+        canvas.toBlob(async (blob) => {
+          if (!blob) {
+            const dataUrl = canvas.toDataURL('image/png');
+            showImgFallback(dataUrl);
+            triggerAnchorDownload(dataUrl, false);
+            return;
+          }
+          const blobUrl = URL.createObjectURL(blob);
+          if (isMobileOrInApp) {
+            showImgFallback(canvas.toDataURL('image/png'));
+            try {
+              const file = new File([blob], fileName, { type: 'image/png' });
+              if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                  files: [file],
+                  title: tr('高峰國小 22 週年校慶金牌榮譽證書', 'GFPS 22nd Gold Honor Certificate')
+                });
+                URL.revokeObjectURL(blobUrl);
+                showToast(tr('✅ 已開啟系統分享／儲存選單！', '✅ Share & Save sheet opened!'));
+                return;
+              }
+            } catch (err) {
+              if (err && err.name === 'AbortError') {
+                URL.revokeObjectURL(blobUrl);
+                return;
+              }
+            }
+          }
+          triggerAnchorDownload(blobUrl, true);
+          showToast(tr('💾 金牌證書已開始下載！(若未自動下載可長按下方圖片儲存)', '💾 Certificate download started!'));
+        }, 'image/png');
+      } else {
+        const dataUrl = canvas.toDataURL('image/png');
+        if (isMobileOrInApp) showImgFallback(dataUrl);
+        triggerAnchorDownload(dataUrl, false);
+        showToast(tr('💾 金牌證書已開始下載！', '💾 Certificate download started!'));
+      }
+    } catch (e) {
+      showToast(tr('⚠️ 下載發生錯誤，請嘗試截圖或更換瀏覽器：', '⚠️ Download error: ') + (e && e.message ? e.message : e));
+    }
   });
 
   // ================= 頂部品牌卡：折疊收合管理 (方案一正式採用) =================
@@ -17173,7 +17260,3 @@ function bootYield(msg) {
 })();
 
 </script>
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
